@@ -1,3 +1,5 @@
+![Banner](./Banner.jpg)
+
 # 💫 About Me:
 👋 Hi, I’m @ARPANPATRA111<br>👀 I’m interested in Development<br>🌱 I’m currently learning JavaScript<br>💞️ I’m looking to collaborate on Front-end<br>⚡ Fun fact: Eat Sleep Code Repeat<br>
 
