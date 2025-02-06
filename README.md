@@ -1,5 +1,11 @@
 ![Banner](./Banner.jpg)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
+</picture>
+
 # 💫 About Me:
 👋 Hi, I’m @ARPANPATRA111<br>👀 I’m interested in Development<br>🌱 I’m currently learning JavaScript<br>💞️ I’m looking to collaborate on Front-end<br>⚡ Fun fact: Eat Sleep Code Repeat<br>
 
