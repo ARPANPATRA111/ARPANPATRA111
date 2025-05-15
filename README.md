@@ -1,4 +1,4 @@
-![Banner](./Banner.jpg)
+![Banner](./Banner.png)
 # 💫 About Me:
 👋 Hi, I’m @ARPANPATRA111<br>👀 I’m interested in Web/App Development<br>🌱 I’m currently learning React.js<br>💞️ I’m looking to collaborate on Front-end<br>⚡ Fun fact: Eat Sleep Code Repeat
 
