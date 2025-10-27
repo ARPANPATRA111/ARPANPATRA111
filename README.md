@@ -37,6 +37,24 @@
 ![](https://github-contributor-stats.vercel.app/api?username=ARPANPATRA111&limit=5&theme=tokyonight&combine_all_yearly_contributions=true)
 
 ---
+
+## ⏰ My Productivity & Coding Stats
+
+### 🕒 Wake-up & Coding Activity Summary
+> _Automatically updated every 4 hours — powered by [WakaTime](https://wakatime.com/)_
+
+**🛌 Earliest Coding Session:** ⏰ _<!--START_WAKEUP_TIME-->Loading...<!--END_WAKEUP_TIME-->_  
+**📆 Last Updated:** 🗓️ _<!--START_UPDATE_DATE-->Loading...<!--END_UPDATE_DATE-->_
+
+### 💻 Coding Breakdown (Past 7 Days)
+<!--START_SECTION:📊 Coding_Stats-->
+<!--END_SECTION:📊 Coding_Stats-->
+
+---
+
+📁 For detailed analytics and JSON stats → [View wakatime_stats.json →](./wakatime_stats.json)
+
+---
 [![](https://visitcount.itsvg.in/api?id=ARPANPATRA111&icon=0&color=2)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->

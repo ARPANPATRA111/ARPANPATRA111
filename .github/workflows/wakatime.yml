@@ -1,0 +1,102 @@
+name: 🕒 Advanced WakaTime + Wake-Up Time Tracker
+
+on:
+  schedule:
+    - cron: '0 0 * * *'     # Daily at midnight UTC
+    - cron: '0 */4 * * *'   # Every 4 hours
+  workflow_dispatch:
+
+jobs:
+  wakatime-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧭 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 🧩 Install Dependencies
+        run: pip install requests pytz
+
+      - name: 📊 Fetch & Generate WakaTime Stats
+        id: wakastats
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: |
+          import os, json, requests, pytz
+          from datetime import datetime
+
+          api_key = os.getenv("WAKATIME_API_KEY")
+          if not api_key:
+              raise Exception("WAKATIME_API_KEY is missing!")
+
+          url = "https://wakatime.com/api/v1/users/current/summaries?range=last_7_days"
+          headers = {"Authorization": f"Basic {api_key}"}
+          res = requests.get(url, headers=headers)
+
+          if res.status_code != 200:
+              raise Exception(f"Failed to fetch WakaTime data: {res.text}")
+
+          data = res.json().get("data", [])
+          if not data:
+              raise Exception("No data found in WakaTime response.")
+
+          # --- Wake-up Coding Time ---
+          today_summary = data[-1]
+          first_activity = today_summary.get("range", {}).get("start", "")
+          wakeup_time = "N/A"
+          if first_activity:
+              utc_dt = datetime.fromisoformat(first_activity.replace("Z", "+00:00"))
+              wakeup_time = utc_dt.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%H:%M:%S")
+
+          # --- Prepare Output Data ---
+          output = {
+              "generated_at_utc": datetime.utcnow().isoformat(),
+              "wake_up_time": wakeup_time,
+              "summary_days": len(data),
+              "latest_day": today_summary.get("range", {}).get("date", ""),
+              "total_coding_time": today_summary.get("grand_total", {}).get("text", "0 mins"),
+              "raw_data": data
+          }
+
+          # Save JSON for portfolio use
+          with open("wakatime_stats.json", "w") as f:
+              json.dump(output, f, indent=2)
+
+          print(f"Wake-up coding time (IST): {wakeup_time}")
+
+      - name: 🧠 Update README with Stats
+        run: |
+          WAKEUP=$(cat wakatime_stats.json | python3 -c "import sys, json; print(json.load(sys.stdin)['wake_up_time'])")
+          UPDATED=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+
+          sed -i "s|<!--START_WAKEUP_TIME-->.*<!--END_WAKEUP_TIME-->|<!--START_WAKEUP_TIME-->${WAKEUP}<!--END_WAKEUP_TIME-->|" README.md
+          sed -i "s|<!--START_UPDATE_DATE-->.*<!--END_UPDATE_DATE-->|<!--START_UPDATE_DATE-->${UPDATED}<!--END_UPDATE_DATE-->|" README.md
+
+      - name: 🧮 Update Coding Breakdown
+        uses: athul/waka-readme@master
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          TIME_RANGE: last_7_days
+          LANG_COUNT: 10
+          SHOW_TITLE: true
+          SHOW_TIME: true
+          SHOW_TOTAL: true
+          SECTION_NAME: 📊 Coding_Stats
+          COMMIT_MESSAGE: "📊 Auto-update: WakaTime stats + wake-up time"
+          TARGET_BRANCH: main
+          TARGET_PATH: README.md
+
+      - name: 💾 Commit wakatime_stats.json
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "github-action-bot@users.noreply.github.com"
+          git add wakatime_stats.json README.md
+          git commit -m "🕒 Updated WakaTime JSON and README" || echo "No changes to commit"
+          git push origin main
