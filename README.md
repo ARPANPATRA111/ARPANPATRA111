@@ -7,7 +7,74 @@
 </picture>
 
 # 💫 About Me:
-👋 Hi, I’m @ARPANPATRA111<br>👀 I’m interested in Web/App Development<br>🌱 I’m currently learning React.js<br>💞️ I’m looking to collaborate on Front-end<br>⚡ Fun fact: Eat Sleep Code Repeat
+👋 Hi, I'm **Arpan Patra** — Passionate Web/App Developer | 🌱 Currently mastering **React.js** | 💞️ Open to **Frontend Collaborations**
+
+## 📊 Weekly Coding Activity
+
+<div align="center">
+
+<!-- Animated Time Counter -->
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://img.shields.io/badge/This_Week-<!--START_THIS_WEEK_BADGE-->0_hrs_0_mins<!--END_THIS_WEEK_BADGE-->-00ADD8?style=for-the-badge&labelColor=1a1a1a&logo=clockify&logoColor=white" alt="This Week"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Last_Week-<!--START_LAST_WEEK_BADGE-->0_hrs_0_mins<!--END_LAST_WEEK_BADGE-->-gray?style=for-the-badge&labelColor=1a1a1a&logo=clockify&logoColor=white" alt="Last Week"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Change-<!--START_WEEK_CHANGE_BADGE-->N/A<!--END_WEEK_CHANGE_BADGE-->-<!--START_CHANGE_COLOR-->brightgreen<!--END_CHANGE_COLOR-->?style=for-the-badge&labelColor=1a1a1a&logo=trending-up&logoColor=white" alt="Change"/>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+<!-- Main Activity Section: Chart + Stats Side by Side -->
+<table>
+<tr>
+<td width="55%" valign="top">
+
+### 📈 Daily Activity Chart
+
+```text
+<!--START_DAILY_CHART-->
+Mon ████████████████████ 0.0h
+Tue ████████████████████ 0.0h
+Wed ████████████████████ 0.0h
+Thu ████████████████████ 0.0h
+Fri ████████████████████ 0.0h
+Sat ████████████████████ 0.0h
+Sun ████████████████████ 0.0h
+<!--END_DAILY_CHART-->
+```
+
+</td>
+<td width="45%" valign="top">
+
+### 📊 Weekly Stats
+
+| Metric | Value |
+|:-------|:------|
+| **🏆 Most Productive** | <!--START_PRODUCTIVE_DAY-->N/A<!--END_PRODUCTIVE_DAY--> |
+| **🔤 Top Language** | <!--START_TOP_LANGUAGE-->N/A<!--END_TOP_LANGUAGE--> |
+| **⚡ Avg Daily Coding** | <!--START_AVG_DAILY-->0.0 hrs<!--END_AVG_DAILY--> |
+| **📅 Active Days** | <!--START_ACTIVE_DAYS-->0/7<!--END_ACTIVE_DAYS--> |
+| **💻 Favorite Editor** | <!--START_TOP_EDITOR-->N/A<!--END_TOP_EDITOR--> |
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-27 15:20:39 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+</div>
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/arpan-patra-1b1041320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/https://x.com/Arpan5305?s=09) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@https://www.youtube.com/@AMDz-cd7ts) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:thispc119@gmail.com) 
@@ -38,21 +105,12 @@
 
 ---
 
-## ⏰ My Productivity & Coding Stats
+###  Detailed Coding Breakdown (Last 7 Days)
 
-### 🕒 Wake-up & Coding Activity Summary
-> _Automatically updated every 4 hours — powered by [WakaTime](https://wakatime.com/)_
-
-**🛌 Earliest Coding Session:** ⏰ _<!--START_WAKEUP_TIME-->00:00:00<!--END_WAKEUP_TIME-->_  
-**📆 Last Updated:** 🗓️ _<!--START_UPDATE_DATE-->2025-10-27 15:20:39 UTC<!--END_UPDATE_DATE-->_
-
-### 💻 Coding Breakdown (Past 7 Days)
 <!--START_SECTION:📊 Coding_Stats-->
 <!--END_SECTION:📊 Coding_Stats-->
 
----
-
-📁 For detailed analytics and JSON stats → [View wakatime_stats.json →](./wakatime_stats.json)
+<sub>� [View Full Analytics JSON →](./wakatime_stats.json)</sub>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=ARPANPATRA111&icon=0&color=2)](https://visitcount.itsvg.in)
