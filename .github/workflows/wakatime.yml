@@ -29,6 +29,7 @@ jobs:
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
+          python <<'EOF'
           import os, json, requests, pytz
           from datetime import datetime
 
@@ -36,6 +37,7 @@ jobs:
           if not api_key:
               raise Exception("WAKATIME_API_KEY is missing!")
 
+          # Correct API URL for summaries
           url = "https://wakatime.com/api/v1/users/current/summaries?range=last_7_days"
           headers = {"Authorization": f"Basic {api_key}"}
           res = requests.get(url, headers=headers)
@@ -65,13 +67,14 @@ jobs:
               "raw_data": data
           }
 
-          # Save JSON for portfolio use
+          # Save JSON for portfolio or future use
           with open("wakatime_stats.json", "w") as f:
               json.dump(output, f, indent=2)
 
           print(f"Wake-up coding time (IST): {wakeup_time}")
+          EOF
 
-      - name: 🧠 Update README with Stats
+      - name: 🧠 Update README with Wake-up Time
         run: |
           WAKEUP=$(cat wakatime_stats.json | python3 -c "import sys, json; print(json.load(sys.stdin)['wake_up_time'])")
           UPDATED=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
@@ -79,7 +82,7 @@ jobs:
           sed -i "s|<!--START_WAKEUP_TIME-->.*<!--END_WAKEUP_TIME-->|<!--START_WAKEUP_TIME-->${WAKEUP}<!--END_WAKEUP_TIME-->|" README.md
           sed -i "s|<!--START_UPDATE_DATE-->.*<!--END_UPDATE_DATE-->|<!--START_UPDATE_DATE-->${UPDATED}<!--END_UPDATE_DATE-->|" README.md
 
-      - name: 🧮 Update Coding Breakdown
+      - name: 🧮 Update Coding Breakdown (WakaTime Chart)
         uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
