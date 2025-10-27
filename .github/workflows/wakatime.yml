@@ -130,6 +130,16 @@ jobs:
           top_language = max(languages.items(), key=lambda x: x[1])[0] if languages else "N/A"
           top_editor = max(editors.items(), key=lambda x: x[1])[0] if editors else "N/A"
 
+          # --- Today and Yesterday Stats ---
+          today_data = data_last7[-1] if len(data_last7) >= 1 else {}
+          yesterday_data = data_last7[-2] if len(data_last7) >= 2 else {}
+          
+          today_seconds = today_data.get("grand_total", {}).get("total_seconds", 0)
+          yesterday_seconds = yesterday_data.get("grand_total", {}).get("total_seconds", 0)
+          
+          today_formatted = format_time(today_seconds)
+          yesterday_formatted = format_time(yesterday_seconds)
+
           # --- Prepare Output Data ---
           output = {
               "generated_at_utc": datetime.utcnow().isoformat(),
@@ -137,6 +147,8 @@ jobs:
               "summary_days": len(data_last7),
               "latest_day": today_summary.get("range", {}).get("date", ""),
               "total_coding_time": today_summary.get("grand_total", {}).get("text", "0 mins"),
+              "today_total": today_formatted,
+              "yesterday_total": yesterday_formatted,
               "this_week_total": this_week_formatted,
               "last_week_total": last_week_formatted,
               "week_change": change_text,
@@ -153,6 +165,8 @@ jobs:
           with open("wakatime_stats.json", "w") as f:
               json.dump(output, f, indent=2)
 
+          print(f"Today: {today_formatted}")
+          print(f"Yesterday: {yesterday_formatted}")
           print(f"This Week: {this_week_formatted}")
           print(f"Last Week: {last_week_formatted}")
           print(f"Change: {change_text}")
@@ -176,6 +190,8 @@ jobs:
           # Update all dynamic fields
           wakeup = stats.get("wake_up_time", "N/A")
           updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+          today = stats.get("today_total", "0 hrs 0 mins")
+          yesterday = stats.get("yesterday_total", "0 hrs 0 mins")
           this_week = stats.get("this_week_total", "0 hrs 0 mins")
           last_week = stats.get("last_week_total", "0 hrs 0 mins")
           change = stats.get("week_change", "N/A")
@@ -190,6 +206,8 @@ jobs:
           avg_daily = sum(daily_hours) / 7 if daily_hours else 0
 
           # Format for badges (replace spaces with underscores)
+          today_badge = today.replace(" ", "_")
+          yesterday_badge = yesterday.replace(" ", "_")
           this_week_badge = this_week.replace(" ", "_")
           last_week_badge = last_week.replace(" ", "_")
           change_badge = change.replace(" ", "_").replace("%", "%%25")
@@ -234,7 +252,45 @@ jobs:
           
           chart = "\n".join(chart_lines)
 
-          # Replace all markers
+          # Replace badge values in URLs
+          import re
+          
+          # Replace TODAY badge
+          readme = re.sub(
+              r'(!\[TODAY\]\(https://img\.shields\.io/badge/TODAY-)[^-]+(-.+?\))<!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->',
+              rf'\g<1>{today_badge}\g<2><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->',
+              readme
+          )
+          
+          # Replace YESTERDAY badge
+          readme = re.sub(
+              r'(!\[YESTERDAY\]\(https://img\.shields\.io/badge/YESTERDAY-)[^-]+(-.+?\))<!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->',
+              rf'\g<1>{yesterday_badge}\g<2><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->',
+              readme
+          )
+          
+          # Replace THIS WEEK badge
+          readme = re.sub(
+              r'(!\[THIS WEEK\]\(https://img\.shields\.io/badge/THIS_WEEK-)[^-]+(-.+?\))<!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->',
+              rf'\g<1>{this_week_badge}\g<2><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->',
+              readme
+          )
+          
+          # Replace LAST WEEK badge
+          readme = re.sub(
+              r'(!\[LAST WEEK\]\(https://img\.shields\.io/badge/LAST_WEEK-)[^-]+(-.+?\))<!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->',
+              rf'\g<1>{last_week_badge}\g<2><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->',
+              readme
+          )
+          
+          # Replace WEEKLY CHANGE badge (both text and color)
+          readme = re.sub(
+              r'(!\[WEEKLY CHANGE\]\(https://img\.shields\.io/badge/WEEKLY_CHANGE-)[^-]+(-)[^?]+(\?style=for-the-badge&labelColor=1a1a1a\))<!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->',
+              rf'\g<1>{change_badge}\g<2>{change_color}\g<3><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->',
+              readme
+          )
+
+          # Replace all markers for other dynamic content
           def safe_replace(content, start_marker, end_marker, new_value):
               try:
                   start = content.find(f"<!--{start_marker}-->")
@@ -247,10 +303,6 @@ jobs:
                   pass
               return content
 
-          readme = safe_replace(readme, "START_THIS_WEEK_BADGE", "END_THIS_WEEK_BADGE", this_week_badge)
-          readme = safe_replace(readme, "START_LAST_WEEK_BADGE", "END_LAST_WEEK_BADGE", last_week_badge)
-          readme = safe_replace(readme, "START_WEEK_CHANGE_BADGE", "END_WEEK_CHANGE_BADGE", change_badge)
-          readme = safe_replace(readme, "START_CHANGE_COLOR", "END_CHANGE_COLOR", change_color)
           readme = safe_replace(readme, "START_UPDATE_DATE", "END_UPDATE_DATE", updated)
           readme = safe_replace(readme, "START_DAILY_CHART", "END_DAILY_CHART", f"\n```\n{chart}\n```\n")
           readme = safe_replace(readme, "START_PRODUCTIVE_DAY", "END_PRODUCTIVE_DAY", f"{productive_day} ({productive_hours:.1f}h)")
@@ -264,7 +316,9 @@ jobs:
               f.write(readme)
 
           print(f"✅ README updated successfully!")
-          print(f"📊 This Week: {this_week}")
+          print(f"� Today: {today}")
+          print(f"📆 Yesterday: {yesterday}")
+          print(f"�📊 This Week: {this_week}")
           print(f"📆 Last Week: {last_week}")
           print(f"📈 Change: {change}")
           print(f"🏆 Most Productive: {productive_day} ({productive_hours:.1f}h)")

@@ -10,35 +10,12 @@
 👋 Hi, I'm **Arpan Patra** — Passionate Web/App Developer | 🌱 Currently mastering **React.js** | 💞️ Open to **Frontend Collaborations**
 
 # 📊 Weekly Coding Activity
-<div align="center">
-
-## 🎯 **Coding Time Overview**
-
-<table>
-<tr>
-<td align="center" width="50%">
-
-![THIS WEEK](https://img.shields.io/badge/THIS_WEEK-<!--START_THIS_WEEK_BADGE-->2_hrs_39_mins<!--END_THIS_WEEK_BADGE-->-00d9ff?style=for-the-badge&logo=clockify&logoColor=white&labelColor=1a1a1a)  
-<sub>Current Week</sub>
-
-</td>
-<td align="center" width="50%">
-
-![LAST WEEK](https://img.shields.io/badge/LAST_WEEK-<!--START_LAST_WEEK_BADGE-->0_hrs_0_mins<!--END_LAST_WEEK_BADGE-->-6c757d?style=for-the-badge&logo=clockify&logoColor=white&labelColor=1a1a1a)  
-<sub>Previous Week</sub>
-
-</td>
-</tr>
-</table>
-
-![WEEKLY CHANGE](https://img.shields.io/badge/WEEKLY_CHANGE-<!--START_WEEK_CHANGE_BADGE-->🆕_New<!--END_WEEK_CHANGE_BADGE-->-<!--START_CHANGE_COLOR-->gray<!--END_CHANGE_COLOR-->?style=for-the-badge&labelColor=1a1a1a)
-
-</div>
 
 <table width="100%">
 <tr>
-<td width="65%" valign="top">
-📈 Daily Activity Breakdown
+<td width="45%" valign="top">
+
+## 📈 Daily Activity Breakdown
 
 <div align="left">
 
@@ -57,10 +34,11 @@ Tue  ███████████████  1.8 hrs  ⭐
 <sub>🔹 Each block represents ~0.08 hrs | ⭐ Most productive day</sub>
 
 </div>
-</td>
-<td width="35%" valign="top">
 
-📊 **Quick Stats**
+</td>
+<td width="30%" valign="top">
+
+## 📊 Quick Stats
 
 <table>
 <tr><td>🏆 <b>Most Productive</b></td><td><!--START_PRODUCTIVE_DAY-->Tuesday (1.8h)<!--END_PRODUCTIVE_DAY--></td></tr>
@@ -70,6 +48,16 @@ Tue  ███████████████  1.8 hrs  ⭐
 <tr><td>📅 <b>Active Days</b></td><td><!--START_ACTIVE_DAYS-->2/7<!--END_ACTIVE_DAYS--> days</td></tr>
 </table>
 
+</td>
+<td width="25%" valign="top" align="center">
+
+## 🎯 Coding Time
+
+![TODAY](https://img.shields.io/badge/TODAY-1_hr_50_mins-4CAF50?style=for-the-badge&logo=codetime&logoColor=white&labelColor=1a1a1a)<!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->  
+![YESTERDAY](https://img.shields.io/badge/YESTERDAY-0_hrs_49_mins-FF9800?style=for-the-badge&logo=codetime&logoColor=white&labelColor=1a1a1a)<!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->  
+![THIS WEEK](https://img.shields.io/badge/THIS_WEEK-2_hrs_39_mins-00d9ff?style=for-the-badge&logo=clockify&logoColor=white&labelColor=1a1a1a)<!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->  
+![LAST WEEK](https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-6c757d?style=for-the-badge&logo=clockify&logoColor=white&labelColor=1a1a1a)<!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->  
+![WEEKLY CHANGE](https://img.shields.io/badge/WEEKLY_CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a)<!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->  
 </td>
 </tr>
 </table>
