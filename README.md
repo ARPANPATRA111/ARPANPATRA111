@@ -43,8 +43,8 @@
 ### 🕒 Wake-up & Coding Activity Summary
 > _Automatically updated every 4 hours — powered by [WakaTime](https://wakatime.com/)_
 
-**🛌 Earliest Coding Session:** ⏰ _<!--START_WAKEUP_TIME-->Loading...<!--END_WAKEUP_TIME-->_  
-**📆 Last Updated:** 🗓️ _<!--START_UPDATE_DATE-->Loading...<!--END_UPDATE_DATE-->_
+**🛌 Earliest Coding Session:** ⏰ _<!--START_WAKEUP_TIME-->00:00:00<!--END_WAKEUP_TIME-->_  
+**📆 Last Updated:** 🗓️ _<!--START_UPDATE_DATE-->2025-10-27 15:20:39 UTC<!--END_UPDATE_DATE-->_
 
 ### 💻 Coding Breakdown (Past 7 Days)
 <!--START_SECTION:📊 Coding_Stats-->
