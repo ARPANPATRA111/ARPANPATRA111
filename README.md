@@ -17,7 +17,7 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://img.shields.io/badge/This_Week-<!--START_THIS_WEEK_BADGE-->0_hrs_0_mins<!--END_THIS_WEEK_BADGE-->-00ADD8?style=for-the-badge&labelColor=1a1a1a&logo=clockify&logoColor=white" alt="This Week"/>
+      <img src="https://img.shields.io/badge/This_Week-<!--START_THIS_WEEK_BADGE-->1_hrs_20_mins<!--END_THIS_WEEK_BADGE-->-00ADD8?style=for-the-badge&labelColor=1a1a1a&logo=clockify&logoColor=white" alt="This Week"/>
     </td>
   </tr>
   <tr>
@@ -27,7 +27,7 @@
   </tr>
   <tr>
     <td align="center">
-      <img src="https://img.shields.io/badge/Change-<!--START_WEEK_CHANGE_BADGE-->N/A<!--END_WEEK_CHANGE_BADGE-->-<!--START_CHANGE_COLOR-->brightgreen<!--END_CHANGE_COLOR-->?style=for-the-badge&labelColor=1a1a1a&logo=trending-up&logoColor=white" alt="Change"/>
+      <img src="https://img.shields.io/badge/Change-<!--START_WEEK_CHANGE_BADGE-->🆕_New<!--END_WEEK_CHANGE_BADGE-->-<!--START_CHANGE_COLOR-->gray<!--END_CHANGE_COLOR-->?style=for-the-badge&labelColor=1a1a1a&logo=trending-up&logoColor=white" alt="Change"/>
     </td>
   </tr>
 </table>
@@ -45,13 +45,13 @@
 
 ```text
 <!--START_DAILY_CHART-->
-Mon ████████████████████ 0.0h
-Tue ████████████████████ 0.0h
-Wed ████████████████████ 0.0h
-Thu ████████████████████ 0.0h
-Fri ████████████████████ 0.0h
-Sat ████████████████████ 0.0h
-Sun ████████████████████ 0.0h
+Wed ░░░░░░░░░░░░░░░░░░░░ 0.0h
+Thu ░░░░░░░░░░░░░░░░░░░░ 0.0h
+Fri ░░░░░░░░░░░░░░░░░░░░ 0.0h
+Sat ░░░░░░░░░░░░░░░░░░░░ 0.0h
+Sun ░░░░░░░░░░░░░░░░░░░░ 0.0h
+Mon ████████████████████ 0.8h
+Tue ████████████░░░░░░░░ 0.5h
 <!--END_DAILY_CHART-->
 ```
 
@@ -62,18 +62,18 @@ Sun ████████████████████ 0.0h
 
 | Metric | Value |
 |:-------|:------|
-| **🏆 Most Productive** | <!--START_PRODUCTIVE_DAY-->N/A<!--END_PRODUCTIVE_DAY--> |
-| **🔤 Top Language** | <!--START_TOP_LANGUAGE-->N/A<!--END_TOP_LANGUAGE--> |
-| **⚡ Avg Daily Coding** | <!--START_AVG_DAILY-->0.0 hrs<!--END_AVG_DAILY--> |
-| **📅 Active Days** | <!--START_ACTIVE_DAYS-->0/7<!--END_ACTIVE_DAYS--> |
-| **💻 Favorite Editor** | <!--START_TOP_EDITOR-->N/A<!--END_TOP_EDITOR--> |
+| **🏆 Most Productive** | <!--START_PRODUCTIVE_DAY-->Monday (0.8h)<!--END_PRODUCTIVE_DAY--> |
+| **🔤 Top Language** | <!--START_TOP_LANGUAGE-->YAML<!--END_TOP_LANGUAGE--> |
+| **⚡ Avg Daily Coding** | <!--START_AVG_DAILY-->0.2 hrs<!--END_AVG_DAILY--> |
+| **📅 Active Days** | <!--START_ACTIVE_DAYS-->2/7<!--END_ACTIVE_DAYS--> |
+| **💻 Favorite Editor** | <!--START_TOP_EDITOR-->VS Code<!--END_TOP_EDITOR--> |
 
 </td>
 </tr>
 </table>
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-27 15:20:39 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-27 19:08:33 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 ## 🌐 Socials:
