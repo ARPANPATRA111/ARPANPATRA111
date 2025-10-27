@@ -203,14 +203,34 @@ jobs:
           else:
               change_color = "gray"
 
-          # Create daily chart
+          # Create ASCII-style daily chart
           daily_labels = stats.get("daily_labels", [])
+          
+          # Short day names
+          day_names = {
+              'Mon': 'Mon', 'Tue': 'Tue', 'Wed': 'Wed',
+              'Thu': 'Thu', 'Fri': 'Fri', 'Sat': 'Sat', 'Sun': 'Sun'
+          }
+          
           chart_lines = []
           max_hours = max(daily_hours) if daily_hours else 1
+          bar_max_length = 15  # Number of blocks
+          
+          # Find the most productive day
+          most_productive_idx = daily_hours.index(max(daily_hours)) if daily_hours else -1
+          
           for i, (label, hours) in enumerate(zip(daily_labels, daily_hours)):
-              bar_length = int((hours / max_hours) * 20) if max_hours > 0 else 0
-              bar = "█" * bar_length + "░" * (20 - bar_length)
-              chart_lines.append(f"{label} {bar} {hours:.1f}h")
+              day = day_names.get(label, label)
+              bar_length = int((hours / max_hours) * bar_max_length) if max_hours > 0 else 0
+              
+              # Use filled and empty blocks
+              bar = "█" * bar_length + "░" * (bar_max_length - bar_length)
+              
+              # Add star for most productive day
+              star = "  ⭐" if i == most_productive_idx and hours > 0 else ""
+              
+              # Format: Day  ████████░░░░░░░  X.X hrs
+              chart_lines.append(f"{day}  {bar}  {hours:.1f} hrs{star}")
           
           chart = "\n".join(chart_lines)
 
@@ -232,7 +252,7 @@ jobs:
           readme = safe_replace(readme, "START_WEEK_CHANGE_BADGE", "END_WEEK_CHANGE_BADGE", change_badge)
           readme = safe_replace(readme, "START_CHANGE_COLOR", "END_CHANGE_COLOR", change_color)
           readme = safe_replace(readme, "START_UPDATE_DATE", "END_UPDATE_DATE", updated)
-          readme = safe_replace(readme, "START_DAILY_CHART", "END_DAILY_CHART", f"\n{chart}\n")
+          readme = safe_replace(readme, "START_DAILY_CHART", "END_DAILY_CHART", f"\n```\n{chart}\n```\n")
           readme = safe_replace(readme, "START_PRODUCTIVE_DAY", "END_PRODUCTIVE_DAY", f"{productive_day} ({productive_hours:.1f}h)")
           readme = safe_replace(readme, "START_TOP_LANGUAGE", "END_TOP_LANGUAGE", top_lang)
           readme = safe_replace(readme, "START_TOP_EDITOR", "END_TOP_EDITOR", top_editor)
