@@ -20,13 +20,13 @@
 <!--START_DAILY_CHART-->
 | Day | Activity | Hours |
 |-----|----------|-------|
-| Wed | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
 | Thu | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
 | Fri | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
 | Sat | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
 | Sun | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
-| Mon | ![](https://progress-bar.xyz/32/?width=150&color=4299e1&suffix=%20) | 0.8 hrs |
-| Tue | ![](https://progress-bar.xyz/100/?width=150&color=48bb78&suffix=%20) ⭐ | 2.5 hrs |
+| Mon | ![](https://progress-bar.xyz/31/?width=150&color=4299e1&suffix=%20) | 0.8 hrs |
+| Tue | ![](https://progress-bar.xyz/100/?width=150&color=48bb78&suffix=%20) ⭐ | 2.6 hrs |
+| Wed | ![](https://progress-bar.xyz/12/?width=150&color=4299e1&suffix=%20) | 0.3 hrs |
 <!--END_DAILY_CHART-->
 
 </td>
@@ -36,11 +36,11 @@
 
 | Metric | Value |
 |--------|-------|
-| 🏆 **Most Productive** | <!--START_PRODUCTIVE_DAY-->Tuesday (2.5h)<!--END_PRODUCTIVE_DAY--> |
+| 🏆 **Most Productive** | <!--START_PRODUCTIVE_DAY-->Tuesday (2.6h)<!--END_PRODUCTIVE_DAY--> |
 | 💻 **Top Language** | <!--START_TOP_LANGUAGE-->Markdown<!--END_TOP_LANGUAGE--> |
 | 🛠️ **Editor** | <!--START_TOP_EDITOR-->VS Code<!--END_TOP_EDITOR--> |
 | ⚡ **Avg Daily** | <!--START_AVG_DAILY-->0.5 hrs<!--END_AVG_DAILY--> |
-| 📅 **Active Days** | <!--START_ACTIVE_DAYS-->2/7<!--END_ACTIVE_DAYS--> days |
+| 📅 **Active Days** | <!--START_ACTIVE_DAYS-->3/7<!--END_ACTIVE_DAYS--> days |
 
 </td>
 <td width="30%" valign="top">
@@ -64,7 +64,7 @@
 </table>
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-29 16:14:25 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-29 18:25:07 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 ## 🌐 Socials:
