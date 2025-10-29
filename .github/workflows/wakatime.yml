@@ -232,23 +232,36 @@ jobs:
           
           chart_lines = []
           max_hours = max(daily_hours) if daily_hours else 1
-          bar_max_length = 15  # Number of blocks
           
           # Find the most productive day
           most_productive_idx = daily_hours.index(max(daily_hours)) if daily_hours else -1
           
+          # Create table header
+          chart_lines.append("| Day | Activity | Hours |")
+          chart_lines.append("|-----|----------|-------|")
+          
           for i, (label, hours) in enumerate(zip(daily_labels, daily_hours)):
               day = day_names.get(label, label)
-              bar_length = int((hours / max_hours) * bar_max_length) if max_hours > 0 else 0
               
-              # Use filled and empty blocks
-              bar = "█" * bar_length + "░" * (bar_max_length - bar_length)
+              # Calculate percentage for progress bar
+              percentage = int((hours / max_hours) * 100) if max_hours > 0 else 0
+              
+              # Determine color based on activity level
+              if percentage == 0:
+                  color = "2d3748"  # Dark gray for no activity
+              elif percentage < 50:
+                  color = "4299e1"  # Blue for low activity
+              else:
+                  color = "48bb78"  # Green for high activity
               
               # Add star for most productive day
-              star = "  ⭐" if i == most_productive_idx and hours > 0 else ""
+              star = " ⭐" if i == most_productive_idx and hours > 0 else ""
               
-              # Format: Day  ████████░░░░░░░  X.X hrs
-              chart_lines.append(f"{day}  {bar}  {hours:.1f} hrs{star}")
+              # Create progress bar using external service
+              progress_bar = f"![](https://progress-bar.xyz/{percentage}/?width=150&color={color}&suffix=%20)"
+              
+              # Format table row
+              chart_lines.append(f"| {day} | {progress_bar}{star} | {hours:.1f} hrs |")
           
           chart = "\n".join(chart_lines)
 
@@ -304,7 +317,7 @@ jobs:
               return content
 
           readme = safe_replace(readme, "START_UPDATE_DATE", "END_UPDATE_DATE", updated)
-          readme = safe_replace(readme, "START_DAILY_CHART", "END_DAILY_CHART", f"\n```\n{chart}\n```\n")
+          readme = safe_replace(readme, "START_DAILY_CHART", "END_DAILY_CHART", f"\n{chart}\n")
           readme = safe_replace(readme, "START_PRODUCTIVE_DAY", "END_PRODUCTIVE_DAY", f"{productive_day} ({productive_hours:.1f}h)")
           readme = safe_replace(readme, "START_TOP_LANGUAGE", "END_TOP_LANGUAGE", top_lang)
           readme = safe_replace(readme, "START_TOP_EDITOR", "END_TOP_EDITOR", top_editor)

@@ -11,53 +11,54 @@
 
 # 📊 Weekly Coding Activity
 
-<table width="100%">
+<table width="100%" cellspacing="0" cellpadding="10">
 <tr>
-<td width="45%" valign="top">
+<td width="40%" valign="top">
 
-## 📈 Daily Activity Breakdown
-
-<div align="left">
+### 📈 Daily Activity
 
 <!--START_DAILY_CHART-->
-```
-Wed  ░░░░░░░░░░░░░░░  0.0 hrs
-Thu  ░░░░░░░░░░░░░░░  0.0 hrs
-Fri  ░░░░░░░░░░░░░░░  0.0 hrs
-Sat  ░░░░░░░░░░░░░░░  0.0 hrs
-Sun  ░░░░░░░░░░░░░░░  0.0 hrs
-Mon  ████░░░░░░░░░░░  0.8 hrs
-Tue  ███████████████  2.5 hrs  ⭐
-```
+| Day | Activity | Hours |
+|-----|----------|-------|
+| Wed | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
+| Thu | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
+| Fri | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
+| Sat | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
+| Sun | ![](https://progress-bar.xyz/0/?width=150&color=2d3748&suffix=%20) | 0.0 hrs |
+| Mon | ![](https://progress-bar.xyz/32/?width=150&color=4299e1&suffix=%20) | 0.8 hrs |
+| Tue | ![](https://progress-bar.xyz/100/?width=150&color=48bb78&suffix=%20) ⭐ | 2.5 hrs |
 <!--END_DAILY_CHART-->
-
-<sub>🔹 Each block represents ~0.08 hrs | ⭐ Most productive day</sub>
-
-</div>
 
 </td>
 <td width="30%" valign="top">
 
-## 📊 Quick Stats
+### 📊 Quick Stats
 
-<table>
-<tr><td>🏆 <b>Most Productive</b></td><td><!--START_PRODUCTIVE_DAY-->Tuesday (2.5h)<!--END_PRODUCTIVE_DAY--></td></tr>
-<tr><td>💻 <b>Top Language</b></td><td><!--START_TOP_LANGUAGE-->Markdown<!--END_TOP_LANGUAGE--></td></tr>
-<tr><td>🛠 <b>Editor</b></td><td><!--START_TOP_EDITOR-->VS Code<!--END_TOP_EDITOR--></td></tr>
-<tr><td>⚡ <b>Avg Daily</b></td><td><!--START_AVG_DAILY-->0.5 hrs<!--END_AVG_DAILY--></td></tr>
-<tr><td>📅 <b>Active Days</b></td><td><!--START_ACTIVE_DAYS-->2/7<!--END_ACTIVE_DAYS--> days</td></tr>
-</table>
+| Metric | Value |
+|--------|-------|
+| 🏆 **Most Productive** | <!--START_PRODUCTIVE_DAY-->Tuesday (2.5h)<!--END_PRODUCTIVE_DAY--> |
+| 💻 **Top Language** | <!--START_TOP_LANGUAGE-->Markdown<!--END_TOP_LANGUAGE--> |
+| 🛠️ **Editor** | <!--START_TOP_EDITOR-->VS Code<!--END_TOP_EDITOR--> |
+| ⚡ **Avg Daily** | <!--START_AVG_DAILY-->0.5 hrs<!--END_AVG_DAILY--> |
+| 📅 **Active Days** | <!--START_ACTIVE_DAYS-->2/7<!--END_ACTIVE_DAYS--> days |
 
 </td>
-<td width="25%" valign="top" align="center">
+<td width="30%" valign="top">
 
-## 🎯 Coding Time
+### 🎯 Coding Time
 
-![TODAY](https://img.shields.io/badge/TODAY-2_hrs_30_mins-4CAF50?style=for-the-badge&logo=codetime&logoColor=white&labelColor=1a1a1a)<!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->  
-![YESTERDAY](https://img.shields.io/badge/YESTERDAY-0_hrs_49_mins-FF9800?style=for-the-badge&logo=codetime&logoColor=white&labelColor=1a1a1a)<!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->  
-![THIS WEEK](https://img.shields.io/badge/THIS_WEEK-3_hrs_19_mins-00d9ff?style=for-the-badge&logo=clockify&logoColor=white&labelColor=1a1a1a)<!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->  
-![LAST WEEK](https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-6c757d?style=for-the-badge&logo=clockify&logoColor=white&labelColor=1a1a1a)<!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->  
-![WEEKLY CHANGE](https://img.shields.io/badge/WEEKLY_CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a)<!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->  
+<div align="center">
+
+| Period | Time |
+|--------|------|
+| 🔴 **TODAY** | ![TODAY](https://img.shields.io/badge/2_hrs_30_mins-4CAF50?style=flat-square&labelColor=1a1a1a)<!--START_TODAY_BADGE--><!--END_TODAY_BADGE--> |
+| **YESTERDAY** | ![YESTERDAY](https://img.shields.io/badge/0_hrs_49_mins-FF9800?style=flat-square&labelColor=1a1a1a)<!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE--> |
+| **THIS WEEK** | ![THIS WEEK](https://img.shields.io/badge/3_hrs_19_mins-00d9ff?style=flat-square&labelColor=1a1a1a)<!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE--> |
+| **LAST WEEK** | ![LAST WEEK](https://img.shields.io/badge/0_hrs_0_mins-6c757d?style=flat-square&labelColor=1a1a1a)<!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE--> |
+| **CHANGE** | ![WEEKLY CHANGE](https://img.shields.io/badge/🆕_New-gray?style=flat-square&labelColor=1a1a1a)<!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR--> |
+
+</div>
+
 </td>
 </tr>
 </table>
