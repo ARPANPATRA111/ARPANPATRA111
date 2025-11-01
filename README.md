@@ -21,9 +21,9 @@
 
 ## 🕒 Coding Time
 <p>
-  <img src="https://img.shields.io/badge/TODAY-1_hrs_13_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
-  <img src="https://img.shields.io/badge/YESTERDAY-2_hrs_16_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
-  <img src="https://img.shields.io/badge/THIS_WEEK-11_hrs_14_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/TODAY-1_hrs_16_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
+  <img src="https://img.shields.io/badge/YESTERDAY-2_hrs_19_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
+  <img src="https://img.shields.io/badge/THIS_WEEK-11_hrs_21_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
 </p>
@@ -40,15 +40,15 @@
 | Tue | ![](https://progress-bar.xyz/66/?width=250&color=48bb78&suffix=%20) | 2.6 hrs |
 | Wed | ![](https://progress-bar.xyz/12/?width=250&color=4299e1&suffix=%20) | 0.5 hrs |
 | Thu | ![](https://progress-bar.xyz/100/?width=250&color=48bb78&suffix=%20) ⭐ | 3.9 hrs |
-| Fri | ![](https://progress-bar.xyz/58/?width=250&color=48bb78&suffix=%20) | 2.3 hrs |
-| Sat | ![](https://progress-bar.xyz/31/?width=250&color=4299e1&suffix=%20) | 1.2 hrs |
+| Fri | ![](https://progress-bar.xyz/59/?width=250&color=48bb78&suffix=%20) | 2.3 hrs |
+| Sat | ![](https://progress-bar.xyz/32/?width=250&color=4299e1&suffix=%20) | 1.3 hrs |
 <!--END_DAILY_CHART-->
 
 </div>
 
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-31 20:13:02 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-11-01 00:55:25 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 <sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-29 20:13:13 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
