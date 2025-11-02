@@ -49,7 +49,6 @@
 
 <div align="center">
 <sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-11-01 13:56:37 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-10-29 20:13:13 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 
@@ -67,6 +66,16 @@
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/100%20days.gif" width="140">
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/50Days.gif" width="140">
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/202507.gif" width="140">
+</p>
+
+### 🧾 Professional Badges
+<p>
+  <a href="https://www.credly.com/badges/5f3abcc4-44f2-4439-a307-4b4239a14ccc" title="Red-Hat Certified System Administrator">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/redhat.png" alt="Red Hat Certified" width = "140">
+  </a>
+  <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025" title="Cisco Certified Networking">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/cisco.png" alt="Cisco Certified" width="140">
+  </a>
 </p>
 
 # 📊 GitHub Stats:
