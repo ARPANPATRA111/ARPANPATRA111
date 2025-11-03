@@ -33,24 +33,24 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
           python <<'EOF'
-                    import os, json, requests, pytz
-                    from datetime import datetime, timedelta
+          import os, json, requests, pytz
+          from datetime import datetime, timedelta
 
           api_key = os.getenv("WAKATIME_API_KEY")
           if not api_key:
               raise Exception("WAKATIME_API_KEY is missing!")
 
-                    # Build explicit date ranges (WakaTime Summaries API requires start and end)
-                    today_utc = datetime.utcnow().date()
-                    start_7 = (today_utc - timedelta(days=6)).strftime('%Y-%m-%d')
-                    end_7 = today_utc.strftime('%Y-%m-%d')
-                    start_14 = (today_utc - timedelta(days=13)).strftime('%Y-%m-%d')
-                    end_14 = end_7
+          # Build explicit date ranges (WakaTime Summaries API requires start and end)
+          today_utc = datetime.utcnow().date()
+          start_7 = (today_utc - timedelta(days=6)).strftime('%Y-%m-%d')
+          end_7 = today_utc.strftime('%Y-%m-%d')
+          start_14 = (today_utc - timedelta(days=13)).strftime('%Y-%m-%d')
+          end_14 = end_7
 
-                    # Fetch last 7 days (explicit start/end)
-                    url_last7 = f"https://wakatime.com/api/v1/users/current/summaries?start={start_7}&end={end_7}"
-                    # Use X-Api-Key header per WakaTime API docs
-                    headers = {"X-Api-Key": api_key}
+          # Fetch last 7 days (explicit start/end)
+          url_last7 = f"https://wakatime.com/api/v1/users/current/summaries?start={start_7}&end={end_7}"
+          # Use X-Api-Key header per WakaTime API docs
+          headers = {"X-Api-Key": api_key}
           res_last7 = requests.get(url_last7, headers=headers)
 
           if res_last7.status_code != 200:
@@ -60,8 +60,8 @@ jobs:
           if not data_last7:
               raise Exception("No data found in WakaTime response.")
 
-                    # Fetch last 14 days for comparison (explicit start/end)
-                    url_last14 = f"https://wakatime.com/api/v1/users/current/summaries?start={start_14}&end={end_14}"
+          # Fetch last 14 days for comparison (explicit start/end)
+          url_last14 = f"https://wakatime.com/api/v1/users/current/summaries?start={start_14}&end={end_14}"
           res_last14 = requests.get(url_last14, headers=headers)
           data_last14 = res_last14.json().get("data", []) if res_last14.status_code == 200 else []
 
