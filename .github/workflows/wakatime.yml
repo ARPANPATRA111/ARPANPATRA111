@@ -185,9 +185,9 @@ jobs:
           print(f"Most Productive: {most_productive_day_name} ({most_productive_hours} hrs)")
           EOF
 
-            - name: 🧠 Update README with Dynamic Stats
-                run: |
-                    python <<'PYEOF'
+      - name: 🧠 Update README with Dynamic Stats
+        run: |
+          python <<'PYEOF'
           import json
           from datetime import datetime, timezone
 
