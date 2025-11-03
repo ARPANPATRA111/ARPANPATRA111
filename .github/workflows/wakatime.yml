@@ -33,15 +33,15 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
           python <<'EOF'
-          import os, json, requests, pytz
-          from datetime import datetime, timedelta
+          import os, json, requests, pytz, base64
+          from datetime import datetime, timedelta, timezone
 
           api_key = os.getenv("WAKATIME_API_KEY")
           if not api_key:
               raise Exception("WAKATIME_API_KEY is missing!")
 
           # Build explicit date ranges (WakaTime Summaries API requires start and end)
-          today_utc = datetime.utcnow().date()
+          today_utc = datetime.now(timezone.utc).date()
           start_7 = (today_utc - timedelta(days=6)).strftime('%Y-%m-%d')
           end_7 = today_utc.strftime('%Y-%m-%d')
           start_14 = (today_utc - timedelta(days=13)).strftime('%Y-%m-%d')
@@ -49,8 +49,9 @@ jobs:
 
           # Fetch last 7 days (explicit start/end)
           url_last7 = f"https://wakatime.com/api/v1/users/current/summaries?start={start_7}&end={end_7}"
-          # Use X-Api-Key header per WakaTime API docs
-          headers = {"X-Api-Key": api_key}
+          # WakaTime requires base64-encoded API key for Basic auth
+          encoded_key = base64.b64encode(api_key.encode()).decode()
+          headers = {"Authorization": f"Basic {encoded_key}"}
           res_last7 = requests.get(url_last7, headers=headers)
 
           if res_last7.status_code != 200:
@@ -153,7 +154,7 @@ jobs:
 
           # --- Prepare Output Data ---
           output = {
-              "generated_at_utc": datetime.utcnow().isoformat(),
+              "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "wake_up_time": wakeup_time,
               "summary_days": len(data_last7),
               "latest_day": today_summary.get("range", {}).get("date", ""),
@@ -188,7 +189,7 @@ jobs:
                 run: |
                     python <<'PYEOF'
           import json
-          from datetime import datetime
+          from datetime import datetime, timezone
 
           # Read the stats
           with open("wakatime_stats.json", "r") as f:
@@ -200,7 +201,7 @@ jobs:
 
           # Update all dynamic fields
           wakeup = stats.get("wake_up_time", "N/A")
-          updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+          updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
           today = stats.get("today_total", "0 hrs 0 mins")
           yesterday = stats.get("yesterday_total", "0 hrs 0 mins")
           this_week = stats.get("this_week_total", "0 hrs 0 mins")
