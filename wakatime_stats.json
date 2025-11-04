@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2025-11-04T08:15:56.864862+00:00",
+  "generated_at_utc": "2025-11-04T12:23:14.282404+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2025-11-04",
-  "total_coding_time": "9 mins",
-  "today_total": "0 hrs 9 mins",
+  "total_coding_time": "1 hr 29 mins",
+  "today_total": "1 hrs 29 mins",
   "yesterday_total": "3 hrs 16 mins",
-  "this_week_total": "14 hrs 25 mins",
+  "this_week_total": "15 hrs 45 mins",
   "last_week_total": "0 hrs 0 mins",
   "week_change": "\ud83c\udd95 New",
   "daily_hours": [
@@ -16,7 +16,7 @@
     4.31,
     0.0,
     3.28,
-    0.16
+    1.49
   ],
   "daily_labels": [
     "Wed",
@@ -3753,16 +3753,16 @@
     },
     {
       "grand_total": {
-        "hours": 0,
-        "minutes": 9,
-        "total_seconds": 565.984,
-        "digital": "0:09",
-        "decimal": "0.15",
-        "text": "9 mins",
+        "hours": 1,
+        "minutes": 29,
+        "total_seconds": 5348.376,
+        "digital": "1:29",
+        "decimal": "1.48",
+        "text": "1 hr 29 mins",
         "ai_additions": 0,
         "ai_deletions": 0,
-        "human_additions": 1,
-        "human_deletions": 0
+        "human_additions": 176,
+        "human_deletions": 606
       },
       "range": {
         "start": "2025-11-03T18:30:00Z",
@@ -3772,6 +3772,22 @@
         "timezone": "Asia/Kolkata"
       },
       "projects": [
+        {
+          "name": "atmark",
+          "total_seconds": 4782.392,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 175,
+          "human_deletions": 606,
+          "color": null,
+          "digital": "1:19:42",
+          "decimal": "1.32",
+          "text": "1 hr 19 mins",
+          "hours": 1,
+          "minutes": 19,
+          "seconds": 42,
+          "percent": 89.42
+        },
         {
           "name": "ARPANPATRA111",
           "total_seconds": 565.984,
@@ -3786,10 +3802,21 @@
           "hours": 0,
           "minutes": 9,
           "seconds": 25,
-          "percent": 100.0
+          "percent": 10.58
         }
       ],
       "languages": [
+        {
+          "name": "TypeScript",
+          "total_seconds": 4580.619,
+          "digital": "1:16:20",
+          "decimal": "1.27",
+          "text": "1 hr 16 mins",
+          "hours": 1,
+          "minutes": 16,
+          "seconds": 20,
+          "percent": 85.65
+        },
         {
           "name": "YAML",
           "total_seconds": 543.996,
@@ -3799,7 +3826,18 @@
           "hours": 0,
           "minutes": 9,
           "seconds": 3,
-          "percent": 96.12
+          "percent": 10.17
+        },
+        {
+          "name": "SQL",
+          "total_seconds": 201.773,
+          "digital": "0:03:21",
+          "decimal": "0.05",
+          "text": "3 mins",
+          "hours": 0,
+          "minutes": 3,
+          "seconds": 21,
+          "percent": 3.77
         },
         {
           "name": "Markdown",
@@ -3810,72 +3848,326 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 21,
-          "percent": 3.88
+          "percent": 0.41
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        {
+          "name": "react",
+          "total_seconds": 4317.221,
+          "digital": "1:11:57",
+          "decimal": "1.18",
+          "text": "1 hr 11 mins",
+          "hours": 1,
+          "minutes": 11,
+          "seconds": 57,
+          "percent": 10.26
+        },
+        {
+          "name": "ToastProvider",
+          "total_seconds": 4317.221,
+          "digital": "1:11:57",
+          "decimal": "1.18",
+          "text": "1 hr 11 mins",
+          "hours": 1,
+          "minutes": 11,
+          "seconds": 57,
+          "percent": 10.26
+        },
+        {
+          "name": "auto",
+          "total_seconds": 2399.379,
+          "digital": "0:39:59",
+          "decimal": "0.65",
+          "text": "39 mins",
+          "hours": 0,
+          "minutes": 39,
+          "seconds": 59,
+          "percent": 5.7
+        },
+        {
+          "name": "react-native-gesture-handler",
+          "total_seconds": 2399.379,
+          "digital": "0:39:59",
+          "decimal": "0.65",
+          "text": "39 mins",
+          "hours": 0,
+          "minutes": 39,
+          "seconds": 59,
+          "percent": 5.7
+        },
+        {
+          "name": "AppNavigator",
+          "total_seconds": 2399.379,
+          "digital": "0:39:59",
+          "decimal": "0.65",
+          "text": "39 mins",
+          "hours": 0,
+          "minutes": 39,
+          "seconds": 59,
+          "percent": 5.7
+        },
+        {
+          "name": "async-storage",
+          "total_seconds": 2174.224,
+          "digital": "0:36:14",
+          "decimal": "0.60",
+          "text": "36 mins",
+          "hours": 0,
+          "minutes": 36,
+          "seconds": 14,
+          "percent": 5.17
+        },
+        {
+          "name": "supabase",
+          "total_seconds": 2174.224,
+          "digital": "0:36:14",
+          "decimal": "0.60",
+          "text": "36 mins",
+          "hours": 0,
+          "minutes": 36,
+          "seconds": 14,
+          "percent": 5.17
+        },
+        {
+          "name": "native",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "CustomTextInput",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "CustomButton",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "BaseScreen",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "react-native-linear-gradient",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "theme",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "react-native",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "MaterialIcons",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "react-native-haptic-feedback",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "storage",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "syncManager",
+          "total_seconds": 1917.842,
+          "digital": "0:31:57",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 57,
+          "percent": 4.56
+        },
+        {
+          "name": "netinfo",
+          "total_seconds": 256.382,
+          "digital": "0:04:16",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 16,
+          "percent": 0.61
+        },
+        {
+          "name": "sync",
+          "total_seconds": 256.382,
+          "digital": "0:04:16",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 16,
+          "percent": 0.61
+        },
+        {
+          "name": "database",
+          "total_seconds": 256.382,
+          "digital": "0:04:16",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 16,
+          "percent": 0.61
+        },
+        {
+          "name": "watermelondb",
+          "total_seconds": 7.016,
+          "digital": "0:00:07",
+          "decimal": "0.00",
+          "text": "7 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 7,
+          "percent": 0.02
+        },
+        {
+          "name": "decorators",
+          "total_seconds": 7.016,
+          "digital": "0:00:07",
+          "decimal": "0.00",
+          "text": "7 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 7,
+          "percent": 0.02
+        }
+      ],
       "machines": [
         {
           "name": "Arpans-PC",
-          "total_seconds": 565.984,
+          "total_seconds": 5348.376,
           "machine_name_id": "55970e36-e093-4a19-945f-0a1c14a4808e",
-          "digital": "0:09:25",
-          "decimal": "0.15",
-          "text": "9 mins",
-          "hours": 0,
-          "minutes": 9,
-          "seconds": 25,
+          "digital": "1:29:08",
+          "decimal": "1.48",
+          "text": "1 hr 29 mins",
+          "hours": 1,
+          "minutes": 29,
+          "seconds": 8,
           "percent": 100.0
         }
       ],
       "editors": [
         {
           "name": "VS Code",
-          "total_seconds": 565.984,
-          "digital": "0:09:25",
-          "decimal": "0.15",
-          "text": "9 mins",
-          "hours": 0,
-          "minutes": 9,
-          "seconds": 25,
+          "total_seconds": 5348.376,
+          "digital": "1:29:08",
+          "decimal": "1.48",
+          "text": "1 hr 29 mins",
+          "hours": 1,
+          "minutes": 29,
+          "seconds": 8,
           "percent": 100.0
         }
       ],
       "operating_systems": [
         {
           "name": "Windows",
-          "total_seconds": 565.984,
-          "digital": "0:09:25",
-          "decimal": "0.15",
-          "text": "9 mins",
-          "hours": 0,
-          "minutes": 9,
-          "seconds": 25,
+          "total_seconds": 5348.376,
+          "digital": "1:29:08",
+          "decimal": "1.48",
+          "text": "1 hr 29 mins",
+          "hours": 1,
+          "minutes": 29,
+          "seconds": 8,
           "percent": 100.0
         }
       ],
       "categories": [
         {
           "name": "Coding",
-          "total_seconds": 473.775,
-          "digital": "0:07:53",
-          "decimal": "0.12",
-          "text": "7 mins",
-          "hours": 0,
-          "minutes": 7,
-          "seconds": 53,
-          "percent": 83.71
+          "total_seconds": 3658.863,
+          "digital": "1:00:58",
+          "decimal": "1.00",
+          "text": "1 hr",
+          "hours": 1,
+          "minutes": 0,
+          "seconds": 58,
+          "percent": 68.41
         },
         {
           "name": "AI Coding",
-          "total_seconds": 89.714,
-          "digital": "0:01:29",
-          "decimal": "0.02",
-          "text": "1 min",
+          "total_seconds": 1687.018,
+          "digital": "0:28:07",
+          "decimal": "0.47",
+          "text": "28 mins",
           "hours": 0,
-          "minutes": 1,
-          "seconds": 29,
-          "percent": 15.85
+          "minutes": 28,
+          "seconds": 7,
+          "percent": 31.54
         },
         {
           "name": "Writing Docs",
@@ -3886,7 +4178,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 2,
-          "percent": 0.44
+          "percent": 0.05
         }
       ]
     }
