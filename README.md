@@ -21,9 +21,9 @@
 
 ## 🕒 Coding Time
 <p>
-  <img src="https://img.shields.io/badge/TODAY-1_hrs_4_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
+  <img src="https://img.shields.io/badge/TODAY-1_hrs_24_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
   <img src="https://img.shields.io/badge/YESTERDAY-1_hrs_39_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
-  <img src="https://img.shields.io/badge/THIS_WEEK-9_hrs_30_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/THIS_WEEK-9_hrs_50_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
 </p>
@@ -41,14 +41,14 @@
 | Thu | ![](https://progress-bar.xyz/0/?width=250&color=2d3748&suffix=%20) | 0.0 hrs |
 | Fri | ![](https://progress-bar.xyz/28/?width=250&color=4299e1&suffix=%20) | 0.9 hrs |
 | Sat | ![](https://progress-bar.xyz/50/?width=250&color=48bb78&suffix=%20) | 1.6 hrs |
-| Sun | ![](https://progress-bar.xyz/32/?width=250&color=4299e1&suffix=%20) | 1.1 hrs |
+| Sun | ![](https://progress-bar.xyz/43/?width=250&color=4299e1&suffix=%20) | 1.4 hrs |
 <!--END_DAILY_CHART-->
 
 </div>
 
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-11-09 12:18:55 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-11-09 16:11:44 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 
