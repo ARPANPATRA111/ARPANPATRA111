@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2025-11-16T04:17:47.309967+00:00",
+  "generated_at_utc": "2025-11-16T08:13:46.165230+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2025-11-16",
   "total_coding_time": "0 secs",
   "today_total": "0 hrs 0 mins",
-  "yesterday_total": "1 hrs 27 mins",
-  "this_week_total": "6 hrs 59 mins",
+  "yesterday_total": "1 hrs 42 mins",
+  "this_week_total": "7 hrs 14 mins",
   "last_week_total": "0 hrs 0 mins",
   "week_change": "\ud83c\udd95 New",
   "daily_hours": [
@@ -15,7 +15,7 @@
     0.0,
     1.32,
     2.38,
-    1.46,
+    1.71,
     0.0
   ],
   "daily_labels": [
@@ -2119,6 +2119,43 @@
       "human_deletions": 0
     },
     {
+      "grand_total": {
+        "hours": 2,
+        "minutes": 22,
+        "total_seconds": 8579.939,
+        "digital": "2:22",
+        "decimal": "2.37",
+        "text": "2 hrs 22 mins",
+        "ai_additions": 0,
+        "ai_deletions": 0,
+        "human_additions": 73,
+        "human_deletions": 56
+      },
+      "range": {
+        "start": "2025-11-13T18:30:00Z",
+        "end": "2025-11-14T18:29:59Z",
+        "date": "2025-11-14",
+        "text": "Fri Nov 14th 2025",
+        "timezone": "Asia/Kolkata"
+      },
+      "projects": [
+        {
+          "name": "tailwindcss",
+          "total_seconds": 8579.939,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 73,
+          "human_deletions": 56,
+          "color": null,
+          "digital": "2:22:59",
+          "decimal": "2.37",
+          "text": "2 hrs 22 mins",
+          "hours": 2,
+          "minutes": 22,
+          "seconds": 59,
+          "percent": 100.0
+        }
+      ],
       "languages": [
         {
           "name": "JavaScript",
@@ -2196,79 +2233,6 @@
           "minutes": 0,
           "seconds": 3,
           "percent": 0.04
-        }
-      ],
-      "grand_total": {
-        "hours": 2,
-        "minutes": 22,
-        "total_seconds": 8579.939,
-        "digital": "2:22",
-        "decimal": "2.37",
-        "text": "2 hrs 22 mins",
-        "ai_additions": 0,
-        "ai_deletions": 0,
-        "human_additions": 73,
-        "human_deletions": 56
-      },
-      "editors": [
-        {
-          "name": "VS Code",
-          "total_seconds": 8579.939,
-          "digital": "2:22:59",
-          "decimal": "2.37",
-          "text": "2 hrs 22 mins",
-          "hours": 2,
-          "minutes": 22,
-          "seconds": 59,
-          "percent": 100.0
-        }
-      ],
-      "operating_systems": [
-        {
-          "name": "Windows",
-          "total_seconds": 8579.939,
-          "digital": "2:22:59",
-          "decimal": "2.37",
-          "text": "2 hrs 22 mins",
-          "hours": 2,
-          "minutes": 22,
-          "seconds": 59,
-          "percent": 100.0
-        }
-      ],
-      "categories": [
-        {
-          "name": "Coding",
-          "total_seconds": 5180.71,
-          "digital": "1:26:20",
-          "decimal": "1.43",
-          "text": "1 hr 26 mins",
-          "hours": 1,
-          "minutes": 26,
-          "seconds": 20,
-          "percent": 60.38
-        },
-        {
-          "name": "Writing Docs",
-          "total_seconds": 2616.201,
-          "digital": "0:43:36",
-          "decimal": "0.72",
-          "text": "43 mins",
-          "hours": 0,
-          "minutes": 43,
-          "seconds": 36,
-          "percent": 30.49
-        },
-        {
-          "name": "AI Coding",
-          "total_seconds": 783.028,
-          "digital": "0:13:03",
-          "decimal": "0.22",
-          "text": "13 mins",
-          "hours": 0,
-          "minutes": 13,
-          "seconds": 3,
-          "percent": 9.13
         }
       ],
       "dependencies": [
@@ -2485,15 +2449,10 @@
           "percent": 100.0
         }
       ],
-      "projects": [
+      "editors": [
         {
-          "name": "tailwindcss",
+          "name": "VS Code",
           "total_seconds": 8579.939,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 73,
-          "human_deletions": 56,
-          "color": null,
           "digital": "2:22:59",
           "decimal": "2.37",
           "text": "2 hrs 22 mins",
@@ -2503,30 +2462,104 @@
           "percent": 100.0
         }
       ],
-      "range": {
-        "start": "2025-11-13T18:30:00Z",
-        "end": "2025-11-14T18:29:59Z",
-        "date": "2025-11-14",
-        "text": "Fri Nov 14th 2025",
-        "timezone": "Asia/Kolkata"
-      },
-      "ai_additions": 0,
-      "ai_deletions": 0,
-      "human_additions": 0,
-      "human_deletions": 0
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 8579.939,
+          "digital": "2:22:59",
+          "decimal": "2.37",
+          "text": "2 hrs 22 mins",
+          "hours": 2,
+          "minutes": 22,
+          "seconds": 59,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 5180.71,
+          "digital": "1:26:20",
+          "decimal": "1.43",
+          "text": "1 hr 26 mins",
+          "hours": 1,
+          "minutes": 26,
+          "seconds": 20,
+          "percent": 60.38
+        },
+        {
+          "name": "Writing Docs",
+          "total_seconds": 2616.201,
+          "digital": "0:43:36",
+          "decimal": "0.72",
+          "text": "43 mins",
+          "hours": 0,
+          "minutes": 43,
+          "seconds": 36,
+          "percent": 30.49
+        },
+        {
+          "name": "AI Coding",
+          "total_seconds": 783.028,
+          "digital": "0:13:03",
+          "decimal": "0.22",
+          "text": "13 mins",
+          "hours": 0,
+          "minutes": 13,
+          "seconds": 3,
+          "percent": 9.13
+        }
+      ]
     },
     {
+      "grand_total": {
+        "hours": 1,
+        "minutes": 42,
+        "total_seconds": 6139.908,
+        "digital": "1:42",
+        "decimal": "1.70",
+        "text": "1 hr 42 mins",
+        "ai_additions": 0,
+        "ai_deletions": 0,
+        "human_additions": 92,
+        "human_deletions": 5
+      },
+      "range": {
+        "start": "2025-11-14T18:30:00Z",
+        "end": "2025-11-15T18:29:59Z",
+        "date": "2025-11-15",
+        "text": "Sat Nov 15th 2025",
+        "timezone": "Asia/Kolkata"
+      },
+      "projects": [
+        {
+          "name": "tailwindcss",
+          "total_seconds": 6139.908,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 92,
+          "human_deletions": 5,
+          "color": null,
+          "digital": "1:42:19",
+          "decimal": "1.70",
+          "text": "1 hr 42 mins",
+          "hours": 1,
+          "minutes": 42,
+          "seconds": 19,
+          "percent": 100.0
+        }
+      ],
       "languages": [
         {
           "name": "JavaScript",
-          "total_seconds": 2783.491,
-          "digital": "0:46:23",
-          "decimal": "0.77",
-          "text": "46 mins",
-          "hours": 0,
-          "minutes": 46,
-          "seconds": 23,
-          "percent": 52.91
+          "total_seconds": 3663.046,
+          "digital": "1:01:03",
+          "decimal": "1.02",
+          "text": "1 hr 1 min",
+          "hours": 1,
+          "minutes": 1,
+          "seconds": 3,
+          "percent": 59.66
         },
         {
           "name": "Other",
@@ -2537,7 +2570,7 @@
           "hours": 0,
           "minutes": 24,
           "seconds": 19,
-          "percent": 27.75
+          "percent": 23.78
         },
         {
           "name": "JSON",
@@ -2548,7 +2581,7 @@
           "hours": 0,
           "minutes": 12,
           "seconds": 16,
-          "percent": 13.99
+          "percent": 11.99
         },
         {
           "name": "Git Config",
@@ -2559,7 +2592,7 @@
           "hours": 0,
           "minutes": 2,
           "seconds": 22,
-          "percent": 2.71
+          "percent": 2.32
         },
         {
           "name": "Bash",
@@ -2570,7 +2603,7 @@
           "hours": 0,
           "minutes": 2,
           "seconds": 9,
-          "percent": 2.46
+          "percent": 2.11
         },
         {
           "name": "Markdown",
@@ -2581,93 +2614,20 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 8,
-          "percent": 0.16
-        }
-      ],
-      "grand_total": {
-        "hours": 1,
-        "minutes": 27,
-        "total_seconds": 5260.353,
-        "digital": "1:27",
-        "decimal": "1.45",
-        "text": "1 hr 27 mins",
-        "ai_additions": 0,
-        "ai_deletions": 0,
-        "human_additions": 92,
-        "human_deletions": 5
-      },
-      "editors": [
-        {
-          "name": "VS Code",
-          "total_seconds": 5260.353,
-          "digital": "1:27:40",
-          "decimal": "1.45",
-          "text": "1 hr 27 mins",
-          "hours": 1,
-          "minutes": 27,
-          "seconds": 40,
-          "percent": 100.0
-        }
-      ],
-      "operating_systems": [
-        {
-          "name": "Windows",
-          "total_seconds": 5260.353,
-          "digital": "1:27:40",
-          "decimal": "1.45",
-          "text": "1 hr 27 mins",
-          "hours": 1,
-          "minutes": 27,
-          "seconds": 40,
-          "percent": 100.0
-        }
-      ],
-      "categories": [
-        {
-          "name": "Coding",
-          "total_seconds": 4895.089,
-          "digital": "1:21:35",
-          "decimal": "1.35",
-          "text": "1 hr 21 mins",
-          "hours": 1,
-          "minutes": 21,
-          "seconds": 35,
-          "percent": 93.06
-        },
-        {
-          "name": "AI Coding",
-          "total_seconds": 356.685,
-          "digital": "0:05:56",
-          "decimal": "0.08",
-          "text": "5 mins",
-          "hours": 0,
-          "minutes": 5,
-          "seconds": 56,
-          "percent": 6.78
-        },
-        {
-          "name": "Writing Docs",
-          "total_seconds": 8.579,
-          "digital": "0:00:08",
-          "decimal": "0.00",
-          "text": "8 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 8,
-          "percent": 0.16
+          "percent": 0.14
         }
       ],
       "dependencies": [
         {
           "name": "lucide-react",
-          "total_seconds": 2608.682,
-          "digital": "0:43:28",
-          "decimal": "0.72",
-          "text": "43 mins",
+          "total_seconds": 3488.237,
+          "digital": "0:58:08",
+          "decimal": "0.97",
+          "text": "58 mins",
           "hours": 0,
-          "minutes": 43,
-          "seconds": 28,
-          "percent": 39.91
+          "minutes": 58,
+          "seconds": 8,
+          "percent": 42.05
         },
         {
           "name": "Button",
@@ -2678,7 +2638,18 @@
           "hours": 0,
           "minutes": 35,
           "seconds": 50,
-          "percent": 32.9
+          "percent": 25.92
+        },
+        {
+          "name": "Dialog",
+          "total_seconds": 1304.16,
+          "digital": "0:21:44",
+          "decimal": "0.35",
+          "text": "21 mins",
+          "hours": 0,
+          "minutes": 21,
+          "seconds": 44,
+          "percent": 15.72
         },
         {
           "name": "GroupCard",
@@ -2689,18 +2660,7 @@
           "hours": 0,
           "minutes": 10,
           "seconds": 49,
-          "percent": 9.94
-        },
-        {
-          "name": "Dialog",
-          "total_seconds": 424.605,
-          "digital": "0:07:04",
-          "decimal": "0.12",
-          "text": "7 mins",
-          "hours": 0,
-          "minutes": 7,
-          "seconds": 4,
-          "percent": 6.5
+          "percent": 7.83
         },
         {
           "name": "supabase-js",
@@ -2711,7 +2671,7 @@
           "hours": 0,
           "minutes": 2,
           "seconds": 53,
-          "percent": 2.65
+          "percent": 2.09
         },
         {
           "name": "react",
@@ -2722,7 +2682,7 @@
           "hours": 0,
           "minutes": 2,
           "seconds": 39,
-          "percent": 2.44
+          "percent": 1.92
         },
         {
           "name": "JoinGroupDialog",
@@ -2733,7 +2693,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "CreateGroupDialog",
@@ -2744,7 +2704,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "Login",
@@ -2755,7 +2715,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "UserDashboard",
@@ -2766,7 +2726,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "GroupExpensesView",
@@ -2777,7 +2737,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "GroupDetailsDialog",
@@ -2788,7 +2748,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "Loading",
@@ -2799,7 +2759,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "database",
@@ -2810,7 +2770,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "auth",
@@ -2821,7 +2781,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "tripLog",
@@ -2832,7 +2792,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         },
         {
           "name": "react-hot-toast",
@@ -2843,52 +2803,84 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 33,
-          "percent": 0.51
+          "percent": 0.41
         }
       ],
       "machines": [
         {
           "name": "Arpans-PC",
-          "total_seconds": 5260.353,
+          "total_seconds": 6139.908,
           "machine_name_id": "16df3c6b-280f-472e-8651-72609e6d1cbb",
-          "digital": "1:27:40",
-          "decimal": "1.45",
-          "text": "1 hr 27 mins",
+          "digital": "1:42:19",
+          "decimal": "1.70",
+          "text": "1 hr 42 mins",
           "hours": 1,
-          "minutes": 27,
-          "seconds": 40,
+          "minutes": 42,
+          "seconds": 19,
           "percent": 100.0
         }
       ],
-      "projects": [
+      "editors": [
         {
-          "name": "tailwindcss",
-          "total_seconds": 5260.353,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 92,
-          "human_deletions": 5,
-          "color": null,
-          "digital": "1:27:40",
-          "decimal": "1.45",
-          "text": "1 hr 27 mins",
+          "name": "VS Code",
+          "total_seconds": 6139.908,
+          "digital": "1:42:19",
+          "decimal": "1.70",
+          "text": "1 hr 42 mins",
           "hours": 1,
-          "minutes": 27,
-          "seconds": 40,
+          "minutes": 42,
+          "seconds": 19,
           "percent": 100.0
         }
       ],
-      "range": {
-        "start": "2025-11-14T18:30:00Z",
-        "end": "2025-11-15T18:29:59Z",
-        "date": "2025-11-15",
-        "text": "Sat Nov 15th 2025",
-        "timezone": "Asia/Kolkata"
-      },
-      "ai_additions": 0,
-      "ai_deletions": 0,
-      "human_additions": 0,
-      "human_deletions": 0
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 6139.908,
+          "digital": "1:42:19",
+          "decimal": "1.70",
+          "text": "1 hr 42 mins",
+          "hours": 1,
+          "minutes": 42,
+          "seconds": 19,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 5774.644,
+          "digital": "1:36:14",
+          "decimal": "1.60",
+          "text": "1 hr 36 mins",
+          "hours": 1,
+          "minutes": 36,
+          "seconds": 14,
+          "percent": 94.05
+        },
+        {
+          "name": "AI Coding",
+          "total_seconds": 356.685,
+          "digital": "0:05:56",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 56,
+          "percent": 5.81
+        },
+        {
+          "name": "Writing Docs",
+          "total_seconds": 8.579,
+          "digital": "0:00:08",
+          "decimal": "0.00",
+          "text": "8 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 8,
+          "percent": 0.14
+        }
+      ]
     },
     {
       "grand_total": {
@@ -2910,13 +2902,114 @@
         "text": "Sun Nov 16th 2025",
         "timezone": "Asia/Kolkata"
       },
-      "projects": [],
-      "languages": [],
-      "dependencies": [],
-      "machines": [],
-      "editors": [],
-      "operating_systems": [],
-      "categories": []
+      "projects": [
+        {
+          "name": "tailwindcss",
+          "total_seconds": 0.0,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 0,
+          "human_deletions": 0,
+          "color": null,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        }
+      ],
+      "languages": [
+        {
+          "name": "JavaScript",
+          "total_seconds": 0.0,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "lucide-react",
+          "total_seconds": 0.0,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        },
+        {
+          "name": "Dialog",
+          "total_seconds": 0.0,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        }
+      ],
+      "machines": [
+        {
+          "name": "Arpans-PC",
+          "total_seconds": 0.0,
+          "machine_name_id": "ab39b915-e8f9-4771-8a01-cfdc2cbc1b51",
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        }
+      ],
+      "editors": [
+        {
+          "name": "VS Code",
+          "total_seconds": 0.0,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        }
+      ],
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 0.0,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 0.0,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0
+        }
+      ]
     }
   ]
 }

@@ -22,8 +22,8 @@
 ## 🕒 Coding Time
 <p>
   <img src="https://img.shields.io/badge/TODAY-0_hrs_0_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
-  <img src="https://img.shields.io/badge/YESTERDAY-1_hrs_27_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
-  <img src="https://img.shields.io/badge/THIS_WEEK-6_hrs_59_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/YESTERDAY-1_hrs_42_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
+  <img src="https://img.shields.io/badge/THIS_WEEK-7_hrs_14_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
 </p>
@@ -40,7 +40,7 @@
 | Wed | ![](https://progress-bar.xyz/0/?width=250&color=2d3748&suffix=%20) | 0.0 hrs |
 | Thu | ![](https://progress-bar.xyz/55/?width=250&color=48bb78&suffix=%20) | 1.3 hrs |
 | Fri | ![](https://progress-bar.xyz/100/?width=250&color=48bb78&suffix=%20) ⭐ | 2.4 hrs |
-| Sat | ![](https://progress-bar.xyz/61/?width=250&color=48bb78&suffix=%20) | 1.5 hrs |
+| Sat | ![](https://progress-bar.xyz/71/?width=250&color=48bb78&suffix=%20) | 1.7 hrs |
 | Sun | ![](https://progress-bar.xyz/0/?width=250&color=2d3748&suffix=%20) | 0.0 hrs |
 <!--END_DAILY_CHART-->
 
@@ -48,7 +48,7 @@
 
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-11-16 04:17:47 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-11-16 08:13:46 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 
