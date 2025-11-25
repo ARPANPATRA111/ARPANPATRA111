@@ -76,6 +76,9 @@
   <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025" title="Cisco Certified Networking">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/cisco.png" alt="Cisco Certified" width="140">
   </a>
+  <a href="https://www.credly.com/badges/9da4a728-61f6-4305-bc9c-5dc804ade605" title="Cisco Certified Networking"> 
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/leadauditor.png" alt="Cisco Certified" width="140">
+  </a>
 </p>
 
 # 📊 GitHub Stats:
