@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: 🧩 Install Dependencies
+      - name: � Install Dependencies
         run: pip install requests pytz
 
       - name: 📊 Fetch & Generate WakaTime Stats
@@ -85,7 +85,8 @@ jobs:
           this_week_formatted = format_time(this_week_seconds)
 
           # Last week (days 8-14 from the 14-day data)
-          last_week_data = data_last14[:7] if len(data_last14) >= 14 else []
+          # The API returns days in chronological order, so we need days 1-7 for last week
+          last_week_data = data_last14[7:14] if len(data_last14) >= 14 else []
           last_week_seconds = calculate_total_seconds(last_week_data)
           last_week_formatted = format_time(last_week_seconds)
 
@@ -121,10 +122,14 @@ jobs:
               wakeup_time = utc_dt.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%H:%M:%S")
 
           # --- Most Productive Day ---
-          most_productive_day = max(data_last7, key=lambda x: x.get("grand_total", {}).get("total_seconds", 0))
-          most_productive_date = most_productive_day.get("range", {}).get("date", "")
-          most_productive_hours = round(most_productive_day.get("grand_total", {}).get("total_seconds", 0) / 3600, 2)
-          most_productive_day_name = datetime.strptime(most_productive_date, "%Y-%m-%d").strftime("%A") if most_productive_date else "N/A"
+          if data_last7:
+              most_productive_day = max(data_last7, key=lambda x: x.get("grand_total", {}).get("total_seconds", 0))
+              most_productive_date = most_productive_day.get("range", {}).get("date", "")
+              most_productive_hours = round(most_productive_day.get("grand_total", {}).get("total_seconds", 0) / 3600, 2)
+              most_productive_day_name = datetime.strptime(most_productive_date, "%Y-%m-%d").strftime("%A") if most_productive_date else "N/A"
+          else:
+              most_productive_day_name = "N/A"
+              most_productive_hours = 0
 
           # --- Languages & Editors Stats ---
           languages = {}
@@ -252,19 +257,31 @@ jobs:
           chart_lines.append("| Day | Activity | Hours |")
           chart_lines.append("|-----|----------|-------|")
           
+          import math
           for i, (label, hours) in enumerate(zip(daily_labels, daily_hours)):
               day = day_names.get(label, label)
               
-              # Calculate percentage for progress bar
-              percentage = int((hours / max_hours) * 100) if max_hours > 0 else 0
-              
-              # Determine color based on activity level
-              if percentage == 0:
-                  color = "2d3748"  # Dark gray for no activity
-              elif percentage < 50:
-                  color = "4299e1"  # Blue for low activity
+              # Apply logarithmic scaling for better visual representation
+              # This makes small values more visible while still showing differences
+              if hours > 0:
+                  # Use log scaling: log(1 + hours*10) to amplify small values
+                  scaled_value = math.log(1 + hours * 10) / math.log(1 + max_hours * 10)
+                  percentage = int(scaled_value * 100)
+                  percentage = max(8, min(percentage, 100))  # Min 8% for visibility, max 100%
               else:
-                  color = "48bb78"  # Green for high activity
+                  percentage = 0
+              
+              # Professional gradient color scheme based on intensity
+              if percentage == 0:
+                  color = "1a1a2e"  # Very dark blue-gray for no activity
+              elif percentage < 25:
+                  color = "e94560"  # Coral red for minimal activity
+              elif percentage < 50:
+                  color = "f39c12"  # Orange for low activity
+              elif percentage < 75:
+                  color = "3498db"  # Blue for moderate activity
+              else:
+                  color = "2ecc71"  # Green for high activity
               
               # Add star for most productive day
               star = " ⭐" if i == most_productive_idx and hours > 0 else ""

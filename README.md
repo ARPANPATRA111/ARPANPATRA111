@@ -12,7 +12,7 @@
 
 ## 📊 Quick Stats
 <p>
-  <img src="https://img.shields.io/badge/🏆_Most_Productive-Tuesday_(2.6h)-4CAFAX?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->
+  <img src="https://img.shields.io/badge/🏆_Most_Productive-Wednesday_(2.4h)-4CAF50?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->
   <img src="https://img.shields.io/badge/💻_Top_Language-TypeScript-2196F3?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->
   <img src="https://img.shields.io/badge/🛠️_Editor-VS_Code-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->
   <img src="https://img.shields.io/badge/⚡_Avg_Daily-0.8_hrs-9C27B0?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
