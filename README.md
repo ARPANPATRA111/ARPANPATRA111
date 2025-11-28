@@ -10,8 +10,8 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=3B82F6&center=true&vCenter=true&repeat=true&width=600&lines=Full+Stack+Developer+%F0%9F%9A%80;React+%7C+Node.js+%7C+TypeScript;Building+Scalable+Applications+%F0%9F%92%BB;Open+Source+Enthusiast+%E2%9C%A8)](https://git.io/typing-svg)
 
-[![GitHub followers](https://img.shields.io/github/followers/ARPANPATRA111?style=for-the-badge&logo=github&color=3b82f6)](https://github.com/ARPANPATRA111?tab=followers)
-[![GitHub Stars](https://img.shields.io/github/stars/ARPANPATRA111?style=for-the-badge&logo=github&color=3b82f6)](https://github.com/ARPANPATRA111)
+![GitHub followers](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-followers.svg?v=1)
+![GitHub Stars](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stars.svg?v=1)
 ![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/profile-views.svg?v=1)
 
 </div>

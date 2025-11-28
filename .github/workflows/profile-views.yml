@@ -1,4 +1,4 @@
-name: Update profile views badge
+name: Update profile views and stats badges
 
 on:
   schedule:
@@ -18,13 +18,48 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch traffic data from GitHub API and generate badge
+      - name: Fetch data from GitHub API and generate badges
         env:
           GH_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
           OWNER: "ARPANPATRA111"
           REPO: "ARPANPATRA111"
         run: |
           mkdir -p data assets
+
+          # ---------- Helper: function to generate shield-style badges ----------
+          create_badge () {
+            label_text="$1"
+            value_text="$2"
+            output_file="$3"
+
+            # Fixed label width, dynamic value width based on length of number
+            label_width=110
+            value_width=$(( 20 + 8 * ${#value_text} ))
+            total_width=$(( label_width + value_width ))
+
+            label_x=$(( label_width / 2 ))
+            value_x=$(( label_width + value_width / 2 ))
+
+            cat > "${output_file}" <<EOF
+          <svg xmlns="http://www.w3.org/2000/svg" width="${total_width}" height="20" role="img" aria-label="${label_text} ${value_text}">
+            <mask id="m">
+              <rect width="${total_width}" height="20" rx="3" fill="#fff"/>
+            </mask>
+
+            <g mask="url(#m)">
+              <rect width="${label_width}" height="20" fill="#555555"/>
+              <rect x="${label_width}" width="${value_width}" height="20" fill="#3b82f6"/>
+            </g>
+
+            <g fill="#ffffff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="10">
+              <text x="${label_x}" y="14">${label_text}</text>
+              <text x="${value_x}" y="14">${value_text}</text>
+            </g>
+          </svg>
+          EOF
+          }
+
+          # ---------- PROFILE VIEWS (repo traffic) ----------
 
           # Get traffic data (last 14 days)
           traffic_json=$(curl -s \
@@ -34,7 +69,7 @@ jobs:
 
           echo "$traffic_json" > data/traffic-latest.json
 
-          # Extract 14-day count (total views over last 14 days)
+          # Extract 14-day count
           current_count=$(echo "$traffic_json" | jq '.count')
 
           # Read previous data if exists
@@ -62,47 +97,57 @@ jobs:
           }
           EOF
 
-          echo "Current 14-day count: ${current_count}"
-          echo "Previous 14-day count: ${last_count}"
-          echo "New total: ${new_total}"
+          echo "Current 14-day views: ${current_count}"
+          echo "Previous 14-day views: ${last_count}"
+          echo "New total profile views: ${new_total}"
 
-          # ----- Shield-style SVG badge -----
-          label_text="PROFILE VIEWS"
-          value_text="${new_total}"
+          # Generate profile views badge
+          create_badge "PROFILE VIEWS" "${new_total}" "assets/profile-views.svg"
 
-          # Fixed label width, dynamic value width based on digits
-          label_width=110
-          value_width=$(( 20 + 8 * ${#value_text} ))
-          total_width=$(( label_width + value_width ))
+          # ---------- FOLLOWERS ----------
 
-          label_x=$(( label_width / 2 ))
-          value_x=$(( label_width + value_width / 2 ))
+          user_json=$(curl -s \
+            -H "Authorization: token ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/users/${OWNER}")
 
-          cat > assets/profile-views.svg <<EOF
-          <svg xmlns="http://www.w3.org/2000/svg" width="${total_width}" height="20" role="img" aria-label="PROFILE VIEWS ${value_text}">
-            <mask id="m">
-              <rect width="${total_width}" height="20" rx="3" fill="#fff"/>
-            </mask>
+          followers=$(echo "$user_json" | jq '.followers')
+          echo "Followers: ${followers}"
 
-            <g mask="url(#m)">
-              <rect width="${label_width}" height="20" fill="#555555"/>
-              <rect x="${label_width}" width="${value_width}" height="20" fill="#3b82f6"/>
-            </g>
+          create_badge "FOLLOWERS" "${followers}" "assets/github-followers.svg"
 
-            <g fill="#ffffff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="10">
-              <text x="${label_x}" y="14">${label_text}</text>
-              <text x="${value_x}" y="14">${value_text}</text>
-            </g>
-          </svg>
-          EOF
+          # ---------- TOTAL STARS (all public repos) ----------
+
+          total_stars=0
+          page=1
+
+          while : ; do
+            repos=$(curl -s \
+              -H "Authorization: token ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/users/${OWNER}/repos?per_page=100&page=${page}")
+
+            count=$(echo "$repos" | jq 'length')
+            if [ "$count" -eq 0 ]; then
+              break
+            fi
+
+            stars_page=$(echo "$repos" | jq '[.[].stargazers_count] | add // 0')
+            total_stars=$(( total_stars + stars_page ))
+            page=$(( page + 1 ))
+          done
+
+          echo "Total stars across repos: ${total_stars}"
+
+          create_badge "STARS" "${total_stars}" "assets/github-stars.svg"
 
       - name: Commit and push if changed
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
+          if [ -n "$(git.status --porcelain 2>/dev/null || git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/profile-views.json data/traffic-latest.json assets/profile-views.svg
-            git commit -m "Update profile views badge"
+            git.config user.email "41898282+github-actions[bot]@users.noreply.github.com" || git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/profile-views.json data/traffic-latest.json assets/profile-views.svg assets/github-followers.svg assets/github-stars.svg
+            git commit -m "Update profile stats badges"
             git push
           else
             echo "No changes to commit."
