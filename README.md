@@ -13,6 +13,7 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=ARPANPATRA111&color=3b82f6&style=for-the-badge&label=PROFILE+VIEWS)
 [![GitHub followers](https://img.shields.io/github/followers/ARPANPATRA111?style=for-the-badge&logo=github&color=3b82f6)](https://github.com/ARPANPATRA111?tab=followers)
 [![GitHub Stars](https://img.shields.io/github/stars/ARPANPATRA111?style=for-the-badge&logo=github&color=3b82f6)](https://github.com/ARPANPATRA111)
+![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/profile-views.svg)
 
 </div>
 
@@ -104,8 +105,11 @@
   <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025" title="Cisco Certified Networking">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/cisco.png" alt="Cisco Certified" width="140">
   </a>
-  <a href="https://www.credly.com/badges/9da4a728-61f6-4305-bc9c-5dc804ade605" title="Cisco Certified Networking"> 
+  <a href="https://www.credly.com/badges/9da4a728-61f6-4305-bc9c-5dc804ade605" title="Lead Audioty"> 
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/leadauditor.png" alt="Cisco Certified" width="140">
+  </a>
+  <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae#acc.EueBRXk0" title="Cisco Certified Networking"> 
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/gemini.png" alt="Gemini Certified" width="140">
   </a>
 </p>
 

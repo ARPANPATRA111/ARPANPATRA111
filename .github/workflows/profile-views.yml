@@ -1,0 +1,94 @@
+name: Update profile views badge
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # every 6 hours
+  workflow_dispatch:       # allow manual run
+  push:
+    branches: ["main"]     # optional: run on push to main
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile-views:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch traffic data from GitHub API
+        env:
+          GH_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
+          OWNER: "ARPANPATRA111"
+          REPO: "ARPANPATRA111"
+        run: |
+          mkdir -p data assets
+
+          # Get traffic data (last 14 days)
+          traffic_json=$(curl -s \
+            -H "Authorization: token ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${OWNER}/${REPO}/traffic/views")
+
+          echo "$traffic_json" > data/traffic-latest.json
+
+          # Extract 14-day count
+          current_count=$(echo "$traffic_json" | jq '.count')
+
+          # Read previous data if exists
+          if [ -f data/profile-views.json ]; then
+            last_count=$(jq '.last_14_days_count' data/profile-views.json)
+            total=$(jq '.total' data/profile-views.json)
+          else
+            last_count=0
+            total=0
+          fi
+
+          # Delta for this period
+          delta=$(( current_count - last_count ))
+          if [ "$delta" -lt 0 ]; then
+            delta=0
+          fi
+
+          new_total=$(( total + delta ))
+
+          # Save updated json
+          cat > data/profile-views.json <<EOF
+          {
+            "last_14_days_count": ${current_count},
+            "total": ${new_total}
+          }
+          EOF
+
+          echo "Current 14-day count: ${current_count}"
+          echo "Previous 14-day count: ${last_count}"
+          echo "New total: ${new_total}"
+
+          # Generate simple SVG badge
+          cat > assets/profile-views.svg <<EOF
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="28" role="img" aria-label="Profile views: ${new_total}">
+            <linearGradient id="bg" x2="0" y2="100%">
+              <stop offset="0" stop-color="#444" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#222" stop-opacity=".9"/>
+            </linearGradient>
+            <rect rx="4" width="200" height="28" fill="url(#bg)"/>
+            <g fill="#fff" text-anchor="middle" font-family="Segoe UI, DejaVu Sans, Verdana, sans-serif" font-size="12">
+              <text x="70" y="18">Profile views</text>
+              <text x="160" y="18">${new_total}</text>
+            </g>
+          </svg>
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/profile-views.json data/traffic-latest.json assets/profile-views.svg
+            git commit -m "Update profile views badge"
+            git push
+          else
+            echo "No changes to commit."
+          fi
