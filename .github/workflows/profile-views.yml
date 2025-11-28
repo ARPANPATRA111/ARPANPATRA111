@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch traffic data from GitHub API
+      - name: Fetch traffic data from GitHub API and generate badge
         env:
           GH_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
           OWNER: "ARPANPATRA111"
@@ -34,7 +34,7 @@ jobs:
 
           echo "$traffic_json" > data/traffic-latest.json
 
-          # Extract 14-day count
+          # Extract 14-day count (total views over last 14 days)
           current_count=$(echo "$traffic_json" | jq '.count')
 
           # Read previous data if exists
@@ -66,17 +66,32 @@ jobs:
           echo "Previous 14-day count: ${last_count}"
           echo "New total: ${new_total}"
 
-          # Generate simple SVG badge
+          # ----- Shield-style SVG badge -----
+          label_text="PROFILE VIEWS"
+          value_text="${new_total}"
+
+          # Fixed label width, dynamic value width based on digits
+          label_width=110
+          value_width=$(( 20 + 8 * ${#value_text} ))
+          total_width=$(( label_width + value_width ))
+
+          label_x=$(( label_width / 2 ))
+          value_x=$(( label_width + value_width / 2 ))
+
           cat > assets/profile-views.svg <<EOF
-          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="28" role="img" aria-label="Profile views: ${new_total}">
-            <linearGradient id="bg" x2="0" y2="100%">
-              <stop offset="0" stop-color="#444" stop-opacity=".9"/>
-              <stop offset="1" stop-color="#222" stop-opacity=".9"/>
-            </linearGradient>
-            <rect rx="4" width="200" height="28" fill="url(#bg)"/>
-            <g fill="#fff" text-anchor="middle" font-family="Segoe UI, DejaVu Sans, Verdana, sans-serif" font-size="12">
-              <text x="70" y="18">Profile views</text>
-              <text x="160" y="18">${new_total}</text>
+          <svg xmlns="http://www.w3.org/2000/svg" width="${total_width}" height="20" role="img" aria-label="PROFILE VIEWS ${value_text}">
+            <mask id="m">
+              <rect width="${total_width}" height="20" rx="3" fill="#fff"/>
+            </mask>
+
+            <g mask="url(#m)">
+              <rect width="${label_width}" height="20" fill="#555555"/>
+              <rect x="${label_width}" width="${value_width}" height="20" fill="#3b82f6"/>
+            </g>
+
+            <g fill="#ffffff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="10">
+              <text x="${label_x}" y="14">${label_text}</text>
+              <text x="${value_x}" y="14">${value_text}</text>
             </g>
           </svg>
           EOF
