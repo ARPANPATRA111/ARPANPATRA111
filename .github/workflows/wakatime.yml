@@ -86,7 +86,7 @@ jobs:
 
           # Last week (days 8-14 from the 14-day data)
           # The API returns days in chronological order, so we need days 1-7 for last week
-          last_week_data = data_last14[7:14] if len(data_last14) >= 14 else []
+          last_week_data = data_last14[:7] if len(data_last14) >= 14 else []
           last_week_seconds = calculate_total_seconds(last_week_data)
           last_week_formatted = format_time(last_week_seconds)
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-![Banner](./Banner.png)
+![Banner](./assets/Banner.png)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake-dark.svg" />
@@ -90,25 +90,25 @@
 
 ### 🥇 LeetCode
 <p>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/200.gif" width="140">
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/100%20days.gif" width="140">
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/50Days.gif" width="140">
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/202507.gif" width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/200.gif" width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/100%20days.gif" width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/50Days.gif" width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/202507.gif" width="140">
 </p>
 
 ### 🧾 Professional Badges
 <p>
   <a href="https://www.credly.com/badges/5f3abcc4-44f2-4439-a307-4b4239a14ccc" title="Red-Hat Certified System Administrator">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/redhat.png" alt="Red Hat Certified" width = "140">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/redhat.png" alt="Red Hat Certified" width = "140">
   </a>
   <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025" title="Cisco Certified Networking">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/cisco.png" alt="Cisco Certified" width="140">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/cisco.png" alt="Cisco Certified" width="140">
   </a>
   <a href="https://www.credly.com/badges/9da4a728-61f6-4305-bc9c-5dc804ade605" title="Lead Audioty"> 
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/leadauditor.png" alt="Cisco Certified" width="140">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/leadauditor.png" alt="Cisco Certified" width="140">
   </a>
   <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae#acc.EueBRXk0" title="Cisco Certified Networking"> 
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/gemini.png" alt="Gemini Certified" width="140">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini Certified" width="140">
   </a>
 </p>
 
