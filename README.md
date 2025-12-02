@@ -110,6 +110,9 @@
   <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae#acc.EueBRXk0" title="Cisco Certified Networking"> 
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini Certified" width="140">
   </a>
+  <a href="https://www.futureskillsprime.in/iDH/user/user_badge/view/32914_BG_10fe9856-d1dd-11f0-bdec-005056b48b54" title="Data encryption"> 
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/encryption.png" alt="Data encryption" width="140">
+  </a>
 </p>
 
 # 📊 GitHub Stats: 
