@@ -37,7 +37,7 @@
 ## 📊 Quick Stats
 <p>
   <img src="https://img.shields.io/badge/🏆_Most_Productive-Friday_(0.6h)-4CAF50?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->
-  <img src="https://img.shields.io/badge/💻_Top_Language-YAML-2196F3?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->
+  <img src="https://img.shields.io/badge/💻_Top_Language-Markdown-2196F3?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->
   <img src="https://img.shields.io/badge/🛠️_Editor-VS_Code-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->
   <img src="https://img.shields.io/badge/⚡_Avg_Daily-0.1_hrs-9C27B0?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
   <img src="https://img.shields.io/badge/📅_Active_Days-1/7_days-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->
@@ -45,9 +45,9 @@
 
 ## 🕒 Coding Time
 <p>
-  <img src="https://img.shields.io/badge/TODAY-0_hrs_32_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
+  <img src="https://img.shields.io/badge/TODAY-0_hrs_37_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
   <img src="https://img.shields.io/badge/YESTERDAY-0_hrs_0_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
-  <img src="https://img.shields.io/badge/THIS_WEEK-0_hrs_32_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/THIS_WEEK-0_hrs_37_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
 </p>
@@ -72,7 +72,7 @@
 
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-12-05 13:51:45 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-12-05 13:58:27 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 
