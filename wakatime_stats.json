@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2025-12-18T04:25:55.016305+00:00",
+  "generated_at_utc": "2025-12-18T08:17:03.961863+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2025-12-18",
-  "total_coding_time": "0 secs",
-  "today_total": "0 hrs 0 mins",
+  "total_coding_time": "1 hr 15 mins",
+  "today_total": "1 hrs 15 mins",
   "yesterday_total": "1 hrs 26 mins",
-  "this_week_total": "6 hrs 32 mins",
+  "this_week_total": "7 hrs 47 mins",
   "last_week_total": "0 hrs 0 mins",
   "week_change": "\ud83c\udd95 New",
   "daily_hours": [
@@ -16,7 +16,7 @@
     1.35,
     1.45,
     1.44,
-    0.0
+    1.25
   ],
   "daily_labels": [
     "Fri",
@@ -957,6 +957,7 @@
           "ai_deletions": 0,
           "human_additions": 9,
           "human_deletions": 5,
+          "color": null,
           "digital": "1:26:19",
           "decimal": "1.43",
           "text": "1 hr 26 mins",
@@ -980,16 +981,16 @@
     },
     {
       "grand_total": {
-        "hours": 0,
-        "minutes": 0,
-        "total_seconds": 0.0,
-        "digital": "0:00",
-        "decimal": "0.00",
-        "text": "0 secs",
+        "hours": 1,
+        "minutes": 15,
+        "total_seconds": 4502.07,
+        "digital": "1:15",
+        "decimal": "1.25",
+        "text": "1 hr 15 mins",
         "ai_additions": 0,
         "ai_deletions": 0,
-        "human_additions": 0,
-        "human_deletions": 0
+        "human_additions": 51,
+        "human_deletions": 27
       },
       "range": {
         "start": "2025-12-17T18:30:00Z",
@@ -998,13 +999,323 @@
         "text": "Thu Dec 18th 2025",
         "timezone": "Asia/Kolkata"
       },
-      "projects": [],
-      "languages": [],
-      "dependencies": [],
-      "machines": [],
-      "editors": [],
-      "operating_systems": [],
-      "categories": []
+      "projects": [
+        {
+          "name": "Proter",
+          "total_seconds": 4502.07,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 51,
+          "human_deletions": 27,
+          "color": null,
+          "digital": "1:15:02",
+          "decimal": "1.25",
+          "text": "1 hr 15 mins",
+          "hours": 1,
+          "minutes": 15,
+          "seconds": 2,
+          "percent": 100.0
+        }
+      ],
+      "languages": [
+        {
+          "name": "TypeScript",
+          "total_seconds": 2374.195,
+          "digital": "0:39:34",
+          "decimal": "0.65",
+          "text": "39 mins",
+          "hours": 0,
+          "minutes": 39,
+          "seconds": 34,
+          "percent": 52.74
+        },
+        {
+          "name": "Git Config",
+          "total_seconds": 889.855,
+          "digital": "0:14:49",
+          "decimal": "0.23",
+          "text": "14 mins",
+          "hours": 0,
+          "minutes": 14,
+          "seconds": 49,
+          "percent": 19.77
+        },
+        {
+          "name": "Other",
+          "total_seconds": 590.457,
+          "digital": "0:09:50",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 50,
+          "percent": 13.12
+        },
+        {
+          "name": "Bash",
+          "total_seconds": 382.684,
+          "digital": "0:06:22",
+          "decimal": "0.10",
+          "text": "6 mins",
+          "hours": 0,
+          "minutes": 6,
+          "seconds": 22,
+          "percent": 8.5
+        },
+        {
+          "name": "JSON",
+          "total_seconds": 264.879,
+          "digital": "0:04:24",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 24,
+          "percent": 5.88
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "types",
+          "total_seconds": 1800.649,
+          "digital": "0:30:00",
+          "decimal": "0.50",
+          "text": "30 mins",
+          "hours": 0,
+          "minutes": 30,
+          "seconds": 0,
+          "percent": 13.37
+        },
+        {
+          "name": "app",
+          "total_seconds": 1800.649,
+          "digital": "0:30:00",
+          "decimal": "0.50",
+          "text": "30 mins",
+          "hours": 0,
+          "minutes": 30,
+          "seconds": 0,
+          "percent": 13.37
+        },
+        {
+          "name": "firestore",
+          "total_seconds": 1800.649,
+          "digital": "0:30:00",
+          "decimal": "0.50",
+          "text": "30 mins",
+          "hours": 0,
+          "minutes": 30,
+          "seconds": 0,
+          "percent": 13.37
+        },
+        {
+          "name": "auth",
+          "total_seconds": 1800.649,
+          "digital": "0:30:00",
+          "decimal": "0.50",
+          "text": "30 mins",
+          "hours": 0,
+          "minutes": 30,
+          "seconds": 0,
+          "percent": 13.37
+        },
+        {
+          "name": "react-native",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "MaterialIcons",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "native-stack",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "ThemeContext",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "RootNavigator",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "common",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "react",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "shared",
+          "total_seconds": 573.546,
+          "digital": "0:09:33",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 33,
+          "percent": 4.26
+        },
+        {
+          "name": "picker",
+          "total_seconds": 552.007,
+          "digital": "0:09:12",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 12,
+          "percent": 4.1
+        },
+        {
+          "name": "native",
+          "total_seconds": 552.007,
+          "digital": "0:09:12",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 12,
+          "percent": 4.1
+        },
+        {
+          "name": "NetworkContext",
+          "total_seconds": 552.007,
+          "digital": "0:09:12",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 12,
+          "percent": 4.1
+        },
+        {
+          "name": "react-native-chart-kit",
+          "total_seconds": 21.539,
+          "digital": "0:00:21",
+          "decimal": "0.00",
+          "text": "21 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 21,
+          "percent": 0.16
+        }
+      ],
+      "machines": [
+        {
+          "name": "Arpans-PC",
+          "total_seconds": 4502.07,
+          "machine_name_id": "d23a56c1-0031-4a2a-8bd5-4d3384af1c93",
+          "digital": "1:15:02",
+          "decimal": "1.25",
+          "text": "1 hr 15 mins",
+          "hours": 1,
+          "minutes": 15,
+          "seconds": 2,
+          "percent": 100.0
+        }
+      ],
+      "editors": [
+        {
+          "name": "VS Code",
+          "total_seconds": 4502.07,
+          "digital": "1:15:02",
+          "decimal": "1.25",
+          "text": "1 hr 15 mins",
+          "hours": 1,
+          "minutes": 15,
+          "seconds": 2,
+          "percent": 100.0
+        }
+      ],
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 4502.07,
+          "digital": "1:15:02",
+          "decimal": "1.25",
+          "text": "1 hr 15 mins",
+          "hours": 1,
+          "minutes": 15,
+          "seconds": 2,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 3711.738,
+          "digital": "1:01:51",
+          "decimal": "1.02",
+          "text": "1 hr 1 min",
+          "hours": 1,
+          "minutes": 1,
+          "seconds": 51,
+          "percent": 82.45
+        },
+        {
+          "name": "AI Coding",
+          "total_seconds": 790.332,
+          "digital": "0:13:10",
+          "decimal": "0.22",
+          "text": "13 mins",
+          "hours": 0,
+          "minutes": 13,
+          "seconds": 10,
+          "percent": 17.55
+        }
+      ]
     }
   ]
 }
