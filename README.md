@@ -45,9 +45,9 @@
 
 ## 🕒 Coding Time
 <p>
-  <img src="https://img.shields.io/badge/TODAY-5_hrs_54_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
+  <img src="https://img.shields.io/badge/TODAY-5_hrs_56_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
   <img src="https://img.shields.io/badge/YESTERDAY-2_hrs_45_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
-  <img src="https://img.shields.io/badge/THIS_WEEK-19_hrs_10_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/THIS_WEEK-19_hrs_12_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
 </p>
@@ -62,7 +62,7 @@
 | Mon | ![](https://progress-bar.xyz/65/?width=250&color=3498db&suffix=%20) | 1.4 hrs |
 | Tue | ![](https://progress-bar.xyz/66/?width=250&color=3498db&suffix=%20) | 1.4 hrs |
 | Wed | ![](https://progress-bar.xyz/66/?width=250&color=3498db&suffix=%20) | 1.4 hrs |
-| Thu | ![](https://progress-bar.xyz/89/?width=250&color=2ecc71&suffix=%20) | 3.7 hrs |
+| Thu | ![](https://progress-bar.xyz/88/?width=250&color=2ecc71&suffix=%20) | 3.7 hrs |
 | Fri | ![](https://progress-bar.xyz/79/?width=250&color=2ecc71&suffix=%20) | 2.5 hrs |
 | Sat | ![](https://progress-bar.xyz/81/?width=250&color=2ecc71&suffix=%20) | 2.8 hrs |
 | Sun | ![](https://progress-bar.xyz/100/?width=250&color=2ecc71&suffix=%20) ⭐ | 5.9 hrs |
@@ -72,7 +72,7 @@
 
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-12-21 16:13:01 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2025-12-21 20:12:18 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 
