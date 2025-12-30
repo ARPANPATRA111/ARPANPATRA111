@@ -1,18 +1,21 @@
-name: Update profile views and stats badges
+name: 📊 Update Profile Views & Stats Badges
 
 on:
   schedule:
     - cron: "0 */6 * * *"  # every 6 hours
   workflow_dispatch:       # allow manual run
-  push:
-    branches: ["main"]     # optional: run on push to main
 
 permissions:
   contents: write
 
+concurrency:
+  group: profile-views-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update-profile-views:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repo
@@ -143,11 +146,11 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if [ -n "$(git.status --porcelain 2>/dev/null || git status --porcelain)" ]; then
+          if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
-            git.config user.email "41898282+github-actions[bot]@users.noreply.github.com" || git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/profile-views.json data/traffic-latest.json assets/profile-views.svg assets/github-followers.svg assets/github-stars.svg
-            git commit -m "Update profile stats badges"
+            git commit -m "📊 Update profile stats badges [skip ci]"
             git push
           else
             echo "No changes to commit."

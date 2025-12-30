@@ -1,4 +1,4 @@
-name: GitHub Snake Game
+name: 🐍 GitHub Snake Game
 
 on:
   # Schedule the workflow to run daily at midnight UTC
@@ -6,10 +6,11 @@ on:
     - cron: "0 0 * * *"
   # Allow manual triggering of the workflow
   workflow_dispatch:
-  # Trigger the workflow on pushes to the main branch
-  push:
-    branches:
-      - main
+
+concurrency:
+  group: snake-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # Step 2: Generate the snake animations
       - name: Generate GitHub Contributions Snake Animations
         uses: Platane/snk@v3

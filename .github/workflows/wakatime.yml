@@ -1,30 +1,33 @@
-name: 🕒 Advanced WakaTime + Wake-Up Time Tracker
+name: 🕒 Advanced WakaTime Stats Tracker
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: '0 0 * * *'     # Daily at midnight UTC
-    - cron: '0 */4 * * *'   # Every 4 hours
+    - cron: '0 */6 * * *'   # Every 6 hours (consolidated)
   workflow_dispatch:
+
+concurrency:
+  group: wakatime-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   wakatime-stats:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: 🧭 Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ⚙️ Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
+          cache: 'pip'
 
-      - name: � Install Dependencies
+      - name: 📦 Install Dependencies
         run: pip install requests pytz
 
       - name: 📊 Fetch & Generate WakaTime Stats
@@ -417,8 +420,7 @@ jobs:
 
       - name: 💾 Commit wakatime_stats.json
         run: |
-          git config --global user.name "GitHub Action Bot"
-          git config --global user.email "github-action-bot@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add wakatime_stats.json README.md
-          git commit -m "🕒 Updated WakaTime JSON and README" || echo "No changes to commit"
-          git push origin main
+          git diff --staged --quiet || (git commit -m "🕒 Update WakaTime stats [skip ci]" && git push origin main)
