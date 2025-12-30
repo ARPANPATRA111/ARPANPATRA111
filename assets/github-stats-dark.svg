@@ -1,50 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160">
   <defs>
     <linearGradient id="statsCardGrad_dark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.1"/>
-      <stop offset="100%" style="stop-color:#48dbfb;stop-opacity:0.1"/>
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#48dbfb;stop-opacity:0.08"/>
     </linearGradient>
   </defs>
-  <rect width="900" height="200" rx="16" fill="#161b22"/>
-  <rect x="2" y="2" width="896" height="196" rx="14" fill="url(#statsCardGrad_dark)"/>
+  <rect width="900" height="160" rx="12" fill="#161b22"/>
+  <rect x="2" y="2" width="896" height="156" rx="10" fill="url(#statsCardGrad_dark)"/>
   
-  <text x="450" y="35" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="bold" 
+  <text x="450" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" 
         fill="#c9d1d9" text-anchor="middle">GitHub Statistics</text>
   
-  <g transform="translate(60, 70)">
-    <!-- Followers -->
+  <g transform="translate(45, 48)">
     <g>
-      <text x="0" y="0" font-size="24">👥</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#8b949e">Followers</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="#c9d1d9">0</text>
+      <rect width="150" height="65" rx="8" fill="#0d1117" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">Followers</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="#c9d1d9" text-anchor="middle">0</text>
     </g>
     
-    <!-- Repos -->
-    <g transform="translate(180, 0)">
-      <text x="0" y="0" font-size="24">📦</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#8b949e">Repositories</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="#c9d1d9">3</text>
+    <g transform="translate(165, 0)">
+      <rect width="150" height="65" rx="8" fill="#0d1117" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">Repositories</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="#c9d1d9" text-anchor="middle">3</text>
     </g>
     
-    <!-- Stars -->
-    <g transform="translate(360, 0)">
-      <text x="0" y="0" font-size="24">⭐</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#8b949e">Total Stars</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="#c9d1d9">0</text>
+    <g transform="translate(330, 0)">
+      <rect width="150" height="65" rx="8" fill="#0d1117" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">Total Stars</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="#c9d1d9" text-anchor="middle">0</text>
     </g>
     
-    <!-- Commits -->
-    <g transform="translate(540, 0)">
-      <text x="0" y="0" font-size="24">📝</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#8b949e">Commits</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="#c9d1d9">150</text>
+    <g transform="translate(495, 0)">
+      <rect width="150" height="65" rx="8" fill="#0d1117" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">Commits (Year)</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="#c9d1d9" text-anchor="middle">0</text>
     </g>
     
-    <!-- PRs -->
-    <g transform="translate(720, 0)">
-      <text x="0" y="0" font-size="24">🔀</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#8b949e">Pull Requests</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="#c9d1d9">2</text>
+    <g transform="translate(660, 0)">
+      <rect width="150" height="65" rx="8" fill="#0d1117" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">Contributions</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="#58a6ff" text-anchor="middle">0</text>
     </g>
   </g>
 </svg>

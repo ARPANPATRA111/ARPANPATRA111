@@ -85,19 +85,25 @@ def fetch_github_stats():
         'total_commits': 0,
         'total_prs': 0,
         'total_issues': 0,
+        'total_contributions': 0,
         'contributions': []
     }
     
     try:
         # Fetch user data
+        print(f"  Fetching user data for {USERNAME}...")
         user_resp = requests.get(f'https://api.github.com/users/{USERNAME}', headers=headers)
         if user_resp.ok:
             user_data = user_resp.json()
             stats['followers'] = user_data.get('followers', 0)
             stats['following'] = user_data.get('following', 0)
             stats['public_repos'] = user_data.get('public_repos', 0)
+            print(f"    Followers: {stats['followers']}, Repos: {stats['public_repos']}")
+        else:
+            print(f"    Failed to fetch user data: {user_resp.status_code}")
         
         # Fetch repos for stars count
+        print("  Fetching repositories...")
         repos_resp = requests.get(
             f'https://api.github.com/users/{USERNAME}/repos?per_page=100',
             headers=headers
@@ -105,40 +111,18 @@ def fetch_github_stats():
         if repos_resp.ok:
             repos = repos_resp.json()
             stats['total_stars'] = sum(repo.get('stargazers_count', 0) for repo in repos)
+            print(f"    Total Stars: {stats['total_stars']}")
         
-        # Fetch commit count (estimate from events)
-        events_resp = requests.get(
-            f'https://api.github.com/users/{USERNAME}/events?per_page=100',
-            headers=headers
-        )
-        if events_resp.ok:
-            events = events_resp.json()
-            push_events = [e for e in events if e.get('type') == 'PushEvent']
-            commits_count = sum(len(e.get('payload', {}).get('commits', [])) for e in push_events)
-            stats['total_commits'] = commits_count if commits_count > 0 else 150  # fallback estimate
-        
-        # Fetch PRs
-        search_resp = requests.get(
-            f'https://api.github.com/search/issues?q=author:{USERNAME}+type:pr',
-            headers=headers
-        )
-        if search_resp.ok:
-            stats['total_prs'] = search_resp.json().get('total_count', 0)
-        
-        # Fetch issues
-        search_resp = requests.get(
-            f'https://api.github.com/search/issues?q=author:{USERNAME}+type:issue',
-            headers=headers
-        )
-        if search_resp.ok:
-            stats['total_issues'] = search_resp.json().get('total_count', 0)
-            
-        # Fetch contribution data using GraphQL
+        # Fetch contribution data using GraphQL (requires token)
         if GH_TOKEN:
+            print("  Fetching contribution data via GraphQL...")
             graphql_query = """
             query($username: String!) {
                 user(login: $username) {
                     contributionsCollection {
+                        totalCommitContributions
+                        totalPullRequestContributions
+                        totalIssueContributions
                         contributionCalendar {
                             totalContributions
                             weeks {
@@ -148,6 +132,12 @@ def fetch_github_stats():
                                 }
                             }
                         }
+                    }
+                    pullRequests(first: 1) {
+                        totalCount
+                    }
+                    issues(first: 1) {
+                        totalCount
                     }
                 }
             }
@@ -159,8 +149,19 @@ def fetch_github_stats():
             )
             if graphql_resp.ok:
                 data = graphql_resp.json()
-                calendar = data.get('data', {}).get('user', {}).get('contributionsCollection', {}).get('contributionCalendar', {})
+                user = data.get('data', {}).get('user', {})
+                contrib_collection = user.get('contributionsCollection', {})
+                calendar = contrib_collection.get('contributionCalendar', {})
+                
+                stats['total_commits'] = contrib_collection.get('totalCommitContributions', 0)
+                stats['total_prs'] = user.get('pullRequests', {}).get('totalCount', 0)
+                stats['total_issues'] = user.get('issues', {}).get('totalCount', 0)
                 stats['total_contributions'] = calendar.get('totalContributions', 0)
+                
+                print(f"    Commits: {stats['total_commits']}, PRs: {stats['total_prs']}")
+                print(f"    Total Contributions: {stats['total_contributions']}")
+                
+                # Parse contribution calendar
                 weeks = calendar.get('weeks', [])
                 for week in weeks:
                     for day in week.get('contributionDays', []):
@@ -168,6 +169,20 @@ def fetch_github_stats():
                             'date': day.get('date'),
                             'count': day.get('contributionCount', 0)
                         })
+                print(f"    Contribution days loaded: {len(stats['contributions'])}")
+            else:
+                print(f"    GraphQL failed: {graphql_resp.status_code}")
+        else:
+            print("  No GH_TOKEN - using REST API fallback...")
+            events_resp = requests.get(
+                f'https://api.github.com/users/{USERNAME}/events?per_page=100',
+                headers=headers
+            )
+            if events_resp.ok:
+                events = events_resp.json()
+                push_events = [e for e in events if e.get('type') == 'PushEvent']
+                stats['total_commits'] = sum(len(e.get('payload', {}).get('commits', [])) for e in push_events)
+                
     except Exception as e:
         print(f"Error fetching GitHub stats: {e}")
     
@@ -175,96 +190,29 @@ def fetch_github_stats():
 
 
 def fetch_wakatime_stats():
-    """Fetch WakaTime statistics"""
-    if not WAKATIME_API_KEY:
-        # Return cached data if available
-        try:
-            with open('wakatime_stats.json', 'r') as f:
-                return json.load(f)
-        except:
-            return None
-    
+    """Fetch WakaTime statistics from local cache"""
     try:
-        headers = {'Authorization': f'Basic {WAKATIME_API_KEY}'}
-        
-        # Fetch stats summary
-        resp = requests.get(
-            'https://wakatime.com/api/v1/users/current/stats/last_7_days',
-            headers=headers
-        )
-        
-        if resp.ok:
-            data = resp.json().get('data', {})
-            
-            stats = {
-                'today_total': '0h 0m',
-                'yesterday_total': '0h 0m',
-                'this_week_total': data.get('human_readable_total', '0h 0m'),
-                'last_week_total': '0h 0m',
-                'week_change': '+0%',
-                'daily_hours': [0] * 7,
-                'daily_labels': [],
-                'most_productive_day': 'N/A',
-                'most_productive_hours': '0h',
-                'top_language': data.get('languages', [{}])[0].get('name', 'N/A') if data.get('languages') else 'N/A',
-                'top_editor': data.get('editors', [{}])[0].get('name', 'VS Code') if data.get('editors') else 'VS Code',
-                'avg_daily': '0h',
-                'active_days': 0
-            }
-            
-            # Calculate daily stats
-            days = data.get('days', [])
-            if days:
-                today = datetime.now().strftime('%Y-%m-%d')
-                yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
-                
-                daily_hours = []
-                daily_labels = []
-                max_hours = 0
-                max_day = 'N/A'
-                active_count = 0
-                
-                for day in days:
-                    hours = day.get('total_seconds', 0) / 3600
-                    daily_hours.append(round(hours, 2))
-                    daily_labels.append(datetime.strptime(day.get('date', ''), '%Y-%m-%d').strftime('%a'))
-                    
-                    if hours > max_hours:
-                        max_hours = hours
-                        max_day = day.get('date', 'N/A')
-                    
-                    if hours > 0:
-                        active_count += 1
-                    
-                    if day.get('date') == today:
-                        hrs = int(hours)
-                        mins = int((hours - hrs) * 60)
-                        stats['today_total'] = f"{hrs}h {mins}m"
-                    elif day.get('date') == yesterday:
-                        hrs = int(hours)
-                        mins = int((hours - hrs) * 60)
-                        stats['yesterday_total'] = f"{hrs}h {mins}m"
-                
-                stats['daily_hours'] = daily_hours
-                stats['daily_labels'] = daily_labels
-                stats['most_productive_day'] = datetime.strptime(max_day, '%Y-%m-%d').strftime('%A') if max_day != 'N/A' else 'N/A'
-                stats['most_productive_hours'] = f"{int(max_hours)}h"
-                stats['active_days'] = active_count
-                
-                # Calculate average
-                total_seconds = sum(day.get('total_seconds', 0) for day in days)
-                avg_hours = (total_seconds / 3600) / len(days) if days else 0
-                stats['avg_daily'] = f"{int(avg_hours)}h {int((avg_hours % 1) * 60)}m"
-            
-            # Save to file
-            with open('wakatime_stats.json', 'w') as f:
-                json.dump(stats, f, indent=2)
-            
-            return stats
+        with open('wakatime_stats.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            print(f"  Loaded WakaTime stats from cache")
+            print(f"    Today: {data.get('today_total', 'N/A')}")
+            print(f"    This Week: {data.get('this_week_total', 'N/A')}")
+            return data
     except Exception as e:
-        print(f"Error fetching WakaTime stats: {e}")
-    
-    return None
+        print(f"  Could not load wakatime_stats.json: {e}")
+        return {
+            'today_total': '0h 0m',
+            'yesterday_total': '0h 0m',
+            'this_week_total': '0h 0m',
+            'last_week_total': '0h 0m',
+            'week_change': '+0%',
+            'daily_hours': [0] * 7,
+            'daily_labels': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            'most_productive_day': 'N/A',
+            'most_productive_hours': 0,
+            'top_language': 'N/A',
+            'top_editor': 'VS Code',
+        }
 
 
 def fetch_profile_views():
@@ -272,27 +220,31 @@ def fetch_profile_views():
     try:
         with open('data/profile-views.json', 'r') as f:
             data = json.load(f)
-            return data.get('total_views', 0)
-    except:
+            views = data.get('total_views', 0)
+            print(f"  Profile views: {views}")
+            return views
+    except Exception as e:
+        print(f"  Could not load profile views: {e}")
         return 0
 
 
-def generate_stat_card(title, value, icon, theme='dark'):
-    """Generate a stat card SVG"""
+def generate_stat_card(title, value, theme='dark'):
+    """Generate a stat card SVG - clean layout without emojis"""
     c = COLORS[theme]
+    display_value = str(value)[:18] if len(str(value)) > 18 else str(value)
+    safe_title = title.replace(' ', '_').replace('/', '_').replace('(', '').replace(')', '')
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="200" height="85" viewBox="0 0 200 85">
   <defs>
-    <linearGradient id="grad_{theme}_{title.replace(' ', '_')}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:{c['accent_gradient'][0]};stop-opacity:0.2"/>
-      <stop offset="100%" style="stop-color:{c['accent_gradient'][2]};stop-opacity:0.2"/>
+    <linearGradient id="grad_{theme}_{safe_title}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:{c['accent_gradient'][0]};stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:{c['accent_gradient'][2]};stop-opacity:0.12"/>
     </linearGradient>
   </defs>
-  <rect width="200" height="100" rx="12" fill="{c['bg_secondary']}"/>
-  <rect x="2" y="2" width="196" height="96" rx="10" fill="url(#grad_{theme}_{title.replace(' ', '_')})" opacity="0.3"/>
-  <text x="20" y="35" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{c['text_secondary']}">{title}</text>
-  <text x="20" y="70" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="{c['text']}">{value}</text>
-  <text x="170" y="60" font-size="24">{icon}</text>
+  <rect width="200" height="85" rx="10" fill="{c['bg_secondary']}"/>
+  <rect x="1" y="1" width="198" height="83" rx="9" fill="url(#grad_{theme}_{safe_title})" opacity="0.6"/>
+  <text x="100" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="{c['text_secondary']}" text-anchor="middle" font-weight="500">{title}</text>
+  <text x="100" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="{c['text']}" text-anchor="middle">{display_value}</text>
 </svg>'''
     return svg
 
@@ -301,7 +253,7 @@ def generate_header_svg(theme='dark'):
     """Generate animated header SVG"""
     c = COLORS[theme]
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" viewBox="0 0 900 120">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewBox="0 0 900 100">
   <defs>
     <linearGradient id="headerGrad_{theme}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:{c['accent_gradient'][0]}">
@@ -315,11 +267,11 @@ def generate_header_svg(theme='dark'):
       </stop>
     </linearGradient>
   </defs>
-  <rect width="900" height="120" fill="{c['bg']}"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="bold" fill="url(#headerGrad_{theme})">
-    Hi there! I'm Arpan 👋
+  <rect width="900" height="100" fill="{c['bg']}"/>
+  <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="bold" fill="url(#headerGrad_{theme})">
+    Hi there! I'm Arpan
   </text>
-  <text x="50%" y="85" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="{c['text_secondary']}">
+  <text x="50%" y="78" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text_secondary']}">
     Full Stack Developer | Open Source Enthusiast | Tech Explorer
   </text>
 </svg>'''
@@ -330,7 +282,7 @@ def generate_footer_svg(theme='dark'):
     """Generate animated footer SVG"""
     c = COLORS[theme]
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="80" viewBox="0 0 900 80">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="60" viewBox="0 0 900 60">
   <defs>
     <linearGradient id="footerGrad_{theme}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:{c['accent_gradient'][0]}"/>
@@ -340,9 +292,9 @@ def generate_footer_svg(theme='dark'):
     </linearGradient>
   </defs>
   <rect width="900" height="2" fill="url(#footerGrad_{theme})"/>
-  <rect y="78" width="900" height="2" fill="url(#footerGrad_{theme})"/>
-  <text x="50%" y="45" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text_secondary']}">
-    Thanks for visiting! Drop a ⭐ if you like my work
+  <rect y="58" width="900" height="2" fill="url(#footerGrad_{theme})"/>
+  <text x="50%" y="35" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="{c['text_secondary']}">
+    Thanks for visiting! Drop a star if you like my work
   </text>
 </svg>'''
     return svg
@@ -353,34 +305,26 @@ def generate_social_badge(platform, theme='dark'):
     c = COLORS[theme]
     
     platforms = {
-        'linkedin': {'color': '#0A66C2', 'icon': '🔗', 'text': 'LinkedIn'},
-        'twitter': {'color': '#1DA1F2', 'icon': '🐦', 'text': 'Twitter'},
-        'youtube': {'color': '#FF0000', 'icon': '📺', 'text': 'YouTube'},
-        'email': {'color': '#EA4335', 'icon': '📧', 'text': 'Email'},
-        'portfolio': {'color': '#8B5CF6', 'icon': '🌐', 'text': 'Portfolio'}
+        'linkedin': {'color': '#0A66C2', 'text': 'LinkedIn'},
+        'twitter': {'color': '#1DA1F2', 'text': 'Twitter/X'},
+        'youtube': {'color': '#FF0000', 'text': 'YouTube'},
+        'email': {'color': '#EA4335', 'text': 'Email'},
+        'portfolio': {'color': '#8B5CF6', 'text': 'Portfolio'}
     }
     
-    p = platforms.get(platform, {'color': c['accent'], 'icon': '🔗', 'text': platform})
+    p = platforms.get(platform, {'color': c['accent'], 'text': platform})
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="140" height="45" viewBox="0 0 140 45">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="110" height="36" viewBox="0 0 110 36">
   <defs>
     <linearGradient id="socialGrad_{platform}_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:{p['color']};stop-opacity:0.8"/>
+      <stop offset="0%" style="stop-color:{p['color']};stop-opacity:0.9"/>
       <stop offset="100%" style="stop-color:{p['color']};stop-opacity:1"/>
     </linearGradient>
-    <filter id="glow_{platform}_{theme}">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <rect width="140" height="45" rx="22" fill="url(#socialGrad_{platform}_{theme})" filter="url(#glow_{platform}_{theme})">
-    <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+  <rect width="110" height="36" rx="18" fill="url(#socialGrad_{platform}_{theme})">
+    <animate attributeName="opacity" values="0.92;1;0.92" dur="2s" repeatCount="indefinite"/>
   </rect>
-  <text x="25" y="28" font-size="18">{p['icon']}</text>
-  <text x="50" y="29" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="white">{p['text']}</text>
+  <text x="55" y="23" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">{p['text']}</text>
 </svg>'''
     return svg
 
@@ -389,32 +333,31 @@ def generate_skills_scroll(theme='dark'):
     """Generate horizontally scrolling skills SVG"""
     c = COLORS[theme]
     
-    # Create skill badges
     skill_elements = []
     x = 0
     for skill, color in SKILLS:
         skill_elements.append(f'''
     <g transform="translate({x}, 0)">
-      <rect width="100" height="36" rx="18" fill="{color}" opacity="0.9"/>
-      <text x="50" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" 
+      <rect width="95" height="32" rx="16" fill="{color}" opacity="0.9"/>
+      <text x="47" y="21" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" 
             fill="white" text-anchor="middle">{skill}</text>
     </g>''')
-        x += 110
+        x += 105
     
     total_width = x
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="60" viewBox="0 0 900 60">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="50" viewBox="0 0 900 50">
   <defs>
     <clipPath id="skillsClip_{theme}">
-      <rect width="900" height="60"/>
+      <rect width="900" height="50"/>
     </clipPath>
   </defs>
-  <rect width="900" height="60" fill="{c['bg']}"/>
+  <rect width="900" height="50" fill="{c['bg']}"/>
   <g clip-path="url(#skillsClip_{theme})">
-    <g transform="translate(0, 12)">
+    <g transform="translate(0, 9)">
       <animateTransform attributeName="transform" type="translate" 
-                        from="0 12" to="-{total_width} 12" 
-                        dur="30s" repeatCount="indefinite"/>
+                        from="0 9" to="-{total_width} 9" 
+                        dur="25s" repeatCount="indefinite"/>
       {''.join(skill_elements)}
       <g transform="translate({total_width}, 0)">
         {''.join(skill_elements)}
@@ -435,21 +378,20 @@ def generate_weekly_chart(wakatime_stats, theme='dark'):
     hours = wakatime_stats.get('daily_hours', [0]*7)
     labels = wakatime_stats.get('daily_labels', ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])
     
-    # Ensure we have 7 values
     while len(hours) < 7:
         hours.append(0)
     while len(labels) < 7:
         labels.append('')
     
     max_hours = max(hours) if max(hours) > 0 else 1
-    bar_width = 80
-    spacing = 20
-    chart_height = 200
+    bar_width = 70
+    spacing = 25
+    chart_height = 180
     
     bars = []
     for i, (h, label) in enumerate(zip(hours[:7], labels[:7])):
-        bar_height = (h / max_hours) * 150 if max_hours > 0 else 0
-        x = i * (bar_width + spacing) + 60
+        bar_height = (h / max_hours) * 130 if max_hours > 0 else 0
+        x = i * (bar_width + spacing) + 80
         y = chart_height - bar_height
         
         gradient_id = f"barGrad_{i}_{theme}"
@@ -461,20 +403,20 @@ def generate_weekly_chart(wakatime_stats, theme='dark'):
         <stop offset="100%" style="stop-color:{c['accent_gradient'][(i+1) % 4]}"/>
       </linearGradient>
     </defs>
-    <rect x="{x}" y="{y}" width="{bar_width}" height="{bar_height}" rx="8" fill="url(#{gradient_id})">
+    <rect x="{x}" y="{y}" width="{bar_width}" height="{bar_height}" rx="6" fill="url(#{gradient_id})">
       <animate attributeName="height" from="0" to="{bar_height}" dur="0.5s" fill="freeze"/>
       <animate attributeName="y" from="{chart_height}" to="{y}" dur="0.5s" fill="freeze"/>
     </rect>
-    <text x="{x + bar_width/2}" y="{y - 10}" font-family="Segoe UI, Arial, sans-serif" font-size="12" 
+    <text x="{x + bar_width/2}" y="{y - 8}" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
           fill="{c['text']}" text-anchor="middle">{h:.1f}h</text>
-    <text x="{x + bar_width/2}" y="{chart_height + 25}" font-family="Segoe UI, Arial, sans-serif" font-size="12" 
+    <text x="{x + bar_width/2}" y="{chart_height + 20}" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
           fill="{c['text_secondary']}" text-anchor="middle">{label}</text>''')
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
-  <rect width="900" height="280" fill="{c['bg']}" rx="16"/>
-  <text x="450" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" 
-        fill="{c['text']}" text-anchor="middle">📊 Weekly Coding Activity</text>
-  <g transform="translate(100, 40)">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250">
+  <rect width="900" height="250" fill="{c['bg']}" rx="12"/>
+  <text x="450" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" 
+        fill="{c['text']}" text-anchor="middle">Weekly Coding Activity</text>
+  <g transform="translate(75, 35)">
     {''.join(bars)}
   </g>
 </svg>'''
@@ -485,53 +427,48 @@ def generate_github_stats_card(stats, theme='dark'):
     """Generate GitHub stats overview card"""
     c = COLORS[theme]
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160">
   <defs>
     <linearGradient id="statsCardGrad_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:{c['accent_gradient'][0]};stop-opacity:0.1"/>
-      <stop offset="100%" style="stop-color:{c['accent_gradient'][2]};stop-opacity:0.1"/>
+      <stop offset="0%" style="stop-color:{c['accent_gradient'][0]};stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:{c['accent_gradient'][2]};stop-opacity:0.08"/>
     </linearGradient>
   </defs>
-  <rect width="900" height="200" rx="16" fill="{c['bg_secondary']}"/>
-  <rect x="2" y="2" width="896" height="196" rx="14" fill="url(#statsCardGrad_{theme})"/>
+  <rect width="900" height="160" rx="12" fill="{c['bg_secondary']}"/>
+  <rect x="2" y="2" width="896" height="156" rx="10" fill="url(#statsCardGrad_{theme})"/>
   
-  <text x="450" y="35" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="bold" 
+  <text x="450" y="28" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" 
         fill="{c['text']}" text-anchor="middle">GitHub Statistics</text>
   
-  <g transform="translate(60, 70)">
-    <!-- Followers -->
+  <g transform="translate(45, 48)">
     <g>
-      <text x="0" y="0" font-size="24">👥</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text_secondary']}">Followers</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="{c['text']}">{stats.get('followers', 0)}</text>
+      <rect width="150" height="65" rx="8" fill="{c['bg']}" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text_secondary']}" text-anchor="middle">Followers</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="{c['text']}" text-anchor="middle">{stats.get('followers', 0)}</text>
     </g>
     
-    <!-- Repos -->
-    <g transform="translate(180, 0)">
-      <text x="0" y="0" font-size="24">📦</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text_secondary']}">Repositories</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="{c['text']}">{stats.get('public_repos', 0)}</text>
+    <g transform="translate(165, 0)">
+      <rect width="150" height="65" rx="8" fill="{c['bg']}" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text_secondary']}" text-anchor="middle">Repositories</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="{c['text']}" text-anchor="middle">{stats.get('public_repos', 0)}</text>
     </g>
     
-    <!-- Stars -->
-    <g transform="translate(360, 0)">
-      <text x="0" y="0" font-size="24">⭐</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text_secondary']}">Total Stars</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="{c['text']}">{stats.get('total_stars', 0)}</text>
+    <g transform="translate(330, 0)">
+      <rect width="150" height="65" rx="8" fill="{c['bg']}" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text_secondary']}" text-anchor="middle">Total Stars</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="{c['text']}" text-anchor="middle">{stats.get('total_stars', 0)}</text>
     </g>
     
-    <!-- Commits -->
-    <g transform="translate(540, 0)">
-      <text x="0" y="0" font-size="24">📝</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text_secondary']}">Commits</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="{c['text']}">{stats.get('total_commits', 0)}</text>
+    <g transform="translate(495, 0)">
+      <rect width="150" height="65" rx="8" fill="{c['bg']}" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text_secondary']}" text-anchor="middle">Commits (Year)</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="{c['text']}" text-anchor="middle">{stats.get('total_commits', 0)}</text>
     </g>
     
-    <!-- PRs -->
-    <g transform="translate(720, 0)">
-      <text x="0" y="0" font-size="24">🔀</text>
-      <text x="40" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text_secondary']}">Pull Requests</text>
-      <text x="40" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="{c['text']}">{stats.get('total_prs', 0)}</text>
+    <g transform="translate(660, 0)">
+      <rect width="150" height="65" rx="8" fill="{c['bg']}" opacity="0.5"/>
+      <text x="75" y="25" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text_secondary']}" text-anchor="middle">Contributions</text>
+      <text x="75" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="{c['accent']}" text-anchor="middle">{stats.get('total_contributions', 0)}</text>
     </g>
   </g>
 </svg>'''
@@ -543,19 +480,24 @@ def generate_contribution_heatmap(stats, theme='dark'):
     c = COLORS[theme]
     contributions = stats.get('contributions', [])
     
-    # Generate last 52 weeks of data
-    cell_size = 12
+    cell_size = 10
     cell_gap = 3
     weeks = 52
     days = 7
     
-    # Create contribution map
-    contrib_map = {c.get('date'): c.get('count', 0) for c in contributions}
+    contrib_map = {}
+    for contrib in contributions:
+        if contrib.get('date'):
+            contrib_map[contrib['date']] = contrib.get('count', 0)
     
-    # Generate cells
     cells = []
     today = datetime.now()
-    max_contrib = max([c.get('count', 0) for c in contributions]) if contributions else 1
+    
+    max_contrib = 1
+    if contributions:
+        counts = [c.get('count', 0) for c in contributions if c.get('count', 0) > 0]
+        if counts:
+            max_contrib = max(counts)
     
     for week in range(weeks):
         for day in range(days):
@@ -563,7 +505,6 @@ def generate_contribution_heatmap(stats, theme='dark'):
             date_str = date.strftime('%Y-%m-%d')
             count = contrib_map.get(date_str, 0)
             
-            # Determine color level
             if count == 0:
                 level = 0
             elif count <= max_contrib * 0.25:
@@ -575,26 +516,22 @@ def generate_contribution_heatmap(stats, theme='dark'):
             else:
                 level = 4
             
-            x = 50 + week * (cell_size + cell_gap)
-            y = 40 + day * (cell_size + cell_gap)
+            x = 45 + week * (cell_size + cell_gap)
+            y = 35 + day * (cell_size + cell_gap)
             color = c['heatmap'][level]
             
             cells.append(f'''
-    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="2" fill="{color}">
-      <title>{date_str}: {count} contributions</title>
-    </rect>''')
+    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="2" fill="{color}"/>''')
     
-    # Day labels
     day_labels = ['', 'Mon', '', 'Wed', '', 'Fri', '']
     day_label_elements = []
     for i, label in enumerate(day_labels):
         if label:
-            y = 40 + i * (cell_size + cell_gap) + cell_size/2 + 4
+            y = 35 + i * (cell_size + cell_gap) + cell_size/2 + 3
             day_label_elements.append(f'''
-    <text x="40" y="{y}" font-family="Segoe UI, Arial, sans-serif" font-size="10" 
+    <text x="38" y="{y}" font-family="Segoe UI, Arial, sans-serif" font-size="8" 
           fill="{c['text_secondary']}" text-anchor="end">{label}</text>''')
     
-    # Month labels
     month_labels = []
     current_month = None
     for week in range(weeks):
@@ -602,53 +539,58 @@ def generate_contribution_heatmap(stats, theme='dark'):
         month = date.strftime('%b')
         if month != current_month:
             current_month = month
-            x = 50 + week * (cell_size + cell_gap)
+            x = 45 + week * (cell_size + cell_gap)
             month_labels.append(f'''
-    <text x="{x}" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="10" 
+    <text x="{x}" y="26" font-family="Segoe UI, Arial, sans-serif" font-size="8" 
           fill="{c['text_secondary']}">{month}</text>''')
     
-    total_contributions = sum(c.get('count', 0) for c in contributions)
+    total_contributions = stats.get('total_contributions', sum(c.get('count', 0) for c in contributions))
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180">
-  <rect width="900" height="180" fill="{c['bg']}" rx="16"/>
-  <text x="450" y="20" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="{c['text']}" text-anchor="middle">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="155" viewBox="0 0 900 155">
+  <rect width="900" height="155" fill="{c['bg']}" rx="12"/>
+  <text x="450" y="16" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{c['text']}" text-anchor="middle">
     {total_contributions} contributions in the last year
   </text>
   {''.join(month_labels)}
   {''.join(day_label_elements)}
   {''.join(cells)}
   
-  <!-- Legend -->
-  <g transform="translate(750, 155)">
-    <text x="-10" y="10" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text_secondary']}">Less</text>
-    <rect x="25" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][0]}"/>
-    <rect x="{25 + cell_size + 4}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][1]}"/>
-    <rect x="{25 + (cell_size + 4) * 2}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][2]}"/>
-    <rect x="{25 + (cell_size + 4) * 3}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][3]}"/>
-    <rect x="{25 + (cell_size + 4) * 4}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][4]}"/>
-    <text x="{25 + (cell_size + 4) * 5 + 5}" y="10" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text_secondary']}">More</text>
+  <g transform="translate(730, 133)">
+    <text x="-8" y="8" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="{c['text_secondary']}">Less</text>
+    <rect x="20" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][0]}"/>
+    <rect x="{20 + cell_size + 2}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][1]}"/>
+    <rect x="{20 + (cell_size + 2) * 2}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][2]}"/>
+    <rect x="{20 + (cell_size + 2) * 3}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][3]}"/>
+    <rect x="{20 + (cell_size + 2) * 4}" y="0" width="{cell_size}" height="{cell_size}" rx="2" fill="{c['heatmap'][4]}"/>
+    <text x="{20 + (cell_size + 2) * 5 + 4}" y="8" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="{c['text_secondary']}">More</text>
   </g>
 </svg>'''
     return svg
 
 
-def generate_project_card(name, emoji, description, theme='dark'):
-    """Generate project card SVG"""
+def generate_project_card_full(name, emoji, description, tech_stack, features, theme='dark'):
+    """Generate full-width project card SVG"""
     c = COLORS[theme]
+    feature_text = ' | '.join(features[:4])
+    safe_name = name.replace(' ', '').replace('-', '')
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="420" height="80" viewBox="0 0 420 80">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="90" viewBox="0 0 900 90">
   <defs>
-    <linearGradient id="projGrad_{name}_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:{c['accent_gradient'][0]};stop-opacity:0.2"/>
-      <stop offset="100%" style="stop-color:{c['accent_gradient'][2]};stop-opacity:0.2"/>
+    <linearGradient id="projGrad_{safe_name}_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:{c['accent_gradient'][0]};stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:{c['accent_gradient'][2]};stop-opacity:0.12"/>
     </linearGradient>
   </defs>
-  <rect width="420" height="80" rx="12" fill="{c['bg_secondary']}" stroke="{c['border']}" stroke-width="1"/>
-  <rect x="2" y="2" width="416" height="76" rx="10" fill="url(#projGrad_{name}_{theme})" opacity="0.5"/>
-  <text x="20" y="35" font-size="24">{emoji}</text>
-  <text x="55" y="35" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="{c['text']}">{name}</text>
-  <text x="55" y="55" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{c['text_secondary']}">{description[:45]}...</text>
-  <text x="390" y="45" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{c['accent']}">→</text>
+  <rect width="900" height="90" rx="10" fill="{c['bg_secondary']}" stroke="{c['border']}" stroke-width="1"/>
+  <rect x="2" y="2" width="896" height="86" rx="8" fill="url(#projGrad_{safe_name}_{theme})" opacity="0.6"/>
+  
+  <text x="22" y="38" font-size="26">{emoji}</text>
+  <text x="58" y="32" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="{c['text']}">{name}</text>
+  <text x="58" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="{c['text_secondary']}">{description}</text>
+  <text x="58" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['accent']}">{tech_stack}</text>
+  
+  <text x="865" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="{c['text_secondary']}" text-anchor="end">{feature_text}</text>
+  <text x="865" y="32" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="{c['accent']}" text-anchor="end">Click to expand</text>
 </svg>'''
     return svg
 
@@ -657,11 +599,11 @@ def generate_badge_svg(label, value, color, theme='dark'):
     """Generate a profile badge SVG"""
     c = COLORS[theme]
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="150" height="28" viewBox="0 0 150 28">
-  <rect width="70" height="28" rx="4" fill="{c['bg_secondary']}"/>
-  <rect x="70" width="80" height="28" rx="4" fill="{color}"/>
-  <text x="35" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="{c['text']}" text-anchor="middle">{label}</text>
-  <text x="110" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="bold">{value}</text>
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="140" height="26" viewBox="0 0 140 26">
+  <rect width="65" height="26" rx="4" fill="{c['bg_secondary']}"/>
+  <rect x="65" width="75" height="26" rx="4" fill="{color}"/>
+  <text x="32" y="17" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="{c['text']}" text-anchor="middle">{label}</text>
+  <text x="102" y="17" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">{value}</text>
 </svg>'''
     return svg
 
@@ -673,43 +615,39 @@ def save_svg(filepath, content):
 
 
 def main():
-    print("Starting profile assets generation...")
+    print("=" * 50)
+    print("Profile Assets Generator")
+    print("=" * 50)
     
-    # Fetch all data
-    print("Fetching GitHub stats...")
+    print("\n[1/3] Fetching GitHub stats...")
     github_stats = fetch_github_stats()
     
-    print("Fetching WakaTime stats...")
+    print("\n[2/3] Fetching WakaTime stats...")
     wakatime_stats = fetch_wakatime_stats()
     
-    print("Fetching profile views...")
+    print("\n[3/3] Fetching profile views...")
     profile_views = fetch_profile_views()
     
-    # Generate assets for both themes
+    # Calculate average daily coding time
+    daily_hours = wakatime_stats.get('daily_hours', [0]*7)
+    avg_daily_hours = sum(daily_hours) / len(daily_hours) if daily_hours else 0
+    avg_daily_str = f"{int(avg_daily_hours)}h {int((avg_daily_hours % 1) * 60)}m"
+    active_days = sum(1 for h in daily_hours if h > 0)
+    
     for theme in ['dark', 'light']:
-        print(f"\nGenerating {theme} theme assets...")
+        print(f"\n[Generating {theme} theme assets]")
         
-        # Header & Footer
         save_svg(ASSETS_DIR / f'header-{theme}.svg', generate_header_svg(theme))
         save_svg(ASSETS_DIR / f'footer-{theme}.svg', generate_footer_svg(theme))
         
-        # Social badges
         for platform in ['linkedin', 'twitter', 'youtube', 'email', 'portfolio']:
             save_svg(ASSETS_DIR / f'social-{platform}-{theme}.svg', generate_social_badge(platform, theme))
         
-        # Skills scroll
         save_svg(ASSETS_DIR / f'skills-scroll-{theme}.svg', generate_skills_scroll(theme))
-        
-        # Weekly activity chart
         save_svg(ASSETS_DIR / f'weekly-activity-{theme}.svg', generate_weekly_chart(wakatime_stats, theme))
-        
-        # GitHub stats card
         save_svg(ASSETS_DIR / f'github-stats-{theme}.svg', generate_github_stats_card(github_stats, theme))
-        
-        # Contribution heatmap
         save_svg(ASSETS_DIR / f'contribution-heatmap-{theme}.svg', generate_contribution_heatmap(github_stats, theme))
         
-        # Profile badges
         save_svg(ASSETS_DIR / f'github-followers.svg', generate_badge_svg('Followers', str(github_stats.get('followers', 0)), '#58a6ff', 'dark'))
         save_svg(ASSETS_DIR / f'github-followers-light.svg', generate_badge_svg('Followers', str(github_stats.get('followers', 0)), '#0969da', 'light'))
         save_svg(ASSETS_DIR / f'github-stars.svg', generate_badge_svg('Stars', str(github_stats.get('total_stars', 0)), '#f0883e', 'dark'))
@@ -717,43 +655,40 @@ def main():
         save_svg(ASSETS_DIR / f'profile-views.svg', generate_badge_svg('Views', str(profile_views), '#a371f7', 'dark'))
         save_svg(ASSETS_DIR / f'profile-views-light.svg', generate_badge_svg('Views', str(profile_views), '#8250df', 'light'))
         
-        # Stat cards for coding dashboard
-        if wakatime_stats:
-            stat_configs = [
-                ('today', 'Today', wakatime_stats.get('today_total', '0h'), '⏰'),
-                ('yesterday', 'Yesterday', wakatime_stats.get('yesterday_total', '0h'), '📆'),
-                ('thisweek', 'This Week', wakatime_stats.get('this_week_total', '0h'), '📊'),
-                ('lastweek', 'Last Week', wakatime_stats.get('last_week_total', '0h'), '📈'),
-                ('productive', 'Most Productive', wakatime_stats.get('most_productive_day', 'N/A'), '🔥'),
-                ('toplang', 'Top Language', wakatime_stats.get('top_language', 'N/A'), '💻'),
-                ('editor', 'Editor', wakatime_stats.get('top_editor', 'VS Code'), '🛠️'),
-                ('avgdaily', 'Daily Average', wakatime_stats.get('avg_daily', '0h'), '⌛'),
-                ('activedays', 'Active Days', f"{wakatime_stats.get('active_days', 0)}/7", '📌'),
-                ('weekchange', 'Week Change', wakatime_stats.get('week_change', '0%'), '📉'),
-            ]
-            
-            for stat_id, title, value, icon in stat_configs:
-                save_svg(ASSETS_DIR / f'stat-{stat_id}-{theme}.svg', generate_stat_card(title, value, icon, theme))
-        
-        # GitHub stats for dashboard
-        save_svg(ASSETS_DIR / f'stat-commits-{theme}.svg', generate_stat_card('Total Commits', str(github_stats.get('total_commits', 0)), '📝', theme))
-        save_svg(ASSETS_DIR / f'stat-prs-{theme}.svg', generate_stat_card('Pull Requests', str(github_stats.get('total_prs', 0)), '🔀', theme))
-        
-        # Project cards
-        projects = [
-            ('atmark', '📝', 'AtMark', 'Modern note-taking application'),
-            ('tripbudget', '✈️', 'TripBudget', 'Travel expense tracking'),
-            ('fitness', '💪', 'Fitness Dashboard', 'Track your fitness journey'),
-            ('floatchat', '💬', 'Float Chat', 'Real-time messaging app'),
-            ('mobapp', '📱', 'MOB-APP', 'Cross-platform mobile app'),
-            ('medix', '🏥', 'Medix Manager', 'Healthcare management'),
+        stat_configs = [
+            ('today', 'Today', wakatime_stats.get('today_total', '0h 0m')),
+            ('yesterday', 'Yesterday', wakatime_stats.get('yesterday_total', '0h 0m')),
+            ('thisweek', 'This Week', wakatime_stats.get('this_week_total', '0h 0m')),
+            ('lastweek', 'Last Week', wakatime_stats.get('last_week_total', '0h 0m')),
+            ('productive', 'Most Productive', wakatime_stats.get('most_productive_day', 'N/A')),
+            ('toplang', 'Top Language', wakatime_stats.get('top_language', 'N/A')),
+            ('editor', 'Editor', wakatime_stats.get('top_editor', 'VS Code')),
+            ('avgdaily', 'Daily Average', avg_daily_str),
+            ('activedays', 'Active Days', f"{active_days}/7"),
+            ('weekchange', 'Week Change', wakatime_stats.get('week_change', '+0%')),
+            ('commits', 'Commits (Year)', str(github_stats.get('total_commits', 0))),
+            ('prs', 'Pull Requests', str(github_stats.get('total_prs', 0))),
         ]
         
-        for proj_id, emoji, name, desc in projects:
-            save_svg(ASSETS_DIR / f'project-{proj_id}-{theme}.svg', generate_project_card(name, emoji, desc, theme))
+        for stat_id, title, value in stat_configs:
+            save_svg(ASSETS_DIR / f'stat-{stat_id}-{theme}.svg', generate_stat_card(title, value, theme))
+        
+        projects = [
+            ('atmark', '📝', 'AtMark', 'A modern note-taking application', 'React, Node.js, MongoDB', ['Rich Text', 'Tags', 'Search', 'Cloud Sync']),
+            ('tripbudget', '✈️', 'TripBudget', 'Travel expense tracking made easy', 'React Native, Firebase', ['Expenses', 'Analytics', 'Multi-currency', 'Groups']),
+            ('fitness', '💪', 'Fitness Dashboard', 'Track your fitness journey', 'Next.js, TailwindCSS', ['Progress', 'Workouts', 'Nutrition', 'Responsive']),
+            ('floatchat', '💬', 'Float Chat', 'Real-time messaging application', 'Socket.io, Express, React', ['Real-time', 'Themes', 'Files', 'Encrypted']),
+            ('mobapp', '📱', 'MOB-APP', 'Cross-platform mobile application', 'React Native, Expo', ['Cross-platform', 'Push Notifs', 'Location', 'Offline']),
+            ('medix', '🏥', 'Medix Manager', 'Healthcare management system', 'Django, PostgreSQL', ['Records', 'Scheduling', 'Prescriptions', 'Analytics']),
+        ]
+        
+        for proj_id, emoji, name, desc, tech, features in projects:
+            save_svg(ASSETS_DIR / f'project-{proj_id}-{theme}.svg', generate_project_card_full(name, emoji, desc, tech, features, theme))
     
-    print("\nAll assets generated successfully!")
+    print("\n" + "=" * 50)
+    print("All assets generated successfully!")
     print(f"Assets saved to: {ASSETS_DIR.absolute()}")
+    print("=" * 50)
 
 
 if __name__ == '__main__':
