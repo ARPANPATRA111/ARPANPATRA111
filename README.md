@@ -29,24 +29,16 @@
 
 <br/>
 
-<!-- Profile Stats Badges -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-followers.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-followers-light.svg" />
-  <img alt="GitHub followers" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-followers.svg" />
-</picture>
+<!-- Profile Stats Badges - Using shields.io for real-time data -->
+<a href="https://github.com/ARPANPATRA111?tab=followers">
+  <img alt="GitHub followers" src="https://img.shields.io/github/followers/ARPANPATRA111?style=for-the-badge&logo=github&labelColor=161b22&color=58a6ff" />
+</a>
 &nbsp;
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-stars.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-stars-light.svg" />
-  <img alt="GitHub Stars" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-stars.svg" />
-</picture>
+<a href="https://github.com/ARPANPATRA111?tab=repositories">
+  <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ARPANPATRA111?style=for-the-badge&logo=github&labelColor=161b22&color=feca57" />
+</a>
 &nbsp;
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/profile-views.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/profile-views-light.svg" />
-  <img alt="Profile views" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/profile-views.svg" />
-</picture>
+<img alt="Profile views" src="https://komarev.com/ghpvc/?username=ARPANPATRA111&style=for-the-badge&color=48dbfb&labelColor=161b22" />
 
 </div>
 
@@ -143,109 +135,73 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 
 ## 📊 Coding Stats Dashboard
 
-<!-- Combined Quick Stats & Coding Time - 3x4 Grid -->
+<!-- Combined Quick Stats & Coding Time - 3x4 Grid with Gradient Background -->
 <div align="center">
 
 <table>
 <tr>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-today-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-today-light.svg" />
-  <img alt="Today" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-today-dark.svg" width="100%" />
-</picture>
+
+![Today](https://img.shields.io/badge/Today-5_hrs_3_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)
 <!--START_TODAY_STAT--><!--END_TODAY_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-yesterday-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-yesterday-light.svg" />
-  <img alt="Yesterday" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-yesterday-dark.svg" width="100%" />
-</picture>
+
+![Yesterday](https://img.shields.io/badge/Yesterday-4_hrs_15_mins-feca57?style=for-the-badge&labelColor=1a1a2e)
 <!--START_YESTERDAY_STAT--><!--END_YESTERDAY_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-thisweek-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-thisweek-light.svg" />
-  <img alt="This Week" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-thisweek-dark.svg" width="100%" />
-</picture>
+
+![This Week](https://img.shields.io/badge/This_Week-40_hrs_22_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)
 <!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-lastweek-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-lastweek-light.svg" />
-  <img alt="Last Week" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-lastweek-dark.svg" width="100%" />
-</picture>
+
+![Last Week](https://img.shields.io/badge/Last_Week-0_hrs_0_mins-ff9ff3?style=for-the-badge&labelColor=1a1a2e)
 <!--START_LASTWEEK_STAT--><!--END_LASTWEEK_STAT-->
 </td>
 </tr>
 <tr>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-productive-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-productive-light.svg" />
-  <img alt="Most Productive" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-productive-dark.svg" width="100%" />
-</picture>
+
+![Most Productive](https://img.shields.io/badge/🏆_Most_Productive-Sunday_(6.9h)-4CAF50?style=for-the-badge&labelColor=1a1a2e)
 <!--START_PRODUCTIVE_STAT--><!--END_PRODUCTIVE_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-toplang-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-toplang-light.svg" />
-  <img alt="Top Language" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-toplang-dark.svg" width="100%" />
-</picture>
+
+![Top Language](https://img.shields.io/badge/💻_Top_Language-Java-2196F3?style=for-the-badge&labelColor=1a1a2e)
 <!--START_TOPLANG_STAT--><!--END_TOPLANG_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-editor-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-editor-light.svg" />
-  <img alt="Editor" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-editor-dark.svg" width="100%" />
-</picture>
+
+![Editor](https://img.shields.io/badge/🛠️_Editor-VS_Code-FF9800?style=for-the-badge&labelColor=1a1a2e)
 <!--START_EDITOR_STAT--><!--END_EDITOR_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-avgdaily-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-avgdaily-light.svg" />
-  <img alt="Avg Daily" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-avgdaily-dark.svg" width="100%" />
-</picture>
+
+![Avg Daily](https://img.shields.io/badge/⚡_Avg_Daily-5.8_hrs-9C27B0?style=for-the-badge&labelColor=1a1a2e)
 <!--START_AVGDAILY_STAT--><!--END_AVGDAILY_STAT-->
 </td>
 </tr>
 <tr>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-activedays-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-activedays-light.svg" />
-  <img alt="Active Days" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-activedays-dark.svg" width="100%" />
-</picture>
+
+![Active Days](https://img.shields.io/badge/📅_Active_Days-7/7_days-00BCD4?style=for-the-badge&labelColor=1a1a2e)
 <!--START_ACTIVEDAYS_STAT--><!--END_ACTIVEDAYS_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-weekchange-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-weekchange-light.svg" />
-  <img alt="Week Change" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-weekchange-dark.svg" width="100%" />
-</picture>
-<!--START_WEEKCHANGE_STAT--><!--END_WEEKCHANGE_STAT-->
+
+![Issues Resolved](https://img.shields.io/github/issues-closed/ARPANPATRA111/ARPANPATRA111?style=for-the-badge&labelColor=1a1a2e&color=2ecc71&label=🐛%20Issues%20Resolved)
+<!--START_ISSUES_STAT--><!--END_ISSUES_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-commits-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-commits-light.svg" />
-  <img alt="Total Commits" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-commits-dark.svg" width="100%" />
-</picture>
+
+![Commits](https://img.shields.io/github/commit-activity/y/ARPANPATRA111/ARPANPATRA111?style=for-the-badge&labelColor=1a1a2e&color=e74c3c&label=🔥%20Commits%20(Year))
 <!--START_COMMITS_STAT--><!--END_COMMITS_STAT-->
 </td>
 <td align="center" width="25%">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-prs-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-prs-light.svg" />
-  <img alt="Pull Requests" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/stat-prs-dark.svg" width="100%" />
-</picture>
+
+![Pull Requests](https://img.shields.io/github/issues-pr-closed/ARPANPATRA111/ARPANPATRA111?style=for-the-badge&labelColor=1a1a2e&color=9b59b6&label=🔀%20PRs%20Merged)
 <!--START_PRS_STAT--><!--END_PRS_STAT-->
 </td>
 </tr>
@@ -261,9 +217,9 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 
 <!--START_WEEKLY_CHART-->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/weekly-activity-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/weekly-activity-light.svg" />
-  <img alt="Weekly Activity" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/weekly-activity-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/weekly-activity-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/weekly-activity-light.svg" />
+  <img alt="Weekly Activity" src="./assets/weekly-activity-dark.svg" width="100%" />
 </picture>
 <!--END_WEEKLY_CHART-->
 
@@ -275,13 +231,28 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 
 ## 💻 Tech Stack
 
-<!-- Animated Scrolling Skills -->
+<!-- Animated 3-Line Scrolling Skills with Logos -->
 <div align="center">
 
+<!-- Line 1: Moving Left - Frontend Technologies -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/skills-scroll-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/skills-scroll-light.svg" />
-  <img alt="Skills" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/skills-scroll-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-stack-line1-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/tech-stack-line1-light.svg" />
+  <img alt="Tech Stack Line 1" src="./assets/tech-stack-line1-dark.svg" width="100%" />
+</picture>
+
+<!-- Line 2: Moving Right - Backend & Database Technologies -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-stack-line2-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/tech-stack-line2-light.svg" />
+  <img alt="Tech Stack Line 2" src="./assets/tech-stack-line2-dark.svg" width="100%" />
+</picture>
+
+<!-- Line 3: Moving Left - Tools & Cloud Technologies -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-stack-line3-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/tech-stack-line3-light.svg" />
+  <img alt="Tech Stack Line 3" src="./assets/tech-stack-line3-dark.svg" width="100%" />
 </picture>
 
 </div>
@@ -294,24 +265,19 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 
 <!-- Self-Generated GitHub Stats -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-stats-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-stats-light.svg" />
-  <img alt="GitHub Stats" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/github-stats-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/github-stats-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/github-stats-light.svg" />
+  <img alt="GitHub Stats" src="./assets/github-stats-dark.svg" width="100%" />
 </picture>
 
-</div>
+<br/><br/>
 
----
+### 🏆 GitHub Trophies
 
-## 🔥 Contribution Heatmap
-
-<div align="center">
-
-<!-- Self-Generated Contribution Calendar -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/contribution-heatmap-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/contribution-heatmap-light.svg" />
-  <img alt="Contribution Heatmap" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/contribution-heatmap-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/github-trophies-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/github-trophies-light.svg" />
+  <img alt="GitHub Trophies" src="./assets/github-trophies-dark.svg" width="100%" />
 </picture>
 
 </div>
@@ -322,161 +288,69 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 
 <div align="center">
 
-<!-- Project Cards - Full Width, Stacked Vertically -->
-
-<details>
-<summary>
+<!-- Project Card 1: AtMark -->
+<a href="https://github.com/ARPANPATRA111/AtMark">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-atmark-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-atmark-light.svg" />
-  <img alt="AtMark" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-atmark-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-atmark-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-atmark-light.svg" />
+  <img alt="AtMark Project" src="./assets/project-card-atmark-dark.svg" width="100%" />
 </picture>
-</summary>
-
-### 📝 AtMark
-**A modern note-taking application**
-
-🔗 [View Repository](https://github.com/ARPANPATRA111/AtMark)
-
-**Tech Stack:** React, Node.js, MongoDB
-
-**Features:**
-- 📄 Rich text editing
-- 🏷️ Tag-based organization
-- 🔍 Full-text search
-- ☁️ Cloud sync
-
-</details>
+</a>
 
 <br/>
 
-<details>
-<summary>
+<!-- Project Card 2: TripBudget -->
+<a href="https://github.com/ARPANPATRA111/TripBudget">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-tripbudget-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-tripbudget-light.svg" />
-  <img alt="TripBudget" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-tripbudget-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-tripbudget-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-tripbudget-light.svg" />
+  <img alt="TripBudget Project" src="./assets/project-card-tripbudget-dark.svg" width="100%" />
 </picture>
-</summary>
-
-### ✈️ TripBudget
-**Travel expense tracking made easy**
-
-🔗 [View Repository](https://github.com/ARPANPATRA111/TripBudget)
-
-**Tech Stack:** React Native, Firebase
-
-**Features:**
-- 💰 Expense tracking
-- 📊 Budget analytics
-- 🌍 Multi-currency support
-- 👥 Group splitting
-
-</details>
+</a>
 
 <br/>
 
-<details>
-<summary>
+<!-- Project Card 3: Fitness Dashboard -->
+<a href="https://github.com/ARPANPATRA111/Fitness-Dashboard">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-fitness-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-fitness-light.svg" />
-  <img alt="Fitness Dashboard" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-fitness-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-fitness-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-fitness-light.svg" />
+  <img alt="Fitness Dashboard Project" src="./assets/project-card-fitness-dark.svg" width="100%" />
 </picture>
-</summary>
-
-### 💪 Fitness Dashboard
-**Track your fitness journey**
-
-🔗 [View Repository](https://github.com/ARPANPATRA111/Fitness-Dashboard)
-
-**Tech Stack:** Next.js, TailwindCSS
-
-**Features:**
-- 📈 Progress tracking
-- 🏋️ Workout plans
-- 🍎 Nutrition logging
-- 📱 Responsive design
-
-</details>
+</a>
 
 <br/>
 
-<details>
-<summary>
+<!-- Project Card 4: Float Chat -->
+<a href="https://github.com/ARPANPATRA111/Float-Chat">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-floatchat-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-floatchat-light.svg" />
-  <img alt="Float Chat" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-floatchat-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-floatchat-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-floatchat-light.svg" />
+  <img alt="Float Chat Project" src="./assets/project-card-floatchat-dark.svg" width="100%" />
 </picture>
-</summary>
-
-### 💬 Float Chat
-**Real-time messaging application**
-
-🔗 [View Repository](https://github.com/ARPANPATRA111/Float-Chat)
-
-**Tech Stack:** Socket.io, Express, React
-
-**Features:**
-- 💬 Real-time messaging
-- 🎨 Custom themes
-- 📁 File sharing
-- 🔒 End-to-end encryption
-
-</details>
+</a>
 
 <br/>
 
-<details>
-<summary>
+<!-- Project Card 5: MOB-APP -->
+<a href="https://github.com/ARPANPATRA111/MOB-APP">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-mobapp-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-mobapp-light.svg" />
-  <img alt="MOB-APP" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-mobapp-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-mobapp-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-mobapp-light.svg" />
+  <img alt="MOB-APP Project" src="./assets/project-card-mobapp-dark.svg" width="100%" />
 </picture>
-</summary>
-
-### 📱 MOB-APP
-**Cross-platform mobile application**
-
-🔗 [View Repository](https://github.com/ARPANPATRA111/MOB-APP)
-
-**Tech Stack:** React Native, Expo
-
-**Features:**
-- 📱 Cross-platform
-- 🔔 Push notifications
-- 📍 Location services
-- 🎯 Offline support
-
-</details>
+</a>
 
 <br/>
 
-<details>
-<summary>
+<!-- Project Card 6: Medix Manager -->
+<a href="https://github.com/ARPANPATRA111/Medix-manager">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-medix-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-medix-light.svg" />
-  <img alt="Medix Manager" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/project-medix-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-medix-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-medix-light.svg" />
+  <img alt="Medix Manager Project" src="./assets/project-card-medix-dark.svg" width="100%" />
 </picture>
-</summary>
-
-### 🏥 Medix Manager
-**Healthcare management system**
-
-🔗 [View Repository](https://github.com/ARPANPATRA111/Medix-manager)
-
-**Tech Stack:** Django, PostgreSQL
-
-**Features:**
-- 📋 Patient records
-- 📅 Appointment scheduling
-- 💊 Prescription management
-- 📊 Analytics dashboard
-
-</details>
+</a>
 
 </div>
 
