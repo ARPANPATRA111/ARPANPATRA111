@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2025-12-31T12:22:47.329506+00:00",
+  "generated_at_utc": "2025-12-31T16:15:02.042689+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2025-12-31",
-  "total_coding_time": "36 mins",
-  "today_total": "0 hrs 36 mins",
+  "total_coding_time": "1 hr 56 mins",
+  "today_total": "1 hrs 56 mins",
   "yesterday_total": "6 hrs 15 mins",
-  "this_week_total": "36 hrs 5 mins",
+  "this_week_total": "37 hrs 25 mins",
   "last_week_total": "0 hrs 0 mins",
   "week_change": "\ud83c\udd95 New",
   "daily_hours": [
@@ -16,7 +16,7 @@
     6.87,
     4.27,
     6.25,
-    0.61
+    1.94
   ],
   "daily_labels": [
     "Thu",
@@ -3892,15 +3892,15 @@
     },
     {
       "grand_total": {
-        "hours": 0,
-        "minutes": 36,
-        "total_seconds": 2186.168,
-        "digital": "0:36",
-        "decimal": "0.60",
-        "text": "36 mins",
+        "hours": 1,
+        "minutes": 56,
+        "total_seconds": 6986.678,
+        "digital": "1:56",
+        "decimal": "1.93",
+        "text": "1 hr 56 mins",
         "ai_additions": 0,
         "ai_deletions": 0,
-        "human_additions": 0,
+        "human_additions": 4560,
         "human_deletions": 126
       },
       "range": {
@@ -3913,22 +3913,33 @@
       "projects": [
         {
           "name": "ARPANPATRA111",
-          "total_seconds": 2186.168,
+          "total_seconds": 6986.678,
           "ai_additions": 0,
           "ai_deletions": 0,
-          "human_additions": 0,
+          "human_additions": 4560,
           "human_deletions": 126,
           "color": null,
-          "digital": "0:36:26",
-          "decimal": "0.60",
-          "text": "36 mins",
-          "hours": 0,
-          "minutes": 36,
+          "digital": "1:56:26",
+          "decimal": "1.93",
+          "text": "1 hr 56 mins",
+          "hours": 1,
+          "minutes": 56,
           "seconds": 26,
           "percent": 100.0
         }
       ],
       "languages": [
+        {
+          "name": "Java",
+          "total_seconds": 4767.153,
+          "digital": "1:19:27",
+          "decimal": "1.32",
+          "text": "1 hr 19 mins",
+          "hours": 1,
+          "minutes": 19,
+          "seconds": 27,
+          "percent": 68.23
+        },
         {
           "name": "Markdown",
           "total_seconds": 2148.804,
@@ -3938,7 +3949,7 @@
           "hours": 0,
           "minutes": 35,
           "seconds": 48,
-          "percent": 98.29
+          "percent": 30.76
         },
         {
           "name": "YAML",
@@ -3949,20 +3960,31 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 37,
-          "percent": 1.71
+          "percent": 0.53
+        },
+        {
+          "name": "PowerShell",
+          "total_seconds": 33.357,
+          "digital": "0:00:33",
+          "decimal": "0.00",
+          "text": "33 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 33,
+          "percent": 0.48
         }
       ],
       "dependencies": [],
       "machines": [
         {
           "name": "Arpans-PC",
-          "total_seconds": 2186.168,
+          "total_seconds": 6986.678,
           "machine_name_id": "2574818f-29a4-4d09-ad84-fc59f899bc4d",
-          "digital": "0:36:26",
-          "decimal": "0.60",
-          "text": "36 mins",
-          "hours": 0,
-          "minutes": 36,
+          "digital": "1:56:26",
+          "decimal": "1.93",
+          "text": "1 hr 56 mins",
+          "hours": 1,
+          "minutes": 56,
           "seconds": 26,
           "percent": 100.0
         }
@@ -3970,12 +3992,12 @@
       "editors": [
         {
           "name": "VS Code",
-          "total_seconds": 2186.168,
-          "digital": "0:36:26",
-          "decimal": "0.60",
-          "text": "36 mins",
-          "hours": 0,
-          "minutes": 36,
+          "total_seconds": 6986.678,
+          "digital": "1:56:26",
+          "decimal": "1.93",
+          "text": "1 hr 56 mins",
+          "hours": 1,
+          "minutes": 56,
           "seconds": 26,
           "percent": 100.0
         }
@@ -3983,17 +4005,28 @@
       "operating_systems": [
         {
           "name": "Windows",
-          "total_seconds": 2186.168,
-          "digital": "0:36:26",
-          "decimal": "0.60",
-          "text": "36 mins",
-          "hours": 0,
-          "minutes": 36,
+          "total_seconds": 6986.678,
+          "digital": "1:56:26",
+          "decimal": "1.93",
+          "text": "1 hr 56 mins",
+          "hours": 1,
+          "minutes": 56,
           "seconds": 26,
           "percent": 100.0
         }
       ],
       "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 4837.874,
+          "digital": "1:20:37",
+          "decimal": "1.33",
+          "text": "1 hr 20 mins",
+          "hours": 1,
+          "minutes": 20,
+          "seconds": 37,
+          "percent": 69.24
+        },
         {
           "name": "Writing Docs",
           "total_seconds": 2148.804,
@@ -4003,18 +4036,7 @@
           "hours": 0,
           "minutes": 35,
           "seconds": 48,
-          "percent": 98.29
-        },
-        {
-          "name": "Coding",
-          "total_seconds": 37.364,
-          "digital": "0:00:37",
-          "decimal": "0.00",
-          "text": "37 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 37,
-          "percent": 1.71
+          "percent": 30.76
         }
       ]
     }
