@@ -65,40 +65,87 @@ currently_learning:
 fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 ```
 
-## 📊 Quick Stats
-<p>
-  <img src="https://img.shields.io/badge/🏆_Most_Productive-Sunday_(6.9h)-4CAF50?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->
-  <img src="https://img.shields.io/badge/💻_Top_Language-Java-2196F3?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->
-  <img src="https://img.shields.io/badge/🛠️_Editor-VS_Code-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->
-  <img src="https://img.shields.io/badge/⚡_Avg_Daily-5.3_hrs-9C27B0?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
-  <img src="https://img.shields.io/badge/📅_Active_Days-7/7_days-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->
-</p>
+</td>
+<td width="45%" valign="middle" align="center">
+<img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" style="width:100%;height:auto;max-width:100%;" alt="Coding"/>
+</td>
+</tr>
+</table>
 
-## 🕒 Coding Time
-<p>
-  <img src="https://img.shields.io/badge/TODAY-4_hrs_18_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
-  <img src="https://img.shields.io/badge/YESTERDAY-4_hrs_4_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
-  <img src="https://img.shields.io/badge/THIS_WEEK-37_hrs_6_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
-  <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
-  <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
-</p>
 
 ## 📊 Coding Stats Dashboard
 
 <!-- Combined Quick Stats & Coding Time - 3x4 Grid with Gradient Background -->
 <div align="center">
 
-<!--START_DAILY_CHART-->
-| Day | Activity | Hours |
-|-----|----------|-------|
-| Fri | ![](https://progress-bar.xyz/93/?width=250&color=2ecc71&suffix=%20) | 5.2 hrs |
-| Sat | ![](https://progress-bar.xyz/97/?width=250&color=2ecc71&suffix=%20) | 6.2 hrs |
-| Sun | ![](https://progress-bar.xyz/100/?width=250&color=2ecc71&suffix=%20) ⭐ | 6.9 hrs |
-| Mon | ![](https://progress-bar.xyz/89/?width=250&color=2ecc71&suffix=%20) | 4.3 hrs |
-| Tue | ![](https://progress-bar.xyz/97/?width=250&color=2ecc71&suffix=%20) | 6.2 hrs |
-| Wed | ![](https://progress-bar.xyz/87/?width=250&color=2ecc71&suffix=%20) | 4.1 hrs |
-| Thu | ![](https://progress-bar.xyz/89/?width=250&color=2ecc71&suffix=%20) | 4.3 hrs |
-<!--END_DAILY_CHART-->
+<table>
+<tr>
+<td align="center" width="25%">
+
+![Today](https://img.shields.io/badge/Today-5_hrs_3_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)
+<!--START_TODAY_STAT--><!--END_TODAY_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Yesterday](https://img.shields.io/badge/Yesterday-4_hrs_15_mins-feca57?style=for-the-badge&labelColor=1a1a2e)
+<!--START_YESTERDAY_STAT--><!--END_YESTERDAY_STAT-->
+</td>
+<td align="center" width="25%">
+
+![This Week](https://img.shields.io/badge/This_Week-40_hrs_22_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)
+<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Last Week](https://img.shields.io/badge/Last_Week-0_hrs_0_mins-ff9ff3?style=for-the-badge&labelColor=1a1a2e)
+<!--START_LASTWEEK_STAT--><!--END_LASTWEEK_STAT-->
+</td>
+</tr>
+<tr>
+<td align="center" width="25%">
+
+![Most Productive](https://img.shields.io/badge/🏆_Most_Productive-Sunday_(6.9h)-4CAF50?style=for-the-badge&labelColor=1a1a2e)
+<!--START_PRODUCTIVE_STAT--><!--END_PRODUCTIVE_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Top Language](https://img.shields.io/badge/💻_Top_Language-Java-2196F3?style=for-the-badge&labelColor=1a1a2e)
+<!--START_TOPLANG_STAT--><!--END_TOPLANG_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Editor](https://img.shields.io/badge/🛠️_Editor-VS_Code-FF9800?style=for-the-badge&labelColor=1a1a2e)
+<!--START_EDITOR_STAT--><!--END_EDITOR_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Avg Daily](https://img.shields.io/badge/⚡_Avg_Daily-5.8_hrs-9C27B0?style=for-the-badge&labelColor=1a1a2e)
+<!--START_AVGDAILY_STAT--><!--END_AVGDAILY_STAT-->
+</td>
+</tr>
+<tr>
+<td align="center" width="25%">
+
+![Active Days](https://img.shields.io/badge/📅_Active_Days-7/7_days-00BCD4?style=for-the-badge&labelColor=1a1a2e)
+<!--START_ACTIVEDAYS_STAT--><!--END_ACTIVEDAYS_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Issues Resolved](https://img.shields.io/badge/🐛_Issues_Resolved-15-2ecc71?style=for-the-badge&labelColor=1a1a2e)
+<!--START_ISSUES_STAT--><!--END_ISSUES_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Commits](https://img.shields.io/badge/🔥_Commits-0-e74c3c?style=for-the-badge&labelColor=1a1a2e)
+<!--START_COMMITS_STAT--><!--END_COMMITS_STAT-->
+</td>
+<td align="center" width="25%">
+
+![Pull Requests](https://img.shields.io/badge/🔀_PRs_Merged-44-9b59b6?style=for-the-badge&labelColor=1a1a2e)
+<!--START_PRS_STAT--><!--END_PRS_STAT-->
+</td>
+</tr>
+</table>
 
 </div>
 
@@ -107,8 +154,6 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 ## 📈 Weekly Activity
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-01 12:22:52 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
-</div>
 
 <!--START_WEEKLY_CHART-->
 <picture>
