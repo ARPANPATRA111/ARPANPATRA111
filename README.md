@@ -1,69 +1,38 @@
 <div align="center">
 
-<!-- Theme-Aware Header -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/header-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/header-light.svg" />
-  <img alt="Header" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/header-dark.svg" width="100%" />
-</picture>
+![Banner](./assets/Banner.png)
 
-<!-- Profile Stats Badges - Using shields.io for real-time data -->
-![GitHub followers](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-followers.svg?v=1)
-![GitHub Stars](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stars.svg?v=1)
-![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/profile-views.svg?v=1)
-
-
-
-<!-- Snake Animation -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake.svg" width="100%" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake.svg" />
 </picture>
-</div>
 
-<!-- Social Section with Gradient Animation -->
-<div>
-  
-# 🌐 Socials:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arpan-patra-1b1041320)
-[![X (Twitter)](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Arpan5305)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@AMDz-cd7ts)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thispc119@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white)](https://arpan111.vercel.app)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=3B82F6&center=true&vCenter=true&repeat=true&width=600&lines=Full+Stack+Developer+%F0%9F%9A%80;React+%7C+Node.js+%7C+TypeScript;Building+Scalable+Applications+%F0%9F%92%BB;Open+Source+Enthusiast+%E2%9C%A8)](https://git.io/typing-svg)
+
+![GitHub followers](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-followers.svg?v=1)
+![GitHub Stars](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stars.svg?v=1)
+![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/profile-views.svg?v=1)
 
 </div>
 
 # 💫 About Me
 
-<table width="100%">
-<tr>
-<td width="55%" valign="top">
+<img align="right" alt="Coding" width="350" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif">
 
-```yaml
-name: Arpan Patra
-located_in: India 🇮🇳
-current_role: Full Stack Developer
-education: Computer Application Student
+👋 Hi, I'm **Arpan Patra** — Passionate Full-Stack Developer
 
-fields_of_interests:
-  - Web Development
-  - Mobile App Development  
-  - Cloud Architecture
-  - Open Source
+🎓 **Computer Application Student** with a focus on modern web/app technologies
 
-currently_learning:
-  - React.js & Next.js
-  - Cloud Architecture (AWS)
-  - System Design
+🌱 Currently mastering **React.js**, **Next.js**, and **Cloud Architecture**
 
-2025_goals:
-  - Contribute to Open Source
-  - Build Production Apps
-  - Master Cloud Technologies
+💼 Open to **Frontend/Backend Collaborations** and exciting projects
 
-fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
-```
+🎯 **2025 Goals**: Contribute more to Open Source & Build Production Apps
+
+💡 Love building **scalable applications** and exploring **new technologies**
+
+⚡ **Fun fact**: Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁
 
 ## 📊 Quick Stats
 <p>
@@ -83,10 +52,9 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
   <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
 </p>
 
-## 📊 Coding Stats Dashboard
+## 📈 Weekly Activity
 
-<!-- Combined Quick Stats & Coding Time - 3x4 Grid with Gradient Background -->
-<div align="center">
+<div>
 
 <!--START_DAILY_CHART-->
 | Day | Activity | Hours |
@@ -102,82 +70,66 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 
 </div>
 
----
-
-## 📈 Weekly Activity
 
 <div align="center">
 <sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-01 12:22:52 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
-<!--START_WEEKLY_CHART-->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/weekly-activity-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/weekly-activity-light.svg" />
-  <img alt="Weekly Activity" src="./assets/weekly-activity-dark.svg" width="100%" />
-</picture>
-<!--END_WEEKLY_CHART-->
 
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-01 14:21:17 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
-
-</div>
-
----
+# 🌐 Socials:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arpan-patra-1b1041320)
+[![X (Twitter)](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Arpan5305)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@AMDz-cd7ts)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thispc119@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white)](https://arpan111.vercel.app)
 
 # 💻 Tech Stack:
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white) ![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=#FF7139) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) ![Epic Games](https://img.shields.io/badge/epicgames-%23313131.svg?style=for-the-badge&logo=epicgames&logoColor=white) ![Riot Games](https://img.shields.io/badge/riotgames-D32936.svg?style=for-the-badge&logo=riotgames&logoColor=white)
 
-
-## 📊 GitHub Stats:
-![](https://git-readme-stats-phi.vercel.app/api?username=ARPANPATRA111&theme=tokyonight&hide_border=false&include_all_commits=false&count_private=false)
-![](https://nirzak-streak-stats.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=false)<br/>
-
-
-## 🏆 Badges & Achievements
-
-<table width="100%">
-<tr>
-<td width="50%">
+# 🏆 Badges & Achievements
 
 ### 🥇 LeetCode
-<p align="center">
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/200.gif" width="100" alt="200 Days"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/100%20days.gif" width="100" alt="100 Days"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/50Days.gif" width="100" alt="50 Days"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/202507.gif" width="100" alt="July Badge"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/2025.gif" width="100" alt="2025 Badge"/>
+<p>
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/200.gif"
+   width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/100%20days.gif" width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/50Days.gif" width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/202507.gif" width="140">
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/2025.gif"
+   width="140">
 </p>
 
-</td>
-<td width="50%">
-
-### 🎓 Professional Certifications
-<p align="center">
-  <a href="https://www.credly.com/badges/5f3abcc4-44f2-4439-a307-4b4239a14ccc">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/redhat.png" alt="Red Hat" width="100"/>
+### 🧾 Professional Badges
+<p>
+  <a href="https://www.credly.com/badges/5f3abcc4-44f2-4439-a307-4b4239a14ccc" title="Red-Hat Certified System Administrator">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/redhat.png" alt="Red Hat Certified" width = "140">
   </a>
-  <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/cisco.png" alt="Cisco" width="100"/>
+  <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025" title="Cisco Certified Networking">
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/cisco.png" alt="Cisco Certified" width="140">
   </a>
-  <a href="https://www.credly.com/badges/9da4a728-61f6-4305-bc9c-5dc804ade605">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/leadauditor.png" alt="Lead Auditor" width="100"/>
+  <a href="https://www.credly.com/badges/9da4a728-61f6-4305-bc9c-5dc804ade605" title="Lead Audioty"> 
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/leadauditor.png" alt="Cisco Certified" width="140">
   </a>
-  <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/gemini.png" alt="Gemini" width="100"/>
+  <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae#acc.EueBRXk0" title="Cisco Certified Networking"> 
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini Certified" width="140">
   </a>
-  <a href="https://www.futureskillsprime.in/iDH/user/user_badge/view/32914_BG_10fe9856-d1dd-11f0-bdec-005056b48b54">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/wall-experiments/assets/encryption.png" alt="Encryption" width="100"/>
+  <a href="https://www.futureskillsprime.in/iDH/user/user_badge/view/32914_BG_10fe9856-d1dd-11f0-bdec-005056b48b54" title="Data encryption"> 
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/encryption.png" alt="Data encryption" width="140">
   </a>
 </p>
 
-</td>
-</tr>
-</table>
+# 📊 GitHub Stats: 
+![](https://git-readme-stats-phi.vercel.app/api?username=ARPANPATRA111&theme=tokyonight&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://git-readme-stats-phi.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=false)<br/>
+![](https://git-readme-stats-phi.vercel.app/api/top-langs/?username=ARPANPATRA111&theme=tokyonight&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-## 🎯 Featured Projects
+## 🏆 GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=ARPANPATRA111&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4&row=2&column=4)
 
-<div>
+## 🔥 Contribution Graph
+![](https://github-readme-activity-graph.vercel.app/graph?username=ARPANPATRA111&theme=tokyo-night&hide_border=true&area=true)
 
+# 🎯 Featured Projects
 [![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=AtMark&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/AtMark)
 [![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=TripBudget&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/TripBudget)
 [![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Fitness-Dashboard&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Fitness-Dashboard)
@@ -185,14 +137,12 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 [![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=MOB-APP&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/MOB-APP)
 [![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Medix-manager&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Medix-manager)
 
-</div>
-
 <div align="center">
-<!-- Theme-Aware Footer -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/footer-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/footer-light.svg" />
-  <img alt="Footer" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/footer-dark.svg" width="100%" />
-</picture>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
+</p>
+
+**Please ⭐️ the repo [ARPANPATRA111](https://github.com/ARPANPATRA111) | Made with ❤️**
 
 </div>
