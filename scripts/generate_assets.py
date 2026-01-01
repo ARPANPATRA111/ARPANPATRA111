@@ -166,10 +166,8 @@ def generate_weekly_activity_svg(theme_name, wakatime_data=None):
         
         for day in recent_data:
             date_str = day.get('range', {}).get('date', '')
-            # Use total_seconds for precision
             total_seconds = day.get('grand_total', {}).get('total_seconds', 0)
             
-            # Parse date
             label = 'N/A'
             if date_str:
                 try:
@@ -178,15 +176,19 @@ def generate_weekly_activity_svg(theme_name, wakatime_data=None):
                 except:
                     pass
             
-            # Format precise time
+            # Format precise time for tooltip
             hours = int(total_seconds // 3600)
             minutes = int((total_seconds % 3600) // 60)
             time_text = f"{hours}h {minutes}m"
             
+            # Format decimal time for display (matching image style)
+            decimal_hours = f"{total_seconds/3600:.1f}h"
+            
             days_data.append({
                 'label': label,
                 'seconds': total_seconds,
-                'text': time_text
+                'text': decimal_hours,
+                'full_text': time_text
             })
             if total_seconds > max_seconds:
                 max_seconds = total_seconds
@@ -195,57 +197,87 @@ def generate_weekly_activity_svg(theme_name, wakatime_data=None):
     if not days_data:
         days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
         for d in days:
-            days_data.append({'label': d, 'seconds': 0, 'text': '0h 0m'})
+            days_data.append({'label': d, 'seconds': 0, 'text': '0.0h', 'full_text': '0h 0m'})
             
+    # Find max index for star
+    max_idx = -1
+    if max_seconds > 0:
+        for i, d in enumerate(days_data):
+            if d['seconds'] == max_seconds:
+                max_idx = i
+                break
+
     # Chart dimensions
     svg_width = 800
-    svg_height = 220
-    chart_bottom = 180
-    bar_width = 50
-    gap = 50
+    svg_height = 250
+    chart_bottom = 210
+    bar_width = 60
+    gap = 40
     
-    # Calculate total width of chart content to center it
+    # Calculate total width to center
     total_chart_width = len(days_data) * bar_width + (len(days_data) - 1) * gap
     start_x = (svg_width - total_chart_width) / 2
     
-    # Calculate max for scaling
     max_val = max_seconds if max_seconds > 0 else 1
     
-    bars_svg = ''
+    # Gradient definitions matching the image style (Vibrant distinct gradients)
+    gradient_pairs = [
+        ('#FF9966', '#FF5E62'), # 1. Orange -> Red
+        ('#F2C94C', '#2F80ED'), # 2. Yellow -> Blue
+        ('#DA22FF', '#9733EE'), # 3. Purple -> Blue
+        ('#FF512F', '#DD2476'), # 4. Pink -> Red
+        ('#FF8008', '#FFC837'), # 5. Orange -> Yellow
+        ('#A8FF78', '#78FFD6'), # 6. Green -> Teal
+        ('#1FA2FF', '#12D8FA')  # 7. Blue -> Cyan
+    ]
     
-    # Gradient definition
-    gradient_id = f"barGradient{theme_name}"
-    gradient_def = f'''
-    <linearGradient id="{gradient_id}" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:{colors['accent']};stop-opacity:1" />
-        <stop offset="100%" style="stop-color:{colors['accent_secondary']};stop-opacity:0.6" />
-    </linearGradient>
-    '''
+    # Ensure we have enough gradients
+    while len(gradient_pairs) < len(days_data):
+        gradient_pairs.append(gradient_pairs[len(gradient_pairs)%7])
+
+    defs = ""
+    for i, (start, end) in enumerate(gradient_pairs):
+        defs += f'''
+    <linearGradient id="grad{i}_{theme_name}" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:{start};stop-opacity:1" />
+        <stop offset="100%" style="stop-color:{end};stop-opacity:1" />
+    </linearGradient>'''
+
+    bars_svg = ''
     
     for i, item in enumerate(days_data):
         seconds = item['seconds']
-        # Max height for bar is 120px
+        # Max height 120
         height = (seconds / max_val) * 120
-        if height < 2 and seconds > 0: height = 2 # Min height for visibility
+        if height < 4 and seconds > 0: height = 4
         
         x = start_x + i * (bar_width + gap)
         y = chart_bottom - height
         
+        # Text above bar
+        text_y = y - 8
+        
         # Animation
         anim_height = f'''<animate attributeName="height" from="0" to="{height}" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.42 0 0.58 1" />'''
         anim_y = f'''<animate attributeName="y" from="{chart_bottom}" to="{y}" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.42 0 0.58 1" />'''
-        anim_text_y = f'''<animate attributeName="y" from="{chart_bottom}" to="{y - 8}" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.42 0 0.58 1" />'''
+        anim_text_y = f'''<animate attributeName="y" from="{chart_bottom}" to="{text_y}" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.42 0 0.58 1" />'''
         
+        # Label text with star if max
+        label_text = item['text']
+        if i == max_idx:
+             label_text += " ⭐"
+
         bars_svg += f'''
     <g class="bar-group">
-        <rect x="{x}" y="{y}" width="{bar_width}" height="{height}" rx="4" fill="url(#{gradient_id})">
-            <title>{item['text']}</title>
+        <rect x="{x}" y="{y}" width="{bar_width}" height="{height}" rx="6" fill="url(#grad{i}_{theme_name})">
+            <title>{item['full_text']}</title>
             {anim_height}
             {anim_y}
         </rect>
-        <text x="{x + bar_width/2}" y="{chart_bottom + 20}" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{colors['text_secondary']}" text-anchor="middle">{item['label']}</text>
-        <text x="{x + bar_width/2}" y="{y - 8}" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="{colors['text']}" text-anchor="middle" opacity="0">
-            {item['text']}
+        <text x="{x + bar_width/2}" y="{chart_bottom + 25}" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{colors['text_secondary']}" text-anchor="middle">{item['label']}</text>
+        
+        <text x="{x + bar_width/2}" y="{text_y}" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="{colors['text']}" text-anchor="middle" opacity="0">
+            {label_text}
             <animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.5s" fill="freeze" />
             {anim_text_y}
         </text>
@@ -253,7 +285,7 @@ def generate_weekly_activity_svg(theme_name, wakatime_data=None):
     
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{svg_width}" height="{svg_height}" viewBox="0 0 {svg_width} {svg_height}">
   <defs>
-    {gradient_def}
+    {defs}
   </defs>
   <rect width="{svg_width}" height="{svg_height}" fill="{colors['bg']}" rx="10"/>
   {bars_svg}
