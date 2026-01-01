@@ -1,9 +1,3 @@
-<!-- 
-  GitHub Profile README - Arpan Patra
-  Theme: Auto-switches between dark/light based on system preference
-  All components are self-generated without external API dependencies
--->
-
 <div align="center">
 
 <!-- Theme-Aware Header -->
@@ -13,12 +7,12 @@
   <img alt="Header" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/header-dark.svg" width="100%" />
 </picture>
 
-<!-- Banner -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/Banner.png" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/Banner.png" />
-  <img alt="Banner" src="./assets/Banner.png" width="100%" />
-</picture>
+<!-- Profile Stats Badges - Using shields.io for real-time data -->
+![GitHub followers](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-followers.svg?v=1)
+![GitHub Stars](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stars.svg?v=1)
+![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/profile-views.svg?v=1)
+
+
 
 <!-- Snake Animation -->
 <picture>
@@ -26,74 +20,21 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake.svg" />
   <img alt="github-snake" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake.svg" width="100%" />
 </picture>
-
-<br/>
-
-<!-- Profile Stats Badges - Using shields.io for real-time data -->
-<a href="https://github.com/ARPANPATRA111?tab=followers">
-  <img alt="GitHub followers" src="https://img.shields.io/github/followers/ARPANPATRA111?style=for-the-badge&logo=github&labelColor=161b22&color=58a6ff" />
-</a>
-&nbsp;
-<a href="https://github.com/ARPANPATRA111?tab=repositories">
-  <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ARPANPATRA111?style=for-the-badge&logo=github&labelColor=161b22&color=feca57" />
-</a>
-&nbsp;
-<img alt="Profile views" src="https://komarev.com/ghpvc/?username=ARPANPATRA111&style=for-the-badge&color=48dbfb&labelColor=161b22" />
-
 </div>
-
----
 
 <!-- Social Section with Gradient Animation -->
-<div align="center">
+<div>
   
-## 🌐 Connect With Me
-
-<a href="https://linkedin.com/in/arpan-patra-1b1041320">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-linkedin-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-linkedin-light.svg" />
-    <img alt="LinkedIn" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-linkedin-dark.svg" height="45" />
-  </picture>
-</a>
-&nbsp;&nbsp;
-<a href="https://x.com/Arpan5305">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-twitter-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-twitter-light.svg" />
-    <img alt="Twitter" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-twitter-dark.svg" height="45" />
-  </picture>
-</a>
-&nbsp;&nbsp;
-<a href="https://youtube.com/@AMDz-cd7ts">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-youtube-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-youtube-light.svg" />
-    <img alt="YouTube" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-youtube-dark.svg" height="45" />
-  </picture>
-</a>
-&nbsp;&nbsp;
-<a href="mailto:thispc119@gmail.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-email-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-email-light.svg" />
-    <img alt="Email" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-email-dark.svg" height="45" />
-  </picture>
-</a>
-&nbsp;&nbsp;
-<a href="https://arpan111.vercel.app">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-portfolio-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-portfolio-light.svg" />
-    <img alt="Portfolio" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/social-portfolio-dark.svg" height="45" />
-  </picture>
-</a>
+# 🌐 Socials:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arpan-patra-1b1041320)
+[![X (Twitter)](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Arpan5305)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@AMDz-cd7ts)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thispc119@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white)](https://arpan111.vercel.app)
 
 </div>
 
----
-
-## 💫 About Me
+# 💫 About Me
 
 <table width="100%">
 <tr>
@@ -131,7 +72,6 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 </tr>
 </table>
 
----
 
 ## 📊 Coding Stats Dashboard
 
@@ -191,17 +131,17 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 </td>
 <td align="center" width="25%">
 
-![Issues Resolved](https://img.shields.io/github/issues-closed/ARPANPATRA111/ARPANPATRA111?style=for-the-badge&labelColor=1a1a2e&color=2ecc71&label=🐛%20Issues%20Resolved)
+![Issues Resolved](https://img.shields.io/badge/🐛_Issues_Resolved-0-2ecc71?style=for-the-badge&labelColor=1a1a2e)
 <!--START_ISSUES_STAT--><!--END_ISSUES_STAT-->
 </td>
 <td align="center" width="25%">
 
-![Commits](https://img.shields.io/github/commit-activity/y/ARPANPATRA111/ARPANPATRA111?style=for-the-badge&labelColor=1a1a2e&color=e74c3c&label=🔥%20Commits%20(Year))
+![Commits](https://img.shields.io/badge/🔥_Commits-0-e74c3c?style=for-the-badge&labelColor=1a1a2e)
 <!--START_COMMITS_STAT--><!--END_COMMITS_STAT-->
 </td>
 <td align="center" width="25%">
 
-![Pull Requests](https://img.shields.io/github/issues-pr-closed/ARPANPATRA111/ARPANPATRA111?style=for-the-badge&labelColor=1a1a2e&color=9b59b6&label=🔀%20PRs%20Merged)
+![Pull Requests](https://img.shields.io/badge/🔀_PRs_Merged-0-9b59b6?style=for-the-badge&labelColor=1a1a2e)
 <!--START_PRS_STAT--><!--END_PRS_STAT-->
 </td>
 </tr>
@@ -229,132 +169,14 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 
 ---
 
-## 💻 Tech Stack
+# 💻 Tech Stack:
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white) ![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=#FF7139) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) ![Epic Games](https://img.shields.io/badge/epicgames-%23313131.svg?style=for-the-badge&logo=epicgames&logoColor=white) ![Riot Games](https://img.shields.io/badge/riotgames-D32936.svg?style=for-the-badge&logo=riotgames&logoColor=white)
 
-<!-- Animated 3-Line Scrolling Skills with Logos -->
-<div align="center">
 
-<!-- Line 1: Moving Left - Frontend Technologies -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-stack-line1-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/tech-stack-line1-light.svg" />
-  <img alt="Tech Stack Line 1" src="./assets/tech-stack-line1-dark.svg" width="100%" />
-</picture>
+## 📊 GitHub Stats:
+![](https://git-readme-stats-phi.vercel.app/api?username=ARPANPATRA111&theme=tokyonight&hide_border=false&include_all_commits=false&count_private=false)
+![](https://nirzak-streak-stats.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=false)<br/>
 
-<!-- Line 2: Moving Right - Backend & Database Technologies -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-stack-line2-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/tech-stack-line2-light.svg" />
-  <img alt="Tech Stack Line 2" src="./assets/tech-stack-line2-dark.svg" width="100%" />
-</picture>
-
-<!-- Line 3: Moving Left - Tools & Cloud Technologies -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/tech-stack-line3-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/tech-stack-line3-light.svg" />
-  <img alt="Tech Stack Line 3" src="./assets/tech-stack-line3-dark.svg" width="100%" />
-</picture>
-
-</div>
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-<!-- Self-Generated GitHub Stats -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/github-stats-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/github-stats-light.svg" />
-  <img alt="GitHub Stats" src="./assets/github-stats-dark.svg" width="100%" />
-</picture>
-
-<br/><br/>
-
-### 🏆 GitHub Trophies
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/github-trophies-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/github-trophies-light.svg" />
-  <img alt="GitHub Trophies" src="./assets/github-trophies-dark.svg" width="100%" />
-</picture>
-
-</div>
-
----
-
-## 🎯 Featured Projects
-
-<div align="center">
-
-<!-- Project Card 1: AtMark -->
-<a href="https://github.com/ARPANPATRA111/AtMark">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-atmark-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-atmark-light.svg" />
-  <img alt="AtMark Project" src="./assets/project-card-atmark-dark.svg" width="100%" />
-</picture>
-</a>
-
-<br/>
-
-<!-- Project Card 2: TripBudget -->
-<a href="https://github.com/ARPANPATRA111/TripBudget">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-tripbudget-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-tripbudget-light.svg" />
-  <img alt="TripBudget Project" src="./assets/project-card-tripbudget-dark.svg" width="100%" />
-</picture>
-</a>
-
-<br/>
-
-<!-- Project Card 3: Fitness Dashboard -->
-<a href="https://github.com/ARPANPATRA111/Fitness-Dashboard">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-fitness-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-fitness-light.svg" />
-  <img alt="Fitness Dashboard Project" src="./assets/project-card-fitness-dark.svg" width="100%" />
-</picture>
-</a>
-
-<br/>
-
-<!-- Project Card 4: Float Chat -->
-<a href="https://github.com/ARPANPATRA111/Float-Chat">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-floatchat-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-floatchat-light.svg" />
-  <img alt="Float Chat Project" src="./assets/project-card-floatchat-dark.svg" width="100%" />
-</picture>
-</a>
-
-<br/>
-
-<!-- Project Card 5: MOB-APP -->
-<a href="https://github.com/ARPANPATRA111/MOB-APP">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-mobapp-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-mobapp-light.svg" />
-  <img alt="MOB-APP Project" src="./assets/project-card-mobapp-dark.svg" width="100%" />
-</picture>
-</a>
-
-<br/>
-
-<!-- Project Card 6: Medix Manager -->
-<a href="https://github.com/ARPANPATRA111/Medix-manager">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/project-card-medix-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/project-card-medix-light.svg" />
-  <img alt="Medix Manager Project" src="./assets/project-card-medix-dark.svg" width="100%" />
-</picture>
-</a>
-
-</div>
-
----
 
 ## 🏆 Badges & Achievements
 
@@ -397,19 +219,25 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 </tr>
 </table>
 
----
+## 🎯 Featured Projects
+
+<div>
+
+[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=AtMark&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/AtMark)
+[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=TripBudget&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/TripBudget)
+[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Fitness-Dashboard&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Fitness-Dashboard)
+[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Float-Chat&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Float-Chat)
+[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=MOB-APP&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/MOB-APP)
+[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Medix-manager&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Medix-manager)
+
+</div>
 
 <div align="center">
-
 <!-- Theme-Aware Footer -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/footer-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/footer-light.svg" />
   <img alt="Footer" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/wall-experiments/assets/footer-dark.svg" width="100%" />
 </picture>
-
-**If you like my work, consider giving this repo a ⭐!**
-
-![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)
 
 </div>

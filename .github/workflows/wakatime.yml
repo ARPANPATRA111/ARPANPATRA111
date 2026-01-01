@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 */6 * * *'   # Every 6 hours (consolidated)
   workflow_dispatch:
+  push:
+    branches: [main, wall-experiments]
+    paths:
+      - '.github/workflows/wakatime.yml'
 
 concurrency:
   group: wakatime-${{ github.ref }}
@@ -45,29 +49,34 @@ jobs:
 
           # Build explicit date ranges (WakaTime Summaries API requires start and end)
           today_utc = datetime.now(timezone.utc).date()
-          start_7 = (today_utc - timedelta(days=6)).strftime('%Y-%m-%d')
-          end_7 = today_utc.strftime('%Y-%m-%d')
-          start_14 = (today_utc - timedelta(days=13)).strftime('%Y-%m-%d')
-          end_14 = end_7
+          
+          # This week: last 7 days (today inclusive)
+          start_this_week = (today_utc - timedelta(days=6)).strftime('%Y-%m-%d')
+          end_this_week = today_utc.strftime('%Y-%m-%d')
+          
+          # Last week: 7 days before this week (days 7-13 ago)
+          start_last_week = (today_utc - timedelta(days=13)).strftime('%Y-%m-%d')
+          end_last_week = (today_utc - timedelta(days=7)).strftime('%Y-%m-%d')
 
-          # Fetch last 7 days (explicit start/end)
-          url_last7 = f"https://wakatime.com/api/v1/users/current/summaries?start={start_7}&end={end_7}"
           # WakaTime requires base64-encoded API key for Basic auth
           encoded_key = base64.b64encode(api_key.encode()).decode()
           headers = {"Authorization": f"Basic {encoded_key}"}
-          res_last7 = requests.get(url_last7, headers=headers)
 
-          if res_last7.status_code != 200:
-              raise Exception(f"Failed to fetch WakaTime data: {res_last7.text}")
+          # Fetch this week (last 7 days)
+          url_this_week = f"https://wakatime.com/api/v1/users/current/summaries?start={start_this_week}&end={end_this_week}"
+          res_this_week = requests.get(url_this_week, headers=headers)
 
-          data_last7 = res_last7.json().get("data", [])
-          if not data_last7:
+          if res_this_week.status_code != 200:
+              raise Exception(f"Failed to fetch WakaTime data: {res_this_week.text}")
+
+          data_this_week = res_this_week.json().get("data", [])
+          if not data_this_week:
               raise Exception("No data found in WakaTime response.")
 
-          # Fetch last 14 days for comparison (explicit start/end)
-          url_last14 = f"https://wakatime.com/api/v1/users/current/summaries?start={start_14}&end={end_14}"
-          res_last14 = requests.get(url_last14, headers=headers)
-          data_last14 = res_last14.json().get("data", []) if res_last14.status_code == 200 else []
+          # Fetch last week (days 7-13 ago)
+          url_last_week = f"https://wakatime.com/api/v1/users/current/summaries?start={start_last_week}&end={end_last_week}"
+          res_last_week = requests.get(url_last_week, headers=headers)
+          data_last_week = res_last_week.json().get("data", []) if res_last_week.status_code == 200 else []
 
           # --- Calculate Weekly Totals ---
           def calculate_total_seconds(data_list):
@@ -84,14 +93,17 @@ jobs:
               return f"{hours} hrs {minutes} mins"
 
           # This week (last 7 days)
-          this_week_seconds = calculate_total_seconds(data_last7)
+          this_week_seconds = calculate_total_seconds(data_this_week)
           this_week_formatted = format_time(this_week_seconds)
 
-          # Last week (days 8-14 from the 14-day data)
-          # The API returns days in chronological order, so we need days 1-7 for last week
-          last_week_data = data_last14[:7] if len(data_last14) >= 14 else []
-          last_week_seconds = calculate_total_seconds(last_week_data)
+          # Last week (days 7-13 ago) - now fetched separately
+          last_week_seconds = calculate_total_seconds(data_last_week)
           last_week_formatted = format_time(last_week_seconds)
+
+          print(f"DEBUG: This week data points: {len(data_this_week)}")
+          print(f"DEBUG: Last week data points: {len(data_last_week)}")
+          print(f"DEBUG: This week seconds: {this_week_seconds}")
+          print(f"DEBUG: Last week seconds: {last_week_seconds}")
 
           # Calculate percentage change
           if last_week_seconds > 0:
@@ -104,7 +116,7 @@ jobs:
           # --- Daily Breakdown for Chart ---
           daily_hours = []
           daily_labels = []
-          for day in data_last7:
+          for day in data_this_week:
               date = day.get("range", {}).get("date", "")
               total_secs = day.get("grand_total", {}).get("total_seconds", 0)
               hours = round(total_secs / 3600, 2)
@@ -117,7 +129,7 @@ jobs:
                   daily_labels.append("N/A")
 
           # --- Wake-up Coding Time ---
-          today_summary = data_last7[-1] if data_last7 else {}
+          today_summary = data_this_week[-1] if data_this_week else {}
           first_activity = today_summary.get("range", {}).get("start", "")
           wakeup_time = "N/A"
           if first_activity:
@@ -125,8 +137,8 @@ jobs:
               wakeup_time = utc_dt.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%H:%M:%S")
 
           # --- Most Productive Day ---
-          if data_last7:
-              most_productive_day = max(data_last7, key=lambda x: x.get("grand_total", {}).get("total_seconds", 0))
+          if data_this_week:
+              most_productive_day = max(data_this_week, key=lambda x: x.get("grand_total", {}).get("total_seconds", 0))
               most_productive_date = most_productive_day.get("range", {}).get("date", "")
               most_productive_hours = round(most_productive_day.get("grand_total", {}).get("total_seconds", 0) / 3600, 2)
               most_productive_day_name = datetime.strptime(most_productive_date, "%Y-%m-%d").strftime("%A") if most_productive_date else "N/A"
@@ -137,7 +149,7 @@ jobs:
           # --- Languages & Editors Stats ---
           languages = {}
           editors = {}
-          for day in data_last7:
+          for day in data_this_week:
               for lang in day.get("languages", []):
                   lang_name = lang.get("name", "Unknown")
                   lang_seconds = lang.get("total_seconds", 0)
@@ -151,8 +163,8 @@ jobs:
           top_editor = max(editors.items(), key=lambda x: x[1])[0] if editors else "N/A"
 
           # --- Today and Yesterday Stats ---
-          today_data = data_last7[-1] if len(data_last7) >= 1 else {}
-          yesterday_data = data_last7[-2] if len(data_last7) >= 2 else {}
+          today_data = data_this_week[-1] if len(data_this_week) >= 1 else {}
+          yesterday_data = data_this_week[-2] if len(data_this_week) >= 2 else {}
           
           today_seconds = today_data.get("grand_total", {}).get("total_seconds", 0)
           yesterday_seconds = yesterday_data.get("grand_total", {}).get("total_seconds", 0)
@@ -164,13 +176,15 @@ jobs:
           output = {
               "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "wake_up_time": wakeup_time,
-              "summary_days": len(data_last7),
+              "summary_days": len(data_this_week),
               "latest_day": today_summary.get("range", {}).get("date", ""),
               "total_coding_time": today_summary.get("grand_total", {}).get("text", "0 mins"),
               "today_total": today_formatted,
               "yesterday_total": yesterday_formatted,
               "this_week_total": this_week_formatted,
               "last_week_total": last_week_formatted,
+              "this_week_seconds": this_week_seconds,
+              "last_week_seconds": last_week_seconds,
               "week_change": change_text,
               "daily_hours": daily_hours,
               "daily_labels": daily_labels,
@@ -178,7 +192,7 @@ jobs:
               "most_productive_hours": most_productive_hours,
               "top_language": top_language,
               "top_editor": top_editor,
-              "raw_data": data_last7
+              "raw_data": data_this_week
           }
 
           # Save JSON for portfolio or future use

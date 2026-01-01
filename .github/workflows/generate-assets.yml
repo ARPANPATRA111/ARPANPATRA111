@@ -6,7 +6,7 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, wall-experiments]
     paths:
       - '.github/workflows/generate-assets.yml'
       - 'scripts/**'
@@ -38,7 +38,7 @@ jobs:
         run: |
           pip install requests
 
-      - name: Generate All SVG Assets
+      - name: Generate SVG Assets (Headers, Footers, Weekly Activity)
         env:
           GH_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
@@ -50,7 +50,9 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           
-          git add assets/*.svg
+          git add assets/header-dark.svg assets/header-light.svg
+          git add assets/footer-dark.svg assets/footer-light.svg
+          git add assets/weekly-activity-dark.svg assets/weekly-activity-light.svg
           git add wakatime_stats.json
           git add data/*.json
           

@@ -6,6 +6,11 @@ on:
     - cron: "0 0 * * *"
   # Allow manual triggering of the workflow
   workflow_dispatch:
+  # Run on push to main or wall-experiments branch
+  push:
+    branches: [main, wall-experiments]
+    paths:
+      - '.github/workflows/snake.yml'
 
 concurrency:
   group: snake-${{ github.ref }}
