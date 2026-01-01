@@ -154,42 +154,108 @@ def generate_weekly_activity_svg(theme_name, wakatime_data=None):
     """Generate weekly activity chart SVG"""
     colors = DARK_THEME if theme_name == 'dark' else LIGHT_THEME
     
-    # Default data if WakaTime not available
-    days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    hours = [0] * 7
+    # Prepare data
+    days_data = []
+    max_seconds = 0
     
-    # wakatime_data is now a list of day objects from the summaries endpoint
     if wakatime_data and isinstance(wakatime_data, list):
-        # Map the data to the correct days
-        # The API returns data sorted by date
-        for day_data in wakatime_data:
-            date_str = day_data.get('range', {}).get('date')
+        # Sort by date to ensure chronological order
+        sorted_data = sorted(wakatime_data, key=lambda x: x.get('range', {}).get('date', ''))
+        # Take last 7 entries
+        recent_data = sorted_data[-7:]
+        
+        for day in recent_data:
+            date_str = day.get('range', {}).get('date', '')
+            # Use total_seconds for precision
+            total_seconds = day.get('grand_total', {}).get('total_seconds', 0)
+            
+            # Parse date
+            label = 'N/A'
             if date_str:
-                date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-                day_idx = (date_obj.weekday() + 1) % 7  # 0=Mon...6=Sun -> 0=Sun...6=Sat
-                
-                # Find the index in our days array (Sun=0, Mon=1, ...)
-                # Python weekday(): Mon=0, Sun=6.
-                # We want Sun=0, Mon=1...
-                # So (weekday + 1) % 7 gives Sun=0, Mon=1, ... Sat=6
-                
-                hours[day_idx] = day_data.get('grand_total', {}).get('hours', 0)
+                try:
+                    dt = datetime.strptime(date_str, '%Y-%m-%d')
+                    label = dt.strftime('%a %d') # e.g., Mon 01
+                except:
+                    pass
+            
+            # Format precise time
+            hours = int(total_seconds // 3600)
+            minutes = int((total_seconds % 3600) // 60)
+            time_text = f"{hours}h {minutes}m"
+            
+            days_data.append({
+                'label': label,
+                'seconds': total_seconds,
+                'text': time_text
+            })
+            if total_seconds > max_seconds:
+                max_seconds = total_seconds
     
-    max_hours = max(hours) if max(hours) > 0 else 8
-    bar_colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3']
+    # Fill with placeholders if no data
+    if not days_data:
+        days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        for d in days:
+            days_data.append({'label': d, 'seconds': 0, 'text': '0h 0m'})
+            
+    # Chart dimensions
+    svg_width = 800
+    svg_height = 220
+    chart_bottom = 180
+    bar_width = 50
+    gap = 50
+    
+    # Calculate total width of chart content to center it
+    total_chart_width = len(days_data) * bar_width + (len(days_data) - 1) * gap
+    start_x = (svg_width - total_chart_width) / 2
+    
+    # Calculate max for scaling
+    max_val = max_seconds if max_seconds > 0 else 1
     
     bars_svg = ''
-    for i, (day, hour) in enumerate(zip(days, hours)):
-        bar_height = (hour / max_hours) * 120 if max_hours > 0 else 0
-        x = 80 + i * 100
-        bars_svg += f'''
-    <rect x="{x}" y="{180 - bar_height}" width="60" height="{bar_height}" rx="5" fill="{bar_colors[i]}" opacity="0.8"/>
-    <text x="{x + 30}" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{colors['text_secondary']}" text-anchor="middle">{day}</text>
-    <text x="{x + 30}" y="{170 - bar_height}" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="{colors['text']}" text-anchor="middle">{hour:.1f}h</text>'''
     
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
-  <rect width="800" height="220" fill="{colors['bg']}" rx="10"/>
-  <text x="400" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="{colors['text']}" text-anchor="middle">📈 Weekly Coding Activity</text>
+    # Gradient definition
+    gradient_id = f"barGradient{theme_name}"
+    gradient_def = f'''
+    <linearGradient id="{gradient_id}" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:{colors['accent']};stop-opacity:1" />
+        <stop offset="100%" style="stop-color:{colors['accent_secondary']};stop-opacity:0.6" />
+    </linearGradient>
+    '''
+    
+    for i, item in enumerate(days_data):
+        seconds = item['seconds']
+        # Max height for bar is 120px
+        height = (seconds / max_val) * 120
+        if height < 2 and seconds > 0: height = 2 # Min height for visibility
+        
+        x = start_x + i * (bar_width + gap)
+        y = chart_bottom - height
+        
+        # Animation
+        anim_height = f'''<animate attributeName="height" from="0" to="{height}" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.42 0 0.58 1" />'''
+        anim_y = f'''<animate attributeName="y" from="{chart_bottom}" to="{y}" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.42 0 0.58 1" />'''
+        anim_text_y = f'''<animate attributeName="y" from="{chart_bottom}" to="{y - 8}" dur="1s" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.42 0 0.58 1" />'''
+        
+        bars_svg += f'''
+    <g class="bar-group">
+        <rect x="{x}" y="{y}" width="{bar_width}" height="{height}" rx="4" fill="url(#{gradient_id})">
+            <title>{item['text']}</title>
+            {anim_height}
+            {anim_y}
+        </rect>
+        <text x="{x + bar_width/2}" y="{chart_bottom + 20}" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="{colors['text_secondary']}" text-anchor="middle">{item['label']}</text>
+        <text x="{x + bar_width/2}" y="{y - 8}" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="{colors['text']}" text-anchor="middle" opacity="0">
+            {item['text']}
+            <animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.5s" fill="freeze" />
+            {anim_text_y}
+        </text>
+    </g>'''
+    
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{svg_width}" height="{svg_height}" viewBox="0 0 {svg_width} {svg_height}">
+  <defs>
+    {gradient_def}
+  </defs>
+  <rect width="{svg_width}" height="{svg_height}" fill="{colors['bg']}" rx="10"/>
   {bars_svg}
 </svg>'''
     return svg
