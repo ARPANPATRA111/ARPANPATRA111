@@ -22,9 +22,66 @@
 </picture>
 </div>
 
-<!-- Social Section with Gradient Animation -->
+# 💫 About Me
+
+<img align="right" alt="Coding" width="350" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif">
+
+👋 Hi, I'm **Arpan Patra** — Passionate Full-Stack Developer
+
+🎓 **Computer Application Student** with a focus on modern web/app technologies
+
+🌱 Currently mastering **React.js**, **Next.js**, and **Cloud Architecture**
+
+💼 Open to **Frontend/Backend Collaborations** and exciting projects
+
+🎯 **2025 Goals**: Contribute more to Open Source & Build Production Apps
+
+💡 Love building **scalable applications** and exploring **new technologies**
+
+⚡ **Fun fact**: Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁
+
+## 📊 Quick Stats
+<p>
+  <img src="https://img.shields.io/badge/🏆_Most_Productive-Sunday_(6.9h)-4CAF50?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->
+  <img src="https://img.shields.io/badge/💻_Top_Language-Java-2196F3?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->
+  <img src="https://img.shields.io/badge/🛠️_Editor-VS_Code-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->
+  <img src="https://img.shields.io/badge/⚡_Avg_Daily-5.3_hrs-9C27B0?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
+  <img src="https://img.shields.io/badge/📅_Active_Days-7/7_days-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->
+</p>
+
+## 🕒 Coding Time
+<p>
+  <img src="https://img.shields.io/badge/TODAY-4_hrs_18_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
+  <img src="https://img.shields.io/badge/YESTERDAY-4_hrs_4_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
+  <img src="https://img.shields.io/badge/THIS_WEEK-37_hrs_6_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
+</p>
+
+## 📈 Weekly Activity
+
 <div>
-  
+
+<!--START_DAILY_CHART-->
+| Day | Activity | Hours |
+|-----|----------|-------|
+| Fri | ![](https://progress-bar.xyz/93/?width=250&color=2ecc71&suffix=%20) | 5.2 hrs |
+| Sat | ![](https://progress-bar.xyz/97/?width=250&color=2ecc71&suffix=%20) | 6.2 hrs |
+| Sun | ![](https://progress-bar.xyz/100/?width=250&color=2ecc71&suffix=%20) ⭐ | 6.9 hrs |
+| Mon | ![](https://progress-bar.xyz/89/?width=250&color=2ecc71&suffix=%20) | 4.3 hrs |
+| Tue | ![](https://progress-bar.xyz/97/?width=250&color=2ecc71&suffix=%20) | 6.2 hrs |
+| Wed | ![](https://progress-bar.xyz/87/?width=250&color=2ecc71&suffix=%20) | 4.1 hrs |
+| Thu | ![](https://progress-bar.xyz/89/?width=250&color=2ecc71&suffix=%20) | 4.3 hrs |
+<!--END_DAILY_CHART-->
+
+</div>
+
+
+<div align="center">
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-01 12:22:52 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+</div>
+
+
 # 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arpan-patra-1b1041320)
 [![X (Twitter)](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Arpan5305)
