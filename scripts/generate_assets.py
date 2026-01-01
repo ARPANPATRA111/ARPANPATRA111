@@ -7,7 +7,8 @@ This script generates theme-aware SVG files for stats, tech stack, etc.
 import os
 import json
 import requests
-from datetime import datetime
+import base64
+from datetime import datetime, timedelta, timezone
 
 # Environment variables
 GH_TOKEN = os.environ.get('GH_TOKEN', '')
@@ -42,11 +43,21 @@ def get_wakatime_stats():
         return None
     
     try:
-        url = f'https://wakatime.com/api/v1/users/current/stats/last_7_days'
-        headers = {'Authorization': f'Basic {WAKATIME_API_KEY}'}
+        # Calculate dates for last 7 days
+        today_utc = datetime.now(timezone.utc).date()
+        start_date = (today_utc - timedelta(days=6)).strftime('%Y-%m-%d')
+        end_date = today_utc.strftime('%Y-%m-%d')
+        
+        url = f'https://wakatime.com/api/v1/users/current/summaries?start={start_date}&end={end_date}'
+        
+        # Encode API key for Basic Auth
+        encoded_key = base64.b64encode(WAKATIME_API_KEY.encode()).decode()
+        headers = {'Authorization': f'Basic {encoded_key}'}
+        
         response = requests.get(url, headers=headers, timeout=30)
         if response.status_code == 200:
-            return response.json().get('data', {})
+            # Return the list of days directly
+            return response.json().get('data', [])
         else:
             print(f"Error fetching WakaTime stats: Status {response.status_code}, Response: {response.text}")
     except Exception as e:
@@ -147,9 +158,22 @@ def generate_weekly_activity_svg(theme_name, wakatime_data=None):
     days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     hours = [0] * 7
     
-    if wakatime_data and 'days' in wakatime_data:
-        for i, day_data in enumerate(wakatime_data.get('days', [])[:7]):
-            hours[i] = day_data.get('grand_total', {}).get('hours', 0)
+    # wakatime_data is now a list of day objects from the summaries endpoint
+    if wakatime_data and isinstance(wakatime_data, list):
+        # Map the data to the correct days
+        # The API returns data sorted by date
+        for day_data in wakatime_data:
+            date_str = day_data.get('range', {}).get('date')
+            if date_str:
+                date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+                day_idx = (date_obj.weekday() + 1) % 7  # 0=Mon...6=Sun -> 0=Sun...6=Sat
+                
+                # Find the index in our days array (Sun=0, Mon=1, ...)
+                # Python weekday(): Mon=0, Sun=6.
+                # We want Sun=0, Mon=1...
+                # So (weekday + 1) % 7 gives Sun=0, Mon=1, ... Sat=6
+                
+                hours[day_idx] = day_data.get('grand_total', {}).get('hours', 0)
     
     max_hours = max(hours) if max(hours) > 0 else 8
     bar_colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3']

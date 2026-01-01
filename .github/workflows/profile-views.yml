@@ -238,9 +238,15 @@ jobs:
             git add data/*.json assets/*.svg README.md
             git commit -m "📊 Update profile stats badges [skip ci]"
             
-            # Pull latest changes after commit to rebase on top of them
-            git pull --rebase origin wall-experiments || true
-            git push origin wall-experiments
+            # Retry loop for push to handle race conditions
+            n=0
+            until [ "$n" -ge 5 ]
+            do
+               git pull --rebase origin wall-experiments && git push origin wall-experiments && break
+               n=$((n+1)) 
+               echo "Push failed, retrying ($n/5)..."
+               sleep 5
+            done
           else
             echo "No changes to commit."
           fi
