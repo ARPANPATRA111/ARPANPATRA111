@@ -51,15 +51,17 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           
-          git add assets/header-dark.svg assets/header-light.svg
-          git add assets/footer-dark.svg assets/footer-light.svg
+          # Pull latest changes first to avoid conflicts
+          git pull --rebase || true
+          
+          # Only add weekly activity SVGs (not header/footer)
           git add assets/weekly-activity-dark.svg assets/weekly-activity-light.svg
           git add wakatime_stats.json
-          git add data/*.json
+          git add data/*.json 2>/dev/null || true
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🤖 Auto-update profile assets [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git commit -m "🤖 Auto-update weekly activity chart [$(date -u '+%Y-%m-%d %H:%M UTC')]"
             git push
           fi

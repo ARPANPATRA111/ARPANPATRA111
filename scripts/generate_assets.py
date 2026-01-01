@@ -285,20 +285,20 @@ def main():
     wakatime_data = get_wakatime_stats()
     
     print(f"GitHub Stats: {github_stats}")
+    print(f"WakaTime Data: {wakatime_data is not None}")
     
-    # Generate SVGs for both themes (only headers, footers, and weekly activity)
+    # Generate ONLY weekly activity SVGs for both themes
+    # Header and footer SVGs are static and should not be regenerated
     for theme in ['dark', 'light']:
-        # Header and Footer
-        save_svg(generate_header_svg(theme, theme), f'header-{theme}.svg')
-        save_svg(generate_footer_svg(theme), f'footer-{theme}.svg')
-        
-        # Weekly Activity
+        # Weekly Activity only
         save_svg(generate_weekly_activity_svg(theme, wakatime_data), f'weekly-activity-{theme}.svg')
+        print(f"Generated weekly-activity-{theme}.svg")
     
     # Save stats to JSON
     with open('wakatime_stats.json', 'w') as f:
         json.dump({
             'github_stats': github_stats,
+            'wakatime_available': wakatime_data is not None,
             'updated_at': datetime.utcnow().isoformat()
         }, f, indent=2)
     

@@ -234,6 +234,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git pull --rebase || true
             git add data/*.json assets/*.svg README.md
             git commit -m "📊 Update profile stats badges [skip ci]"
             git push

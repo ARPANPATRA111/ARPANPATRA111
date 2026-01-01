@@ -419,23 +419,15 @@ jobs:
           print(f"📅 Active Days: {active_days}/7")
           PYEOF
 
-      - name: 🧮 Update Coding Breakdown (WakaTime Chart)
-        uses: athul/waka-readme@master
-        with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          TIME_RANGE: last_7_days
-          LANG_COUNT: 10
-          SHOW_TITLE: true
-          SHOW_TIME: true
-          SHOW_TOTAL: true
-          SECTION_NAME: 📊 Coding_Stats
-          COMMIT_MESSAGE: "📊 Auto-update: WakaTime stats + wake-up time"
-          TARGET_BRANCH: main
-          TARGET_PATH: README.md
-
       - name: 💾 Commit wakatime_stats.json
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase || true
           git add wakatime_stats.json README.md
-          git diff --staged --quiet || (git commit -m "🕒 Update WakaTime stats [skip ci]" && git push origin main)
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🕒 Update WakaTime stats [skip ci]"
+            git push
+          fi

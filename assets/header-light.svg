@@ -1,13 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewBox="0 0 900 100">
   <defs>
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#667eea"/>
-      <stop offset="50%" style="stop-color:#764ba2"/>
-      <stop offset="100%" style="stop-color:#f093fb"/>
+    <linearGradient id="headerGrad_light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b">
+        <animate attributeName="stop-color" values="#ff6b6b;#feca57;#00d2d3;#ff9ff3;#ff6b6b" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#feca57">
+        <animate attributeName="stop-color" values="#feca57;#00d2d3;#ff9ff3;#ff6b6b;#feca57" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#00d2d3">
+        <animate attributeName="stop-color" values="#00d2d3;#ff9ff3;#ff6b6b;#feca57;#00d2d3" dur="8s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
   </defs>
-  <rect width="800" height="200" fill="#ffffff"/>
-  <text x="400" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="bold" fill="url(#headerGrad)" text-anchor="middle">Hi 👋, I'm Arpan Patra</text>
-  <text x="400" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#57606a" text-anchor="middle">Full Stack Developer | Open Source Enthusiast | Tech Explorer</text>
-  <text x="400" y="170" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#57606a" text-anchor="middle">🚀 Building the future, one commit at a time</text>
+  <rect width="900" height="100" fill="#ffffff"/>
+  <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="bold" fill="url(#headerGrad_light)">
+    Hi there! I'm Arpan
+  </text>
+  <text x="50%" y="78" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#57606a">
+    Full Stack Developer | Open Source Enthusiast | Tech Explorer
+  </text>
 </svg>
