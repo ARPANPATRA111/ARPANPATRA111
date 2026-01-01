@@ -131,7 +131,7 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 </td>
 <td align="center" width="25%">
 
-![Issues Resolved](https://img.shields.io/badge/🐛_Issues_Resolved-0-2ecc71?style=for-the-badge&labelColor=1a1a2e)
+![Issues Resolved](https://img.shields.io/badge/🐛_Issues_Resolved-15-2ecc71?style=for-the-badge&labelColor=1a1a2e)
 <!--START_ISSUES_STAT--><!--END_ISSUES_STAT-->
 </td>
 <td align="center" width="25%">
@@ -141,7 +141,7 @@ fun_fact: "Eat🍔 Sleep💤 Code👨‍💻 Repeat🔁"
 </td>
 <td align="center" width="25%">
 
-![Pull Requests](https://img.shields.io/badge/🔀_PRs_Merged-0-9b59b6?style=for-the-badge&labelColor=1a1a2e)
+![Pull Requests](https://img.shields.io/badge/🔀_PRs_Merged-44-9b59b6?style=for-the-badge&labelColor=1a1a2e)
 <!--START_PRS_STAT--><!--END_PRS_STAT-->
 </td>
 </tr>
