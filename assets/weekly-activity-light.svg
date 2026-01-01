@@ -1,117 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
-  <defs>
-    <linearGradient id="bgGrad_light" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="220" fill="url(#bgGrad_light)" rx="12"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <rect width="800" height="220" fill="#ffffff" rx="10"/>
+  <text x="400" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#24292f" text-anchor="middle">📈 Weekly Coding Activity</text>
   
-  <g transform="translate(75, 15)">
-    
-    <defs>
-      <linearGradient id="barGrad_0_light" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#e74c3c"/>
-        <stop offset="100%" style="stop-color:#f39c12"/>
-      </linearGradient>
-    </defs>
-    <rect x="80" y="64.57" width="70" height="115.43" rx="6" fill="url(#barGrad_0_light)">
-      <animate attributeName="height" from="0" to="115.43" dur="0.5s" fill="freeze"/>
-      <animate attributeName="y" from="180" to="64.57" dur="0.5s" fill="freeze"/>
-    </rect>
-    <text x="115" y="56.57" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#24292f" text-anchor="middle">6.1h</text>
-    <text x="115" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#57606a" text-anchor="middle">Wed</text>
-    
-    <defs>
-      <linearGradient id="barGrad_1_light" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#f39c12"/>
-        <stop offset="100%" style="stop-color:#3498db"/>
-      </linearGradient>
-    </defs>
-    <rect x="175" y="52.08" width="70" height="127.92" rx="6" fill="url(#barGrad_1_light)">
-      <animate attributeName="height" from="0" to="127.92" dur="0.5s" fill="freeze"/>
-      <animate attributeName="y" from="180" to="52.08" dur="0.5s" fill="freeze"/>
-    </rect>
-    <text x="210" y="44.08" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#24292f" text-anchor="middle">6.8h</text>
-    <text x="210" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#57606a" text-anchor="middle">Thu</text>
-    
-    <defs>
-      <linearGradient id="barGrad_2_light" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#3498db"/>
-        <stop offset="100%" style="stop-color:#9b59b6"/>
-      </linearGradient>
-    </defs>
-    <rect x="270" y="82.17" width="70" height="97.83" rx="6" fill="url(#barGrad_2_light)">
-      <animate attributeName="height" from="0" to="97.83" dur="0.5s" fill="freeze"/>
-      <animate attributeName="y" from="180" to="82.17" dur="0.5s" fill="freeze"/>
-    </rect>
-    <text x="305" y="74.17" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#24292f" text-anchor="middle">5.2h</text>
-    <text x="305" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#57606a" text-anchor="middle">Fri</text>
-    
-    <defs>
-      <linearGradient id="barGrad_3_light" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#9b59b6"/>
-        <stop offset="100%" style="stop-color:#e74c3c"/>
-      </linearGradient>
-    </defs>
-    <rect x="365" y="63.62" width="70" height="116.38" rx="6" fill="url(#barGrad_3_light)">
-      <animate attributeName="height" from="0" to="116.38" dur="0.5s" fill="freeze"/>
-      <animate attributeName="y" from="180" to="63.62" dur="0.5s" fill="freeze"/>
-    </rect>
-    <text x="400" y="55.62" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#24292f" text-anchor="middle">6.2h</text>
-    <text x="400" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#57606a" text-anchor="middle">Sat</text>
-    
-    <defs>
-      <linearGradient id="barGrad_4_light" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#e74c3c"/>
-        <stop offset="100%" style="stop-color:#f39c12"/>
-      </linearGradient>
-    </defs>
-    <rect x="460" y="50" width="70" height="130" rx="6" fill="url(#barGrad_4_light)">
-      <animate attributeName="height" from="0" to="130" dur="0.5s" fill="freeze"/>
-      <animate attributeName="y" from="180" to="50" dur="0.5s" fill="freeze"/>
-    </rect>
-    <text x="495" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#24292f" text-anchor="middle">6.9h ⭐</text>
-    <text x="495" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#57606a" text-anchor="middle">Sun</text>
-    
-    <defs>
-      <linearGradient id="barGrad_5_light" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#f39c12"/>
-        <stop offset="100%" style="stop-color:#3498db"/>
-      </linearGradient>
-    </defs>
-    <rect x="555" y="99.2" width="70" height="80.8" rx="6" fill="url(#barGrad_5_light)">
-      <animate attributeName="height" from="0" to="80.8" dur="0.5s" fill="freeze"/>
-      <animate attributeName="y" from="180" to="99.2" dur="0.5s" fill="freeze"/>
-    </rect>
-    <text x="590" y="91.2" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#24292f" text-anchor="middle">4.3h</text>
-    <text x="590" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#57606a" text-anchor="middle">Mon</text>
-    
-    <defs>
-      <linearGradient id="barGrad_6_light" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#3498db"/>
-        <stop offset="100%" style="stop-color:#9b59b6"/>
-      </linearGradient>
-    </defs>
-    <rect x="650" y="84.44" width="70" height="95.56" rx="6" fill="url(#barGrad_6_light)">
-      <animate attributeName="height" from="0" to="95.56" dur="0.5s" fill="freeze"/>
-      <animate attributeName="y" from="180" to="84.44" dur="0.5s" fill="freeze"/>
-    </rect>
-    <text x="685" y="76.44" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#24292f" text-anchor="middle">5.0h</text>
-    <text x="685" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="11" 
-          fill="#57606a" text-anchor="middle">Tue</text>
-  </g>
+    <rect x="80" y="180.0" width="60" height="0.0" rx="5" fill="#ff6b6b" opacity="0.8"/>
+    <text x="110" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="middle">Sun</text>
+    <text x="110" y="170.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#24292f" text-anchor="middle">0.0h</text>
+    <rect x="180" y="180.0" width="60" height="0.0" rx="5" fill="#feca57" opacity="0.8"/>
+    <text x="210" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="middle">Mon</text>
+    <text x="210" y="170.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#24292f" text-anchor="middle">0.0h</text>
+    <rect x="280" y="180.0" width="60" height="0.0" rx="5" fill="#48dbfb" opacity="0.8"/>
+    <text x="310" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="middle">Tue</text>
+    <text x="310" y="170.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#24292f" text-anchor="middle">0.0h</text>
+    <rect x="380" y="180.0" width="60" height="0.0" rx="5" fill="#ff9ff3" opacity="0.8"/>
+    <text x="410" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="middle">Wed</text>
+    <text x="410" y="170.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#24292f" text-anchor="middle">0.0h</text>
+    <rect x="480" y="180.0" width="60" height="0.0" rx="5" fill="#54a0ff" opacity="0.8"/>
+    <text x="510" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="middle">Thu</text>
+    <text x="510" y="170.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#24292f" text-anchor="middle">0.0h</text>
+    <rect x="580" y="180.0" width="60" height="0.0" rx="5" fill="#5f27cd" opacity="0.8"/>
+    <text x="610" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="middle">Fri</text>
+    <text x="610" y="170.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#24292f" text-anchor="middle">0.0h</text>
+    <rect x="680" y="180.0" width="60" height="0.0" rx="5" fill="#00d2d3" opacity="0.8"/>
+    <text x="710" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#57606a" text-anchor="middle">Sat</text>
+    <text x="710" y="170.0" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#24292f" text-anchor="middle">0.0h</text>
 </svg>
