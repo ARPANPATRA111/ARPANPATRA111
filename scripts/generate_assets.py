@@ -47,6 +47,8 @@ def get_wakatime_stats():
         response = requests.get(url, headers=headers, timeout=30)
         if response.status_code == 200:
             return response.json().get('data', {})
+        else:
+            print(f"Error fetching WakaTime stats: Status {response.status_code}, Response: {response.text}")
     except Exception as e:
         print(f"Error fetching WakaTime stats: {e}")
     return None

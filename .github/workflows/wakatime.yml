@@ -423,11 +423,14 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase || true
+          
           git add wakatime_stats.json README.md
+          
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
             git commit -m "🕒 Update WakaTime stats [skip ci]"
-            git push
+            # Pull latest changes after commit to rebase on top of them
+            git pull --rebase origin wall-experiments || true
+            git push origin wall-experiments
           fi
