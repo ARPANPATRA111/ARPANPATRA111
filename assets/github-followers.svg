@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="26" viewBox="0 0 140 26">
-  <rect width="65" height="26" rx="4" fill="#161b22"/>
-  <rect x="65" width="75" height="26" rx="4" fill="#58a6ff"/>
-  <text x="32" y="17" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#c9d1d9" text-anchor="middle">Followers</text>
-  <text x="102" y="17" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">0</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="20" role="img" aria-label="FOLLOWERS 9">
+  <mask id="m">
+    <rect width="138" height="20" rx="3" fill="#fff"/>
+  </mask>
+
+  <g mask="url(#m)">
+    <rect width="110" height="20" fill="#555555"/>
+    <rect x="110" width="28" height="20" fill="#3b82f6"/>
+  </g>
+
+  <g fill="#ffffff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="10">
+    <text x="55" y="14">FOLLOWERS</text>
+    <text x="124" y="14">9</text>
+  </g>
 </svg>
