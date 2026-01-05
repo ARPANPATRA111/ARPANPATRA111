@@ -194,6 +194,7 @@ jobs:
         run: |
           python <<'PYEOF'
           import json
+          import re
           from datetime import datetime, timezone
 
           # Read the stats
@@ -205,7 +206,6 @@ jobs:
               readme = f.read()
 
           # Update all dynamic fields
-          wakeup = stats.get("wake_up_time", "N/A")
           updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
           today = stats.get("today_total", "0 hrs 0 mins")
           yesterday = stats.get("yesterday_total", "0 hrs 0 mins")
@@ -213,7 +213,7 @@ jobs:
           last_week = stats.get("last_week_total", "0 hrs 0 mins")
           change = stats.get("week_change", "N/A")
           productive_day = stats.get("most_productive_day", "N/A")
-          productive_hours = stats.get("most_productive_hours", "0")
+          productive_hours = stats.get("most_productive_hours", 0)
           top_lang = stats.get("top_language", "N/A")
           top_editor = stats.get("top_editor", "N/A")
 
@@ -228,111 +228,15 @@ jobs:
           this_week_badge = this_week.replace(" ", "_")
           last_week_badge = last_week.replace(" ", "_")
           change_badge = change.replace(" ", "_").replace("%", "%%25")
-          
-          # Determine badge color based on change
-          change_color = "brightgreen"
-          if "📈" in change:
-              change_color = "brightgreen"
-          elif "📉" in change:
-              change_color = "red"
-          else:
-              change_color = "gray"
 
-          # Create ASCII-style daily chart
-          daily_labels = stats.get("daily_labels", [])
-          
-          # Short day names
-          day_names = {
-              'Mon': 'Mon', 'Tue': 'Tue', 'Wed': 'Wed',
-              'Thu': 'Thu', 'Fri': 'Fri', 'Sat': 'Sat', 'Sun': 'Sun'
-          }
-          
-          chart_lines = []
-          max_hours = max(daily_hours) if daily_hours else 1
-          
-          # Find the most productive day
-          most_productive_idx = daily_hours.index(max(daily_hours)) if daily_hours else -1
-          
-          # Create table header
-          chart_lines.append("| Day | Activity | Hours |")
-          chart_lines.append("|-----|----------|-------|")
-          
-          import math
-          for i, (label, hours) in enumerate(zip(daily_labels, daily_hours)):
-              day = day_names.get(label, label)
-              
-              # Apply logarithmic scaling for better visual representation
-              # This makes small values more visible while still showing differences
-              if hours > 0:
-                  # Use log scaling: log(1 + hours*10) to amplify small values
-                  scaled_value = math.log(1 + hours * 10) / math.log(1 + max_hours * 10)
-                  percentage = int(scaled_value * 100)
-                  percentage = max(8, min(percentage, 100))  # Min 8% for visibility, max 100%
-              else:
-                  percentage = 0
-              
-              # Professional gradient color scheme based on intensity
-              if percentage == 0:
-                  color = "1a1a2e"  # Very dark blue-gray for no activity
-              elif percentage < 25:
-                  color = "e94560"  # Coral red for minimal activity
-              elif percentage < 50:
-                  color = "f39c12"  # Orange for low activity
-              elif percentage < 75:
-                  color = "3498db"  # Blue for moderate activity
-              else:
-                  color = "2ecc71"  # Green for high activity
-              
-              # Add star for most productive day
-              star = " ⭐" if i == most_productive_idx and hours > 0 else ""
-              
-              # Create progress bar using external service
-              progress_bar = f"![](https://progress-bar.xyz/{percentage}/?width=250&color={color}&suffix=%20)"
-              
-              # Format table row
-              chart_lines.append(f"| {day} | {progress_bar}{star} | {hours:.1f} hrs |")
-          
-          chart = "\n".join(chart_lines)
+          # Format values for Quick Stats badges
+          productive_badge = f"{productive_day}_({productive_hours:.1f}h)"
+          top_lang_badge = top_lang.replace(" ", "_")
+          top_editor_badge = top_editor.replace(" ", "_")
+          avg_daily_badge = f"{avg_daily:.1f}_hrs"
+          active_days_badge = f"{active_days}/7_days"
 
-          # Replace badge values in URLs
-          import re
-          
-          # Replace TODAY badge (HTML img tag format)
-          readme = re.sub(
-              r'(<img src="https://img\.shields\.io/badge/TODAY-)[^-]+(-.+?" alt="TODAY"/>)<!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->',
-              rf'\g<1>{today_badge}\g<2><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->',
-              readme
-          )
-          
-          # Replace YESTERDAY badge (HTML img tag format)
-          readme = re.sub(
-              r'(<img src="https://img\.shields\.io/badge/YESTERDAY-)[^-]+(-.+?" alt="YESTERDAY"/>)<!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->',
-              rf'\g<1>{yesterday_badge}\g<2><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->',
-              readme
-          )
-          
-          # Replace THIS WEEK badge (HTML img tag format)
-          readme = re.sub(
-              r'(<img src="https://img\.shields\.io/badge/THIS_WEEK-)[^-]+(-.+?" alt="THIS WEEK"/>)<!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->',
-              rf'\g<1>{this_week_badge}\g<2><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->',
-              readme
-          )
-          
-          # Replace LAST WEEK badge (HTML img tag format)
-          readme = re.sub(
-              r'(<img src="https://img\.shields\.io/badge/LAST_WEEK-)[^-]+(-.+?" alt="LAST WEEK"/>)<!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->',
-              rf'\g<1>{last_week_badge}\g<2><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->',
-              readme
-          )
-          
-          # Replace WEEKLY CHANGE badge (both text and color) (HTML img tag format)
-          readme = re.sub(
-              r'(<img src="https://img\.shields\.io/badge/CHANGE-)[^-]+(-)[^?]+(\?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/>)<!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->',
-              rf'\g<1>{change_badge}\g<2>{change_color}\g<3><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->',
-              readme
-          )
-
-          # Replace all markers for other dynamic content
+          # Helper function to safely replace between markers
           def safe_replace(content, start_marker, end_marker, new_value):
               try:
                   start = content.find(f"<!--{start_marker}-->")
@@ -345,44 +249,72 @@ jobs:
                   pass
               return content
 
+          # Update timestamp
           readme = safe_replace(readme, "START_UPDATE_DATE", "END_UPDATE_DATE", updated)
-          readme = safe_replace(readme, "START_DAILY_CHART", "END_DAILY_CHART", f"\n{chart}\n")
-          
-          # Format values for Quick Stats badges (replace spaces with underscores for URL compatibility)
-          productive_badge = f"{productive_day} ({productive_hours:.1f}h)".replace(" ", "_")
-          top_lang_badge = top_lang.replace(" ", "_")
-          top_editor_badge = top_editor.replace(" ", "_")
-          avg_daily_badge = f"{avg_daily:.1f} hrs".replace(" ", "_")
-          active_days_badge = f"{active_days}/7 days".replace(" ", "_")
-          
-          # Replace Quick Stats badges - full img tag replacement
+
+          # Update Today stat badge in table
           readme = re.sub(
-              r'<img src="https://img\.shields\.io/badge/🏆_Most_Productive-[^-]+-4CAF50\?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->',
-              f'<img src="https://img.shields.io/badge/🏆_Most_Productive-{productive_badge}-4CAF50?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->',
+              r'!\[Today\]\(https://img\.shields\.io/badge/Today-[^)]+\)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->',
+              f'![Today](https://img.shields.io/badge/Today-{today_badge}-ff6b6b?style=for-the-badge&labelColor=1a1a2e)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->',
               readme
           )
-          
+
+          # Update Yesterday stat badge
           readme = re.sub(
-              r'<img src="https://img\.shields\.io/badge/💻_Top_Language-[^-]+-2196F3\?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->',
-              f'<img src="https://img.shields.io/badge/💻_Top_Language-{top_lang_badge}-2196F3?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->',
+              r'!\[Yesterday\]\(https://img\.shields\.io/badge/Yesterday-[^)]+\)<!--START_YESTERDAY_STAT--><!--END_YESTERDAY_STAT-->',
+              f'![Yesterday](https://img.shields.io/badge/Yesterday-{yesterday_badge}-feca57?style=for-the-badge&labelColor=1a1a2e)<!--START_YESTERDAY_STAT--><!--END_YESTERDAY_STAT-->',
               readme
           )
-          
+
+          # Update This Week stat badge
           readme = re.sub(
-              r'<img src="https://img\.shields\.io/badge/🛠️_Editor-[^-]+-FF9800\?style=for-the-badge&labelColor=1a1a1a" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->',
-              f'<img src="https://img.shields.io/badge/🛠️_Editor-{top_editor_badge}-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->',
+              r'!\[This Week\]\(https://img\.shields\.io/badge/This_Week-[^)]+\)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->',
+              f'![This Week](https://img.shields.io/badge/This_Week-{this_week_badge}-48dbfb?style=for-the-badge&labelColor=1a1a2e)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->',
               readme
           )
-          
+
+          # Update Last Week stat badge
           readme = re.sub(
-              r'<img src="https://img\.shields\.io/badge/⚡_Avg_Daily-[^-]+-9C27B0\?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->',
-              f'<img src="https://img.shields.io/badge/⚡_Avg_Daily-{avg_daily_badge}-9C27B0?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->',
+              r'!\[Last Week\]\(https://img\.shields\.io/badge/Last_Week-[^)]+\)<!--START_LASTWEEK_STAT--><!--END_LASTWEEK_STAT-->',
+              f'![Last Week](https://img.shields.io/badge/Last_Week-{last_week_badge}-ff9ff3?style=for-the-badge&labelColor=1a1a2e)<!--START_LASTWEEK_STAT--><!--END_LASTWEEK_STAT-->',
               readme
           )
-          
+
+          # Update Quick Stats badges - full img tag replacement
           readme = re.sub(
-              r'<img src="https://img\.shields\.io/badge/📅_Active_Days-[^-]+-00BCD4\?style=for-the-badge&labelColor=1a1a1a" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->',
-              f'<img src="https://img.shields.io/badge/📅_Active_Days-{active_days_badge}-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->',
+              r'<img src="https://img\.shields\.io/badge/🏆_Most_Productive-[^"]+style=for-the-badge&labelColor=1a1a2e" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->',
+              f'<img src="https://img.shields.io/badge/🏆_Most_Productive-{productive_badge}-4CAF50?style=for-the-badge&labelColor=1a1a2e" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->',
+              readme
+          )
+
+          readme = re.sub(
+              r'<img src="https://img\.shields\.io/badge/💻_Top_Language-[^"]+style=for-the-badge&labelColor=1a1a2e" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->',
+              f'<img src="https://img.shields.io/badge/💻_Top_Language-{top_lang_badge}-2196F3?style=for-the-badge&labelColor=1a1a2e" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->',
+              readme
+          )
+
+          readme = re.sub(
+              r'<img src="https://img\.shields\.io/badge/🛠️_Editor-[^"]+style=for-the-badge&labelColor=1a1a2e" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->',
+              f'<img src="https://img.shields.io/badge/🛠️_Editor-{top_editor_badge}-FF9800?style=for-the-badge&labelColor=1a1a2e" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->',
+              readme
+          )
+
+          readme = re.sub(
+              r'<img src="https://img\.shields\.io/badge/⚡_Avg_Daily-[^"]+style=for-the-badge&labelColor=1a1a2e" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->',
+              f'<img src="https://img.shields.io/badge/⚡_Avg_Daily-{avg_daily_badge}-9C27B0?style=for-the-badge&labelColor=1a1a2e" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->',
+              readme
+          )
+
+          readme = re.sub(
+              r'<img src="https://img\.shields\.io/badge/📅_Active_Days-[^"]+style=for-the-badge&labelColor=1a1a2e" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->',
+              f'<img src="https://img.shields.io/badge/📅_Active_Days-{active_days_badge}-00BCD4?style=for-the-badge&labelColor=1a1a2e" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->',
+              readme
+          )
+
+          # Update Change badge
+          readme = re.sub(
+              r'!\[Change\]\(https://img\.shields\.io/badge/📈_Change-[^)]+\)<!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE-->',
+              f'![Change](https://img.shields.io/badge/📈_Change-{change_badge}-gray?style=for-the-badge&labelColor=1a1a2e)<!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE-->',
               readme
           )
 
@@ -391,30 +323,16 @@ jobs:
               f.write(readme)
 
           print(f"✅ README updated successfully!")
-          print(f"� Today: {today}")
+          print(f"📅 Today: {today}")
           print(f"📆 Yesterday: {yesterday}")
-          print(f"�📊 This Week: {this_week}")
+          print(f"📊 This Week: {this_week}")
           print(f"📆 Last Week: {last_week}")
           print(f"📈 Change: {change}")
           print(f"🏆 Most Productive: {productive_day} ({productive_hours:.1f}h)")
           print(f"⚡ Avg Daily: {avg_daily:.1f} hrs")
           print(f"📅 Active Days: {active_days}/7")
           PYEOF
-
-      - name: 🧮 Update Coding Breakdown (WakaTime Chart)
-        uses: athul/waka-readme@master
-        with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          TIME_RANGE: last_7_days
-          LANG_COUNT: 10
-          SHOW_TITLE: true
-          SHOW_TIME: true
-          SHOW_TOTAL: true
-          SECTION_NAME: 📊 Coding_Stats
-          COMMIT_MESSAGE: "📊 Auto-update: WakaTime stats + wake-up time"
-          TARGET_BRANCH: main
-          TARGET_PATH: README.md
-
+          
       - name: 💾 Commit wakatime_stats.json
         run: |
           git config --global user.name "GitHub Action Bot"

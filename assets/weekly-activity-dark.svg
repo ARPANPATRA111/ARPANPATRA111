@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350">
+  <defs>
+    <linearGradient id="grad0" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8e53;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#feca57;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#48dbfb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5f27cd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#48dbfb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b81;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a55eea;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6348;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffa502;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd32a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7bed9f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#70a1ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5352ed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="350" fill="#0d1117" rx="16" ry="16"/>
+  <rect x="1" y="1" width="798" height="348" fill="none" stroke="#30363d" stroke-width="1" rx="15" ry="15"/>
+  
+  <!-- Title -->
+  <text x="400.0" y="35" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="600"></text>
+  
+  <!-- Grid Lines -->
+  <line x1="60" y1="90.0" x2="740" y2="90.0" stroke="#21262d" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="50" y="94.0" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">8.3h</text>
+  <line x1="60" y1="137.5" x2="740" y2="137.5" stroke="#21262d" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="50" y="141.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">6.2h</text>
+  <line x1="60" y1="185.0" x2="740" y2="185.0" stroke="#21262d" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="50" y="189.0" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">4.2h</text>
+  <line x1="60" y1="232.5" x2="740" y2="232.5" stroke="#21262d" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="50" y="236.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">2.1h</text>
+  <line x1="60" y1="280.0" x2="740" y2="280.0" stroke="#21262d" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="50" y="284.0" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">0.0h</text>
+  
+  <!-- Activity Bars -->
+  <rect x="79.42857142857143" y="160.93637454981993" width="58.28571428571428" height="119.06362545018007" fill="url(#grad0)" rx="8" ry="8">
+    <animate attributeName="height" from="0" to="119.06362545018007" dur="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="280" to="160.93637454981993" dur="0.5s" fill="freeze"/>
+  </rect>
+  <text x="108.57142857142857" y="150.93637454981993" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">5.2h </text>
+  <text x="108.57142857142857" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Fri</text>
+  <rect x="176.57142857142856" y="90.0" width="58.28571428571428" height="190.0" fill="url(#grad1)" rx="8" ry="8">
+    <animate attributeName="height" from="0" to="190.0" dur="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="280" to="90.0" dur="0.5s" fill="freeze"/>
+  </rect>
+  <text x="205.7142857142857" y="80.0" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">8.3h ⭐</text>
+  <text x="205.7142857142857" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Sat</text>
+  <rect x="273.7142857142857" y="186.48259303721488" width="58.28571428571428" height="93.5174069627851" fill="url(#grad2)" rx="8" ry="8">
+    <animate attributeName="height" from="0" to="93.5174069627851" dur="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="280" to="186.48259303721488" dur="0.5s" fill="freeze"/>
+  </rect>
+  <text x="302.8571428571429" y="176.48259303721488" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">4.1h </text>
+  <text x="302.8571428571429" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Sun</text>
+  <rect x="370.8571428571429" y="209.51980792316925" width="58.28571428571428" height="70.48019207683073" fill="url(#grad3)" rx="8" ry="8">
+    <animate attributeName="height" from="0" to="70.48019207683073" dur="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="280" to="209.51980792316925" dur="0.5s" fill="freeze"/>
+  </rect>
+  <text x="400.0" y="199.51980792316925" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">3.1h </text>
+  <text x="400.0" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Mon</text>
+  <rect x="468.0" y="178.49939975990395" width="58.28571428571428" height="101.50060024009603" fill="url(#grad4)" rx="8" ry="8">
+    <animate attributeName="height" from="0" to="101.50060024009603" dur="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="280" to="178.49939975990395" dur="0.5s" fill="freeze"/>
+  </rect>
+  <text x="497.1428571428571" y="168.49939975990395" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">4.5h </text>
+  <text x="497.1428571428571" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Tue</text>
+  <rect x="565.1428571428571" y="153.1812725090036" width="58.28571428571428" height="126.8187274909964" fill="url(#grad5)" rx="8" ry="8">
+    <animate attributeName="height" from="0" to="126.8187274909964" dur="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="280" to="153.1812725090036" dur="0.5s" fill="freeze"/>
+  </rect>
+  <text x="594.2857142857142" y="143.1812725090036" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">5.6h </text>
+  <text x="594.2857142857142" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Wed</text>
+  <text x="691.4285714285714" y="260" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">0.0h </text>
+  <text x="691.4285714285714" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Thu</text>
+</svg>

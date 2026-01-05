@@ -6,10 +6,11 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
-    branches: [main, wall-experiments]
+    branches: [main]
     paths:
       - '.github/workflows/generate-assets.yml'
       - 'scripts/**'
+      - 'wakatime_stats.json'
 
 # Prevent concurrent runs
 concurrency:
@@ -32,14 +33,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
-          cache-dependency-path: 'requirements.txt'
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install requests pytz
 
-      - name: Generate SVG Assets (Headers, Footers, Weekly Activity)
+      - name: Generate SVG Assets (Weekly Activity Charts)
         env:
           GH_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
@@ -51,9 +50,8 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           
-          # Only add weekly activity SVGs (not header/footer)
-          git add assets/weekly-activity-dark.svg assets/weekly-activity-light.svg
-          git add wakatime_stats.json
+          # Add weekly activity SVGs
+          git add assets/weekly-activity-dark.svg assets/weekly-activity-light.svg 2>/dev/null || true
           git add data/*.json 2>/dev/null || true
           
           if git diff --staged --quiet; then
@@ -65,7 +63,7 @@ jobs:
             n=0
             until [ "$n" -ge 5 ]
             do
-               git pull --rebase origin wall-experiments && git push origin wall-experiments && break
+               git pull --rebase origin main && git push origin main && break
                n=$((n+1)) 
                echo "Push failed, retrying ($n/5)..."
                sleep 5

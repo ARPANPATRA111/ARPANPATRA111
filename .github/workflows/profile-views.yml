@@ -143,9 +143,9 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if [ -n "$(git.status --porcelain 2>/dev/null || git status --porcelain)" ]; then
+          if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
             git config user.name "github-actions[bot]"
-            git.config user.email "41898282+github-actions[bot]@users.noreply.github.com" || git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/profile-views.json data/traffic-latest.json assets/profile-views.svg assets/github-followers.svg assets/github-stars.svg
             git commit -m "Update profile stats badges"
             git push
