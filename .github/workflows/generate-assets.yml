@@ -38,7 +38,7 @@ jobs:
         run: |
           pip install requests pytz
 
-      - name: Generate SVG Assets (Weekly Activity Charts)
+      - name: Generate SVG Assets (All Profile Assets)
         env:
           GH_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
@@ -50,8 +50,8 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           
-          # Add weekly activity SVGs
-          git add assets/weekly-activity-dark.svg assets/weekly-activity-light.svg 2>/dev/null || true
+          # Add all generated assets
+          git add assets/*.svg 2>/dev/null || true
           git add data/*.json 2>/dev/null || true
           
           if git diff --staged --quiet; then

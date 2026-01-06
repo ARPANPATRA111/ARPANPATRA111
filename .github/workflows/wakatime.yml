@@ -273,13 +273,6 @@ jobs:
               readme
           )
 
-          # Update Last Week stat badge
-          readme = re.sub(
-              r'!\[Last Week\]\(https://img\.shields\.io/badge/Last_Week-[^)]+\)<!--START_LASTWEEK_STAT--><!--END_LASTWEEK_STAT-->',
-              f'![Last Week](https://img.shields.io/badge/Last_Week-{last_week_badge}-ff9ff3?style=for-the-badge&labelColor=1a1a2e)<!--START_LASTWEEK_STAT--><!--END_LASTWEEK_STAT-->',
-              readme
-          )
-
           # Update Quick Stats badges - full img tag replacement
           readme = re.sub(
               r'<img src="https://img\.shields\.io/badge/🏆_Most_Productive-[^"]+style=for-the-badge&labelColor=1a1a2e" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->',
@@ -326,11 +319,106 @@ jobs:
           print(f"📅 Today: {today}")
           print(f"📆 Yesterday: {yesterday}")
           print(f"📊 This Week: {this_week}")
-          print(f"📆 Last Week: {last_week}")
-          print(f"📈 Change: {change}")
           print(f"🏆 Most Productive: {productive_day} ({productive_hours:.1f}h)")
           print(f"⚡ Avg Daily: {avg_daily:.1f} hrs")
           print(f"📅 Active Days: {active_days}/7")
+          PYEOF
+
+      - name: 📊 Update GitHub Stats (Commits, PRs, Issues)
+        env:
+          GH_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
+        run: |
+          python <<'PYEOF'
+          import os
+          import re
+          import requests
+
+          gh_token = os.environ.get("GH_TOKEN", "")
+          username = "ARPANPATRA111"
+
+          headers = {
+              "Accept": "application/vnd.github.v3+json",
+              "User-Agent": username
+          }
+          if gh_token:
+              headers["Authorization"] = f"token {gh_token}"
+
+          # Fetch commits (from events API)
+          total_commits = 0
+          for page in range(1, 4):
+              try:
+                  resp = requests.get(
+                      f"https://api.github.com/users/{username}/events?per_page=100&page={page}",
+                      headers=headers,
+                      timeout=30
+                  )
+                  if resp.status_code == 200:
+                      events = resp.json()
+                      push_events = [e for e in events if e.get("type") == "PushEvent"]
+                      for e in push_events:
+                          total_commits += len(e.get("payload", {}).get("commits", []))
+              except:
+                  pass
+
+          # Fetch PRs
+          total_prs = 0
+          try:
+              resp = requests.get(
+                  f"https://api.github.com/search/issues?q=author:{username}+type:pr",
+                  headers=headers,
+                  timeout=30
+              )
+              if resp.status_code == 200:
+                  total_prs = resp.json().get("total_count", 0)
+          except:
+              pass
+
+          # Fetch Issues
+          total_issues = 0
+          try:
+              resp = requests.get(
+                  f"https://api.github.com/search/issues?q=author:{username}+type:issue",
+                  headers=headers,
+                  timeout=30
+              )
+              if resp.status_code == 200:
+                  total_issues = resp.json().get("total_count", 0)
+          except:
+              pass
+
+          print(f"📊 Commits: {total_commits}")
+          print(f"📊 PRs: {total_prs}")
+          print(f"📊 Issues: {total_issues}")
+
+          # Update README
+          with open("README.md", "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          # Update Commits badge
+          readme = re.sub(
+              r'!\[Commits\]\(https://img\.shields\.io/badge/🔥_Commits-[^)]+\)<!--START_COMMITS_STAT--><!--END_COMMITS_STAT-->',
+              f'![Commits](https://img.shields.io/badge/🔥_Commits-{total_commits}-e74c3c?style=for-the-badge&labelColor=1a1a2e)<!--START_COMMITS_STAT--><!--END_COMMITS_STAT-->',
+              readme
+          )
+
+          # Update PRs badge
+          readme = re.sub(
+              r'!\[PRs\]\(https://img\.shields\.io/badge/🔀_PRs-[^)]+\)<!--START_PRS_STAT--><!--END_PRS_STAT-->',
+              f'![PRs](https://img.shields.io/badge/🔀_PRs-{total_prs}-9b59b6?style=for-the-badge&labelColor=1a1a2e)<!--START_PRS_STAT--><!--END_PRS_STAT-->',
+              readme
+          )
+
+          # Update Issues badge
+          readme = re.sub(
+              r'!\[Issues\]\(https://img\.shields\.io/badge/✅_Issues-[^)]+\)<!--START_ISSUES_STAT--><!--END_ISSUES_STAT-->',
+              f'![Issues](https://img.shields.io/badge/✅_Issues-{total_issues}-27ae60?style=for-the-badge&labelColor=1a1a2e)<!--START_ISSUES_STAT--><!--END_ISSUES_STAT-->',
+              readme
+          )
+
+          with open("README.md", "w", encoding="utf-8") as f:
+              f.write(readme)
+
+          print("✅ GitHub stats updated!")
           PYEOF
           
       - name: 💾 Commit wakatime_stats.json
@@ -338,5 +426,15 @@ jobs:
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "github-action-bot@users.noreply.github.com"
           git add wakatime_stats.json README.md
-          git commit -m "🕒 Updated WakaTime JSON and README" || echo "No changes to commit"
-          git push origin main
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "🕒 Updated WakaTime JSON and README"
+          
+          # Retry loop for push with rebase to handle race conditions
+          n=0
+          until [ "$n" -ge 5 ]
+          do
+             git pull --rebase origin main && git push origin main && break
+             n=$((n+1)) 
+             echo "Push failed, retrying ($n/5)..."
+             sleep 5
+          done
