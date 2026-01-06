@@ -179,7 +179,7 @@ def get_repo_info(owner: str, repo_name: str) -> Optional[Dict]:
 # ============================================================
 
 def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
-    """Generate a weekly activity bar chart SVG with date display."""
+    """Generate a weekly activity bar chart SVG with individual date and day display."""
     daily_hours = stats.get("daily_hours", [0] * 7)
     daily_labels = stats.get("daily_labels", ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
     
@@ -215,10 +215,10 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
     ]
     
     width = 800
-    height = 380  # Increased height for date
+    height = 380
     padding = 60
     chart_width = width - (padding * 2)
-    chart_height = height - (padding * 2) - 70  # More space for date
+    chart_height = height - (padding * 2) - 70
     
     max_hours = max(daily_hours) if max(daily_hours) > 0 else 8
     max_hours = max(max_hours, 1)
@@ -228,19 +228,48 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
     bar_width = chart_width / 7 * 0.6
     bar_spacing = chart_width / 7
     
-    # Get current date info
+    # Get latest_day from stats (the last day of data)
+    # This is the key fix: use the actual latest_day from WakaTime data
     from datetime import datetime
     import pytz
-    try:
-        ist = pytz.timezone('Asia/Kolkata')
-        now = datetime.now(ist)
-    except:
-        now = datetime.now()
     
-    # Calculate week range
-    week_start = now - timedelta(days=now.weekday())
-    week_end = week_start + timedelta(days=6)
-    date_range = f"{week_start.strftime('%b %d')} - {week_end.strftime('%b %d, %Y')}"
+    latest_day_str = stats.get("latest_day", None)
+    
+    if latest_day_str:
+        # Parse the latest_day from the stats (format: "2026-01-08")
+        try:
+            latest_day = datetime.strptime(latest_day_str, "%Y-%m-%d")
+        except:
+            # Fallback to today if parsing fails
+            try:
+                ist = pytz.timezone('Asia/Kolkata')
+                latest_day = datetime.now(ist).replace(tzinfo=None)
+            except:
+                latest_day = datetime.now()
+    else:
+        # Fallback to today if no latest_day in stats
+        try:
+            ist = pytz.timezone('Asia/Kolkata')
+            latest_day = datetime.now(ist).replace(tzinfo=None)
+        except:
+            latest_day = datetime.now()
+    
+    # Calculate dates for each day of the week
+    # daily_hours[0] is 6 days before latest_day, daily_hours[6] is latest_day
+    day_short_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    week_dates = []
+    
+    for i in range(7):
+        # Go back (6-i) days from latest_day to get the correct date for each position
+        days_ago = 6 - i
+        day_date = latest_day - timedelta(days=days_ago)
+        day_name = day_short_names[day_date.weekday()]
+        date_str = f"{day_date.day:02d} {day_name}"
+        week_dates.append(date_str)
+    
+    # Calculate week range for title
+    week_start_date = latest_day - timedelta(days=6)
+    week_range = f"{week_start_date.strftime('%b %d')} - {latest_day.strftime('%b %d, %Y')}"
     
     svg_parts = []
     svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
@@ -290,14 +319,14 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
         svg_parts.append(f'''
   <text x="{bar_x + bar_width/2}" y="{text_y}" text-anchor="middle" fill="{text_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">{hours:.1f}h {star}</text>''')
         
+        # Display date with day name (e.g., "02 Fri")
         svg_parts.append(f'''
-  <text x="{bar_x + bar_width/2}" y="{height - 50}" text-anchor="middle" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">{label}</text>''')
+  <text x="{bar_x + bar_width/2}" y="{height - 50}" text-anchor="middle" fill="{accent_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">{week_dates[i]}</text>''')
     
-    # Add date range below the chart
     svg_parts.append(f'''
-  <!-- Date Range -->
-  <text x="{width/2}" y="{height - 18}" text-anchor="middle" fill="{accent_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="600">
-    📅 {date_range}
+  <!-- Week Range Title -->
+  <text x="{width/2}" y="{height - 15}" text-anchor="middle" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">
+    📅 Last 7 Days: {week_range}
     <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
   </text>''')
     
@@ -850,10 +879,65 @@ def generate_all_featured_projects_svg(repos_info: List[Dict], theme: str = "dar
     return "".join(svg_parts)
 
 
+def fetch_github_contributions(username: str) -> Dict[str, int]:
+    """
+    Fetch actual GitHub contribution data using the GitHub GraphQL API.
+    Returns a dictionary with date strings as keys and contribution counts as values.
+    """
+    query = """
+    query($username: String!) {
+      user(login: $username) {
+        contributionsCollection {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+    
+    headers = {
+        "Content-Type": "application/json",
+    }
+    if GH_TOKEN:
+        headers["Authorization"] = f"bearer {GH_TOKEN}"
+    
+    try:
+        response = requests.post(
+            "https://api.github.com/graphql",
+            json={"query": query, "variables": {"username": username}},
+            headers=headers,
+            timeout=30
+        )
+        
+        if response.status_code == 200:
+            data = response.json()
+            contributions = {}
+            if data.get("data", {}).get("user", {}).get("contributionsCollection"):
+                weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+                for week in weeks:
+                    for day in week["contributionDays"]:
+                        contributions[day["date"]] = day["contributionCount"]
+            return contributions
+    except Exception as e:
+        print(f"⚠️ Failed to fetch GitHub contributions: {e}")
+    
+    return {}
+
+
 def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], theme: str = "dark") -> str:
     """
     Generate a premium infinite loop animated contribution graph SVG.
-    Like the snake animation, this loops continuously showing contribution activity.
+    Features:
+    1. Pop-up animation where all cells appear with staggered timing
+    2. After pop-up completes, a scanner line moves horizontally highlighting contributions
+    3. Uses real GitHub contribution data for accurate representation
     """
     if theme == "dark":
         bg_color = "#0d1117"
@@ -863,7 +947,7 @@ def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], them
         empty_color = "#161b22"
         level_colors = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
         glow_color = "#39d353"
-        particle_colors = ["#39d353", "#26a641", "#58a6ff", "#f778ba", "#ffd700"]
+        scanner_color = "#58a6ff"
     else:
         bg_color = "#ffffff"
         text_color = "#1f2328"
@@ -872,85 +956,74 @@ def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], them
         empty_color = "#ebedf0"
         level_colors = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]
         glow_color = "#216e39"
-        particle_colors = ["#216e39", "#30a14e", "#0969da", "#bf3989", "#9a6700"]
+        scanner_color = "#0969da"
     
     cell_size = 11
     cell_gap = 3
     weeks = 53
-    days = 7
+    days_per_week = 7
     
     left_padding = 45
     top_padding = 65
     right_padding = 30
     bottom_padding = 60
     
-    width = left_padding + weeks * (cell_size + cell_gap) + right_padding
-    height = top_padding + days * (cell_size + cell_gap) + bottom_padding
+    graph_width = weeks * (cell_size + cell_gap)
+    graph_height = days_per_week * (cell_size + cell_gap)
     
-    # Generate dates for last 52 weeks
+    width = left_padding + graph_width + right_padding
+    height = top_padding + graph_height + bottom_padding
+    
+    # Generate dates for last 52 weeks + current week
     today = datetime.now(timezone.utc).date()
-    days_since_sunday = today.weekday() + 1
-    if days_since_sunday == 7:
-        days_since_sunday = 0
-    end_date = today
-    start_date = end_date - timedelta(days=364)
+    # Find the Sunday of the current week
+    days_since_sunday = (today.weekday() + 1) % 7
+    end_of_week = today + timedelta(days=(6 - days_since_sunday))
+    start_date = end_of_week - timedelta(days=52*7 + 6)
     
-    # Calculate totals
+    # Calculate totals from actual contributions
     total_contribs = sum(contributions.values())
     max_contrib = max(contributions.values()) if contributions else 1
     max_contrib = max(max_contrib, 1)
     
+    # Animation timing
+    pop_duration = 4  # Total time for pop-up animation
+    scanner_delay = pop_duration + 0.5  # Scanner starts after pop-up
+    scanner_duration = 3  # Scanner sweep duration
+    total_cycle = scanner_delay + scanner_duration + 1  # Full animation cycle
+    
     svg_parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
   <defs>
-    <!-- Glow filter -->
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+    <!-- Glow filter for highlights -->
+    <filter id="cellGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     
-    <!-- Neon glow for active elements -->
-    <filter id="neonGlow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    
-    <!-- Gradient for title -->
-    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:{level_colors[3]};stop-opacity:1">
-        <animate attributeName="stop-color" values="{level_colors[3]};{level_colors[4]};{level_colors[3]}" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:{level_colors[4]};stop-opacity:1">
-        <animate attributeName="stop-color" values="{level_colors[4]};{level_colors[3]};{level_colors[4]}" dur="4s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-    
-    <!-- Wave gradient for scanning effect -->
-    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Scanner line gradient -->
+    <linearGradient id="scannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:transparent"/>
-      <stop offset="45%" style="stop-color:transparent"/>
-      <stop offset="50%" style="stop-color:{glow_color};stop-opacity:0.6"/>
-      <stop offset="55%" style="stop-color:transparent"/>
+      <stop offset="40%" style="stop-color:{scanner_color};stop-opacity:0.1"/>
+      <stop offset="50%" style="stop-color:{scanner_color};stop-opacity:0.8"/>
+      <stop offset="60%" style="stop-color:{scanner_color};stop-opacity:0.1"/>
       <stop offset="100%" style="stop-color:transparent"/>
-      <animate attributeName="x1" values="-100%;200%" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="0%;300%" dur="4s" repeatCount="indefinite"/>
     </linearGradient>
     
-    <!-- Particle gradient -->
-    <radialGradient id="particleGrad">
-      <stop offset="0%" style="stop-color:{glow_color};stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:{glow_color};stop-opacity:0"/>
-    </radialGradient>''']
+    <!-- Title gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:{level_colors[3]}"/>
+      <stop offset="100%" style="stop-color:{level_colors[4]}"/>
+    </linearGradient>''']
     
-    # Add animated gradients for each level
+    # Add cell gradients for each level
     for i, color in enumerate(level_colors[1:], 1):
         svg_parts.append(f'''
-    <radialGradient id="cellGrad{i}" cx="50%" cy="50%" r="60%">
+    <radialGradient id="lvl{i}" cx="50%" cy="50%" r="60%">
       <stop offset="0%" style="stop-color:{color};stop-opacity:1"/>
-      <stop offset="80%" style="stop-color:{color};stop-opacity:0.85"/>
-      <stop offset="100%" style="stop-color:{color};stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:{color};stop-opacity:0.8"/>
     </radialGradient>''')
     
     svg_parts.append(f'''
@@ -960,58 +1033,60 @@ def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], them
   <rect width="{width}" height="{height}" fill="{bg_color}" rx="16" ry="16"/>
   <rect x="1" y="1" width="{width-2}" height="{height-2}" fill="none" stroke="{border_color}" stroke-width="1" rx="15" ry="15"/>
   
-  <!-- Animated Title -->
-  <g transform="translate({left_padding}, 25)">
-    <text fill="url(#titleGradient)" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700">
+  <!-- Title -->
+  <g transform="translate({left_padding}, 28)">
+    <text fill="url(#titleGrad)" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700">
       🔥 Contribution Activity
     </text>
     <text x="{width - left_padding - right_padding - 10}" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" text-anchor="end">
-      <tspan fill="{level_colors[4]}" font-weight="bold">{total_contribs}</tspan> contributions
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+      <tspan fill="{level_colors[4]}" font-weight="bold">{total_contribs}</tspan> contributions in the last year
     </text>
-  </g>
-  
-  <!-- Scanning wave overlay (infinite loop) -->
-  <rect x="{left_padding}" y="{top_padding}" width="{weeks * (cell_size + cell_gap)}" height="{days * (cell_size + cell_gap)}" fill="url(#waveGrad)" rx="3" ry="3" opacity="0.5"/>''')
+  </g>''')
     
-    # Day labels
+    # Day labels (Sun, Mon, ..., Sat aligned with GitHub)
     day_labels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i in [1, 3, 5]:
         y = top_padding + i * (cell_size + cell_gap) + cell_size / 2 + 4
         svg_parts.append(f'''
-  <text x="{left_padding - 10}" y="{y}" text-anchor="end" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">{day_labels[i]}</text>''')
+  <text x="{left_padding - 8}" y="{y}" text-anchor="end" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">{day_labels[i]}</text>''')
     
     # Month labels
     current_date = start_date
     prev_month = None
     for week in range(weeks):
-        month_name = current_date.strftime("%b")
+        week_start = start_date + timedelta(days=week * 7)
+        month_name = week_start.strftime("%b")
         if month_name != prev_month:
             x = left_padding + week * (cell_size + cell_gap)
             svg_parts.append(f'''
-  <text x="{x}" y="{top_padding - 12}" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">{month_name}</text>''')
+  <text x="{x}" y="{top_padding - 10}" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">{month_name}</text>''')
             prev_month = month_name
-        current_date += timedelta(days=7)
     
-    # Draw cells with infinite loop wave animation
+    # Draw contribution cells with pop-up animation
+    svg_parts.append(f'''
+  
+  <!-- Contribution cells with pop-up animation -->
+  <g id="cells">''')
+    
+    cell_data = []
     current_date = start_date
-    active_cells = []
     
     for week in range(weeks):
-        for day in range(days):
+        for day in range(days_per_week):
             date_str = current_date.strftime("%Y-%m-%d")
             count = contributions.get(date_str, 0)
             
+            # Determine color level based on contribution count
             if count == 0:
                 level = 0
                 color = level_colors[0]
-            elif count <= max_contrib * 0.25:
+            elif count <= max(1, max_contrib * 0.25):
                 level = 1
                 color = level_colors[1]
-            elif count <= max_contrib * 0.5:
+            elif count <= max(2, max_contrib * 0.5):
                 level = 2
                 color = level_colors[2]
-            elif count <= max_contrib * 0.75:
+            elif count <= max(3, max_contrib * 0.75):
                 level = 3
                 color = level_colors[3]
             else:
@@ -1021,78 +1096,79 @@ def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], them
             x = left_padding + week * (cell_size + cell_gap)
             y = top_padding + day * (cell_size + cell_gap)
             
-            # Calculate animation delay based on position (creates wave effect)
-            wave_delay = week * 0.06  # Wave moves left to right
+            # Calculate pop-up delay (wave from left to right, then top to bottom)
+            pop_delay = (week / weeks) * (pop_duration * 0.8) + (day / days_per_week) * 0.15
             
-            if level > 0:
-                active_cells.append((x, y, level, wave_delay, count))
-                # Cell with pulsing animation (infinite loop)
-                svg_parts.append(f'''
-  <g>
-    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="url(#cellGrad{level})" rx="2" ry="2">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="{wave_delay:.2f}s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2" opacity="0">
-      <animate attributeName="opacity" values="0;0.4;0" dur="3s" begin="{wave_delay:.2f}s" repeatCount="indefinite"/>
-    </rect>
-    <title>{date_str}: {count} contributions</title>
-  </g>''')
-            else:
-                svg_parts.append(f'''
-  <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2">
-    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="4s" begin="{wave_delay:.2f}s" repeatCount="indefinite"/>
-    <title>{date_str}: 0 contributions</title>
-  </rect>''')
-            
+            cell_data.append((x, y, level, color, count, date_str, pop_delay))
             current_date += timedelta(days=1)
     
-    # Add floating particles (infinite animation like snake)
-    svg_parts.append(f'''
-  <!-- Floating particles - infinite loop like snake -->
-  <g opacity="0.8">''')
-    
-    for i in range(8):
-        px = 50 + (i * 100) % (width - 100)
-        color = particle_colors[i % len(particle_colors)]
-        delay = i * 0.5
-        duration = 6 + (i % 3)
-        svg_parts.append(f'''
-    <circle cx="{px}" cy="{top_padding + 30}" r="3" fill="{color}" filter="url(#neonGlow)">
-      <animate attributeName="cx" values="{left_padding};{width - right_padding};{left_padding}" dur="{duration}s" begin="{delay}s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="{top_padding};{top_padding + days * (cell_size + cell_gap)};{top_padding}" dur="{duration * 1.5}s" begin="{delay}s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="{duration}s" begin="{delay}s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="2;4;2" dur="2s" begin="{delay}s" repeatCount="indefinite"/>
-    </circle>''')
+    # Generate cells with animations
+    for x, y, level, color, count, date_str, pop_delay in cell_data:
+        if level > 0:
+            # Active contribution cell with pop-up and glow
+            svg_parts.append(f'''
+    <g>
+      <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="url(#lvl{level})" rx="2" ry="2" opacity="0" transform-origin="{x + cell_size/2} {y + cell_size/2}">
+        <!-- Pop-up animation (scale from 0 to 1, loop) -->
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;{pop_delay/total_cycle:.3f};{(pop_delay+0.3)/total_cycle:.3f};{(total_cycle-0.5)/total_cycle:.3f};1" dur="{total_cycle}s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="scale" values="0;0;1.2;1;1;0" keyTimes="0;{pop_delay/total_cycle:.3f};{(pop_delay+0.15)/total_cycle:.3f};{(pop_delay+0.3)/total_cycle:.3f};{(total_cycle-0.5)/total_cycle:.3f};1" dur="{total_cycle}s" repeatCount="indefinite" additive="sum"/>
+      </rect>
+      <title>{date_str}: {count} contribution{"s" if count != 1 else ""}</title>
+    </g>''')
+        else:
+            # Empty cell with subtle animation
+            svg_parts.append(f'''
+    <g>
+      <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.6;0.6;0" keyTimes="0;{pop_delay/total_cycle:.3f};{(pop_delay+0.2)/total_cycle:.3f};{(total_cycle-0.5)/total_cycle:.3f};1" dur="{total_cycle}s" repeatCount="indefinite"/>
+      </rect>
+      <title>{date_str}: 0 contributions</title>
+    </g>''')
     
     svg_parts.append('''
   </g>''')
     
-    # Legend with infinite animation
-    legend_x = width - 180
-    legend_y = height - 30
+    # Scanner line that moves horizontally after pop-up
+    scanner_x_start = left_padding - 20
+    scanner_x_end = left_padding + graph_width + 20
     
     svg_parts.append(f'''
-  <!-- Animated Legend -->
+  
+  <!-- Scanner line (moves after pop-up completes) -->
+  <rect x="{scanner_x_start}" y="{top_padding - 5}" width="30" height="{graph_height + 10}" fill="url(#scannerGrad)" opacity="0">
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;{scanner_delay/total_cycle:.3f};{(scanner_delay+0.1)/total_cycle:.3f};{(scanner_delay+scanner_duration-0.1)/total_cycle:.3f};{(scanner_delay+scanner_duration)/total_cycle:.3f}" dur="{total_cycle}s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="{scanner_x_start};{scanner_x_start};{scanner_x_end};{scanner_x_end}" keyTimes="0;{scanner_delay/total_cycle:.3f};{(scanner_delay+scanner_duration)/total_cycle:.3f};1" dur="{total_cycle}s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Scanner glow line -->
+  <line x1="{scanner_x_start + 15}" y1="{top_padding - 3}" x2="{scanner_x_start + 15}" y2="{top_padding + graph_height + 3}" stroke="{scanner_color}" stroke-width="2" opacity="0" filter="url(#cellGlow)">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;{scanner_delay/total_cycle:.3f};{(scanner_delay+0.1)/total_cycle:.3f};{(scanner_delay+scanner_duration-0.1)/total_cycle:.3f};{(scanner_delay+scanner_duration)/total_cycle:.3f}" dur="{total_cycle}s" repeatCount="indefinite"/>
+    <animate attributeName="x1" values="{scanner_x_start + 15};{scanner_x_start + 15};{scanner_x_end + 15};{scanner_x_end + 15}" keyTimes="0;{scanner_delay/total_cycle:.3f};{(scanner_delay+scanner_duration)/total_cycle:.3f};1" dur="{total_cycle}s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="{scanner_x_start + 15};{scanner_x_start + 15};{scanner_x_end + 15};{scanner_x_end + 15}" keyTimes="0;{scanner_delay/total_cycle:.3f};{(scanner_delay+scanner_duration)/total_cycle:.3f};1" dur="{total_cycle}s" repeatCount="indefinite"/>
+  </line>''')
+    
+    # Legend
+    legend_x = width - 175
+    legend_y = height - 28
+    
+    svg_parts.append(f'''
+  
+  <!-- Legend -->
   <g transform="translate({legend_x}, {legend_y})">
-    <text x="-35" y="9" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">Less</text>''')
+    <text x="-30" y="9" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">Less</text>''')
     
     for i, color in enumerate(level_colors):
-        pulse_delay = i * 0.3
         svg_parts.append(f'''
-    <rect x="{i * 15}" y="0" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="{pulse_delay}s" repeatCount="indefinite"/>
-    </rect>''')
+    <rect x="{i * 15}" y="0" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2"/>''')
     
     svg_parts.append(f'''
     <text x="{5 * 15 + 8}" y="9" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">More</text>
   </g>
   
-  <!-- Streak indicator with glow -->
-  <g transform="translate({left_padding}, {height - 20})">
-    <text fill="{text_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">
-      <tspan fill="{level_colors[4]}" filter="url(#glow)">⚡</tspan>
-      <tspan fill="{secondary_text}"> Keep the streak going!</tspan>
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
+  <!-- Status indicator -->
+  <g transform="translate({left_padding}, {height - 18})">
+    <text fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">
+      <tspan fill="{level_colors[4]}">⚡</tspan> Updated: {today.strftime("%b %d, %Y")}
     </text>
   </g>''')
     
@@ -1199,7 +1275,17 @@ def main():
     # Generate contribution graph
     print("\n📈 Generating modern contribution graph...")
     contributions = github_stats.get("contributions", {})
-    print(f"  📊 Found {len(contributions)} days with contributions")
+    print(f"  📊 Found {len(contributions)} days with contributions from events API")
+    
+    # Fetch accurate contributions using GraphQL API
+    print("  🔄 Fetching accurate contribution data via GraphQL API...")
+    graphql_contributions = fetch_github_contributions(GITHUB_USERNAME)
+    if graphql_contributions:
+        contributions = graphql_contributions
+        print(f"  ✅ Fetched {len(contributions)} days with accurate contribution data")
+        print(f"  📊 Total contributions: {sum(contributions.values())}")
+    else:
+        print("  ⚠️ Could not fetch GraphQL contributions, using events API data")
     
     for theme in ["dark", "light"]:
         svg = generate_contribution_graph_svg(contributions, theme)

@@ -166,7 +166,7 @@ currently_learning:
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/200.gif" width="100" alt="200 Days"/>
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/100%20days.gif" width="100" alt="100 Days"/>
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/50Days.gif" width="100" alt="50 Days"/>
-  <!-- <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/202507.gif" width="100" alt="July Badge"/> -->
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/202507.gif" width="100" alt="July Badge"/>
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/2025.gif" width="100" alt="2025 Badge"/>
 </p>
 
@@ -187,9 +187,9 @@ currently_learning:
   <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini" width="100"/>
   </a>
-  <!-- <a href="https://www.futureskillsprime.in/iDH/user/user_badge/view/32914_BG_10fe9856-d1dd-11f0-bdec-005056b48b54">
+  <a href="https://www.futureskillsprime.in/iDH/user/user_badge/view/32914_BG_10fe9856-d1dd-11f0-bdec-005056b48b54">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/encryption.png" alt="Encryption" width="100"/>
-  </a> -->
+  </a>
 </p>
 
 </td>
@@ -241,22 +241,46 @@ currently_learning:
 <div align="center">
 
 <a href="https://github.com/ARPANPATRA111/AtMark">
-  <img src="https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=AtMark&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=39d353" alt="AtMark"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-0-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-0-light.svg" />
+    <img alt="AtMark" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-0-dark.svg" />
+  </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/TripBudget">
-  <img src="https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=TripBudget&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=39d353" alt="TripBudget"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-1-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-1-light.svg" />
+    <img alt="TripBudget" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-1-dark.svg" />
+  </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/Fitness-Dashboard">
-  <img src="https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Fitness-Dashboard&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=39d353" alt="Fitness Dashboard"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-2-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-2-light.svg" />
+    <img alt="Fitness Dashboard" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-2-dark.svg" />
+  </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/Float-Chat">
-  <img src="https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Float-Chat&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=39d353" alt="Float Chat"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-3-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-3-light.svg" />
+    <img alt="Float Chat" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-3-dark.svg" />
+  </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/MOB-APP">
-  <img src="https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=MOB-APP&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=39d353" alt="MOB-APP"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-4-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-4-light.svg" />
+    <img alt="MOB-APP" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-4-dark.svg" />
+  </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/Medix-manager">
-  <img src="https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Medix-manager&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=39d353" alt="Medix Manager"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-5-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-5-light.svg" />
+    <img alt="Medix Manager" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-5-dark.svg" />
+  </picture>
 </a>
 
 </div>
