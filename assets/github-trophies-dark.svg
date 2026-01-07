@@ -1,213 +1,293 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 290" width="530" height="290">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 270" width="530" height="270">
   <defs>
-    <linearGradient id="trophyGrad0" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="tGrad0" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#ff8c00;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="trophyGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+    <filter id="glow0" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="tGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="trophyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+    <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="tGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#6A1B9A;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="trophyGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="tGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#FF5722;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#E64A19;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="trophyGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+    <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="tGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#1565C0;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="trophyGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+    <filter id="glow4" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="tGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#00BCD4;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#0097A7;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="trophyGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+    <filter id="glow5" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="tGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#E91E63;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#C2185B;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="trophyGrad7" x1="0%" y1="0%" x2="0%" y2="100%">
+    <filter id="glow6" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="tGrad7" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#F57C00;stop-opacity:1" />
     </linearGradient>
+    <filter id="glow7" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="530" height="290" fill="#0d1117" rx="12" ry="12"/>
+  <rect width="530" height="270" fill="#0d1117" rx="12" ry="12"/>
   <g transform="translate(10, 10)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#3498db" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">B</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">⭐</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow0)">⭐</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Stars</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Stars</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">29</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#ffd700" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">0</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="10" height="6" fill="url(#trophyGrad0)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="10" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="25" height="8" fill="url(#tGrad0)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="25" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="25" height="8" fill="url(#tGrad0)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
   <g transform="translate(140, 10)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#6e6e6e" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">C</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">📝</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow1)">📝</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Commits</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Commits</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">0</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#4CAF50" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">3</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="10" height="6" fill="url(#trophyGrad1)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="10" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="41" height="8" fill="url(#tGrad1)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="41" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="41" height="8" fill="url(#tGrad1)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
   <g transform="translate(270, 10)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#00c853" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">A</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">🔀</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow2)">🔀</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">PRs</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">PRs</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">44</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#9C27B0" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">2</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="22.0" height="6" fill="url(#trophyGrad2)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="22.0" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="45" height="8" fill="url(#tGrad2)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="45" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="45" height="8" fill="url(#tGrad2)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
   <g transform="translate(400, 10)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#3498db" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">B</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">❗</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow3)">❗</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Issues</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Issues</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">16</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#FF5722" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">3</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="10" height="6" fill="url(#trophyGrad3)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="10" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="51" height="8" fill="url(#tGrad3)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="51" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="51" height="8" fill="url(#tGrad3)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
-  <g transform="translate(10, 150)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+  <g transform="translate(10, 140)">
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#00c853" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">A</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">📁</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow4)">📁</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Repos</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Repos</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">32</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#2196F3" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">3</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="16.0" height="6" fill="url(#trophyGrad4)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="16.0" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="55" height="8" fill="url(#tGrad4)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="55" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="55" height="8" fill="url(#tGrad4)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
-  <g transform="translate(140, 150)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+  <g transform="translate(140, 140)">
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#3498db" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">B</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">👥</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow5)">👥</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Followers</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Followers</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">10</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#00BCD4" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">0</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="10" height="6" fill="url(#trophyGrad5)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="10" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="25" height="8" fill="url(#tGrad5)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="25" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="25" height="8" fill="url(#tGrad5)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
-  <g transform="translate(270, 150)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+  <g transform="translate(270, 140)">
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#3498db" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">B</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">🏅</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow6)">🏅</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Experience</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Experience</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">1</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#E91E63" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">11</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="10" height="6" fill="url(#trophyGrad6)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="10" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="102" height="8" fill="url(#tGrad6)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="102" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="102" height="8" fill="url(#tGrad6)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
-  <g transform="translate(400, 150)">
-    <rect width="120" height="130" fill="#0d1117" stroke="#30363d" stroke-width="1" rx="8" ry="8"/>
+  <g transform="translate(400, 140)">
+    <rect width="120" height="120" fill="#161b22" stroke="#30363d" stroke-width="1" rx="10" ry="10"/>
     
-    <!-- Rank Badge -->
-    <rect x="85" y="5" width="30" height="20" fill="#6e6e6e" rx="4" ry="4"/>
-    <text x="100" y="19" text-anchor="middle" fill="white" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="bold">C</text>
-    
-    <!-- Trophy Icon -->
-    <text x="60.0" y="50" text-anchor="middle" font-size="28">🔥</text>
+    <!-- Trophy Icon with glow -->
+    <text x="60.0" y="40" text-anchor="middle" font-size="32" filter="url(#glow7)">🔥</text>
     
     <!-- Trophy Name -->
-    <text x="60.0" y="80" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Contrib</text>
+    <text x="60.0" y="68" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">Activity</text>
     
-    <!-- Value -->
-    <text x="60.0" y="100" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">57</text>
+    <!-- Value with accent color -->
+    <text x="60.0" y="86" text-anchor="middle" fill="#FF9800" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="bold">0</text>
     
-    <!-- Progress bar -->
-    <rect x="10" y="110" width="100" height="6" fill="#30363d" rx="3" ry="3"/>
-    <rect x="10" y="110" width="10" height="6" fill="url(#trophyGrad7)" rx="3" ry="3">
-      <animate attributeName="width" from="0" to="10" dur="1s" fill="freeze"/>
+    <!-- Progress bar background -->
+    <rect x="10" y="100" width="100" height="8" fill="#30363d" rx="4" ry="4"/>
+    
+    <!-- Progress bar fill with animation -->
+    <rect x="10" y="100" width="25" height="8" fill="url(#tGrad7)" rx="4" ry="4">
+      <animate attributeName="width" from="0" to="25" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+    
+    <!-- Shimmer effect -->
+    <rect x="10" y="100" width="25" height="8" fill="url(#tGrad7)" rx="4" ry="4" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
     </rect>
   </g>
 </svg>

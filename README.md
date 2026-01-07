@@ -25,7 +25,7 @@
 
 <table width="100%">
 <tr>
-<td width="50%" valign="top">
+<td width="45%" valign="top">
 
 ```yaml
 name: Arpan Patra
@@ -51,7 +51,7 @@ currently_learning:
 ```
 
 </td>
-<td width="50%" valign="middle" align="center">
+<td width="55%" valign="middle" align="center">
 <img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" style="width:100%;height:auto;max-width:100%;" alt="Coding"/>
 </td>
 </tr>
@@ -72,7 +72,7 @@ currently_learning:
 </div>
 
 
-## 📊 Coding Stats Dashboard
+## 📊 Coding Stats
 
 <!-- Combined Quick Stats & Coding Time - 4x3 Grid -->
 <div align="center">
@@ -137,8 +137,6 @@ currently_learning:
 </table>
 
 </div>
-
----
 
 ## 📈 Weekly Activity
 
@@ -246,30 +244,36 @@ currently_learning:
 
 </details>
 
-## 🎯 Featured Project
+## 🎯 Featured Projects
 
-<!--START_FEATURED_PROJECT-->
+<!--START_FEATURED_PROJECTS-->
 <div align="center">
-<a href="https://github.com/ARPANPATRA111/AtMark">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-light.svg" />
-  <img alt="Featured Project" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-projects-grid-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-projects-grid-light.svg" />
+  <img alt="Featured Projects" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-projects-grid-dark.svg" width="100%" />
 </picture>
-</a>
 </div>
-<!--END_FEATURED_PROJECT-->
+<!--END_FEATURED_PROJECTS-->
 
-> 💡 **Tip**: To change the featured project, update the `data/featured-project.json` file with your preferred repo URL!
+> 💡 **Tip**: To update featured projects, edit `data/featured-projects.json` with your repo URLs!
 
-## 📂 More Projects
+<details>
+<summary>📂 <b>View Individual Project Cards</b></summary>
+<br>
 
-[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=AtMark&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/AtMark)
-[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=TripBudget&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/TripBudget)
-[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Fitness-Dashboard&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Fitness-Dashboard)
-[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Float-Chat&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Float-Chat)
-[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=MOB-APP&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/MOB-APP)
-[![Repo Card](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Medix-manager&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Medix-manager)
+<div align="center">
+
+[![AtMark](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=AtMark&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/AtMark)
+[![TripBudget](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=TripBudget&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/TripBudget)
+[![Fitness-Dashboard](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Fitness-Dashboard&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Fitness-Dashboard)
+[![Float-Chat](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Float-Chat&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Float-Chat)
+[![MOB-APP](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=MOB-APP&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/MOB-APP)
+[![Medix-manager](https://git-readme-stats-phi.vercel.app/api/pin/?username=ARPANPATRA111&repo=Medix-manager&theme=tokyonight&hide_border=true)](https://github.com/ARPANPATRA111/Medix-manager)
+
+</div>
+
+</details>
 
 <div align="center">
 

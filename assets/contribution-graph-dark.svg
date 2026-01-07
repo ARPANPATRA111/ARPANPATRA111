@@ -1,1493 +1,2326 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 783 158" width="783" height="158">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 817 198" width="817" height="198">
   <defs>
-    <filter id="glow">
+    <!-- Glow filter for active cells -->
+    <filter id="cellGlow" x="-100%" y="-100%" width="300%" height="300%">
       <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    
+    <!-- Gradient for title -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#006d32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#39d353;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Animated shimmer -->
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:transparent"/>
+      <stop offset="50%" style="stop-color:rgba(255,255,255,0.15)"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+      <animate attributeName="x1" values="-100%;100%" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0%;200%" dur="3s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <!-- Pulse animation for legend -->
+    <filter id="pulse">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+    </filter>
+    <radialGradient id="levelGrad1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0e4429;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0e4429;stop-opacity:0.7"/>
+    </radialGradient>
+    <radialGradient id="levelGrad2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#006d32;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#006d32;stop-opacity:0.7"/>
+    </radialGradient>
+    <radialGradient id="levelGrad3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#26a641;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#26a641;stop-opacity:0.7"/>
+    </radialGradient>
+    <radialGradient id="levelGrad4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#39d353;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#39d353;stop-opacity:0.7"/>
+    </radialGradient>
   </defs>
   
-  <rect width="783" height="158" fill="#0d1117" rx="12" ry="12"/>
-  <rect x="1" y="1" width="781" height="156" fill="none" stroke="#30363d" stroke-width="1" rx="11" ry="11"/>
-  <text x="27" y="53.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Mon</text>
-  <text x="27" y="81.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Wed</text>
-  <text x="27" y="109.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Fri</text>
-  <text x="35" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Jan</text>
-  <text x="91" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Feb</text>
-  <text x="147" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Mar</text>
-  <text x="217" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Apr</text>
-  <text x="273" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">May</text>
-  <text x="329" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Jun</text>
-  <text x="399" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Jul</text>
-  <text x="455" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Aug</text>
-  <text x="525" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Sep</text>
-  <text x="581" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Oct</text>
-  <text x="637" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Nov</text>
-  <text x="707" y="22" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Dec</text>
-  <rect x="35" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.000s" fill="freeze"/>
-    <title>2025-01-05: 0 contributions</title>
-  </rect>
-  <rect x="35" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.003s" fill="freeze"/>
-    <title>2025-01-06: 0 contributions</title>
-  </rect>
-  <rect x="35" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.006s" fill="freeze"/>
-    <title>2025-01-07: 0 contributions</title>
-  </rect>
-  <rect x="35" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.009s" fill="freeze"/>
-    <title>2025-01-08: 0 contributions</title>
-  </rect>
-  <rect x="35" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.012s" fill="freeze"/>
+  <!-- Background -->
+  <rect width="817" height="198" fill="#0d1117" rx="16" ry="16"/>
+  <rect x="1" y="1" width="815" height="196" fill="none" stroke="#30363d" stroke-width="1" rx="15" ry="15"/>
+  
+  <!-- Title -->
+  <text x="45" y="28" fill="url(#titleGrad)" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700">
+    Contribution Activity
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <text x="35" y="73.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Mon</text>
+  <text x="35" y="101.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Wed</text>
+  <text x="35" y="129.5" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Fri</text>
+  <text x="45" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Jan</text>
+  <text x="101" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Feb</text>
+  <text x="157" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Mar</text>
+  <text x="213" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Apr</text>
+  <text x="269" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">May</text>
+  <text x="339" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Jun</text>
+  <text x="395" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Jul</text>
+  <text x="465" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Aug</text>
+  <text x="521" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Sep</text>
+  <text x="577" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Oct</text>
+  <text x="647" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Nov</text>
+  <text x="703" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Dec</text>
+  <text x="759" y="40" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Jan</text>
+  <g class="cell" data-date="2025-01-09" data-count="0">
+    <rect x="45" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.00s" fill="freeze"/>
+    </rect>
     <title>2025-01-09: 0 contributions</title>
-  </rect>
-  <rect x="35" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.015s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-10" data-count="0">
+    <rect x="45" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.01s" fill="freeze"/>
+    </rect>
     <title>2025-01-10: 0 contributions</title>
-  </rect>
-  <rect x="35" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.018s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-11" data-count="0">
+    <rect x="45" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.02s" fill="freeze"/>
+    </rect>
     <title>2025-01-11: 0 contributions</title>
-  </rect>
-  <rect x="49" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.021s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-12" data-count="0">
+    <rect x="45" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.03s" fill="freeze"/>
+    </rect>
     <title>2025-01-12: 0 contributions</title>
-  </rect>
-  <rect x="49" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.024s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-13" data-count="0">
+    <rect x="45" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.04s" fill="freeze"/>
+    </rect>
     <title>2025-01-13: 0 contributions</title>
-  </rect>
-  <rect x="49" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.027s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-14" data-count="0">
+    <rect x="45" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.05s" fill="freeze"/>
+    </rect>
     <title>2025-01-14: 0 contributions</title>
-  </rect>
-  <rect x="49" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.030s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-15" data-count="0">
+    <rect x="45" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.06s" fill="freeze"/>
+    </rect>
     <title>2025-01-15: 0 contributions</title>
-  </rect>
-  <rect x="49" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.033s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-16" data-count="0">
+    <rect x="59" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.02s" fill="freeze"/>
+    </rect>
     <title>2025-01-16: 0 contributions</title>
-  </rect>
-  <rect x="49" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.036s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-17" data-count="0">
+    <rect x="59" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.03s" fill="freeze"/>
+    </rect>
     <title>2025-01-17: 0 contributions</title>
-  </rect>
-  <rect x="49" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.039s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-18" data-count="0">
+    <rect x="59" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.04s" fill="freeze"/>
+    </rect>
     <title>2025-01-18: 0 contributions</title>
-  </rect>
-  <rect x="63" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.042s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-19" data-count="0">
+    <rect x="59" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.05s" fill="freeze"/>
+    </rect>
     <title>2025-01-19: 0 contributions</title>
-  </rect>
-  <rect x="63" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.045s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-20" data-count="0">
+    <rect x="59" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.06s" fill="freeze"/>
+    </rect>
     <title>2025-01-20: 0 contributions</title>
-  </rect>
-  <rect x="63" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.048s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-21" data-count="0">
+    <rect x="59" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.07s" fill="freeze"/>
+    </rect>
     <title>2025-01-21: 0 contributions</title>
-  </rect>
-  <rect x="63" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.051s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-22" data-count="0">
+    <rect x="59" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.08s" fill="freeze"/>
+    </rect>
     <title>2025-01-22: 0 contributions</title>
-  </rect>
-  <rect x="63" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.054s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-23" data-count="0">
+    <rect x="73" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.04s" fill="freeze"/>
+    </rect>
     <title>2025-01-23: 0 contributions</title>
-  </rect>
-  <rect x="63" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.057s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-24" data-count="0">
+    <rect x="73" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.05s" fill="freeze"/>
+    </rect>
     <title>2025-01-24: 0 contributions</title>
-  </rect>
-  <rect x="63" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.060s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-25" data-count="0">
+    <rect x="73" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.06s" fill="freeze"/>
+    </rect>
     <title>2025-01-25: 0 contributions</title>
-  </rect>
-  <rect x="77" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.063s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-26" data-count="0">
+    <rect x="73" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.07s" fill="freeze"/>
+    </rect>
     <title>2025-01-26: 0 contributions</title>
-  </rect>
-  <rect x="77" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.066s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-27" data-count="0">
+    <rect x="73" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.08s" fill="freeze"/>
+    </rect>
     <title>2025-01-27: 0 contributions</title>
-  </rect>
-  <rect x="77" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.069s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-28" data-count="0">
+    <rect x="73" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.09s" fill="freeze"/>
+    </rect>
     <title>2025-01-28: 0 contributions</title>
-  </rect>
-  <rect x="77" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.072s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-29" data-count="0">
+    <rect x="73" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.10s" fill="freeze"/>
+    </rect>
     <title>2025-01-29: 0 contributions</title>
-  </rect>
-  <rect x="77" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.075s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-30" data-count="0">
+    <rect x="87" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.06s" fill="freeze"/>
+    </rect>
     <title>2025-01-30: 0 contributions</title>
-  </rect>
-  <rect x="77" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.078s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-01-31" data-count="0">
+    <rect x="87" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.07s" fill="freeze"/>
+    </rect>
     <title>2025-01-31: 0 contributions</title>
-  </rect>
-  <rect x="77" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.081s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-01" data-count="0">
+    <rect x="87" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.08s" fill="freeze"/>
+    </rect>
     <title>2025-02-01: 0 contributions</title>
-  </rect>
-  <rect x="91" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.084s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-02" data-count="0">
+    <rect x="87" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.09s" fill="freeze"/>
+    </rect>
     <title>2025-02-02: 0 contributions</title>
-  </rect>
-  <rect x="91" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.087s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-03" data-count="0">
+    <rect x="87" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.10s" fill="freeze"/>
+    </rect>
     <title>2025-02-03: 0 contributions</title>
-  </rect>
-  <rect x="91" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.090s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-04" data-count="0">
+    <rect x="87" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.11s" fill="freeze"/>
+    </rect>
     <title>2025-02-04: 0 contributions</title>
-  </rect>
-  <rect x="91" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.093s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-05" data-count="0">
+    <rect x="87" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.12s" fill="freeze"/>
+    </rect>
     <title>2025-02-05: 0 contributions</title>
-  </rect>
-  <rect x="91" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.096s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-06" data-count="0">
+    <rect x="101" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.08s" fill="freeze"/>
+    </rect>
     <title>2025-02-06: 0 contributions</title>
-  </rect>
-  <rect x="91" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.099s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-07" data-count="0">
+    <rect x="101" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.09s" fill="freeze"/>
+    </rect>
     <title>2025-02-07: 0 contributions</title>
-  </rect>
-  <rect x="91" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.102s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-08" data-count="0">
+    <rect x="101" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.10s" fill="freeze"/>
+    </rect>
     <title>2025-02-08: 0 contributions</title>
-  </rect>
-  <rect x="105" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.105s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-09" data-count="0">
+    <rect x="101" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.11s" fill="freeze"/>
+    </rect>
     <title>2025-02-09: 0 contributions</title>
-  </rect>
-  <rect x="105" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.108s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-10" data-count="0">
+    <rect x="101" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.12s" fill="freeze"/>
+    </rect>
     <title>2025-02-10: 0 contributions</title>
-  </rect>
-  <rect x="105" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.111s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-11" data-count="0">
+    <rect x="101" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.13s" fill="freeze"/>
+    </rect>
     <title>2025-02-11: 0 contributions</title>
-  </rect>
-  <rect x="105" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.114s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-12" data-count="0">
+    <rect x="101" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.14s" fill="freeze"/>
+    </rect>
     <title>2025-02-12: 0 contributions</title>
-  </rect>
-  <rect x="105" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.117s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-13" data-count="0">
+    <rect x="115" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.10s" fill="freeze"/>
+    </rect>
     <title>2025-02-13: 0 contributions</title>
-  </rect>
-  <rect x="105" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.120s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-14" data-count="0">
+    <rect x="115" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.11s" fill="freeze"/>
+    </rect>
     <title>2025-02-14: 0 contributions</title>
-  </rect>
-  <rect x="105" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.123s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-15" data-count="0">
+    <rect x="115" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.12s" fill="freeze"/>
+    </rect>
     <title>2025-02-15: 0 contributions</title>
-  </rect>
-  <rect x="119" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.126s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-16" data-count="0">
+    <rect x="115" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.13s" fill="freeze"/>
+    </rect>
     <title>2025-02-16: 0 contributions</title>
-  </rect>
-  <rect x="119" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.129s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-17" data-count="0">
+    <rect x="115" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.14s" fill="freeze"/>
+    </rect>
     <title>2025-02-17: 0 contributions</title>
-  </rect>
-  <rect x="119" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.132s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-18" data-count="0">
+    <rect x="115" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.15s" fill="freeze"/>
+    </rect>
     <title>2025-02-18: 0 contributions</title>
-  </rect>
-  <rect x="119" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.135s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-19" data-count="0">
+    <rect x="115" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.16s" fill="freeze"/>
+    </rect>
     <title>2025-02-19: 0 contributions</title>
-  </rect>
-  <rect x="119" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.138s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-20" data-count="0">
+    <rect x="129" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.12s" fill="freeze"/>
+    </rect>
     <title>2025-02-20: 0 contributions</title>
-  </rect>
-  <rect x="119" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.141s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-21" data-count="0">
+    <rect x="129" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.13s" fill="freeze"/>
+    </rect>
     <title>2025-02-21: 0 contributions</title>
-  </rect>
-  <rect x="119" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.144s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-22" data-count="0">
+    <rect x="129" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.14s" fill="freeze"/>
+    </rect>
     <title>2025-02-22: 0 contributions</title>
-  </rect>
-  <rect x="133" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.147s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-23" data-count="0">
+    <rect x="129" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.15s" fill="freeze"/>
+    </rect>
     <title>2025-02-23: 0 contributions</title>
-  </rect>
-  <rect x="133" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.150s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-24" data-count="0">
+    <rect x="129" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.16s" fill="freeze"/>
+    </rect>
     <title>2025-02-24: 0 contributions</title>
-  </rect>
-  <rect x="133" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.153s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-25" data-count="0">
+    <rect x="129" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.17s" fill="freeze"/>
+    </rect>
     <title>2025-02-25: 0 contributions</title>
-  </rect>
-  <rect x="133" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.156s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-26" data-count="0">
+    <rect x="129" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.18s" fill="freeze"/>
+    </rect>
     <title>2025-02-26: 0 contributions</title>
-  </rect>
-  <rect x="133" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.159s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-27" data-count="0">
+    <rect x="143" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.14s" fill="freeze"/>
+    </rect>
     <title>2025-02-27: 0 contributions</title>
-  </rect>
-  <rect x="133" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.162s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-02-28" data-count="0">
+    <rect x="143" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.15s" fill="freeze"/>
+    </rect>
     <title>2025-02-28: 0 contributions</title>
-  </rect>
-  <rect x="133" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.165s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-01" data-count="0">
+    <rect x="143" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.16s" fill="freeze"/>
+    </rect>
     <title>2025-03-01: 0 contributions</title>
-  </rect>
-  <rect x="147" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.168s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-02" data-count="0">
+    <rect x="143" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.17s" fill="freeze"/>
+    </rect>
     <title>2025-03-02: 0 contributions</title>
-  </rect>
-  <rect x="147" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.171s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-03" data-count="0">
+    <rect x="143" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.18s" fill="freeze"/>
+    </rect>
     <title>2025-03-03: 0 contributions</title>
-  </rect>
-  <rect x="147" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.174s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-04" data-count="0">
+    <rect x="143" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.19s" fill="freeze"/>
+    </rect>
     <title>2025-03-04: 0 contributions</title>
-  </rect>
-  <rect x="147" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.177s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-05" data-count="0">
+    <rect x="143" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.20s" fill="freeze"/>
+    </rect>
     <title>2025-03-05: 0 contributions</title>
-  </rect>
-  <rect x="147" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.180s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-06" data-count="0">
+    <rect x="157" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.16s" fill="freeze"/>
+    </rect>
     <title>2025-03-06: 0 contributions</title>
-  </rect>
-  <rect x="147" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.183s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-07" data-count="0">
+    <rect x="157" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.17s" fill="freeze"/>
+    </rect>
     <title>2025-03-07: 0 contributions</title>
-  </rect>
-  <rect x="147" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.186s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-08" data-count="0">
+    <rect x="157" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.18s" fill="freeze"/>
+    </rect>
     <title>2025-03-08: 0 contributions</title>
-  </rect>
-  <rect x="161" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.189s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-09" data-count="0">
+    <rect x="157" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.19s" fill="freeze"/>
+    </rect>
     <title>2025-03-09: 0 contributions</title>
-  </rect>
-  <rect x="161" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.192s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-10" data-count="0">
+    <rect x="157" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.20s" fill="freeze"/>
+    </rect>
     <title>2025-03-10: 0 contributions</title>
-  </rect>
-  <rect x="161" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.195s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-11" data-count="0">
+    <rect x="157" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.21s" fill="freeze"/>
+    </rect>
     <title>2025-03-11: 0 contributions</title>
-  </rect>
-  <rect x="161" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.198s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-12" data-count="0">
+    <rect x="157" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.22s" fill="freeze"/>
+    </rect>
     <title>2025-03-12: 0 contributions</title>
-  </rect>
-  <rect x="161" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.201s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-13" data-count="0">
+    <rect x="171" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.18s" fill="freeze"/>
+    </rect>
     <title>2025-03-13: 0 contributions</title>
-  </rect>
-  <rect x="161" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.204s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-14" data-count="0">
+    <rect x="171" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.19s" fill="freeze"/>
+    </rect>
     <title>2025-03-14: 0 contributions</title>
-  </rect>
-  <rect x="161" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.207s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-15" data-count="0">
+    <rect x="171" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.20s" fill="freeze"/>
+    </rect>
     <title>2025-03-15: 0 contributions</title>
-  </rect>
-  <rect x="175" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.210s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-16" data-count="0">
+    <rect x="171" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.21s" fill="freeze"/>
+    </rect>
     <title>2025-03-16: 0 contributions</title>
-  </rect>
-  <rect x="175" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.213s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-17" data-count="0">
+    <rect x="171" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.22s" fill="freeze"/>
+    </rect>
     <title>2025-03-17: 0 contributions</title>
-  </rect>
-  <rect x="175" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.216s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-18" data-count="0">
+    <rect x="171" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.23s" fill="freeze"/>
+    </rect>
     <title>2025-03-18: 0 contributions</title>
-  </rect>
-  <rect x="175" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.219s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-19" data-count="0">
+    <rect x="171" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.24s" fill="freeze"/>
+    </rect>
     <title>2025-03-19: 0 contributions</title>
-  </rect>
-  <rect x="175" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.222s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-20" data-count="0">
+    <rect x="185" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.20s" fill="freeze"/>
+    </rect>
     <title>2025-03-20: 0 contributions</title>
-  </rect>
-  <rect x="175" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.225s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-21" data-count="0">
+    <rect x="185" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.21s" fill="freeze"/>
+    </rect>
     <title>2025-03-21: 0 contributions</title>
-  </rect>
-  <rect x="175" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.228s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-22" data-count="0">
+    <rect x="185" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.22s" fill="freeze"/>
+    </rect>
     <title>2025-03-22: 0 contributions</title>
-  </rect>
-  <rect x="189" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.231s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-23" data-count="0">
+    <rect x="185" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.23s" fill="freeze"/>
+    </rect>
     <title>2025-03-23: 0 contributions</title>
-  </rect>
-  <rect x="189" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.234s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-24" data-count="0">
+    <rect x="185" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.24s" fill="freeze"/>
+    </rect>
     <title>2025-03-24: 0 contributions</title>
-  </rect>
-  <rect x="189" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.237s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-25" data-count="0">
+    <rect x="185" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.25s" fill="freeze"/>
+    </rect>
     <title>2025-03-25: 0 contributions</title>
-  </rect>
-  <rect x="189" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.240s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-26" data-count="0">
+    <rect x="185" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.26s" fill="freeze"/>
+    </rect>
     <title>2025-03-26: 0 contributions</title>
-  </rect>
-  <rect x="189" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.243s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-27" data-count="0">
+    <rect x="199" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.22s" fill="freeze"/>
+    </rect>
     <title>2025-03-27: 0 contributions</title>
-  </rect>
-  <rect x="189" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.246s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-28" data-count="0">
+    <rect x="199" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.23s" fill="freeze"/>
+    </rect>
     <title>2025-03-28: 0 contributions</title>
-  </rect>
-  <rect x="189" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.249s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-29" data-count="0">
+    <rect x="199" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.24s" fill="freeze"/>
+    </rect>
     <title>2025-03-29: 0 contributions</title>
-  </rect>
-  <rect x="203" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.252s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-30" data-count="0">
+    <rect x="199" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.25s" fill="freeze"/>
+    </rect>
     <title>2025-03-30: 0 contributions</title>
-  </rect>
-  <rect x="203" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.255s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-03-31" data-count="0">
+    <rect x="199" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.26s" fill="freeze"/>
+    </rect>
     <title>2025-03-31: 0 contributions</title>
-  </rect>
-  <rect x="203" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.258s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-01" data-count="0">
+    <rect x="199" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.27s" fill="freeze"/>
+    </rect>
     <title>2025-04-01: 0 contributions</title>
-  </rect>
-  <rect x="203" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.261s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-02" data-count="0">
+    <rect x="199" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.28s" fill="freeze"/>
+    </rect>
     <title>2025-04-02: 0 contributions</title>
-  </rect>
-  <rect x="203" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.264s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-03" data-count="0">
+    <rect x="213" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.24s" fill="freeze"/>
+    </rect>
     <title>2025-04-03: 0 contributions</title>
-  </rect>
-  <rect x="203" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.267s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-04" data-count="0">
+    <rect x="213" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.25s" fill="freeze"/>
+    </rect>
     <title>2025-04-04: 0 contributions</title>
-  </rect>
-  <rect x="203" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.270s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-05" data-count="0">
+    <rect x="213" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.26s" fill="freeze"/>
+    </rect>
     <title>2025-04-05: 0 contributions</title>
-  </rect>
-  <rect x="217" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.273s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-06" data-count="0">
+    <rect x="213" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.27s" fill="freeze"/>
+    </rect>
     <title>2025-04-06: 0 contributions</title>
-  </rect>
-  <rect x="217" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.276s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-07" data-count="0">
+    <rect x="213" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.28s" fill="freeze"/>
+    </rect>
     <title>2025-04-07: 0 contributions</title>
-  </rect>
-  <rect x="217" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.279s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-08" data-count="0">
+    <rect x="213" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.29s" fill="freeze"/>
+    </rect>
     <title>2025-04-08: 0 contributions</title>
-  </rect>
-  <rect x="217" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.282s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-09" data-count="0">
+    <rect x="213" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.30s" fill="freeze"/>
+    </rect>
     <title>2025-04-09: 0 contributions</title>
-  </rect>
-  <rect x="217" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.285s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-10" data-count="0">
+    <rect x="227" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.26s" fill="freeze"/>
+    </rect>
     <title>2025-04-10: 0 contributions</title>
-  </rect>
-  <rect x="217" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.288s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-11" data-count="0">
+    <rect x="227" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.27s" fill="freeze"/>
+    </rect>
     <title>2025-04-11: 0 contributions</title>
-  </rect>
-  <rect x="217" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.291s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-12" data-count="0">
+    <rect x="227" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.28s" fill="freeze"/>
+    </rect>
     <title>2025-04-12: 0 contributions</title>
-  </rect>
-  <rect x="231" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.294s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-13" data-count="0">
+    <rect x="227" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.29s" fill="freeze"/>
+    </rect>
     <title>2025-04-13: 0 contributions</title>
-  </rect>
-  <rect x="231" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.297s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-14" data-count="0">
+    <rect x="227" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.30s" fill="freeze"/>
+    </rect>
     <title>2025-04-14: 0 contributions</title>
-  </rect>
-  <rect x="231" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.300s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-15" data-count="0">
+    <rect x="227" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.31s" fill="freeze"/>
+    </rect>
     <title>2025-04-15: 0 contributions</title>
-  </rect>
-  <rect x="231" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.303s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-16" data-count="0">
+    <rect x="227" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.32s" fill="freeze"/>
+    </rect>
     <title>2025-04-16: 0 contributions</title>
-  </rect>
-  <rect x="231" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.306s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-17" data-count="0">
+    <rect x="241" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.28s" fill="freeze"/>
+    </rect>
     <title>2025-04-17: 0 contributions</title>
-  </rect>
-  <rect x="231" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.309s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-18" data-count="0">
+    <rect x="241" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.29s" fill="freeze"/>
+    </rect>
     <title>2025-04-18: 0 contributions</title>
-  </rect>
-  <rect x="231" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.312s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-19" data-count="0">
+    <rect x="241" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.30s" fill="freeze"/>
+    </rect>
     <title>2025-04-19: 0 contributions</title>
-  </rect>
-  <rect x="245" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.315s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-20" data-count="0">
+    <rect x="241" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.31s" fill="freeze"/>
+    </rect>
     <title>2025-04-20: 0 contributions</title>
-  </rect>
-  <rect x="245" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.318s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-21" data-count="0">
+    <rect x="241" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.32s" fill="freeze"/>
+    </rect>
     <title>2025-04-21: 0 contributions</title>
-  </rect>
-  <rect x="245" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.321s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-22" data-count="0">
+    <rect x="241" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.33s" fill="freeze"/>
+    </rect>
     <title>2025-04-22: 0 contributions</title>
-  </rect>
-  <rect x="245" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.324s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-23" data-count="0">
+    <rect x="241" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.34s" fill="freeze"/>
+    </rect>
     <title>2025-04-23: 0 contributions</title>
-  </rect>
-  <rect x="245" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.327s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-24" data-count="0">
+    <rect x="255" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.30s" fill="freeze"/>
+    </rect>
     <title>2025-04-24: 0 contributions</title>
-  </rect>
-  <rect x="245" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.330s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-25" data-count="0">
+    <rect x="255" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.31s" fill="freeze"/>
+    </rect>
     <title>2025-04-25: 0 contributions</title>
-  </rect>
-  <rect x="245" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.333s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-26" data-count="0">
+    <rect x="255" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.32s" fill="freeze"/>
+    </rect>
     <title>2025-04-26: 0 contributions</title>
-  </rect>
-  <rect x="259" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.336s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-27" data-count="0">
+    <rect x="255" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.33s" fill="freeze"/>
+    </rect>
     <title>2025-04-27: 0 contributions</title>
-  </rect>
-  <rect x="259" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.339s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-28" data-count="0">
+    <rect x="255" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.34s" fill="freeze"/>
+    </rect>
     <title>2025-04-28: 0 contributions</title>
-  </rect>
-  <rect x="259" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.342s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-29" data-count="0">
+    <rect x="255" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.35s" fill="freeze"/>
+    </rect>
     <title>2025-04-29: 0 contributions</title>
-  </rect>
-  <rect x="259" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.345s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-04-30" data-count="0">
+    <rect x="255" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.36s" fill="freeze"/>
+    </rect>
     <title>2025-04-30: 0 contributions</title>
-  </rect>
-  <rect x="259" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.348s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-01" data-count="0">
+    <rect x="269" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.32s" fill="freeze"/>
+    </rect>
     <title>2025-05-01: 0 contributions</title>
-  </rect>
-  <rect x="259" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.351s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-02" data-count="0">
+    <rect x="269" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.33s" fill="freeze"/>
+    </rect>
     <title>2025-05-02: 0 contributions</title>
-  </rect>
-  <rect x="259" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.354s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-03" data-count="0">
+    <rect x="269" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.34s" fill="freeze"/>
+    </rect>
     <title>2025-05-03: 0 contributions</title>
-  </rect>
-  <rect x="273" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.357s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-04" data-count="0">
+    <rect x="269" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.35s" fill="freeze"/>
+    </rect>
     <title>2025-05-04: 0 contributions</title>
-  </rect>
-  <rect x="273" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.360s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-05" data-count="0">
+    <rect x="269" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.36s" fill="freeze"/>
+    </rect>
     <title>2025-05-05: 0 contributions</title>
-  </rect>
-  <rect x="273" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.363s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-06" data-count="0">
+    <rect x="269" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.37s" fill="freeze"/>
+    </rect>
     <title>2025-05-06: 0 contributions</title>
-  </rect>
-  <rect x="273" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.366s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-07" data-count="0">
+    <rect x="269" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.38s" fill="freeze"/>
+    </rect>
     <title>2025-05-07: 0 contributions</title>
-  </rect>
-  <rect x="273" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.369s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-08" data-count="0">
+    <rect x="283" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.34s" fill="freeze"/>
+    </rect>
     <title>2025-05-08: 0 contributions</title>
-  </rect>
-  <rect x="273" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.372s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-09" data-count="0">
+    <rect x="283" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.35s" fill="freeze"/>
+    </rect>
     <title>2025-05-09: 0 contributions</title>
-  </rect>
-  <rect x="273" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.375s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-10" data-count="0">
+    <rect x="283" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.36s" fill="freeze"/>
+    </rect>
     <title>2025-05-10: 0 contributions</title>
-  </rect>
-  <rect x="287" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.378s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-11" data-count="0">
+    <rect x="283" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.37s" fill="freeze"/>
+    </rect>
     <title>2025-05-11: 0 contributions</title>
-  </rect>
-  <rect x="287" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.381s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-12" data-count="0">
+    <rect x="283" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.38s" fill="freeze"/>
+    </rect>
     <title>2025-05-12: 0 contributions</title>
-  </rect>
-  <rect x="287" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.384s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-13" data-count="0">
+    <rect x="283" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.39s" fill="freeze"/>
+    </rect>
     <title>2025-05-13: 0 contributions</title>
-  </rect>
-  <rect x="287" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.387s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-14" data-count="0">
+    <rect x="283" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.40s" fill="freeze"/>
+    </rect>
     <title>2025-05-14: 0 contributions</title>
-  </rect>
-  <rect x="287" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.390s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-15" data-count="0">
+    <rect x="297" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.36s" fill="freeze"/>
+    </rect>
     <title>2025-05-15: 0 contributions</title>
-  </rect>
-  <rect x="287" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.393s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-16" data-count="0">
+    <rect x="297" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.37s" fill="freeze"/>
+    </rect>
     <title>2025-05-16: 0 contributions</title>
-  </rect>
-  <rect x="287" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.396s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-17" data-count="0">
+    <rect x="297" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.38s" fill="freeze"/>
+    </rect>
     <title>2025-05-17: 0 contributions</title>
-  </rect>
-  <rect x="301" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.399s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-18" data-count="0">
+    <rect x="297" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.39s" fill="freeze"/>
+    </rect>
     <title>2025-05-18: 0 contributions</title>
-  </rect>
-  <rect x="301" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.402s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-19" data-count="0">
+    <rect x="297" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.40s" fill="freeze"/>
+    </rect>
     <title>2025-05-19: 0 contributions</title>
-  </rect>
-  <rect x="301" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.405s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-20" data-count="0">
+    <rect x="297" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.41s" fill="freeze"/>
+    </rect>
     <title>2025-05-20: 0 contributions</title>
-  </rect>
-  <rect x="301" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.408s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-21" data-count="0">
+    <rect x="297" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.42s" fill="freeze"/>
+    </rect>
     <title>2025-05-21: 0 contributions</title>
-  </rect>
-  <rect x="301" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.411s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-22" data-count="0">
+    <rect x="311" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.38s" fill="freeze"/>
+    </rect>
     <title>2025-05-22: 0 contributions</title>
-  </rect>
-  <rect x="301" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.414s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-23" data-count="0">
+    <rect x="311" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.39s" fill="freeze"/>
+    </rect>
     <title>2025-05-23: 0 contributions</title>
-  </rect>
-  <rect x="301" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.417s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-24" data-count="0">
+    <rect x="311" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.40s" fill="freeze"/>
+    </rect>
     <title>2025-05-24: 0 contributions</title>
-  </rect>
-  <rect x="315" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.420s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-25" data-count="0">
+    <rect x="311" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.41s" fill="freeze"/>
+    </rect>
     <title>2025-05-25: 0 contributions</title>
-  </rect>
-  <rect x="315" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.423s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-26" data-count="0">
+    <rect x="311" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.42s" fill="freeze"/>
+    </rect>
     <title>2025-05-26: 0 contributions</title>
-  </rect>
-  <rect x="315" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.426s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-27" data-count="0">
+    <rect x="311" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.43s" fill="freeze"/>
+    </rect>
     <title>2025-05-27: 0 contributions</title>
-  </rect>
-  <rect x="315" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.429s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-28" data-count="0">
+    <rect x="311" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.44s" fill="freeze"/>
+    </rect>
     <title>2025-05-28: 0 contributions</title>
-  </rect>
-  <rect x="315" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.432s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-29" data-count="0">
+    <rect x="325" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.40s" fill="freeze"/>
+    </rect>
     <title>2025-05-29: 0 contributions</title>
-  </rect>
-  <rect x="315" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.435s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-30" data-count="0">
+    <rect x="325" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.41s" fill="freeze"/>
+    </rect>
     <title>2025-05-30: 0 contributions</title>
-  </rect>
-  <rect x="315" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.438s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-05-31" data-count="0">
+    <rect x="325" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.42s" fill="freeze"/>
+    </rect>
     <title>2025-05-31: 0 contributions</title>
-  </rect>
-  <rect x="329" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.441s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-01" data-count="0">
+    <rect x="325" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.43s" fill="freeze"/>
+    </rect>
     <title>2025-06-01: 0 contributions</title>
-  </rect>
-  <rect x="329" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.444s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-02" data-count="0">
+    <rect x="325" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.44s" fill="freeze"/>
+    </rect>
     <title>2025-06-02: 0 contributions</title>
-  </rect>
-  <rect x="329" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.447s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-03" data-count="0">
+    <rect x="325" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.45s" fill="freeze"/>
+    </rect>
     <title>2025-06-03: 0 contributions</title>
-  </rect>
-  <rect x="329" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.450s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-04" data-count="0">
+    <rect x="325" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.46s" fill="freeze"/>
+    </rect>
     <title>2025-06-04: 0 contributions</title>
-  </rect>
-  <rect x="329" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.453s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-05" data-count="0">
+    <rect x="339" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.42s" fill="freeze"/>
+    </rect>
     <title>2025-06-05: 0 contributions</title>
-  </rect>
-  <rect x="329" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.456s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-06" data-count="0">
+    <rect x="339" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.43s" fill="freeze"/>
+    </rect>
     <title>2025-06-06: 0 contributions</title>
-  </rect>
-  <rect x="329" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.459s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-07" data-count="0">
+    <rect x="339" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.44s" fill="freeze"/>
+    </rect>
     <title>2025-06-07: 0 contributions</title>
-  </rect>
-  <rect x="343" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.462s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-08" data-count="0">
+    <rect x="339" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.45s" fill="freeze"/>
+    </rect>
     <title>2025-06-08: 0 contributions</title>
-  </rect>
-  <rect x="343" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.465s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-09" data-count="0">
+    <rect x="339" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.46s" fill="freeze"/>
+    </rect>
     <title>2025-06-09: 0 contributions</title>
-  </rect>
-  <rect x="343" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.468s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-10" data-count="0">
+    <rect x="339" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.47s" fill="freeze"/>
+    </rect>
     <title>2025-06-10: 0 contributions</title>
-  </rect>
-  <rect x="343" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.471s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-11" data-count="0">
+    <rect x="339" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.48s" fill="freeze"/>
+    </rect>
     <title>2025-06-11: 0 contributions</title>
-  </rect>
-  <rect x="343" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.474s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-12" data-count="0">
+    <rect x="353" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.44s" fill="freeze"/>
+    </rect>
     <title>2025-06-12: 0 contributions</title>
-  </rect>
-  <rect x="343" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.477s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-13" data-count="0">
+    <rect x="353" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.45s" fill="freeze"/>
+    </rect>
     <title>2025-06-13: 0 contributions</title>
-  </rect>
-  <rect x="343" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.480s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-14" data-count="0">
+    <rect x="353" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.46s" fill="freeze"/>
+    </rect>
     <title>2025-06-14: 0 contributions</title>
-  </rect>
-  <rect x="357" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.483s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-15" data-count="0">
+    <rect x="353" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.47s" fill="freeze"/>
+    </rect>
     <title>2025-06-15: 0 contributions</title>
-  </rect>
-  <rect x="357" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.486s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-16" data-count="0">
+    <rect x="353" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.48s" fill="freeze"/>
+    </rect>
     <title>2025-06-16: 0 contributions</title>
-  </rect>
-  <rect x="357" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.489s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-17" data-count="0">
+    <rect x="353" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.49s" fill="freeze"/>
+    </rect>
     <title>2025-06-17: 0 contributions</title>
-  </rect>
-  <rect x="357" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.492s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-18" data-count="0">
+    <rect x="353" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.50s" fill="freeze"/>
+    </rect>
     <title>2025-06-18: 0 contributions</title>
-  </rect>
-  <rect x="357" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.495s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-19" data-count="0">
+    <rect x="367" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.46s" fill="freeze"/>
+    </rect>
     <title>2025-06-19: 0 contributions</title>
-  </rect>
-  <rect x="357" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.498s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-20" data-count="0">
+    <rect x="367" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.47s" fill="freeze"/>
+    </rect>
     <title>2025-06-20: 0 contributions</title>
-  </rect>
-  <rect x="357" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.501s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-21" data-count="0">
+    <rect x="367" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.48s" fill="freeze"/>
+    </rect>
     <title>2025-06-21: 0 contributions</title>
-  </rect>
-  <rect x="371" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.504s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-22" data-count="0">
+    <rect x="367" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.49s" fill="freeze"/>
+    </rect>
     <title>2025-06-22: 0 contributions</title>
-  </rect>
-  <rect x="371" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.507s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-23" data-count="0">
+    <rect x="367" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.50s" fill="freeze"/>
+    </rect>
     <title>2025-06-23: 0 contributions</title>
-  </rect>
-  <rect x="371" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.510s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-24" data-count="0">
+    <rect x="367" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.51s" fill="freeze"/>
+    </rect>
     <title>2025-06-24: 0 contributions</title>
-  </rect>
-  <rect x="371" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.513s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-25" data-count="0">
+    <rect x="367" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.52s" fill="freeze"/>
+    </rect>
     <title>2025-06-25: 0 contributions</title>
-  </rect>
-  <rect x="371" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.516s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-26" data-count="0">
+    <rect x="381" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.48s" fill="freeze"/>
+    </rect>
     <title>2025-06-26: 0 contributions</title>
-  </rect>
-  <rect x="371" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.519s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-27" data-count="0">
+    <rect x="381" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.49s" fill="freeze"/>
+    </rect>
     <title>2025-06-27: 0 contributions</title>
-  </rect>
-  <rect x="371" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.522s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-28" data-count="0">
+    <rect x="381" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.50s" fill="freeze"/>
+    </rect>
     <title>2025-06-28: 0 contributions</title>
-  </rect>
-  <rect x="385" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.525s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-29" data-count="0">
+    <rect x="381" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.51s" fill="freeze"/>
+    </rect>
     <title>2025-06-29: 0 contributions</title>
-  </rect>
-  <rect x="385" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.528s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-06-30" data-count="0">
+    <rect x="381" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.52s" fill="freeze"/>
+    </rect>
     <title>2025-06-30: 0 contributions</title>
-  </rect>
-  <rect x="385" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.531s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-01" data-count="0">
+    <rect x="381" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.53s" fill="freeze"/>
+    </rect>
     <title>2025-07-01: 0 contributions</title>
-  </rect>
-  <rect x="385" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.534s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-02" data-count="0">
+    <rect x="381" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.54s" fill="freeze"/>
+    </rect>
     <title>2025-07-02: 0 contributions</title>
-  </rect>
-  <rect x="385" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.537s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-03" data-count="0">
+    <rect x="395" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.50s" fill="freeze"/>
+    </rect>
     <title>2025-07-03: 0 contributions</title>
-  </rect>
-  <rect x="385" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.540s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-04" data-count="0">
+    <rect x="395" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.51s" fill="freeze"/>
+    </rect>
     <title>2025-07-04: 0 contributions</title>
-  </rect>
-  <rect x="385" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.543s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-05" data-count="0">
+    <rect x="395" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.52s" fill="freeze"/>
+    </rect>
     <title>2025-07-05: 0 contributions</title>
-  </rect>
-  <rect x="399" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.546s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-06" data-count="0">
+    <rect x="395" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.53s" fill="freeze"/>
+    </rect>
     <title>2025-07-06: 0 contributions</title>
-  </rect>
-  <rect x="399" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.549s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-07" data-count="0">
+    <rect x="395" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.54s" fill="freeze"/>
+    </rect>
     <title>2025-07-07: 0 contributions</title>
-  </rect>
-  <rect x="399" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.552s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-08" data-count="0">
+    <rect x="395" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.55s" fill="freeze"/>
+    </rect>
     <title>2025-07-08: 0 contributions</title>
-  </rect>
-  <rect x="399" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.555s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-09" data-count="0">
+    <rect x="395" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.56s" fill="freeze"/>
+    </rect>
     <title>2025-07-09: 0 contributions</title>
-  </rect>
-  <rect x="399" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.558s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-10" data-count="0">
+    <rect x="409" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.52s" fill="freeze"/>
+    </rect>
     <title>2025-07-10: 0 contributions</title>
-  </rect>
-  <rect x="399" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.561s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-11" data-count="0">
+    <rect x="409" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.53s" fill="freeze"/>
+    </rect>
     <title>2025-07-11: 0 contributions</title>
-  </rect>
-  <rect x="399" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.564s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-12" data-count="0">
+    <rect x="409" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.54s" fill="freeze"/>
+    </rect>
     <title>2025-07-12: 0 contributions</title>
-  </rect>
-  <rect x="413" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.567s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-13" data-count="0">
+    <rect x="409" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.55s" fill="freeze"/>
+    </rect>
     <title>2025-07-13: 0 contributions</title>
-  </rect>
-  <rect x="413" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.570s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-14" data-count="0">
+    <rect x="409" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.56s" fill="freeze"/>
+    </rect>
     <title>2025-07-14: 0 contributions</title>
-  </rect>
-  <rect x="413" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.573s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-15" data-count="0">
+    <rect x="409" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.57s" fill="freeze"/>
+    </rect>
     <title>2025-07-15: 0 contributions</title>
-  </rect>
-  <rect x="413" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.576s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-16" data-count="0">
+    <rect x="409" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.58s" fill="freeze"/>
+    </rect>
     <title>2025-07-16: 0 contributions</title>
-  </rect>
-  <rect x="413" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.579s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-17" data-count="0">
+    <rect x="423" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.54s" fill="freeze"/>
+    </rect>
     <title>2025-07-17: 0 contributions</title>
-  </rect>
-  <rect x="413" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.582s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-18" data-count="0">
+    <rect x="423" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.55s" fill="freeze"/>
+    </rect>
     <title>2025-07-18: 0 contributions</title>
-  </rect>
-  <rect x="413" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.585s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-19" data-count="0">
+    <rect x="423" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.56s" fill="freeze"/>
+    </rect>
     <title>2025-07-19: 0 contributions</title>
-  </rect>
-  <rect x="427" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.588s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-20" data-count="0">
+    <rect x="423" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.57s" fill="freeze"/>
+    </rect>
     <title>2025-07-20: 0 contributions</title>
-  </rect>
-  <rect x="427" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.591s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-21" data-count="0">
+    <rect x="423" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.58s" fill="freeze"/>
+    </rect>
     <title>2025-07-21: 0 contributions</title>
-  </rect>
-  <rect x="427" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.594s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-22" data-count="0">
+    <rect x="423" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.59s" fill="freeze"/>
+    </rect>
     <title>2025-07-22: 0 contributions</title>
-  </rect>
-  <rect x="427" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.597s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-23" data-count="0">
+    <rect x="423" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.60s" fill="freeze"/>
+    </rect>
     <title>2025-07-23: 0 contributions</title>
-  </rect>
-  <rect x="427" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.600s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-24" data-count="0">
+    <rect x="437" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.56s" fill="freeze"/>
+    </rect>
     <title>2025-07-24: 0 contributions</title>
-  </rect>
-  <rect x="427" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.603s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-25" data-count="0">
+    <rect x="437" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.57s" fill="freeze"/>
+    </rect>
     <title>2025-07-25: 0 contributions</title>
-  </rect>
-  <rect x="427" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.606s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-26" data-count="0">
+    <rect x="437" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.58s" fill="freeze"/>
+    </rect>
     <title>2025-07-26: 0 contributions</title>
-  </rect>
-  <rect x="441" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.609s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-27" data-count="0">
+    <rect x="437" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.59s" fill="freeze"/>
+    </rect>
     <title>2025-07-27: 0 contributions</title>
-  </rect>
-  <rect x="441" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.612s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-28" data-count="0">
+    <rect x="437" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.60s" fill="freeze"/>
+    </rect>
     <title>2025-07-28: 0 contributions</title>
-  </rect>
-  <rect x="441" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.615s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-29" data-count="0">
+    <rect x="437" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.61s" fill="freeze"/>
+    </rect>
     <title>2025-07-29: 0 contributions</title>
-  </rect>
-  <rect x="441" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.618s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-30" data-count="0">
+    <rect x="437" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.62s" fill="freeze"/>
+    </rect>
     <title>2025-07-30: 0 contributions</title>
-  </rect>
-  <rect x="441" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.621s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-07-31" data-count="0">
+    <rect x="451" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.58s" fill="freeze"/>
+    </rect>
     <title>2025-07-31: 0 contributions</title>
-  </rect>
-  <rect x="441" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.624s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-01" data-count="0">
+    <rect x="451" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.59s" fill="freeze"/>
+    </rect>
     <title>2025-08-01: 0 contributions</title>
-  </rect>
-  <rect x="441" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.627s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-02" data-count="0">
+    <rect x="451" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.60s" fill="freeze"/>
+    </rect>
     <title>2025-08-02: 0 contributions</title>
-  </rect>
-  <rect x="455" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.630s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-03" data-count="0">
+    <rect x="451" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.61s" fill="freeze"/>
+    </rect>
     <title>2025-08-03: 0 contributions</title>
-  </rect>
-  <rect x="455" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.633s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-04" data-count="0">
+    <rect x="451" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.62s" fill="freeze"/>
+    </rect>
     <title>2025-08-04: 0 contributions</title>
-  </rect>
-  <rect x="455" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.636s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-05" data-count="0">
+    <rect x="451" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.63s" fill="freeze"/>
+    </rect>
     <title>2025-08-05: 0 contributions</title>
-  </rect>
-  <rect x="455" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.639s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-06" data-count="0">
+    <rect x="451" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.64s" fill="freeze"/>
+    </rect>
     <title>2025-08-06: 0 contributions</title>
-  </rect>
-  <rect x="455" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.642s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-07" data-count="0">
+    <rect x="465" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.60s" fill="freeze"/>
+    </rect>
     <title>2025-08-07: 0 contributions</title>
-  </rect>
-  <rect x="455" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.645s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-08" data-count="0">
+    <rect x="465" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.61s" fill="freeze"/>
+    </rect>
     <title>2025-08-08: 0 contributions</title>
-  </rect>
-  <rect x="455" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.648s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-09" data-count="0">
+    <rect x="465" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.62s" fill="freeze"/>
+    </rect>
     <title>2025-08-09: 0 contributions</title>
-  </rect>
-  <rect x="469" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.651s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-10" data-count="0">
+    <rect x="465" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.63s" fill="freeze"/>
+    </rect>
     <title>2025-08-10: 0 contributions</title>
-  </rect>
-  <rect x="469" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.654s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-11" data-count="0">
+    <rect x="465" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.64s" fill="freeze"/>
+    </rect>
     <title>2025-08-11: 0 contributions</title>
-  </rect>
-  <rect x="469" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.657s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-12" data-count="0">
+    <rect x="465" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.65s" fill="freeze"/>
+    </rect>
     <title>2025-08-12: 0 contributions</title>
-  </rect>
-  <rect x="469" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.660s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-13" data-count="0">
+    <rect x="465" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.66s" fill="freeze"/>
+    </rect>
     <title>2025-08-13: 0 contributions</title>
-  </rect>
-  <rect x="469" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.663s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-14" data-count="0">
+    <rect x="479" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.62s" fill="freeze"/>
+    </rect>
     <title>2025-08-14: 0 contributions</title>
-  </rect>
-  <rect x="469" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.666s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-15" data-count="0">
+    <rect x="479" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.63s" fill="freeze"/>
+    </rect>
     <title>2025-08-15: 0 contributions</title>
-  </rect>
-  <rect x="469" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.669s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-16" data-count="0">
+    <rect x="479" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.64s" fill="freeze"/>
+    </rect>
     <title>2025-08-16: 0 contributions</title>
-  </rect>
-  <rect x="483" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.672s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-17" data-count="0">
+    <rect x="479" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.65s" fill="freeze"/>
+    </rect>
     <title>2025-08-17: 0 contributions</title>
-  </rect>
-  <rect x="483" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.675s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-18" data-count="0">
+    <rect x="479" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.66s" fill="freeze"/>
+    </rect>
     <title>2025-08-18: 0 contributions</title>
-  </rect>
-  <rect x="483" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.678s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-19" data-count="0">
+    <rect x="479" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.67s" fill="freeze"/>
+    </rect>
     <title>2025-08-19: 0 contributions</title>
-  </rect>
-  <rect x="483" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.681s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-20" data-count="0">
+    <rect x="479" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.68s" fill="freeze"/>
+    </rect>
     <title>2025-08-20: 0 contributions</title>
-  </rect>
-  <rect x="483" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.684s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-21" data-count="0">
+    <rect x="493" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.64s" fill="freeze"/>
+    </rect>
     <title>2025-08-21: 0 contributions</title>
-  </rect>
-  <rect x="483" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.687s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-22" data-count="0">
+    <rect x="493" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.65s" fill="freeze"/>
+    </rect>
     <title>2025-08-22: 0 contributions</title>
-  </rect>
-  <rect x="483" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.690s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-23" data-count="0">
+    <rect x="493" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.66s" fill="freeze"/>
+    </rect>
     <title>2025-08-23: 0 contributions</title>
-  </rect>
-  <rect x="497" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.693s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-24" data-count="0">
+    <rect x="493" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.67s" fill="freeze"/>
+    </rect>
     <title>2025-08-24: 0 contributions</title>
-  </rect>
-  <rect x="497" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.696s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-25" data-count="0">
+    <rect x="493" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.68s" fill="freeze"/>
+    </rect>
     <title>2025-08-25: 0 contributions</title>
-  </rect>
-  <rect x="497" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.699s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-26" data-count="0">
+    <rect x="493" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.69s" fill="freeze"/>
+    </rect>
     <title>2025-08-26: 0 contributions</title>
-  </rect>
-  <rect x="497" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.702s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-27" data-count="0">
+    <rect x="493" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.70s" fill="freeze"/>
+    </rect>
     <title>2025-08-27: 0 contributions</title>
-  </rect>
-  <rect x="497" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.705s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-28" data-count="0">
+    <rect x="507" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.66s" fill="freeze"/>
+    </rect>
     <title>2025-08-28: 0 contributions</title>
-  </rect>
-  <rect x="497" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.708s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-29" data-count="0">
+    <rect x="507" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.67s" fill="freeze"/>
+    </rect>
     <title>2025-08-29: 0 contributions</title>
-  </rect>
-  <rect x="497" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.711s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-30" data-count="0">
+    <rect x="507" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.68s" fill="freeze"/>
+    </rect>
     <title>2025-08-30: 0 contributions</title>
-  </rect>
-  <rect x="511" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.714s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-08-31" data-count="0">
+    <rect x="507" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.69s" fill="freeze"/>
+    </rect>
     <title>2025-08-31: 0 contributions</title>
-  </rect>
-  <rect x="511" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.717s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-01" data-count="0">
+    <rect x="507" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.70s" fill="freeze"/>
+    </rect>
     <title>2025-09-01: 0 contributions</title>
-  </rect>
-  <rect x="511" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.720s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-02" data-count="0">
+    <rect x="507" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.71s" fill="freeze"/>
+    </rect>
     <title>2025-09-02: 0 contributions</title>
-  </rect>
-  <rect x="511" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.723s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-03" data-count="0">
+    <rect x="507" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.72s" fill="freeze"/>
+    </rect>
     <title>2025-09-03: 0 contributions</title>
-  </rect>
-  <rect x="511" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.726s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-04" data-count="0">
+    <rect x="521" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.68s" fill="freeze"/>
+    </rect>
     <title>2025-09-04: 0 contributions</title>
-  </rect>
-  <rect x="511" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.729s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-05" data-count="0">
+    <rect x="521" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.69s" fill="freeze"/>
+    </rect>
     <title>2025-09-05: 0 contributions</title>
-  </rect>
-  <rect x="511" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.732s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-06" data-count="0">
+    <rect x="521" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.70s" fill="freeze"/>
+    </rect>
     <title>2025-09-06: 0 contributions</title>
-  </rect>
-  <rect x="525" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.735s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-07" data-count="0">
+    <rect x="521" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.71s" fill="freeze"/>
+    </rect>
     <title>2025-09-07: 0 contributions</title>
-  </rect>
-  <rect x="525" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.738s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-08" data-count="0">
+    <rect x="521" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.72s" fill="freeze"/>
+    </rect>
     <title>2025-09-08: 0 contributions</title>
-  </rect>
-  <rect x="525" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.741s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-09" data-count="0">
+    <rect x="521" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.73s" fill="freeze"/>
+    </rect>
     <title>2025-09-09: 0 contributions</title>
-  </rect>
-  <rect x="525" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.744s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-10" data-count="0">
+    <rect x="521" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.74s" fill="freeze"/>
+    </rect>
     <title>2025-09-10: 0 contributions</title>
-  </rect>
-  <rect x="525" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.747s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-11" data-count="0">
+    <rect x="535" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.70s" fill="freeze"/>
+    </rect>
     <title>2025-09-11: 0 contributions</title>
-  </rect>
-  <rect x="525" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.750s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-12" data-count="0">
+    <rect x="535" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.71s" fill="freeze"/>
+    </rect>
     <title>2025-09-12: 0 contributions</title>
-  </rect>
-  <rect x="525" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.753s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-13" data-count="0">
+    <rect x="535" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.72s" fill="freeze"/>
+    </rect>
     <title>2025-09-13: 0 contributions</title>
-  </rect>
-  <rect x="539" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.756s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-14" data-count="0">
+    <rect x="535" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.73s" fill="freeze"/>
+    </rect>
     <title>2025-09-14: 0 contributions</title>
-  </rect>
-  <rect x="539" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.759s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-15" data-count="0">
+    <rect x="535" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.74s" fill="freeze"/>
+    </rect>
     <title>2025-09-15: 0 contributions</title>
-  </rect>
-  <rect x="539" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.762s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-16" data-count="0">
+    <rect x="535" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.75s" fill="freeze"/>
+    </rect>
     <title>2025-09-16: 0 contributions</title>
-  </rect>
-  <rect x="539" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.765s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-17" data-count="0">
+    <rect x="535" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.76s" fill="freeze"/>
+    </rect>
     <title>2025-09-17: 0 contributions</title>
-  </rect>
-  <rect x="539" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.768s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-18" data-count="0">
+    <rect x="549" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.72s" fill="freeze"/>
+    </rect>
     <title>2025-09-18: 0 contributions</title>
-  </rect>
-  <rect x="539" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.771s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-19" data-count="0">
+    <rect x="549" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.73s" fill="freeze"/>
+    </rect>
     <title>2025-09-19: 0 contributions</title>
-  </rect>
-  <rect x="539" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.774s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-20" data-count="0">
+    <rect x="549" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.74s" fill="freeze"/>
+    </rect>
     <title>2025-09-20: 0 contributions</title>
-  </rect>
-  <rect x="553" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.777s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-21" data-count="0">
+    <rect x="549" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.75s" fill="freeze"/>
+    </rect>
     <title>2025-09-21: 0 contributions</title>
-  </rect>
-  <rect x="553" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.780s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-22" data-count="0">
+    <rect x="549" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.76s" fill="freeze"/>
+    </rect>
     <title>2025-09-22: 0 contributions</title>
-  </rect>
-  <rect x="553" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.783s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-23" data-count="0">
+    <rect x="549" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.77s" fill="freeze"/>
+    </rect>
     <title>2025-09-23: 0 contributions</title>
-  </rect>
-  <rect x="553" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.786s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-24" data-count="0">
+    <rect x="549" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.78s" fill="freeze"/>
+    </rect>
     <title>2025-09-24: 0 contributions</title>
-  </rect>
-  <rect x="553" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.789s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-25" data-count="0">
+    <rect x="563" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.74s" fill="freeze"/>
+    </rect>
     <title>2025-09-25: 0 contributions</title>
-  </rect>
-  <rect x="553" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.792s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-26" data-count="0">
+    <rect x="563" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.75s" fill="freeze"/>
+    </rect>
     <title>2025-09-26: 0 contributions</title>
-  </rect>
-  <rect x="553" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.795s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-27" data-count="0">
+    <rect x="563" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.76s" fill="freeze"/>
+    </rect>
     <title>2025-09-27: 0 contributions</title>
-  </rect>
-  <rect x="567" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.798s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-28" data-count="0">
+    <rect x="563" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.77s" fill="freeze"/>
+    </rect>
     <title>2025-09-28: 0 contributions</title>
-  </rect>
-  <rect x="567" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.801s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-29" data-count="0">
+    <rect x="563" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.78s" fill="freeze"/>
+    </rect>
     <title>2025-09-29: 0 contributions</title>
-  </rect>
-  <rect x="567" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.804s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-09-30" data-count="0">
+    <rect x="563" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.79s" fill="freeze"/>
+    </rect>
     <title>2025-09-30: 0 contributions</title>
-  </rect>
-  <rect x="567" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.807s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-01" data-count="0">
+    <rect x="563" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.80s" fill="freeze"/>
+    </rect>
     <title>2025-10-01: 0 contributions</title>
-  </rect>
-  <rect x="567" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.810s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-02" data-count="0">
+    <rect x="577" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.76s" fill="freeze"/>
+    </rect>
     <title>2025-10-02: 0 contributions</title>
-  </rect>
-  <rect x="567" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.813s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-03" data-count="0">
+    <rect x="577" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.77s" fill="freeze"/>
+    </rect>
     <title>2025-10-03: 0 contributions</title>
-  </rect>
-  <rect x="567" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.816s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-04" data-count="0">
+    <rect x="577" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.78s" fill="freeze"/>
+    </rect>
     <title>2025-10-04: 0 contributions</title>
-  </rect>
-  <rect x="581" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.819s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-05" data-count="0">
+    <rect x="577" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.79s" fill="freeze"/>
+    </rect>
     <title>2025-10-05: 0 contributions</title>
-  </rect>
-  <rect x="581" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.822s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-06" data-count="0">
+    <rect x="577" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.80s" fill="freeze"/>
+    </rect>
     <title>2025-10-06: 0 contributions</title>
-  </rect>
-  <rect x="581" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.825s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-07" data-count="0">
+    <rect x="577" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.81s" fill="freeze"/>
+    </rect>
     <title>2025-10-07: 0 contributions</title>
-  </rect>
-  <rect x="581" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.828s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-08" data-count="0">
+    <rect x="577" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.82s" fill="freeze"/>
+    </rect>
     <title>2025-10-08: 0 contributions</title>
-  </rect>
-  <rect x="581" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.831s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-09" data-count="0">
+    <rect x="591" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.78s" fill="freeze"/>
+    </rect>
     <title>2025-10-09: 0 contributions</title>
-  </rect>
-  <rect x="581" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.834s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-10" data-count="0">
+    <rect x="591" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.79s" fill="freeze"/>
+    </rect>
     <title>2025-10-10: 0 contributions</title>
-  </rect>
-  <rect x="581" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.837s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-11" data-count="0">
+    <rect x="591" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.80s" fill="freeze"/>
+    </rect>
     <title>2025-10-11: 0 contributions</title>
-  </rect>
-  <rect x="595" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.840s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-12" data-count="0">
+    <rect x="591" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.81s" fill="freeze"/>
+    </rect>
     <title>2025-10-12: 0 contributions</title>
-  </rect>
-  <rect x="595" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.843s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-13" data-count="0">
+    <rect x="591" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.82s" fill="freeze"/>
+    </rect>
     <title>2025-10-13: 0 contributions</title>
-  </rect>
-  <rect x="595" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.846s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-14" data-count="0">
+    <rect x="591" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.83s" fill="freeze"/>
+    </rect>
     <title>2025-10-14: 0 contributions</title>
-  </rect>
-  <rect x="595" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.849s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-15" data-count="0">
+    <rect x="591" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.84s" fill="freeze"/>
+    </rect>
     <title>2025-10-15: 0 contributions</title>
-  </rect>
-  <rect x="595" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.852s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-16" data-count="0">
+    <rect x="605" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.80s" fill="freeze"/>
+    </rect>
     <title>2025-10-16: 0 contributions</title>
-  </rect>
-  <rect x="595" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.855s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-17" data-count="0">
+    <rect x="605" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.81s" fill="freeze"/>
+    </rect>
     <title>2025-10-17: 0 contributions</title>
-  </rect>
-  <rect x="595" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.858s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-18" data-count="0">
+    <rect x="605" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.82s" fill="freeze"/>
+    </rect>
     <title>2025-10-18: 0 contributions</title>
-  </rect>
-  <rect x="609" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.861s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-19" data-count="0">
+    <rect x="605" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.83s" fill="freeze"/>
+    </rect>
     <title>2025-10-19: 0 contributions</title>
-  </rect>
-  <rect x="609" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.864s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-20" data-count="0">
+    <rect x="605" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.84s" fill="freeze"/>
+    </rect>
     <title>2025-10-20: 0 contributions</title>
-  </rect>
-  <rect x="609" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.867s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-21" data-count="0">
+    <rect x="605" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.85s" fill="freeze"/>
+    </rect>
     <title>2025-10-21: 0 contributions</title>
-  </rect>
-  <rect x="609" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.870s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-22" data-count="0">
+    <rect x="605" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.86s" fill="freeze"/>
+    </rect>
     <title>2025-10-22: 0 contributions</title>
-  </rect>
-  <rect x="609" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.873s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-23" data-count="0">
+    <rect x="619" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.82s" fill="freeze"/>
+    </rect>
     <title>2025-10-23: 0 contributions</title>
-  </rect>
-  <rect x="609" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.876s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-24" data-count="0">
+    <rect x="619" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.83s" fill="freeze"/>
+    </rect>
     <title>2025-10-24: 0 contributions</title>
-  </rect>
-  <rect x="609" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.879s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-25" data-count="0">
+    <rect x="619" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.84s" fill="freeze"/>
+    </rect>
     <title>2025-10-25: 0 contributions</title>
-  </rect>
-  <rect x="623" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.882s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-26" data-count="0">
+    <rect x="619" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.85s" fill="freeze"/>
+    </rect>
     <title>2025-10-26: 0 contributions</title>
-  </rect>
-  <rect x="623" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.885s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-27" data-count="0">
+    <rect x="619" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.86s" fill="freeze"/>
+    </rect>
     <title>2025-10-27: 0 contributions</title>
-  </rect>
-  <rect x="623" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.888s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-28" data-count="0">
+    <rect x="619" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.87s" fill="freeze"/>
+    </rect>
     <title>2025-10-28: 0 contributions</title>
-  </rect>
-  <rect x="623" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.891s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-29" data-count="0">
+    <rect x="619" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.88s" fill="freeze"/>
+    </rect>
     <title>2025-10-29: 0 contributions</title>
-  </rect>
-  <rect x="623" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.894s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-30" data-count="0">
+    <rect x="633" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.84s" fill="freeze"/>
+    </rect>
     <title>2025-10-30: 0 contributions</title>
-  </rect>
-  <rect x="623" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.897s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-10-31" data-count="0">
+    <rect x="633" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.85s" fill="freeze"/>
+    </rect>
     <title>2025-10-31: 0 contributions</title>
-  </rect>
-  <rect x="623" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.900s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-01" data-count="0">
+    <rect x="633" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.86s" fill="freeze"/>
+    </rect>
     <title>2025-11-01: 0 contributions</title>
-  </rect>
-  <rect x="637" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.903s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-02" data-count="0">
+    <rect x="633" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.87s" fill="freeze"/>
+    </rect>
     <title>2025-11-02: 0 contributions</title>
-  </rect>
-  <rect x="637" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.906s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-03" data-count="0">
+    <rect x="633" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.88s" fill="freeze"/>
+    </rect>
     <title>2025-11-03: 0 contributions</title>
-  </rect>
-  <rect x="637" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.909s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-04" data-count="0">
+    <rect x="633" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.89s" fill="freeze"/>
+    </rect>
     <title>2025-11-04: 0 contributions</title>
-  </rect>
-  <rect x="637" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.912s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-05" data-count="0">
+    <rect x="633" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.90s" fill="freeze"/>
+    </rect>
     <title>2025-11-05: 0 contributions</title>
-  </rect>
-  <rect x="637" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.915s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-06" data-count="0">
+    <rect x="647" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.86s" fill="freeze"/>
+    </rect>
     <title>2025-11-06: 0 contributions</title>
-  </rect>
-  <rect x="637" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.918s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-07" data-count="0">
+    <rect x="647" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.87s" fill="freeze"/>
+    </rect>
     <title>2025-11-07: 0 contributions</title>
-  </rect>
-  <rect x="637" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.921s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-08" data-count="0">
+    <rect x="647" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.88s" fill="freeze"/>
+    </rect>
     <title>2025-11-08: 0 contributions</title>
-  </rect>
-  <rect x="651" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.924s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-09" data-count="0">
+    <rect x="647" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.89s" fill="freeze"/>
+    </rect>
     <title>2025-11-09: 0 contributions</title>
-  </rect>
-  <rect x="651" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.927s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-10" data-count="0">
+    <rect x="647" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.90s" fill="freeze"/>
+    </rect>
     <title>2025-11-10: 0 contributions</title>
-  </rect>
-  <rect x="651" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.930s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-11" data-count="0">
+    <rect x="647" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.91s" fill="freeze"/>
+    </rect>
     <title>2025-11-11: 0 contributions</title>
-  </rect>
-  <rect x="651" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.933s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-12" data-count="0">
+    <rect x="647" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.92s" fill="freeze"/>
+    </rect>
     <title>2025-11-12: 0 contributions</title>
-  </rect>
-  <rect x="651" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.936s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-13" data-count="0">
+    <rect x="661" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.88s" fill="freeze"/>
+    </rect>
     <title>2025-11-13: 0 contributions</title>
-  </rect>
-  <rect x="651" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.939s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-14" data-count="0">
+    <rect x="661" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.89s" fill="freeze"/>
+    </rect>
     <title>2025-11-14: 0 contributions</title>
-  </rect>
-  <rect x="651" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.942s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-15" data-count="0">
+    <rect x="661" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.90s" fill="freeze"/>
+    </rect>
     <title>2025-11-15: 0 contributions</title>
-  </rect>
-  <rect x="665" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.945s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-16" data-count="0">
+    <rect x="661" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.91s" fill="freeze"/>
+    </rect>
     <title>2025-11-16: 0 contributions</title>
-  </rect>
-  <rect x="665" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.948s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-17" data-count="0">
+    <rect x="661" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.92s" fill="freeze"/>
+    </rect>
     <title>2025-11-17: 0 contributions</title>
-  </rect>
-  <rect x="665" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.951s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-18" data-count="0">
+    <rect x="661" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.93s" fill="freeze"/>
+    </rect>
     <title>2025-11-18: 0 contributions</title>
-  </rect>
-  <rect x="665" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.954s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-19" data-count="0">
+    <rect x="661" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.94s" fill="freeze"/>
+    </rect>
     <title>2025-11-19: 0 contributions</title>
-  </rect>
-  <rect x="665" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.957s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-20" data-count="0">
+    <rect x="675" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.90s" fill="freeze"/>
+    </rect>
     <title>2025-11-20: 0 contributions</title>
-  </rect>
-  <rect x="665" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.960s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-21" data-count="0">
+    <rect x="675" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.91s" fill="freeze"/>
+    </rect>
     <title>2025-11-21: 0 contributions</title>
-  </rect>
-  <rect x="665" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.963s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-22" data-count="0">
+    <rect x="675" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.92s" fill="freeze"/>
+    </rect>
     <title>2025-11-22: 0 contributions</title>
-  </rect>
-  <rect x="679" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.966s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-23" data-count="0">
+    <rect x="675" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.93s" fill="freeze"/>
+    </rect>
     <title>2025-11-23: 0 contributions</title>
-  </rect>
-  <rect x="679" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.969s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-24" data-count="0">
+    <rect x="675" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.94s" fill="freeze"/>
+    </rect>
     <title>2025-11-24: 0 contributions</title>
-  </rect>
-  <rect x="679" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.972s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-25" data-count="0">
+    <rect x="675" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.95s" fill="freeze"/>
+    </rect>
     <title>2025-11-25: 0 contributions</title>
-  </rect>
-  <rect x="679" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.975s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-26" data-count="0">
+    <rect x="675" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.96s" fill="freeze"/>
+    </rect>
     <title>2025-11-26: 0 contributions</title>
-  </rect>
-  <rect x="679" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.978s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-27" data-count="0">
+    <rect x="689" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.92s" fill="freeze"/>
+    </rect>
     <title>2025-11-27: 0 contributions</title>
-  </rect>
-  <rect x="679" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.981s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-28" data-count="0">
+    <rect x="689" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.93s" fill="freeze"/>
+    </rect>
     <title>2025-11-28: 0 contributions</title>
-  </rect>
-  <rect x="679" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.984s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-29" data-count="0">
+    <rect x="689" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.94s" fill="freeze"/>
+    </rect>
     <title>2025-11-29: 0 contributions</title>
-  </rect>
-  <rect x="693" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.987s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-11-30" data-count="0">
+    <rect x="689" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.95s" fill="freeze"/>
+    </rect>
     <title>2025-11-30: 0 contributions</title>
-  </rect>
-  <rect x="693" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.990s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-01" data-count="0">
+    <rect x="689" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.96s" fill="freeze"/>
+    </rect>
     <title>2025-12-01: 0 contributions</title>
-  </rect>
-  <rect x="693" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.993s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-02" data-count="0">
+    <rect x="689" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.97s" fill="freeze"/>
+    </rect>
     <title>2025-12-02: 0 contributions</title>
-  </rect>
-  <rect x="693" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.996s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-03" data-count="0">
+    <rect x="689" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.98s" fill="freeze"/>
+    </rect>
     <title>2025-12-03: 0 contributions</title>
-  </rect>
-  <rect x="693" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.999s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-04" data-count="0">
+    <rect x="703" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.94s" fill="freeze"/>
+    </rect>
     <title>2025-12-04: 0 contributions</title>
-  </rect>
-  <rect x="693" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.002s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-05" data-count="0">
+    <rect x="703" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.95s" fill="freeze"/>
+    </rect>
     <title>2025-12-05: 0 contributions</title>
-  </rect>
-  <rect x="693" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.005s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-06" data-count="0">
+    <rect x="703" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.96s" fill="freeze"/>
+    </rect>
     <title>2025-12-06: 0 contributions</title>
-  </rect>
-  <rect x="707" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.008s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-07" data-count="0">
+    <rect x="703" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.97s" fill="freeze"/>
+    </rect>
     <title>2025-12-07: 0 contributions</title>
-  </rect>
-  <rect x="707" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.011s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-08" data-count="0">
+    <rect x="703" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.98s" fill="freeze"/>
+    </rect>
     <title>2025-12-08: 0 contributions</title>
-  </rect>
-  <rect x="707" y="58" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.014s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-09" data-count="0">
+    <rect x="703" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.99s" fill="freeze"/>
+    </rect>
     <title>2025-12-09: 0 contributions</title>
-  </rect>
-  <rect x="707" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.017s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-10" data-count="0">
+    <rect x="703" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.00s" fill="freeze"/>
+    </rect>
     <title>2025-12-10: 0 contributions</title>
-  </rect>
-  <rect x="707" y="86" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.020s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-11" data-count="0">
+    <rect x="717" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.96s" fill="freeze"/>
+    </rect>
     <title>2025-12-11: 0 contributions</title>
-  </rect>
-  <rect x="707" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.023s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-12" data-count="0">
+    <rect x="717" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.97s" fill="freeze"/>
+    </rect>
     <title>2025-12-12: 0 contributions</title>
-  </rect>
-  <rect x="707" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.026s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-13" data-count="0">
+    <rect x="717" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.98s" fill="freeze"/>
+    </rect>
     <title>2025-12-13: 0 contributions</title>
-  </rect>
-  <rect x="721" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.029s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-14" data-count="0">
+    <rect x="717" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.99s" fill="freeze"/>
+    </rect>
     <title>2025-12-14: 0 contributions</title>
-  </rect>
-  <rect x="721" y="44" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.032s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-15" data-count="0">
+    <rect x="717" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.00s" fill="freeze"/>
+    </rect>
     <title>2025-12-15: 0 contributions</title>
-  </rect>
-  <rect x="721" y="58" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.035s" fill="freeze"/>
-    <title>2025-12-16: 5 contributions</title>
-  </rect>
-  <rect x="721" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.038s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-16" data-count="0">
+    <rect x="717" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.01s" fill="freeze"/>
+    </rect>
+    <title>2025-12-16: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-17" data-count="0">
+    <rect x="717" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.02s" fill="freeze"/>
+    </rect>
     <title>2025-12-17: 0 contributions</title>
-  </rect>
-  <rect x="721" y="86" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.041s" fill="freeze"/>
-    <title>2025-12-18: 1 contribution</title>
-  </rect>
-  <rect x="721" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.044s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-18" data-count="0">
+    <rect x="731" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.98s" fill="freeze"/>
+    </rect>
+    <title>2025-12-18: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-19" data-count="0">
+    <rect x="731" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.99s" fill="freeze"/>
+    </rect>
     <title>2025-12-19: 0 contributions</title>
-  </rect>
-  <rect x="721" y="114" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.047s" fill="freeze"/>
-    <title>2025-12-20: 2 contributions</title>
-  </rect>
-  <rect x="735" y="30" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.050s" fill="freeze"/>
-    <title>2025-12-21: 2 contributions</title>
-  </rect>
-  <rect x="735" y="44" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.053s" fill="freeze"/>
-    <title>2025-12-22: 3 contributions</title>
-  </rect>
-  <rect x="735" y="58" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.056s" fill="freeze"/>
-    <title>2025-12-23: 1 contribution</title>
-  </rect>
-  <rect x="735" y="72" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.059s" fill="freeze"/>
-    <title>2025-12-24: 3 contributions</title>
-  </rect>
-  <rect x="735" y="86" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.062s" fill="freeze"/>
-    <title>2025-12-25: 1 contribution</title>
-  </rect>
-  <rect x="735" y="100" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.065s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-20" data-count="0">
+    <rect x="731" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.00s" fill="freeze"/>
+    </rect>
+    <title>2025-12-20: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-21" data-count="0">
+    <rect x="731" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.01s" fill="freeze"/>
+    </rect>
+    <title>2025-12-21: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-22" data-count="0">
+    <rect x="731" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.02s" fill="freeze"/>
+    </rect>
+    <title>2025-12-22: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-23" data-count="0">
+    <rect x="731" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.03s" fill="freeze"/>
+    </rect>
+    <title>2025-12-23: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-24" data-count="0">
+    <rect x="731" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.04s" fill="freeze"/>
+    </rect>
+    <title>2025-12-24: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-25" data-count="0">
+    <rect x="745" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.00s" fill="freeze"/>
+    </rect>
+    <title>2025-12-25: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-26" data-count="0">
+    <rect x="745" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.01s" fill="freeze"/>
+    </rect>
     <title>2025-12-26: 0 contributions</title>
-  </rect>
-  <rect x="735" y="114" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.068s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-27" data-count="0">
+    <rect x="745" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.02s" fill="freeze"/>
+    </rect>
     <title>2025-12-27: 0 contributions</title>
-  </rect>
-  <rect x="749" y="30" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.071s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-28" data-count="0">
+    <rect x="745" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.03s" fill="freeze"/>
+    </rect>
     <title>2025-12-28: 0 contributions</title>
-  </rect>
-  <rect x="749" y="44" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.074s" fill="freeze"/>
-    <title>2025-12-29: 2 contributions</title>
-  </rect>
-  <rect x="749" y="58" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.077s" fill="freeze"/>
-    <title>2025-12-30: 3 contributions</title>
-  </rect>
-  <rect x="749" y="72" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.080s" fill="freeze"/>
+  </g>
+  <g class="cell" data-date="2025-12-29" data-count="0">
+    <rect x="745" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.04s" fill="freeze"/>
+    </rect>
+    <title>2025-12-29: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-30" data-count="0">
+    <rect x="745" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.05s" fill="freeze"/>
+    </rect>
+    <title>2025-12-30: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2025-12-31" data-count="0">
+    <rect x="745" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.06s" fill="freeze"/>
+    </rect>
     <title>2025-12-31: 0 contributions</title>
-  </rect>
-  <rect x="749" y="86" width="11" height="11" fill="#39d353" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.083s" fill="freeze"/>
-    <title>2026-01-01: 21 contributions</title>
-  </rect>
-  <rect x="749" y="100" width="11" height="11" fill="#0e4429" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.086s" fill="freeze"/>
-    <title>2026-01-02: 1 contribution</title>
-  </rect>
-  <rect x="749" y="114" width="11" height="11" fill="#006d32" rx="2" ry="2" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.089s" fill="freeze"/>
-    <title>2026-01-03: 7 contributions</title>
-  </rect>
-  <text x="603" y="148" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">Less</text>
-  <rect x="633" y="140" width="11" height="11" fill="#161b22" rx="2" ry="2"/>
-  <rect x="647" y="140" width="11" height="11" fill="#0e4429" rx="2" ry="2"/>
-  <rect x="661" y="140" width="11" height="11" fill="#006d32" rx="2" ry="2"/>
-  <rect x="675" y="140" width="11" height="11" fill="#26a641" rx="2" ry="2"/>
-  <rect x="689" y="140" width="11" height="11" fill="#39d353" rx="2" ry="2"/>
-  <text x="708" y="148" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="9">More</text>
-  <text x="35" y="148" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="500">57 contributions in the last year</text>
+  </g>
+  <g class="cell" data-date="2026-01-01" data-count="0">
+    <rect x="759" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.02s" fill="freeze"/>
+    </rect>
+    <title>2026-01-01: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-02" data-count="0">
+    <rect x="759" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.03s" fill="freeze"/>
+    </rect>
+    <title>2026-01-02: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-03" data-count="0">
+    <rect x="759" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.04s" fill="freeze"/>
+    </rect>
+    <title>2026-01-03: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-04" data-count="0">
+    <rect x="759" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.05s" fill="freeze"/>
+    </rect>
+    <title>2026-01-04: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-05" data-count="0">
+    <rect x="759" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.06s" fill="freeze"/>
+    </rect>
+    <title>2026-01-05: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-06" data-count="0">
+    <rect x="759" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.07s" fill="freeze"/>
+    </rect>
+    <title>2026-01-06: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-07" data-count="0">
+    <rect x="759" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.08s" fill="freeze"/>
+    </rect>
+    <title>2026-01-07: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-08" data-count="0">
+    <rect x="773" y="50" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.04s" fill="freeze"/>
+    </rect>
+    <title>2026-01-08: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-09" data-count="0">
+    <rect x="773" y="64" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.05s" fill="freeze"/>
+    </rect>
+    <title>2026-01-09: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-10" data-count="0">
+    <rect x="773" y="78" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.06s" fill="freeze"/>
+    </rect>
+    <title>2026-01-10: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-11" data-count="0">
+    <rect x="773" y="92" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.07s" fill="freeze"/>
+    </rect>
+    <title>2026-01-11: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-12" data-count="0">
+    <rect x="773" y="106" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.08s" fill="freeze"/>
+    </rect>
+    <title>2026-01-12: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-13" data-count="0">
+    <rect x="773" y="120" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.09s" fill="freeze"/>
+    </rect>
+    <title>2026-01-13: 0 contributions</title>
+  </g>
+  <g class="cell" data-date="2026-01-14" data-count="0">
+    <rect x="773" y="134" width="11" height="11" fill="#161b22" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.10s" fill="freeze"/>
+    </rect>
+    <title>2026-01-14: 0 contributions</title>
+  </g>
+  <!-- Legend with pulse animation -->
+  <g transform="translate(637, 173)">
+    <text x="-35" y="9" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">Less</text>
+    <rect x="0" y="0" width="11" height="11" fill="#161b22" rx="2" ry="2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="15" y="0" width="11" height="11" fill="#0e4429" rx="2" ry="2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="30" y="0" width="11" height="11" fill="#006d32" rx="2" ry="2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="45" y="0" width="11" height="11" fill="#26a641" rx="2" ry="2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.6000000000000001s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="60" y="0" width="11" height="11" fill="#39d353" rx="2" ry="2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="83" y="9" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">More</text>
+  </g>
+  <!-- Contribution count -->
+  <g transform="translate(45, 180)">
+    <text fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">
+      <tspan fill="#39d353">0</tspan> contributions in the last year
+    </text>
+  </g>
 </svg>
