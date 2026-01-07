@@ -39,15 +39,15 @@
   <img src="https://img.shields.io/badge/🏆_Most_Productive-Saturday_(8.3h)-4CAF50?style=for-the-badge&labelColor=1a1a1a" alt="Most Productive"/><!--START_PRODUCTIVE_DAY--><!--END_PRODUCTIVE_DAY-->
   <img src="https://img.shields.io/badge/💻_Top_Language-JSON-2196F3?style=for-the-badge&labelColor=1a1a1a" alt="Top Language"/><!--START_TOP_LANGUAGE--><!--END_TOP_LANGUAGE-->
   <img src="https://img.shields.io/badge/🛠️_Editor-VS_Code-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="Editor"/><!--START_TOP_EDITOR--><!--END_TOP_EDITOR-->
-  <img src="https://img.shields.io/badge/⚡_Avg_Daily-5.2_hrs-9C27B0?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
-  <img src="https://img.shields.io/badge/📅_Active_Days-7/7_days-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->
+  <img src="https://img.shields.io/badge/⚡_Avg_Daily-4.6_hrs-9C27B0?style=for-the-badge&labelColor=1a1a1a" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
+  <img src="https://img.shields.io/badge/📅_Active_Days-6/7_days-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->
 </p>
 
 ## 🕒 Coding Time
 <p>
-  <img src="https://img.shields.io/badge/TODAY-4_hrs_26_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
-  <img src="https://img.shields.io/badge/YESTERDAY-3_hrs_5_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
-  <img src="https://img.shields.io/badge/THIS_WEEK-36_hrs_28_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
+  <img src="https://img.shields.io/badge/TODAY-0_hrs_0_mins-ff0000?style=for-the-badge&labelColor=1a1a1a" alt="TODAY"/><!--START_TODAY_BADGE--><!--END_TODAY_BADGE-->
+  <img src="https://img.shields.io/badge/YESTERDAY-4_hrs_26_mins-FF9800?style=for-the-badge&labelColor=1a1a1a" alt="YESTERDAY"/><!--START_YESTERDAY_BADGE--><!--END_YESTERDAY_BADGE-->
+  <img src="https://img.shields.io/badge/THIS_WEEK-32_hrs_24_mins-00BCD4?style=for-the-badge&labelColor=1a1a1a" alt="THIS WEEK"/><!--START_THIS_WEEK_BADGE--><!--END_THIS_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/LAST_WEEK-0_hrs_0_mins-3232ff?style=for-the-badge&labelColor=1a1a1a" alt="LAST WEEK"/><!--START_LAST_WEEK_BADGE--><!--END_LAST_WEEK_BADGE-->
   <img src="https://img.shields.io/badge/CHANGE-🆕_New-gray?style=for-the-badge&labelColor=1a1a1a" alt="CHANGE"/><!--START_WEEK_CHANGE_BADGE--><!--END_WEEK_CHANGE_BADGE--><!--START_CHANGE_COLOR--><!--END_CHANGE_COLOR-->
 </p>
@@ -59,20 +59,20 @@
 <!--START_DAILY_CHART-->
 | Day | Activity | Hours |
 |-----|----------|-------|
-| Wed | ![](https://progress-bar.xyz/84/?width=250&color=2ecc71&suffix=%20) | 4.1 hrs |
 | Thu | ![](https://progress-bar.xyz/96/?width=250&color=2ecc71&suffix=%20) | 7.2 hrs |
 | Fri | ![](https://progress-bar.xyz/89/?width=250&color=2ecc71&suffix=%20) | 5.2 hrs |
 | Sat | ![](https://progress-bar.xyz/100/?width=250&color=2ecc71&suffix=%20) ⭐ | 8.3 hrs |
 | Sun | ![](https://progress-bar.xyz/84/?width=250&color=2ecc71&suffix=%20) | 4.1 hrs |
 | Mon | ![](https://progress-bar.xyz/78/?width=250&color=2ecc71&suffix=%20) | 3.1 hrs |
 | Tue | ![](https://progress-bar.xyz/86/?width=250&color=2ecc71&suffix=%20) | 4.4 hrs |
+| Wed | ![](https://progress-bar.xyz/0/?width=250&color=1a1a2e&suffix=%20) | 0.0 hrs |
 <!--END_DAILY_CHART-->
 
 </div>
 
 
 <div align="center">
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-06 20:15:07 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-07 01:03:09 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 </div>
 
 
