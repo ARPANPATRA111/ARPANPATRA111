@@ -179,7 +179,7 @@ def get_repo_info(owner: str, repo_name: str) -> Optional[Dict]:
 # ============================================================
 
 def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
-    """Generate a weekly activity bar chart SVG."""
+    """Generate a weekly activity bar chart SVG with date display."""
     daily_hours = stats.get("daily_hours", [0] * 7)
     daily_labels = stats.get("daily_labels", ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
     
@@ -195,12 +195,14 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
         secondary_text = "#8b949e"
         grid_color = "#21262d"
         border_color = "#30363d"
+        accent_color = "#58a6ff"
     else:
         bg_color = "#ffffff"
         text_color = "#1f2328"
         secondary_text = "#656d76"
         grid_color = "#d0d7de"
         border_color = "#d0d7de"
+        accent_color = "#0969da"
     
     bar_gradients = [
         ("ff6b6b", "ff8e53"),
@@ -213,10 +215,10 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
     ]
     
     width = 800
-    height = 350
+    height = 380  # Increased height for date
     padding = 60
     chart_width = width - (padding * 2)
-    chart_height = height - (padding * 2) - 40
+    chart_height = height - (padding * 2) - 70  # More space for date
     
     max_hours = max(daily_hours) if max(daily_hours) > 0 else 8
     max_hours = max(max_hours, 1)
@@ -225,6 +227,20 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
     
     bar_width = chart_width / 7 * 0.6
     bar_spacing = chart_width / 7
+    
+    # Get current date info
+    from datetime import datetime
+    import pytz
+    try:
+        ist = pytz.timezone('Asia/Kolkata')
+        now = datetime.now(ist)
+    except:
+        now = datetime.now()
+    
+    # Calculate week range
+    week_start = now - timedelta(days=now.weekday())
+    week_end = week_start + timedelta(days=6)
+    date_range = f"{week_start.strftime('%b %d')} - {week_end.strftime('%b %d, %Y')}"
     
     svg_parts = []
     svg_parts.append(f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
@@ -275,7 +291,15 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
   <text x="{bar_x + bar_width/2}" y="{text_y}" text-anchor="middle" fill="{text_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">{hours:.1f}h {star}</text>''')
         
         svg_parts.append(f'''
-  <text x="{bar_x + bar_width/2}" y="{height - 20}" text-anchor="middle" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">{label}</text>''')
+  <text x="{bar_x + bar_width/2}" y="{height - 50}" text-anchor="middle" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">{label}</text>''')
+    
+    # Add date range below the chart
+    svg_parts.append(f'''
+  <!-- Date Range -->
+  <text x="{width/2}" y="{height - 18}" text-anchor="middle" fill="{accent_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="600">
+    📅 {date_range}
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </text>''')
     
     svg_parts.append('''
 </svg>''')
@@ -826,6 +850,258 @@ def generate_all_featured_projects_svg(repos_info: List[Dict], theme: str = "dar
     return "".join(svg_parts)
 
 
+def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], theme: str = "dark") -> str:
+    """
+    Generate a premium infinite loop animated contribution graph SVG.
+    Like the snake animation, this loops continuously showing contribution activity.
+    """
+    if theme == "dark":
+        bg_color = "#0d1117"
+        text_color = "#e6edf3"
+        secondary_text = "#8b949e"
+        border_color = "#30363d"
+        empty_color = "#161b22"
+        level_colors = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+        glow_color = "#39d353"
+        particle_colors = ["#39d353", "#26a641", "#58a6ff", "#f778ba", "#ffd700"]
+    else:
+        bg_color = "#ffffff"
+        text_color = "#1f2328"
+        secondary_text = "#656d76"
+        border_color = "#d0d7de"
+        empty_color = "#ebedf0"
+        level_colors = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]
+        glow_color = "#216e39"
+        particle_colors = ["#216e39", "#30a14e", "#0969da", "#bf3989", "#9a6700"]
+    
+    cell_size = 11
+    cell_gap = 3
+    weeks = 53
+    days = 7
+    
+    left_padding = 45
+    top_padding = 65
+    right_padding = 30
+    bottom_padding = 60
+    
+    width = left_padding + weeks * (cell_size + cell_gap) + right_padding
+    height = top_padding + days * (cell_size + cell_gap) + bottom_padding
+    
+    # Generate dates for last 52 weeks
+    today = datetime.now(timezone.utc).date()
+    days_since_sunday = today.weekday() + 1
+    if days_since_sunday == 7:
+        days_since_sunday = 0
+    end_date = today
+    start_date = end_date - timedelta(days=364)
+    
+    # Calculate totals
+    total_contribs = sum(contributions.values())
+    max_contrib = max(contributions.values()) if contributions else 1
+    max_contrib = max(max_contrib, 1)
+    
+    svg_parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
+  <defs>
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Neon glow for active elements -->
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Gradient for title -->
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:{level_colors[3]};stop-opacity:1">
+        <animate attributeName="stop-color" values="{level_colors[3]};{level_colors[4]};{level_colors[3]}" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:{level_colors[4]};stop-opacity:1">
+        <animate attributeName="stop-color" values="{level_colors[4]};{level_colors[3]};{level_colors[4]}" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Wave gradient for scanning effect -->
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:transparent"/>
+      <stop offset="45%" style="stop-color:transparent"/>
+      <stop offset="50%" style="stop-color:{glow_color};stop-opacity:0.6"/>
+      <stop offset="55%" style="stop-color:transparent"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+      <animate attributeName="x1" values="-100%;200%" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0%;300%" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <!-- Particle gradient -->
+    <radialGradient id="particleGrad">
+      <stop offset="0%" style="stop-color:{glow_color};stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:{glow_color};stop-opacity:0"/>
+    </radialGradient>''']
+    
+    # Add animated gradients for each level
+    for i, color in enumerate(level_colors[1:], 1):
+        svg_parts.append(f'''
+    <radialGradient id="cellGrad{i}" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:{color};stop-opacity:1"/>
+      <stop offset="80%" style="stop-color:{color};stop-opacity:0.85"/>
+      <stop offset="100%" style="stop-color:{color};stop-opacity:0.7"/>
+    </radialGradient>''')
+    
+    svg_parts.append(f'''
+  </defs>
+  
+  <!-- Background -->
+  <rect width="{width}" height="{height}" fill="{bg_color}" rx="16" ry="16"/>
+  <rect x="1" y="1" width="{width-2}" height="{height-2}" fill="none" stroke="{border_color}" stroke-width="1" rx="15" ry="15"/>
+  
+  <!-- Animated Title -->
+  <g transform="translate({left_padding}, 25)">
+    <text fill="url(#titleGradient)" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700">
+      🔥 Contribution Activity
+    </text>
+    <text x="{width - left_padding - right_padding - 10}" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" text-anchor="end">
+      <tspan fill="{level_colors[4]}" font-weight="bold">{total_contribs}</tspan> contributions
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  
+  <!-- Scanning wave overlay (infinite loop) -->
+  <rect x="{left_padding}" y="{top_padding}" width="{weeks * (cell_size + cell_gap)}" height="{days * (cell_size + cell_gap)}" fill="url(#waveGrad)" rx="3" ry="3" opacity="0.5"/>''')
+    
+    # Day labels
+    day_labels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    for i in [1, 3, 5]:
+        y = top_padding + i * (cell_size + cell_gap) + cell_size / 2 + 4
+        svg_parts.append(f'''
+  <text x="{left_padding - 10}" y="{y}" text-anchor="end" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">{day_labels[i]}</text>''')
+    
+    # Month labels
+    current_date = start_date
+    prev_month = None
+    for week in range(weeks):
+        month_name = current_date.strftime("%b")
+        if month_name != prev_month:
+            x = left_padding + week * (cell_size + cell_gap)
+            svg_parts.append(f'''
+  <text x="{x}" y="{top_padding - 12}" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">{month_name}</text>''')
+            prev_month = month_name
+        current_date += timedelta(days=7)
+    
+    # Draw cells with infinite loop wave animation
+    current_date = start_date
+    active_cells = []
+    
+    for week in range(weeks):
+        for day in range(days):
+            date_str = current_date.strftime("%Y-%m-%d")
+            count = contributions.get(date_str, 0)
+            
+            if count == 0:
+                level = 0
+                color = level_colors[0]
+            elif count <= max_contrib * 0.25:
+                level = 1
+                color = level_colors[1]
+            elif count <= max_contrib * 0.5:
+                level = 2
+                color = level_colors[2]
+            elif count <= max_contrib * 0.75:
+                level = 3
+                color = level_colors[3]
+            else:
+                level = 4
+                color = level_colors[4]
+            
+            x = left_padding + week * (cell_size + cell_gap)
+            y = top_padding + day * (cell_size + cell_gap)
+            
+            # Calculate animation delay based on position (creates wave effect)
+            wave_delay = week * 0.06  # Wave moves left to right
+            
+            if level > 0:
+                active_cells.append((x, y, level, wave_delay, count))
+                # Cell with pulsing animation (infinite loop)
+                svg_parts.append(f'''
+  <g>
+    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="url(#cellGrad{level})" rx="2" ry="2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="{wave_delay:.2f}s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" values="0;0.4;0" dur="3s" begin="{wave_delay:.2f}s" repeatCount="indefinite"/>
+    </rect>
+    <title>{date_str}: {count} contributions</title>
+  </g>''')
+            else:
+                svg_parts.append(f'''
+  <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="4s" begin="{wave_delay:.2f}s" repeatCount="indefinite"/>
+    <title>{date_str}: 0 contributions</title>
+  </rect>''')
+            
+            current_date += timedelta(days=1)
+    
+    # Add floating particles (infinite animation like snake)
+    svg_parts.append(f'''
+  <!-- Floating particles - infinite loop like snake -->
+  <g opacity="0.8">''')
+    
+    for i in range(8):
+        px = 50 + (i * 100) % (width - 100)
+        color = particle_colors[i % len(particle_colors)]
+        delay = i * 0.5
+        duration = 6 + (i % 3)
+        svg_parts.append(f'''
+    <circle cx="{px}" cy="{top_padding + 30}" r="3" fill="{color}" filter="url(#neonGlow)">
+      <animate attributeName="cx" values="{left_padding};{width - right_padding};{left_padding}" dur="{duration}s" begin="{delay}s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="{top_padding};{top_padding + days * (cell_size + cell_gap)};{top_padding}" dur="{duration * 1.5}s" begin="{delay}s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="{duration}s" begin="{delay}s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="2s" begin="{delay}s" repeatCount="indefinite"/>
+    </circle>''')
+    
+    svg_parts.append('''
+  </g>''')
+    
+    # Legend with infinite animation
+    legend_x = width - 180
+    legend_y = height - 30
+    
+    svg_parts.append(f'''
+  <!-- Animated Legend -->
+  <g transform="translate({legend_x}, {legend_y})">
+    <text x="-35" y="9" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">Less</text>''')
+    
+    for i, color in enumerate(level_colors):
+        pulse_delay = i * 0.3
+        svg_parts.append(f'''
+    <rect x="{i * 15}" y="0" width="{cell_size}" height="{cell_size}" fill="{color}" rx="2" ry="2">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="{pulse_delay}s" repeatCount="indefinite"/>
+    </rect>''')
+    
+    svg_parts.append(f'''
+    <text x="{5 * 15 + 8}" y="9" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">More</text>
+  </g>
+  
+  <!-- Streak indicator with glow -->
+  <g transform="translate({left_padding}, {height - 20})">
+    <text fill="{text_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">
+      <tspan fill="{level_colors[4]}" filter="url(#glow)">⚡</tspan>
+      <tspan fill="{secondary_text}"> Keep the streak going!</tspan>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
+    </text>
+  </g>''')
+    
+    svg_parts.append('''
+</svg>''')
+    
+    return "".join(svg_parts)
+
+
 # ============================================================
 # FEATURED PROJECT CONFIG
 # ============================================================
@@ -928,6 +1204,15 @@ def main():
     for theme in ["dark", "light"]:
         svg = generate_contribution_graph_svg(contributions, theme)
         svg_file = assets_dir / f"contribution-graph-{theme}.svg"
+        with open(svg_file, "w", encoding="utf-8") as f:
+            f.write(svg)
+        print(f"  ✅ Generated {svg_file.name}")
+    
+    # Generate infinite loop contribution graph (for Readme_experiment.md)
+    print("\n🔄 Generating infinite loop contribution graph...")
+    for theme in ["dark", "light"]:
+        svg = generate_infinite_contribution_graph_svg(contributions, theme)
+        svg_file = assets_dir / f"contribution-graph-infinite-{theme}.svg"
         with open(svg_file, "w", encoding="utf-8") as f:
             f.write(svg)
         print(f"  ✅ Generated {svg_file.name}")

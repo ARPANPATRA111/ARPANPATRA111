@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380">
   <defs>
     <linearGradient id="grad0" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
@@ -29,8 +29,8 @@
       <stop offset="100%" style="stop-color:#5352ed;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <rect width="800" height="350" fill="#0d1117" rx="16" ry="16"/>
-  <rect x="1" y="1" width="798" height="348" fill="none" stroke="#30363d" stroke-width="1" rx="15" ry="15"/>
+  <rect width="800" height="380" fill="#0d1117" rx="16" ry="16"/>
+  <rect x="1" y="1" width="798" height="378" fill="none" stroke="#30363d" stroke-width="1" rx="15" ry="15"/>
   <line x1="60" y1="90.0" x2="740" y2="90.0" stroke="#21262d" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
   <text x="50" y="94.0" text-anchor="end" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="11">8.3h</text>
   <line x1="60" y1="137.5" x2="740" y2="137.5" stroke="#21262d" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
@@ -77,10 +77,15 @@
   </rect>
   <text x="594.2857142857142" y="142.49699879951982" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">5.6h </text>
   <text x="594.2857142857142" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Wed</text>
-  <rect x="662.2857142857143" y="169.60384153661465" width="58.28571428571428" height="110.39615846338535" fill="url(#grad6)" rx="8" ry="8">
-    <animate attributeName="height" from="0" to="110.39615846338535" dur="0.5s" fill="freeze"/>
-    <animate attributeName="y" from="280" to="169.60384153661465" dur="0.5s" fill="freeze"/>
+  <rect x="662.2857142857143" y="162.76110444177672" width="58.28571428571428" height="117.23889555822328" fill="url(#grad6)" rx="8" ry="8">
+    <animate attributeName="height" from="0" to="117.23889555822328" dur="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="280" to="162.76110444177672" dur="0.5s" fill="freeze"/>
   </rect>
-  <text x="691.4285714285714" y="159.60384153661465" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">4.8h </text>
+  <text x="691.4285714285714" y="152.76110444177672" text-anchor="middle" fill="#e6edf3" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="500">5.1h </text>
   <text x="691.4285714285714" y="330" text-anchor="middle" fill="#8b949e" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">Thu</text>
+  <!-- Date Range -->
+  <text x="400.0" y="362" text-anchor="middle" fill="#58a6ff" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="600">
+    📅 Jan 05 - Jan 11, 2026
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </text>
 </svg>
