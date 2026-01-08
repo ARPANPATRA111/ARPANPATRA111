@@ -81,7 +81,7 @@ currently_learning:
 <tr>
 <td align="center" width="33%">
 
-![Today](https://img.shields.io/badge/Today-4_hrs_50_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->
+![Today](https://img.shields.io/badge/Today-5_hrs_8_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->
 </td>
 <td align="center" width="33%">
 
@@ -89,7 +89,7 @@ currently_learning:
 </td>
 <td align="center" width="33%">
 
-![This Week](https://img.shields.io/badge/This_Week-35_hrs_37_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
+![This Week](https://img.shields.io/badge/This_Week-35_hrs_55_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
 </td>
 </tr>
 <tr>
@@ -150,7 +150,7 @@ currently_learning:
 </picture>
 <!--END_WEEKLY_CHART-->
 
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-08 18:11:47 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-08 18:31:35 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 
 </div>
 
