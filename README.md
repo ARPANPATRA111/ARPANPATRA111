@@ -81,15 +81,15 @@ currently_learning:
 <tr>
 <td align="center" width="33%">
 
-![Today](https://img.shields.io/badge/Today-0_hrs_0_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->
+![Today](https://img.shields.io/badge/Today-0_hrs_34_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->
 </td>
 <td align="center" width="33%">
 
-![Yesterday](https://img.shields.io/badge/Yesterday-5_hrs_33_mins-feca57?style=for-the-badge&labelColor=1a1a2e)<!--START_YESTERDAY_STAT--><!--END_YESTERDAY_STAT-->
+![Yesterday](https://img.shields.io/badge/Yesterday-5_hrs_35_mins-feca57?style=for-the-badge&labelColor=1a1a2e)<!--START_YESTERDAY_STAT--><!--END_YESTERDAY_STAT-->
 </td>
 <td align="center" width="33%">
 
-![This Week](https://img.shields.io/badge/This_Week-30_hrs_45_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
+![This Week](https://img.shields.io/badge/This_Week-31_hrs_21_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
 </td>
 </tr>
 <tr>
@@ -109,11 +109,11 @@ currently_learning:
 <tr>
 <td align="center" width="33%">
 
-<img src="https://img.shields.io/badge/⚡_Avg_Daily-4.4_hrs-9C27B0?style=for-the-badge&labelColor=1a1a2e" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
+<img src="https://img.shields.io/badge/⚡_Avg_Daily-4.5_hrs-9C27B0?style=for-the-badge&labelColor=1a1a2e" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
 </td>
 <td align="center" width="33%">
 
-<img src="https://img.shields.io/badge/📅_Active_Days-6/7_days-00BCD4?style=for-the-badge&labelColor=1a1a2e" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->
+<img src="https://img.shields.io/badge/📅_Active_Days-7/7_days-00BCD4?style=for-the-badge&labelColor=1a1a2e" alt="Active Days"/><!--START_ACTIVE_DAYS--><!--END_ACTIVE_DAYS-->
 </td>
 <td align="center" width="33%">
 
@@ -152,7 +152,7 @@ currently_learning:
 </picture>
 <!--END_WEEKLY_CHART-->
 
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-08 08:19:49 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-08 12:49:49 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 
 </div>
 
