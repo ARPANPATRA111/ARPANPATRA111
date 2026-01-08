@@ -81,7 +81,7 @@ currently_learning:
 <tr>
 <td align="center" width="33%">
 
-![Today](https://img.shields.io/badge/Today-2_hrs_37_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->
+![Today](https://img.shields.io/badge/Today-3_hrs_13_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e)<!--START_TODAY_STAT--><!--END_TODAY_STAT-->
 </td>
 <td align="center" width="33%">
 
@@ -89,7 +89,7 @@ currently_learning:
 </td>
 <td align="center" width="33%">
 
-![This Week](https://img.shields.io/badge/This_Week-33_hrs_25_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
+![This Week](https://img.shields.io/badge/This_Week-34_hrs_0_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e)<!--START_THISWEEK_STAT--><!--END_THISWEEK_STAT-->
 </td>
 </tr>
 <tr>
@@ -109,7 +109,7 @@ currently_learning:
 <tr>
 <td align="center" width="33%">
 
-<img src="https://img.shields.io/badge/⚡_Avg_Daily-4.8_hrs-9C27B0?style=for-the-badge&labelColor=1a1a2e" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
+<img src="https://img.shields.io/badge/⚡_Avg_Daily-4.9_hrs-9C27B0?style=for-the-badge&labelColor=1a1a2e" alt="Avg Daily"/><!--START_AVG_DAILY--><!--END_AVG_DAILY-->
 </td>
 <td align="center" width="33%">
 
@@ -152,7 +152,7 @@ currently_learning:
 </picture>
 <!--END_WEEKLY_CHART-->
 
-<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-08 14:58:39 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
+<sub>🕒 Last Updated: <!--START_UPDATE_DATE-->2026-01-08 16:18:55 UTC<!--END_UPDATE_DATE--> | ⚡ Powered by <a href="https://wakatime.com/">WakaTime</a></sub>
 
 </div>
 
