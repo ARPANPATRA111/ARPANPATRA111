@@ -13,10 +13,11 @@
 ![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/profile-views.svg?v=1)
 
 <!-- Snake Animation -->
+<!-- Infinite Loop Animated Contribution Graph (like Snake animation) -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/output/github-snake.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/contribution-graph-infinite-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/contribution-graph-infinite-light.svg" />
+  <img alt="Contribution Graph" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/contribution-graph-infinite-dark.svg" width="100%" />
 </picture>
 
 </div>
@@ -92,16 +93,32 @@ currently_learning:
 <table>
 <tr>
 <td align="center" width="25%">
-<img src="https://img.shields.io/badge/Today-2_hrs_37_mins-ff6b6b?style=for-the-badge&labelColor=1a1a2e&logo=clock&logoColor=ff6b6b" alt="Today"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/wakatime-today-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/wakatime-today-light.svg" />
+  <img alt="Today" src="./assets/wakatime-today-dark.svg" />
+</picture>
 </td>
 <td align="center" width="25%">
-<img src="https://img.shields.io/badge/Yesterday-5_hrs_35_mins-feca57?style=for-the-badge&labelColor=1a1a2e&logo=clock&logoColor=feca57" alt="Yesterday"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/wakatime-yesterday-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/wakatime-yesterday-light.svg" />
+  <img alt="Yesterday" src="./assets/wakatime-yesterday-dark.svg" />
+</picture>
 </td>
 <td align="center" width="25%">
-<img src="https://img.shields.io/badge/This_Week-33_hrs_25_mins-48dbfb?style=for-the-badge&labelColor=1a1a2e&logo=calendar&logoColor=48dbfb" alt="This Week"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/wakatime-this_week-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/wakatime-this_week-light.svg" />
+  <img alt="This Week" src="./assets/wakatime-this_week-dark.svg" />
+</picture>
 </td>
 <td align="center" width="25%">
-<img src="https://img.shields.io/badge/Avg_Daily-4.8_hrs-9C27B0?style=for-the-badge&labelColor=1a1a2e&logo=trending-up&logoColor=9C27B0" alt="Avg Daily"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/wakatime-avg_daily-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/wakatime-avg_daily-light.svg" />
+  <img alt="Avg Daily" src="./assets/wakatime-avg_daily-dark.svg" />
+</picture>
 </td>
 </tr>
 </table>
@@ -218,8 +235,8 @@ currently_learning:
 
 <!-- Stats Cards Row -->
 <p align="center">
-  <img src="https://git-readme-stats-phi.vercel.app/api?username=ARPANPATRA111&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9&ring_color=39d353&include_all_commits=true&count_private=true" width="49%" alt="GitHub Stats"/>
-  <img src="https://nirzak-streak-stats.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=true&background=0D1117&ring=39d353&fire=ff6b6b&currStreakLabel=58a6ff" width="49%" alt="Streak Stats"/>
+  <img src="https://git-readme-stats-phi.vercel.app/api?username=ARPANPATRA111&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9&ring_color=39d353&include_all_commits=true&count_private=true" width="49%" alt=""/>
+  <img src="https://nirzak-streak-stats.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=true&background=0D1117&ring=39d353&fire=ff6b6b&currStreakLabel=58a6ff" width="49%" alt=""/>
 </p>
 
 </div>

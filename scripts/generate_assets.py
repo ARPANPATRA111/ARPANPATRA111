@@ -336,6 +336,45 @@ def generate_weekly_activity_svg(stats: dict, theme: str = "dark") -> str:
     return "".join(svg_parts)
 
 
+def generate_wakatime_badge_svg(label: str, value: str, color: str, theme: str = "dark") -> str:
+    """Generate a WakaTime stat badge SVG."""
+    if theme == "dark":
+        bg_color = "#1a1a2e"
+        text_color = "#e6edf3"
+        label_bg = "#0d1117"
+    else:
+        bg_color = "#f0f0f0"
+        text_color = "#24292f"
+        label_bg = "#ffffff"
+    
+    # Calculate widths based on text length
+    label_width = len(label) * 7 + 20
+    value_width = len(value) * 8 + 20
+    total_width = label_width + value_width
+    height = 28
+    
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{total_width}" height="{height}" viewBox="0 0 {total_width} {height}">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:{label_bg};stop-opacity:1"/>
+      <stop offset="{(label_width/total_width)*100}%" style="stop-color:{label_bg};stop-opacity:1"/>
+      <stop offset="{(label_width/total_width)*100}%" style="stop-color:{color};stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:{color};stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="{total_width}" height="{height}" fill="url(#grad)" rx="6"/>
+  
+  <!-- Label -->
+  <text x="{label_width/2}" y="{height/2 + 4}" font-family="'Segoe UI', 'Helvetica', 'Arial', sans-serif" font-size="12" font-weight="600" fill="{text_color}" text-anchor="middle">{label}</text>
+  
+  <!-- Value -->
+  <text x="{label_width + value_width/2}" y="{height/2 + 4}" font-family="'Segoe UI', 'Helvetica', 'Arial', sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">{value}</text>
+</svg>'''
+    
+    return svg
+
+
 def generate_featured_project_svg(repo_info: Dict, theme: str = "dark", index: int = 0) -> str:
     """Generate a featured project card SVG."""
     if theme == "dark":
@@ -1244,6 +1283,40 @@ def main():
         with open(svg_file, "w", encoding="utf-8") as f:
             f.write(svg)
         print(f"  ✅ Generated {svg_file.name}")
+    
+    # Generate WakaTime stat badges
+    print("\n⏱️  Generating WakaTime stat badges...")
+    today_total = wakatime_stats.get("today_total", "0 hrs 0 mins")
+    yesterday_total = wakatime_stats.get("yesterday_total", "0 hrs 0 mins")
+    this_week_total = wakatime_stats.get("this_week_total", "0 hrs 0 mins")
+    
+    # Calculate average daily (from daily_hours array)
+    daily_hours = wakatime_stats.get("daily_hours", [0] * 7)
+    avg_daily = sum(daily_hours) / len(daily_hours) if daily_hours else 0
+    avg_daily_str = f"{avg_daily:.1f} hrs"
+    
+    # Badge colors
+    badge_colors = {
+        "today": "#ff6b6b",
+        "yesterday": "#feca57",
+        "this_week": "#48dbfb",
+        "avg_daily": "#9C27B0"
+    }
+    
+    badges = [
+        ("Today", today_total.replace(" hrs ", "h ").replace(" mins", "m"), "today"),
+        ("Yesterday", yesterday_total.replace(" hrs ", "h ").replace(" mins", "m"), "yesterday"),
+        ("This Week", this_week_total.replace(" hrs ", "h ").replace(" mins", "m"), "this_week"),
+        ("Avg Daily", avg_daily_str, "avg_daily")
+    ]
+    
+    for label, value, key in badges:
+        for theme in ["dark", "light"]:
+            svg = generate_wakatime_badge_svg(label, value, badge_colors[key], theme)
+            svg_file = assets_dir / f"wakatime-{key}-{theme}.svg"
+            with open(svg_file, "w", encoding="utf-8") as f:
+                f.write(svg)
+        print(f"  ✅ Generated wakatime-{key} badges")
     
     # Fetch GitHub stats
     print("\n🔍 Fetching GitHub stats...")
