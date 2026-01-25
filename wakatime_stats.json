@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-01-25T06:34:49.458017+00:00",
+  "generated_at_utc": "2026-01-25T08:17:33.731009+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-01-25",
-  "total_coding_time": "0 secs",
-  "today_total": "0 hrs 0 mins",
-  "yesterday_total": "6 hrs 23 mins",
-  "this_week_total": "31 hrs 35 mins",
+  "total_coding_time": "8 mins",
+  "today_total": "0 hrs 8 mins",
+  "yesterday_total": "6 hrs 28 mins",
+  "this_week_total": "31 hrs 49 mins",
   "last_week_total": "0 hrs 0 mins",
   "week_change": "\ud83c\udd95 New",
   "daily_hours": [
@@ -15,8 +15,8 @@
     4.53,
     4.67,
     6.58,
-    6.39,
-    0.0
+    6.47,
+    0.15
   ],
   "daily_labels": [
     "Mon",
@@ -1240,6 +1240,43 @@
       }
     },
     {
+      "grand_total": {
+        "hours": 6,
+        "minutes": 34,
+        "total_seconds": 23676.581,
+        "digital": "6:34",
+        "decimal": "6.57",
+        "text": "6 hrs 34 mins",
+        "ai_additions": 0,
+        "ai_deletions": 0,
+        "human_additions": 17551,
+        "human_deletions": 9592
+      },
+      "range": {
+        "start": "2026-01-22T18:30:00Z",
+        "end": "2026-01-23T18:29:59Z",
+        "date": "2026-01-23",
+        "text": "Fri Jan 23rd 2026",
+        "timezone": "Asia/Kolkata"
+      },
+      "projects": [
+        {
+          "name": "Bullet",
+          "total_seconds": 23676.581,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 17551,
+          "human_deletions": 9592,
+          "color": null,
+          "digital": "6:34:36",
+          "decimal": "6.57",
+          "text": "6 hrs 34 mins",
+          "hours": 6,
+          "minutes": 34,
+          "seconds": 36,
+          "percent": 100.0
+        }
+      ],
       "languages": [
         {
           "name": "Java",
@@ -1328,68 +1365,6 @@
           "minutes": 0,
           "seconds": 0,
           "percent": 0.0
-        }
-      ],
-      "grand_total": {
-        "hours": 6,
-        "minutes": 34,
-        "total_seconds": 23676.581,
-        "digital": "6:34",
-        "decimal": "6.57",
-        "text": "6 hrs 34 mins",
-        "ai_additions": 0,
-        "ai_deletions": 0,
-        "human_additions": 17551,
-        "human_deletions": 9592
-      },
-      "editors": [
-        {
-          "name": "VS Code",
-          "total_seconds": 23676.581,
-          "digital": "6:34:36",
-          "decimal": "6.57",
-          "text": "6 hrs 34 mins",
-          "hours": 6,
-          "minutes": 34,
-          "seconds": 36,
-          "percent": 100.0
-        }
-      ],
-      "operating_systems": [
-        {
-          "name": "Windows",
-          "total_seconds": 23676.581,
-          "digital": "6:34:36",
-          "decimal": "6.57",
-          "text": "6 hrs 34 mins",
-          "hours": 6,
-          "minutes": 34,
-          "seconds": 36,
-          "percent": 100.0
-        }
-      ],
-      "categories": [
-        {
-          "name": "Coding",
-          "total_seconds": 21778.191,
-          "digital": "6:02:58",
-          "decimal": "6.03",
-          "text": "6 hrs 2 mins",
-          "hours": 6,
-          "minutes": 2,
-          "seconds": 58,
-          "percent": 91.98
-        },
-        {
-          "name": "Writing Docs",
-          "total_seconds": 1898.39,
-          "digital": "0:31:38",
-          "decimal": "0.52",
-          "text": "31 mins",
-          "hours": 0,
-          "minutes": 31,
-          "seconds": 38,
-          "percent": 8.02
         }
       ],
       "dependencies": [
@@ -1518,15 +1493,10 @@
           "percent": 100.0
         }
       ],
-      "projects": [
+      "editors": [
         {
-          "name": "Bullet",
+          "name": "VS Code",
           "total_seconds": 23676.581,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 17551,
-          "human_deletions": 9592,
-          "color": null,
           "digital": "6:34:36",
           "decimal": "6.57",
           "text": "6 hrs 34 mins",
@@ -1536,26 +1506,109 @@
           "percent": 100.0
         }
       ],
-      "range": {
-        "start": "2026-01-22T18:30:00Z",
-        "end": "2026-01-23T18:29:59Z",
-        "date": "2026-01-23",
-        "text": "Fri Jan 23rd 2026",
-        "timezone": "Asia/Kolkata"
-      }
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 23676.581,
+          "digital": "6:34:36",
+          "decimal": "6.57",
+          "text": "6 hrs 34 mins",
+          "hours": 6,
+          "minutes": 34,
+          "seconds": 36,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 21778.191,
+          "digital": "6:02:58",
+          "decimal": "6.03",
+          "text": "6 hrs 2 mins",
+          "hours": 6,
+          "minutes": 2,
+          "seconds": 58,
+          "percent": 91.98
+        },
+        {
+          "name": "Writing Docs",
+          "total_seconds": 1898.39,
+          "digital": "0:31:38",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 38,
+          "percent": 8.02
+        }
+      ]
     },
     {
+      "grand_total": {
+        "hours": 6,
+        "minutes": 28,
+        "total_seconds": 23289.399,
+        "digital": "6:28",
+        "decimal": "6.47",
+        "text": "6 hrs 28 mins",
+        "ai_additions": 0,
+        "ai_deletions": 0,
+        "human_additions": 20600,
+        "human_deletions": 12633
+      },
+      "range": {
+        "start": "2026-01-23T18:30:00Z",
+        "end": "2026-01-24T18:29:59Z",
+        "date": "2026-01-24",
+        "text": "Sat Jan 24th 2026",
+        "timezone": "Asia/Kolkata"
+      },
+      "projects": [
+        {
+          "name": "Proter",
+          "total_seconds": 15347.006,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 12755,
+          "human_deletions": 3943,
+          "color": null,
+          "digital": "4:15:47",
+          "decimal": "4.25",
+          "text": "4 hrs 15 mins",
+          "hours": 4,
+          "minutes": 15,
+          "seconds": 47,
+          "percent": 65.9
+        },
+        {
+          "name": "Bullet",
+          "total_seconds": 7942.393,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 7845,
+          "human_deletions": 8690,
+          "color": null,
+          "digital": "2:12:22",
+          "decimal": "2.20",
+          "text": "2 hrs 12 mins",
+          "hours": 2,
+          "minutes": 12,
+          "seconds": 22,
+          "percent": 34.1
+        }
+      ],
       "languages": [
         {
           "name": "Text",
-          "total_seconds": 14951.32,
-          "digital": "4:09:11",
-          "decimal": "4.15",
-          "text": "4 hrs 9 mins",
+          "total_seconds": 15244.307,
+          "digital": "4:14:04",
+          "decimal": "4.23",
+          "text": "4 hrs 14 mins",
           "hours": 4,
-          "minutes": 9,
-          "seconds": 11,
-          "percent": 65.02
+          "minutes": 14,
+          "seconds": 4,
+          "percent": 65.46
         },
         {
           "name": "Java",
@@ -1566,7 +1619,7 @@
           "hours": 2,
           "minutes": 10,
           "seconds": 59,
-          "percent": 34.18
+          "percent": 33.75
         },
         {
           "name": "PowerShell",
@@ -1577,7 +1630,7 @@
           "hours": 0,
           "minutes": 2,
           "seconds": 13,
-          "percent": 0.58
+          "percent": 0.57
         },
         {
           "name": "JSON",
@@ -1588,7 +1641,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 52,
-          "percent": 0.23
+          "percent": 0.22
         },
         {
           "name": "YAML",
@@ -1600,57 +1653,6 @@
           "minutes": 0,
           "seconds": 0,
           "percent": 0.0
-        }
-      ],
-      "grand_total": {
-        "hours": 6,
-        "minutes": 23,
-        "total_seconds": 22996.412,
-        "digital": "6:23",
-        "decimal": "6.38",
-        "text": "6 hrs 23 mins",
-        "ai_additions": 0,
-        "ai_deletions": 0,
-        "human_additions": 20600,
-        "human_deletions": 12624
-      },
-      "editors": [
-        {
-          "name": "VS Code",
-          "total_seconds": 22996.412,
-          "digital": "6:23:16",
-          "decimal": "6.38",
-          "text": "6 hrs 23 mins",
-          "hours": 6,
-          "minutes": 23,
-          "seconds": 16,
-          "percent": 100.0
-        }
-      ],
-      "operating_systems": [
-        {
-          "name": "Windows",
-          "total_seconds": 22996.412,
-          "digital": "6:23:16",
-          "decimal": "6.38",
-          "text": "6 hrs 23 mins",
-          "hours": 6,
-          "minutes": 23,
-          "seconds": 16,
-          "percent": 100.0
-        }
-      ],
-      "categories": [
-        {
-          "name": "Coding",
-          "total_seconds": 22996.412,
-          "digital": "6:23:16",
-          "decimal": "6.38",
-          "text": "6 hrs 23 mins",
-          "hours": 6,
-          "minutes": 23,
-          "seconds": 16,
-          "percent": 100.0
         }
       ],
       "dependencies": [
@@ -1680,68 +1682,68 @@
       "machines": [
         {
           "name": "Arpans-PC",
-          "total_seconds": 22996.412,
+          "total_seconds": 23289.399,
           "machine_name_id": "598a7304-ef1f-4210-a0bb-8e856440dfee",
-          "digital": "6:23:16",
-          "decimal": "6.38",
-          "text": "6 hrs 23 mins",
+          "digital": "6:28:09",
+          "decimal": "6.47",
+          "text": "6 hrs 28 mins",
           "hours": 6,
-          "minutes": 23,
-          "seconds": 16,
+          "minutes": 28,
+          "seconds": 9,
           "percent": 100.0
         }
       ],
-      "projects": [
+      "editors": [
         {
-          "name": "Proter",
-          "total_seconds": 15054.019,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 12755,
-          "human_deletions": 3934,
-          "digital": "4:10:54",
-          "decimal": "4.17",
-          "text": "4 hrs 10 mins",
-          "hours": 4,
-          "minutes": 10,
-          "seconds": 54,
-          "percent": 65.46
-        },
-        {
-          "name": "Bullet",
-          "total_seconds": 7942.393,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 7845,
-          "human_deletions": 8690,
-          "digital": "2:12:22",
-          "decimal": "2.20",
-          "text": "2 hrs 12 mins",
-          "hours": 2,
-          "minutes": 12,
-          "seconds": 22,
-          "percent": 34.54
+          "name": "VS Code",
+          "total_seconds": 23289.399,
+          "digital": "6:28:09",
+          "decimal": "6.47",
+          "text": "6 hrs 28 mins",
+          "hours": 6,
+          "minutes": 28,
+          "seconds": 9,
+          "percent": 100.0
         }
       ],
-      "range": {
-        "start": "2026-01-23T18:30:00Z",
-        "end": "2026-01-24T18:29:59Z",
-        "date": "2026-01-24",
-        "text": "Sat Jan 24th 2026",
-        "timezone": "Asia/Kolkata"
-      }
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 23289.399,
+          "digital": "6:28:09",
+          "decimal": "6.47",
+          "text": "6 hrs 28 mins",
+          "hours": 6,
+          "minutes": 28,
+          "seconds": 9,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 23289.399,
+          "digital": "6:28:09",
+          "decimal": "6.47",
+          "text": "6 hrs 28 mins",
+          "hours": 6,
+          "minutes": 28,
+          "seconds": 9,
+          "percent": 100.0
+        }
+      ]
     },
     {
       "grand_total": {
         "hours": 0,
-        "minutes": 0,
-        "total_seconds": 0.0,
-        "digital": "0:00",
-        "decimal": "0.00",
-        "text": "0 secs",
+        "minutes": 8,
+        "total_seconds": 534.501,
+        "digital": "0:08",
+        "decimal": "0.13",
+        "text": "8 mins",
         "ai_additions": 0,
-        "ai_deletions": 0,
-        "human_additions": 0,
+        "ai_deletions": 97,
+        "human_additions": 97,
         "human_deletions": 0
       },
       "range": {
@@ -1751,13 +1753,102 @@
         "text": "Sun Jan 25th 2026",
         "timezone": "Asia/Kolkata"
       },
-      "projects": [],
-      "languages": [],
+      "projects": [
+        {
+          "name": "Proter",
+          "total_seconds": 534.501,
+          "ai_additions": 0,
+          "ai_deletions": 97,
+          "human_additions": 97,
+          "human_deletions": 0,
+          "color": null,
+          "digital": "0:08:54",
+          "decimal": "0.13",
+          "text": "8 mins",
+          "hours": 0,
+          "minutes": 8,
+          "seconds": 54,
+          "percent": 100.0
+        }
+      ],
+      "languages": [
+        {
+          "name": "Text",
+          "total_seconds": 534.501,
+          "digital": "0:08:54",
+          "decimal": "0.13",
+          "text": "8 mins",
+          "hours": 0,
+          "minutes": 8,
+          "seconds": 54,
+          "percent": 100.0
+        }
+      ],
       "dependencies": [],
-      "machines": [],
-      "editors": [],
-      "operating_systems": [],
-      "categories": []
+      "machines": [
+        {
+          "name": "Arpans-PC",
+          "total_seconds": 534.501,
+          "machine_name_id": "67e3c8e9-cd85-4cd4-bf00-0d17a649ef55",
+          "digital": "0:08:54",
+          "decimal": "0.13",
+          "text": "8 mins",
+          "hours": 0,
+          "minutes": 8,
+          "seconds": 54,
+          "percent": 100.0
+        }
+      ],
+      "editors": [
+        {
+          "name": "VS Code",
+          "total_seconds": 534.501,
+          "digital": "0:08:54",
+          "decimal": "0.13",
+          "text": "8 mins",
+          "hours": 0,
+          "minutes": 8,
+          "seconds": 54,
+          "percent": 100.0
+        }
+      ],
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 534.501,
+          "digital": "0:08:54",
+          "decimal": "0.13",
+          "text": "8 mins",
+          "hours": 0,
+          "minutes": 8,
+          "seconds": 54,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 327.22,
+          "digital": "0:05:27",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 27,
+          "percent": 61.22
+        },
+        {
+          "name": "AI Coding",
+          "total_seconds": 207.281,
+          "digital": "0:03:27",
+          "decimal": "0.05",
+          "text": "3 mins",
+          "hours": 0,
+          "minutes": 3,
+          "seconds": 27,
+          "percent": 38.78
+        }
+      ]
     }
   ]
 }
