@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-02-22T12:29:01.903986+00:00",
+  "generated_at_utc": "2026-02-22T12:52:57.743564+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-02-22",
-  "total_coding_time": "2 hrs 31 mins",
-  "today_total": "2 hrs 31 mins",
+  "total_coding_time": "2 hrs 56 mins",
+  "today_total": "2 hrs 56 mins",
   "yesterday_total": "5 hrs 19 mins",
-  "this_week_total": "36 hrs 58 mins",
+  "this_week_total": "37 hrs 23 mins",
   "last_week_total": "47 hrs 26 mins",
-  "week_change": "\ud83d\udcc9 22.1%",
+  "week_change": "\ud83d\udcc9 21.2%",
   "daily_hours": [
     5.84,
     5.93,
@@ -16,7 +16,7 @@
     6.1,
     5.87,
     5.32,
-    2.52
+    2.94
   ],
   "daily_labels": [
     "Mon",
@@ -3022,14 +3022,14 @@
     {
       "grand_total": {
         "hours": 2,
-        "minutes": 31,
-        "total_seconds": 9084.8,
-        "digital": "2:31",
-        "decimal": "2.52",
-        "text": "2 hrs 31 mins",
-        "ai_additions": 0,
+        "minutes": 56,
+        "total_seconds": 10586.018,
+        "digital": "2:56",
+        "decimal": "2.93",
+        "text": "2 hrs 56 mins",
+        "ai_additions": 274,
         "ai_deletions": 0,
-        "human_additions": 18479,
+        "human_additions": 19384,
         "human_deletions": 2
       },
       "range": {
@@ -3040,6 +3040,22 @@
         "timezone": "Asia/Kolkata"
       },
       "projects": [
+        {
+          "name": "weekly_agent",
+          "total_seconds": 4950.375,
+          "ai_additions": 274,
+          "ai_deletions": 0,
+          "human_additions": 4238,
+          "human_deletions": 0,
+          "color": null,
+          "digital": "1:22:30",
+          "decimal": "1.37",
+          "text": "1 hr 22 mins",
+          "hours": 1,
+          "minutes": 22,
+          "seconds": 30,
+          "percent": 46.76
+        },
         {
           "name": "Proter",
           "total_seconds": 4754.852,
@@ -3054,23 +3070,7 @@
           "hours": 1,
           "minutes": 19,
           "seconds": 14,
-          "percent": 52.34
-        },
-        {
-          "name": "weekly_agent",
-          "total_seconds": 3449.157,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 3333,
-          "human_deletions": 0,
-          "color": null,
-          "digital": "0:57:29",
-          "decimal": "0.95",
-          "text": "57 mins",
-          "hours": 0,
-          "minutes": 57,
-          "seconds": 29,
-          "percent": 37.97
+          "percent": 44.92
         },
         {
           "name": "Family_aid",
@@ -3086,10 +3086,21 @@
           "hours": 0,
           "minutes": 14,
           "seconds": 40,
-          "percent": 9.7
+          "percent": 8.32
         }
       ],
       "languages": [
+        {
+          "name": "Text",
+          "total_seconds": 4773.434,
+          "digital": "1:19:33",
+          "decimal": "1.32",
+          "text": "1 hr 19 mins",
+          "hours": 1,
+          "minutes": 19,
+          "seconds": 33,
+          "percent": 45.09
+        },
         {
           "name": "TypeScript",
           "total_seconds": 4712.41,
@@ -3099,18 +3110,7 @@
           "hours": 1,
           "minutes": 18,
           "seconds": 32,
-          "percent": 51.87
-        },
-        {
-          "name": "Text",
-          "total_seconds": 3535.46,
-          "digital": "0:58:55",
-          "decimal": "0.97",
-          "text": "58 mins",
-          "hours": 0,
-          "minutes": 58,
-          "seconds": 55,
-          "percent": 38.92
+          "percent": 44.52
         },
         {
           "name": "Markdown",
@@ -3121,18 +3121,18 @@
           "hours": 0,
           "minutes": 10,
           "seconds": 47,
-          "percent": 7.13
+          "percent": 6.12
         },
         {
           "name": "Python",
-          "total_seconds": 117.125,
-          "digital": "0:01:57",
-          "decimal": "0.02",
-          "text": "1 min",
+          "total_seconds": 380.369,
+          "digital": "0:06:20",
+          "decimal": "0.10",
+          "text": "6 mins",
           "hours": 0,
-          "minutes": 1,
-          "seconds": 57,
-          "percent": 1.29
+          "minutes": 6,
+          "seconds": 20,
+          "percent": 3.59
         },
         {
           "name": "Bash",
@@ -3143,7 +3143,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 42,
-          "percent": 0.47
+          "percent": 0.4
         },
         {
           "name": "PowerShell",
@@ -3154,20 +3154,130 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 29,
-          "percent": 0.33
+          "percent": 0.28
         }
       ],
       "dependencies": [
         {
+          "name": "asyncio",
+          "total_seconds": 316.834,
+          "digital": "0:05:16",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 16,
+          "percent": 9.47
+        },
+        {
+          "name": "typing",
+          "total_seconds": 316.834,
+          "digital": "0:05:16",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 16,
+          "percent": 9.47
+        },
+        {
+          "name": "httpx",
+          "total_seconds": 316.834,
+          "digital": "0:05:16",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 16,
+          "percent": 9.47
+        },
+        {
+          "name": "logging",
+          "total_seconds": 316.834,
+          "digital": "0:05:16",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 16,
+          "percent": 9.47
+        },
+        {
+          "name": "datetime",
+          "total_seconds": 316.834,
+          "digital": "0:05:16",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 16,
+          "percent": 9.47
+        },
+        {
+          "name": "config",
+          "total_seconds": 316.834,
+          "digital": "0:05:16",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 16,
+          "percent": 9.47
+        },
+        {
+          "name": "tempfile",
+          "total_seconds": 288.043,
+          "digital": "0:04:48",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 48,
+          "percent": 8.61
+        },
+        {
+          "name": "pathlib",
+          "total_seconds": 288.043,
+          "digital": "0:04:48",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 48,
+          "percent": 8.61
+        },
+        {
+          "name": "re",
+          "total_seconds": 288.043,
+          "digital": "0:04:48",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 48,
+          "percent": 8.61
+        },
+        {
+          "name": "collections",
+          "total_seconds": 288.043,
+          "digital": "0:04:48",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 48,
+          "percent": 8.61
+        },
+        {
           "name": "random",
-          "total_seconds": 63.535,
-          "digital": "0:01:03",
+          "total_seconds": 92.326,
+          "digital": "0:01:32",
           "decimal": "0.02",
           "text": "1 min",
           "hours": 0,
           "minutes": 1,
-          "seconds": 3,
-          "percent": 9.26
+          "seconds": 32,
+          "percent": 2.76
         },
         {
           "name": "json",
@@ -3178,117 +3288,51 @@
           "hours": 0,
           "minutes": 1,
           "seconds": 3,
-          "percent": 9.26
+          "percent": 1.9
         },
         {
-          "name": "asyncio",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
+          "name": "llm_agent",
+          "total_seconds": 28.791,
+          "digital": "0:00:28",
           "decimal": "0.00",
-          "text": "53 secs",
+          "text": "28 secs",
           "hours": 0,
           "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
+          "seconds": 28,
+          "percent": 0.86
         },
         {
-          "name": "typing",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
+          "name": "models",
+          "total_seconds": 28.791,
+          "digital": "0:00:28",
           "decimal": "0.00",
-          "text": "53 secs",
+          "text": "28 secs",
           "hours": 0,
           "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
+          "seconds": 28,
+          "percent": 0.86
         },
         {
-          "name": "tempfile",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
+          "name": "memory",
+          "total_seconds": 28.791,
+          "digital": "0:00:28",
           "decimal": "0.00",
-          "text": "53 secs",
+          "text": "28 secs",
           "hours": 0,
           "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
+          "seconds": 28,
+          "percent": 0.86
         },
         {
-          "name": "httpx",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
+          "name": "utils",
+          "total_seconds": 28.791,
+          "digital": "0:00:28",
           "decimal": "0.00",
-          "text": "53 secs",
+          "text": "28 secs",
           "hours": 0,
           "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
-        },
-        {
-          "name": "pathlib",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
-          "decimal": "0.00",
-          "text": "53 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
-        },
-        {
-          "name": "logging",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
-          "decimal": "0.00",
-          "text": "53 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
-        },
-        {
-          "name": "datetime",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
-          "decimal": "0.00",
-          "text": "53 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
-        },
-        {
-          "name": "re",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
-          "decimal": "0.00",
-          "text": "53 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
-        },
-        {
-          "name": "config",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
-          "decimal": "0.00",
-          "text": "53 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
-        },
-        {
-          "name": "collections",
-          "total_seconds": 53.59,
-          "digital": "0:00:53",
-          "decimal": "0.00",
-          "text": "53 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 53,
-          "percent": 7.81
+          "seconds": 28,
+          "percent": 0.86
         },
         {
           "name": "Toast",
@@ -3299,7 +3343,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 11,
-          "percent": 1.68
+          "percent": 0.34
         },
         {
           "name": "react",
@@ -3310,60 +3354,60 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 11,
-          "percent": 1.68
+          "percent": 0.34
         }
       ],
       "machines": [
         {
           "name": "Arpans-PC",
-          "total_seconds": 9084.8,
+          "total_seconds": 10586.018,
           "machine_name_id": "28f75952-0ac2-4f37-8f7b-dff9a6058678",
-          "digital": "2:31:24",
-          "decimal": "2.52",
-          "text": "2 hrs 31 mins",
+          "digital": "2:56:26",
+          "decimal": "2.93",
+          "text": "2 hrs 56 mins",
           "hours": 2,
-          "minutes": 31,
-          "seconds": 24,
+          "minutes": 56,
+          "seconds": 26,
           "percent": 100.0
         }
       ],
       "editors": [
         {
           "name": "VS Code",
-          "total_seconds": 9084.8,
-          "digital": "2:31:24",
-          "decimal": "2.52",
-          "text": "2 hrs 31 mins",
+          "total_seconds": 10586.018,
+          "digital": "2:56:26",
+          "decimal": "2.93",
+          "text": "2 hrs 56 mins",
           "hours": 2,
-          "minutes": 31,
-          "seconds": 24,
+          "minutes": 56,
+          "seconds": 26,
           "percent": 100.0
         }
       ],
       "operating_systems": [
         {
           "name": "Windows",
-          "total_seconds": 9084.8,
-          "digital": "2:31:24",
-          "decimal": "2.52",
-          "text": "2 hrs 31 mins",
+          "total_seconds": 10586.018,
+          "digital": "2:56:26",
+          "decimal": "2.93",
+          "text": "2 hrs 56 mins",
           "hours": 2,
-          "minutes": 31,
-          "seconds": 24,
+          "minutes": 56,
+          "seconds": 26,
           "percent": 100.0
         }
       ],
       "categories": [
         {
           "name": "Coding",
-          "total_seconds": 8437.378,
-          "digital": "2:20:37",
-          "decimal": "2.33",
-          "text": "2 hrs 20 mins",
+          "total_seconds": 9763.435,
+          "digital": "2:42:43",
+          "decimal": "2.70",
+          "text": "2 hrs 42 mins",
           "hours": 2,
-          "minutes": 20,
-          "seconds": 37,
-          "percent": 92.87
+          "minutes": 42,
+          "seconds": 43,
+          "percent": 92.23
         },
         {
           "name": "Writing Docs",
@@ -3374,18 +3418,18 @@
           "hours": 0,
           "minutes": 10,
           "seconds": 7,
-          "percent": 6.69
+          "percent": 5.74
         },
         {
           "name": "AI Coding",
-          "total_seconds": 39.699,
-          "digital": "0:00:39",
-          "decimal": "0.00",
-          "text": "39 secs",
+          "total_seconds": 214.86,
+          "digital": "0:03:34",
+          "decimal": "0.05",
+          "text": "3 mins",
           "hours": 0,
-          "minutes": 0,
-          "seconds": 39,
-          "percent": 0.44
+          "minutes": 3,
+          "seconds": 34,
+          "percent": 2.03
         }
       ]
     }
