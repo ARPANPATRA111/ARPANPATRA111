@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-02-28T04:48:25.403621+00:00",
+  "generated_at_utc": "2026-02-28T08:18:27.339313+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-02-28",
-  "total_coding_time": "0 secs",
-  "today_total": "0 hrs 0 mins",
+  "total_coding_time": "16 mins",
+  "today_total": "0 hrs 16 mins",
   "yesterday_total": "0 hrs 30 mins",
-  "this_week_total": "23 hrs 21 mins",
+  "this_week_total": "23 hrs 38 mins",
   "last_week_total": "41 hrs 48 mins",
-  "week_change": "\ud83d\udcc9 44.1%",
+  "week_change": "\ud83d\udcc9 43.5%",
   "daily_hours": [
     5.25,
     5.78,
@@ -16,7 +16,7 @@
     4.82,
     3.73,
     0.51,
-    0.0
+    0.27
   ],
   "daily_labels": [
     "Sun",
@@ -3935,6 +3935,28 @@
       ],
       "dependencies": [
         {
+          "name": "types",
+          "total_seconds": 28.16,
+          "digital": "0:00:28",
+          "decimal": "0.00",
+          "text": "28 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 28,
+          "percent": 20.0
+        },
+        {
+          "name": "test1-3edho",
+          "total_seconds": 28.16,
+          "digital": "0:00:28",
+          "decimal": "0.00",
+          "text": "28 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 28,
+          "percent": 20.0
+        },
+        {
           "name": "stores",
           "total_seconds": 28.16,
           "digital": "0:00:28",
@@ -3958,28 +3980,6 @@
         },
         {
           "name": "spacetimedb",
-          "total_seconds": 28.16,
-          "digital": "0:00:28",
-          "decimal": "0.00",
-          "text": "28 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 28,
-          "percent": 20.0
-        },
-        {
-          "name": "types",
-          "total_seconds": 28.16,
-          "digital": "0:00:28",
-          "decimal": "0.00",
-          "text": "28 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 28,
-          "percent": 20.0
-        },
-        {
-          "name": "test1-3edho",
           "total_seconds": 28.16,
           "digital": "0:00:28",
           "decimal": "0.00",
@@ -4012,6 +4012,7 @@
           "ai_deletions": 0,
           "human_additions": 12138,
           "human_deletions": 12025,
+          "color": null,
           "digital": "3:24:19",
           "decimal": "3.40",
           "text": "3 hrs 24 mins",
@@ -4027,6 +4028,7 @@
           "ai_deletions": 0,
           "human_additions": 28,
           "human_deletions": 20,
+          "color": null,
           "digital": "0:18:47",
           "decimal": "0.30",
           "text": "18 mins",
@@ -4042,6 +4044,7 @@
           "ai_deletions": 0,
           "human_additions": 0,
           "human_deletions": 0,
+          "color": null,
           "digital": "0:00:28",
           "decimal": "0.00",
           "text": "28 secs",
@@ -4680,11 +4683,11 @@
     {
       "grand_total": {
         "hours": 0,
-        "minutes": 0,
-        "total_seconds": 0.0,
-        "digital": "0:00",
-        "decimal": "0.00",
-        "text": "0 secs",
+        "minutes": 16,
+        "total_seconds": 980.151,
+        "digital": "0:16",
+        "decimal": "0.27",
+        "text": "16 mins",
         "ai_additions": 0,
         "ai_deletions": 0,
         "human_additions": 0,
@@ -4697,13 +4700,257 @@
         "text": "Sat Feb 28th 2026",
         "timezone": "Asia/Kolkata"
       },
-      "projects": [],
-      "languages": [],
-      "dependencies": [],
-      "machines": [],
-      "editors": [],
-      "operating_systems": [],
-      "categories": []
+      "projects": [
+        {
+          "name": "weekly_agent",
+          "total_seconds": 980.151,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 0,
+          "human_deletions": 0,
+          "color": null,
+          "digital": "0:16:20",
+          "decimal": "0.27",
+          "text": "16 mins",
+          "hours": 0,
+          "minutes": 16,
+          "seconds": 20,
+          "percent": 100.0
+        }
+      ],
+      "languages": [
+        {
+          "name": "Markdown",
+          "total_seconds": 953.265,
+          "digital": "0:15:53",
+          "decimal": "0.25",
+          "text": "15 mins",
+          "hours": 0,
+          "minutes": 15,
+          "seconds": 53,
+          "percent": 97.26
+        },
+        {
+          "name": "TypeScript",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 2.74
+        },
+        {
+          "name": "Text",
+          "total_seconds": 0.0,
+          "digital": "0:00:00",
+          "decimal": "0.00",
+          "text": "0 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 0,
+          "percent": 0.0
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "badge",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "input",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "react",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "switch",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "card",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "select",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "framer-motion",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "lucide-react",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "separator",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "button",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "utils",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        },
+        {
+          "name": "use-toast",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 8.33
+        }
+      ],
+      "machines": [
+        {
+          "name": "Arpans-PC",
+          "total_seconds": 980.151,
+          "machine_name_id": "4461840c-5cfa-4e62-af34-21bbe2e7fb04",
+          "digital": "0:16:20",
+          "decimal": "0.27",
+          "text": "16 mins",
+          "hours": 0,
+          "minutes": 16,
+          "seconds": 20,
+          "percent": 100.0
+        }
+      ],
+      "editors": [
+        {
+          "name": "VS Code",
+          "total_seconds": 980.151,
+          "digital": "0:16:20",
+          "decimal": "0.27",
+          "text": "16 mins",
+          "hours": 0,
+          "minutes": 16,
+          "seconds": 20,
+          "percent": 100.0
+        }
+      ],
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 980.151,
+          "digital": "0:16:20",
+          "decimal": "0.27",
+          "text": "16 mins",
+          "hours": 0,
+          "minutes": 16,
+          "seconds": 20,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Writing Docs",
+          "total_seconds": 953.265,
+          "digital": "0:15:53",
+          "decimal": "0.25",
+          "text": "15 mins",
+          "hours": 0,
+          "minutes": 15,
+          "seconds": 53,
+          "percent": 97.26
+        },
+        {
+          "name": "Coding",
+          "total_seconds": 26.886,
+          "digital": "0:00:26",
+          "decimal": "0.00",
+          "text": "26 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 26,
+          "percent": 2.74
+        }
+      ]
     }
   ]
 }
