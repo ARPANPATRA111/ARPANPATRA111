@@ -3566,11 +3566,15 @@
     </rect>
     <title>2026-02-25: 1 contribution</title>
   </g>
-  <g class="cell" data-date="2026-02-26" data-count="0">
-    <rect x="759" y="120" width="11" height="11" fill="#ebedf0" rx="2" ry="2" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.07s" fill="freeze"/>
+  <g class="cell" data-date="2026-02-26" data-count="1">
+    <rect x="759" y="120" width="11" height="11" fill="#9be9a8" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.07s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="rx" values="2;3;2" dur="2s" begin="1.57s" repeatCount="indefinite"/>
     </rect>
-    <title>2026-02-26: 0 contributions</title>
+    <rect x="759" y="120" width="11" height="11" fill="url(#shimmer)" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="0.3" dur="0.4s" begin="1.07s" fill="freeze"/>
+    </rect>
+    <title>2026-02-26: 1 contribution</title>
   </g>
   <g class="cell" data-date="2026-02-27" data-count="2">
     <rect x="759" y="134" width="11" height="11" fill="#9be9a8" rx="2" ry="2" opacity="0">
@@ -3647,7 +3651,7 @@
   <!-- Contribution count -->
   <g transform="translate(45, 180)">
     <text fill="#1f2328" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">
-      <tspan fill="#216e39">770</tspan> contributions in the last year
+      <tspan fill="#216e39">771</tspan> contributions in the last year
     </text>
   </g>
 </svg>
