@@ -198,13 +198,13 @@ currently_learning:
   <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/cisco.png" alt="Cisco" width="100"/>
   </a>
-  <a href="https://www.credly.com/badges/9da4a728-61f6-4305-bc9c-5dc804ade605">
+  <a href="https://learn.microsoft.com/api/credentials/share/en-us/ArpanPatra-3804/DF31299649B7C8D0?sharingId=583BDF8556DF2F7F">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/leadauditor.png" alt="Lead Auditor" width="100"/>
   </a>
   <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini" width="100"/>
   </a>
-  <a href="https://www.futureskillsprime.in/iDH/user/user_badge/view/32914_BG_10fe9856-d1dd-11f0-bdec-005056b48b54">
+  <a href="https://verify.skilljar.com/c/bvbpedx4dbzw">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/encryption.png" alt="Encryption" width="100"/>
   </a>
 </p>
