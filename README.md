@@ -42,11 +42,11 @@ fields_of_interests:
   - Web Development
   - Mobile App Development  
   - Cloud Architecture
-  - Open Source
+  - Open Source Contributor
 
 currently_learning:
   - React.js & Next.js
-  - Cloud Architecture (AWS)
+  - Cloud Architecture (Azure)
   - System Design
 
 2026_goals:
@@ -57,7 +57,7 @@ currently_learning:
 
 </td>
 <td width="55%" valign="middle" align="center">
-<img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" style="width:100%;height:auto;max-width:100%;" alt="Coding"/>
+<img src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" style="width:100%;height:auto;max-width:100%;" alt="Coding"/>
 </td>
 </tr>
 </table>
