@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-02T18:58:42.432845+00:00",
+  "generated_at_utc": "2026-04-02T20:26:15.243564+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-04-02",
@@ -3190,59 +3190,6 @@
       }
     },
     {
-      "grand_total": {
-        "hours": 3,
-        "minutes": 35,
-        "total_seconds": 12923.782,
-        "digital": "3:35",
-        "decimal": "3.58",
-        "text": "3 hrs 35 mins",
-        "ai_additions": 0,
-        "ai_deletions": 0,
-        "human_additions": 188,
-        "human_deletions": 13
-      },
-      "range": {
-        "start": "2026-04-01T18:30:00Z",
-        "end": "2026-04-02T18:29:59Z",
-        "date": "2026-04-02",
-        "text": "Thu Apr 2nd 2026",
-        "timezone": "Asia/Kolkata"
-      },
-      "projects": [
-        {
-          "name": "Proter",
-          "total_seconds": 8490.389,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 110,
-          "human_deletions": 11,
-          "color": null,
-          "digital": "2:21:30",
-          "decimal": "2.35",
-          "text": "2 hrs 21 mins",
-          "hours": 2,
-          "minutes": 21,
-          "seconds": 30,
-          "percent": 65.7
-        },
-        {
-          "name": "test_fl",
-          "total_seconds": 4433.393,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 78,
-          "human_deletions": 2,
-          "color": null,
-          "digital": "1:13:53",
-          "decimal": "1.22",
-          "text": "1 hr 13 mins",
-          "hours": 1,
-          "minutes": 13,
-          "seconds": 53,
-          "percent": 34.3
-        }
-      ],
       "languages": [
         {
           "name": "Text",
@@ -3410,6 +3357,68 @@
           "percent": 0.01
         }
       ],
+      "grand_total": {
+        "hours": 3,
+        "minutes": 35,
+        "total_seconds": 12923.782,
+        "digital": "3:35",
+        "decimal": "3.58",
+        "text": "3 hrs 35 mins",
+        "ai_additions": 0,
+        "ai_deletions": 0,
+        "human_additions": 188,
+        "human_deletions": 13
+      },
+      "editors": [
+        {
+          "name": "VS Code",
+          "total_seconds": 12923.782,
+          "digital": "3:35:23",
+          "decimal": "3.58",
+          "text": "3 hrs 35 mins",
+          "hours": 3,
+          "minutes": 35,
+          "seconds": 23,
+          "percent": 100.0
+        }
+      ],
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 12923.782,
+          "digital": "3:35:23",
+          "decimal": "3.58",
+          "text": "3 hrs 35 mins",
+          "hours": 3,
+          "minutes": 35,
+          "seconds": 23,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Coding",
+          "total_seconds": 11748.772,
+          "digital": "3:15:48",
+          "decimal": "3.25",
+          "text": "3 hrs 15 mins",
+          "hours": 3,
+          "minutes": 15,
+          "seconds": 48,
+          "percent": 90.91
+        },
+        {
+          "name": "Writing Docs",
+          "total_seconds": 1175.01,
+          "digital": "0:19:35",
+          "decimal": "0.32",
+          "text": "19 mins",
+          "hours": 0,
+          "minutes": 19,
+          "seconds": 35,
+          "percent": 9.09
+        }
+      ],
       "dependencies": [
         {
           "name": "path",
@@ -3511,7 +3520,7 @@
           "percent": 2.41
         },
         {
-          "name": "native-stack",
+          "name": "common",
           "total_seconds": 156.507,
           "digital": "0:02:36",
           "decimal": "0.03",
@@ -3522,7 +3531,7 @@
           "percent": 2.39
         },
         {
-          "name": "common",
+          "name": "native-stack",
           "total_seconds": 156.507,
           "digital": "0:02:36",
           "decimal": "0.03",
@@ -3577,7 +3586,7 @@
           "percent": 2.18
         },
         {
-          "name": "native",
+          "name": "NetworkContext",
           "total_seconds": 56.508,
           "digital": "0:00:56",
           "decimal": "0.00",
@@ -3588,7 +3597,7 @@
           "percent": 0.86
         },
         {
-          "name": "NetworkContext",
+          "name": "native",
           "total_seconds": 56.508,
           "digital": "0:00:56",
           "decimal": "0.00",
@@ -3665,7 +3674,7 @@
           "percent": 0.39
         },
         {
-          "name": "@env",
+          "name": "async-storage",
           "total_seconds": 25.665,
           "digital": "0:00:25",
           "decimal": "0.00",
@@ -3687,17 +3696,6 @@
           "percent": 0.39
         },
         {
-          "name": "ToastContext",
-          "total_seconds": 25.665,
-          "digital": "0:00:25",
-          "decimal": "0.00",
-          "text": "25 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 25,
-          "percent": 0.39
-        },
-        {
           "name": "react-native-paper",
           "total_seconds": 25.665,
           "digital": "0:00:25",
@@ -3709,7 +3707,18 @@
           "percent": 0.39
         },
         {
-          "name": "async-storage",
+          "name": "@env",
+          "total_seconds": 25.665,
+          "digital": "0:00:25",
+          "decimal": "0.00",
+          "text": "25 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 25,
+          "percent": 0.39
+        },
+        {
+          "name": "ToastContext",
           "total_seconds": 25.665,
           "digital": "0:00:25",
           "decimal": "0.00",
@@ -3731,6 +3740,182 @@
           "percent": 0.39
         },
         {
+          "name": "@babel/preset-env",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@types/jest",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "jest-junit",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "react-native-chart-kit",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "react-native-vector-icons",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@nozbe/watermelondb",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "babel-jest",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@firebase/rules-unit-testing",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "react-native-svg",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@react-native/eslint-config",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "react-native-dotenv",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@react-native-community/datetimepicker",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "metro-react-native-babel-preset",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@testing-library/react-native",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "js-sha1",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "babel-plugin-module-resolver",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
           "name": "@react-native/metro-config",
           "total_seconds": 24.612,
           "digital": "0:00:24",
@@ -3742,51 +3927,7 @@
           "percent": 0.38
         },
         {
-          "name": "@proter/shared",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "react-native-linear-gradient",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@testing-library/jest-native",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "firebase-tools",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@tanstack/react-query",
+          "name": "@react-native-firebase/app",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -3798,28 +3939,6 @@
         },
         {
           "name": "react-native-image-picker",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@react-navigation/native",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@babel/preset-env",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -3852,7 +3971,7 @@
           "percent": 0.38
         },
         {
-          "name": "@testing-library/react-native",
+          "name": "@testing-library/jest-native",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -3863,7 +3982,7 @@
           "percent": 0.38
         },
         {
-          "name": "react-test-renderer",
+          "name": "firebase-tools",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -3874,7 +3993,7 @@
           "percent": 0.38
         },
         {
-          "name": "react-native-chart-kit",
+          "name": "@proter/shared",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -3885,150 +4004,7 @@
           "percent": 0.38
         },
         {
-          "name": "babel-plugin-module-resolver",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "metro-react-native-babel-preset",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "babel-jest",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@react-native-firebase/app",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@react-native/eslint-config",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "react-native-vector-icons",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@react-native-community/datetimepicker",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "js-sha1",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@types/jest",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@types/react-native-vector-icons",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@react-native-async-storage/async-storage",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "react-native-dotenv",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "jest-junit",
-          "total_seconds": 24.612,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 0.38
-        },
-        {
-          "name": "@nozbe/watermelondb",
+          "name": "@react-navigation/native",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -4050,7 +4026,18 @@
           "percent": 0.38
         },
         {
-          "name": "@firebase/rules-unit-testing",
+          "name": "react-native-linear-gradient",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "react-test-renderer",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -4072,7 +4059,29 @@
           "percent": 0.38
         },
         {
-          "name": "react-native-svg",
+          "name": "@tanstack/react-query",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@react-native-async-storage/async-storage",
+          "total_seconds": 24.612,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 0.38
+        },
+        {
+          "name": "@types/react-native-vector-icons",
           "total_seconds": 24.612,
           "digital": "0:00:24",
           "decimal": "0.00",
@@ -4273,56 +4282,45 @@
           "percent": 100.0
         }
       ],
-      "editors": [
+      "projects": [
         {
-          "name": "VS Code",
-          "total_seconds": 12923.782,
-          "digital": "3:35:23",
-          "decimal": "3.58",
-          "text": "3 hrs 35 mins",
-          "hours": 3,
-          "minutes": 35,
-          "seconds": 23,
-          "percent": 100.0
-        }
-      ],
-      "operating_systems": [
-        {
-          "name": "Windows",
-          "total_seconds": 12923.782,
-          "digital": "3:35:23",
-          "decimal": "3.58",
-          "text": "3 hrs 35 mins",
-          "hours": 3,
-          "minutes": 35,
-          "seconds": 23,
-          "percent": 100.0
-        }
-      ],
-      "categories": [
-        {
-          "name": "Coding",
-          "total_seconds": 11748.772,
-          "digital": "3:15:48",
-          "decimal": "3.25",
-          "text": "3 hrs 15 mins",
-          "hours": 3,
-          "minutes": 15,
-          "seconds": 48,
-          "percent": 90.91
+          "name": "Proter",
+          "total_seconds": 8490.389,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 110,
+          "human_deletions": 11,
+          "digital": "2:21:30",
+          "decimal": "2.35",
+          "text": "2 hrs 21 mins",
+          "hours": 2,
+          "minutes": 21,
+          "seconds": 30,
+          "percent": 65.7
         },
         {
-          "name": "Writing Docs",
-          "total_seconds": 1175.01,
-          "digital": "0:19:35",
-          "decimal": "0.32",
-          "text": "19 mins",
-          "hours": 0,
-          "minutes": 19,
-          "seconds": 35,
-          "percent": 9.09
+          "name": "test_fl",
+          "total_seconds": 4433.393,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 78,
+          "human_deletions": 2,
+          "digital": "1:13:53",
+          "decimal": "1.22",
+          "text": "1 hr 13 mins",
+          "hours": 1,
+          "minutes": 13,
+          "seconds": 53,
+          "percent": 34.3
         }
-      ]
+      ],
+      "range": {
+        "start": "2026-04-01T18:30:00Z",
+        "end": "2026-04-02T18:29:59Z",
+        "date": "2026-04-02",
+        "text": "Thu Apr 2nd 2026",
+        "timezone": "Asia/Kolkata"
+      }
     }
   ]
 }
