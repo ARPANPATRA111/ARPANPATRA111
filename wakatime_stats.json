@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-04T18:43:56.446919+00:00",
+  "generated_at_utc": "2026-04-04T20:19:24.403378+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-04-04",
@@ -3157,6 +3157,7 @@
       }
     },
     {
+      "languages": [],
       "grand_total": {
         "hours": 0,
         "minutes": 0,
@@ -3169,59 +3170,21 @@
         "human_additions": 0,
         "human_deletions": 0
       },
+      "editors": [],
+      "operating_systems": [],
+      "categories": [],
+      "dependencies": [],
+      "machines": [],
+      "projects": [],
       "range": {
         "start": "2026-04-02T18:30:00Z",
         "end": "2026-04-03T18:29:59Z",
         "date": "2026-04-03",
         "text": "Fri Apr 3rd 2026",
         "timezone": "Asia/Kolkata"
-      },
-      "projects": [],
-      "languages": [],
-      "dependencies": [],
-      "machines": [],
-      "editors": [],
-      "operating_systems": [],
-      "categories": []
+      }
     },
     {
-      "grand_total": {
-        "hours": 4,
-        "minutes": 39,
-        "total_seconds": 16795.355,
-        "digital": "4:39",
-        "decimal": "4.65",
-        "text": "4 hrs 39 mins",
-        "ai_additions": 0,
-        "ai_deletions": 0,
-        "human_additions": 13743,
-        "human_deletions": 13684
-      },
-      "range": {
-        "start": "2026-04-03T18:30:00Z",
-        "end": "2026-04-04T18:29:59Z",
-        "date": "2026-04-04",
-        "text": "Sat Apr 4th 2026",
-        "timezone": "Asia/Kolkata"
-      },
-      "projects": [
-        {
-          "name": "test_fl",
-          "total_seconds": 16795.355,
-          "ai_additions": 0,
-          "ai_deletions": 0,
-          "human_additions": 13743,
-          "human_deletions": 13684,
-          "color": null,
-          "digital": "4:39:55",
-          "decimal": "4.65",
-          "text": "4 hrs 39 mins",
-          "hours": 4,
-          "minutes": 39,
-          "seconds": 55,
-          "percent": 100.0
-        }
-      ],
       "languages": [
         {
           "name": "Markdown",
@@ -3321,6 +3284,68 @@
           "minutes": 0,
           "seconds": 9,
           "percent": 0.06
+        }
+      ],
+      "grand_total": {
+        "hours": 4,
+        "minutes": 39,
+        "total_seconds": 16795.355,
+        "digital": "4:39",
+        "decimal": "4.65",
+        "text": "4 hrs 39 mins",
+        "ai_additions": 0,
+        "ai_deletions": 0,
+        "human_additions": 13743,
+        "human_deletions": 13684
+      },
+      "editors": [
+        {
+          "name": "VS Code",
+          "total_seconds": 16795.355,
+          "digital": "4:39:55",
+          "decimal": "4.65",
+          "text": "4 hrs 39 mins",
+          "hours": 4,
+          "minutes": 39,
+          "seconds": 55,
+          "percent": 100.0
+        }
+      ],
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 16795.355,
+          "digital": "4:39:55",
+          "decimal": "4.65",
+          "text": "4 hrs 39 mins",
+          "hours": 4,
+          "minutes": 39,
+          "seconds": 55,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "Writing Docs",
+          "total_seconds": 14892.479,
+          "digital": "4:08:12",
+          "decimal": "4.13",
+          "text": "4 hrs 8 mins",
+          "hours": 4,
+          "minutes": 8,
+          "seconds": 12,
+          "percent": 88.67
+        },
+        {
+          "name": "Coding",
+          "total_seconds": 1902.876,
+          "digital": "0:31:42",
+          "decimal": "0.52",
+          "text": "31 mins",
+          "hours": 0,
+          "minutes": 31,
+          "seconds": 42,
+          "percent": 11.33
         }
       ],
       "dependencies": [
@@ -3438,10 +3463,15 @@
           "percent": 100.0
         }
       ],
-      "editors": [
+      "projects": [
         {
-          "name": "VS Code",
+          "name": "test_fl",
           "total_seconds": 16795.355,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 13743,
+          "human_deletions": 13684,
+          "color": null,
           "digital": "4:39:55",
           "decimal": "4.65",
           "text": "4 hrs 39 mins",
@@ -3451,43 +3481,13 @@
           "percent": 100.0
         }
       ],
-      "operating_systems": [
-        {
-          "name": "Windows",
-          "total_seconds": 16795.355,
-          "digital": "4:39:55",
-          "decimal": "4.65",
-          "text": "4 hrs 39 mins",
-          "hours": 4,
-          "minutes": 39,
-          "seconds": 55,
-          "percent": 100.0
-        }
-      ],
-      "categories": [
-        {
-          "name": "Writing Docs",
-          "total_seconds": 14892.479,
-          "digital": "4:08:12",
-          "decimal": "4.13",
-          "text": "4 hrs 8 mins",
-          "hours": 4,
-          "minutes": 8,
-          "seconds": 12,
-          "percent": 88.67
-        },
-        {
-          "name": "Coding",
-          "total_seconds": 1902.876,
-          "digital": "0:31:42",
-          "decimal": "0.52",
-          "text": "31 mins",
-          "hours": 0,
-          "minutes": 31,
-          "seconds": 42,
-          "percent": 11.33
-        }
-      ]
+      "range": {
+        "start": "2026-04-03T18:30:00Z",
+        "end": "2026-04-04T18:29:59Z",
+        "date": "2026-04-04",
+        "text": "Sat Apr 4th 2026",
+        "timezone": "Asia/Kolkata"
+      }
     }
   ]
 }
