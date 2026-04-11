@@ -71,15 +71,11 @@
   <text x="647" y="40" fill="#656d76" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Feb</text>
   <text x="703" y="40" fill="#656d76" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Mar</text>
   <text x="759" y="40" fill="#656d76" font-family="'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500">Apr</text>
-  <g class="cell" data-date="2025-04-12" data-count="2">
-    <rect x="45" y="50" width="11" height="11" fill="#9be9a8" rx="2" ry="2" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.00s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      <animate attributeName="rx" values="2;3;2" dur="2s" begin="0.50s" repeatCount="indefinite"/>
+  <g class="cell" data-date="2025-04-12" data-count="0">
+    <rect x="45" y="50" width="11" height="11" fill="#ebedf0" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.00s" fill="freeze"/>
     </rect>
-    <rect x="45" y="50" width="11" height="11" fill="url(#shimmer)" rx="2" ry="2" opacity="0">
-      <animate attributeName="opacity" from="0" to="0.3" dur="0.4s" begin="0.00s" fill="freeze"/>
-    </rect>
-    <title>2025-04-12: 2 contributions</title>
+    <title>2025-04-12: 0 contributions</title>
   </g>
   <g class="cell" data-date="2025-04-13" data-count="1">
     <rect x="45" y="64" width="11" height="11" fill="#9be9a8" rx="2" ry="2" opacity="0">
@@ -3583,11 +3579,15 @@
     </rect>
     <title>2026-04-10: 0 contributions</title>
   </g>
-  <g class="cell" data-date="2026-04-11" data-count="0">
-    <rect x="773" y="50" width="11" height="11" fill="#ebedf0" rx="2" ry="2" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.04s" fill="freeze"/>
+  <g class="cell" data-date="2026-04-11" data-count="1">
+    <rect x="773" y="50" width="11" height="11" fill="#9be9a8" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.04s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="rx" values="2;3;2" dur="2s" begin="1.54s" repeatCount="indefinite"/>
     </rect>
-    <title>2026-04-11: 0 contributions</title>
+    <rect x="773" y="50" width="11" height="11" fill="url(#shimmer)" rx="2" ry="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="0.3" dur="0.4s" begin="1.04s" fill="freeze"/>
+    </rect>
+    <title>2026-04-11: 1 contribution</title>
   </g>
   <g class="cell" data-date="2026-04-12" data-count="0">
     <rect x="773" y="64" width="11" height="11" fill="#ebedf0" rx="2" ry="2" opacity="0">
@@ -3648,7 +3648,7 @@
   <!-- Contribution count -->
   <g transform="translate(45, 180)">
     <text fill="#1f2328" font-family="'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600">
-      <tspan fill="#216e39">822</tspan> contributions in the last year
+      <tspan fill="#216e39">812</tspan> contributions in the last year
     </text>
   </g>
 </svg>
