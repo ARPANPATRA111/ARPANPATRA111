@@ -6,10 +6,8 @@ on:
     - cron: "0 0 * * *"
   # Allow manual triggering of the workflow
   workflow_dispatch:
-  # Trigger the workflow on pushes to the main branch
-  push:
-    branches:
-      - main
+  # No push trigger: the snake only changes when contributions change, so a
+  # daily schedule is enough — running on every push just burns Actions minutes.
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -17,7 +15,7 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # Step 2: Generate the snake animations
       - name: Generate GitHub Contributions Snake Animations
         uses: Platane/snk@v3

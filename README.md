@@ -233,10 +233,23 @@ currently_learning:
 
 <div align="center">
 
-<!-- Stats Cards Row -->
+<!-- Stats Cards Row (self-hosted - no third-party API dependency) -->
 <p align="center">
-  <img src="https://git-readme-stats-phi.vercel.app/api?username=ARPANPATRA111&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9&ring_color=39d353&include_all_commits=true&count_private=true" width="49%" alt=""/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-light.svg" />
+    <img alt="GitHub Stats" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-dark.svg" width="49%" />
+  </picture>
   <img src="https://nirzak-streak-stats.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=true&background=0D1117&ring=39d353&fire=ff6b6b&currStreakLabel=58a6ff" width="49%" alt=""/>
+</p>
+
+<!-- Most Used Languages (self-hosted donut) -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-light.svg" />
+    <img alt="Most Used Languages" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-dark.svg" width="49%" />
+  </picture>
 </p>
 
 </div>
