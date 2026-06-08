@@ -2,22 +2,22 @@
 
 <!-- Theme-Aware Header -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/header-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/header-light.svg" />
-  <img alt="Header" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/header-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/header-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/header-light.svg" />
+  <img alt="Header" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/header-dark.svg" width="100%" />
 </picture>
 
 <!-- Profile Stats Badges - Using shields.io for real-time data -->
-![GitHub followers](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-followers.svg?v=1)
-![GitHub Stars](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stars.svg?v=1)
-![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/profile-views.svg?v=1)
+![GitHub followers](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-followers.svg?v=1)
+![GitHub Stars](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-stars.svg?v=1)
+![Profile views](https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/profile-views.svg?v=1)
 
 <!-- Snake Animation -->
 <!-- Infinite Loop Animated Contribution Graph (like Snake animation) -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/contribution-graph-infinite-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/contribution-graph-infinite-light.svg" />
-  <img alt="Contribution Graph" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/contribution-graph-infinite-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/contribution-graph-infinite-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/contribution-graph-infinite-light.svg" />
+  <img alt="Contribution Graph" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/contribution-graph-infinite-dark.svg" width="100%" />
 </picture>
 
 </div>
@@ -180,11 +180,11 @@ currently_learning:
 
 ### 🥇 LeetCode
 <p align="center">
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/200.gif" width="100" alt="200 Days"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/100%20days.gif" width="100" alt="100 Days"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/50Days.gif" width="100" alt="50 Days"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/202507.gif" width="100" alt="July Badge"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/2025.gif" width="100" alt="2025 Badge"/>
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/200.gif" width="100" alt="200 Days"/>
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/100%20days.gif" width="100" alt="100 Days"/>
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/50Days.gif" width="100" alt="50 Days"/>
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/202507.gif" width="100" alt="July Badge"/>
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/2025.gif" width="100" alt="2025 Badge"/>
 </p>
 
 </td>
@@ -193,19 +193,19 @@ currently_learning:
 ### 🎓 Professional Certifications
 <p align="center">
   <a href="https://www.credly.com/badges/5f3abcc4-44f2-4439-a307-4b4239a14ccc">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/redhat.png" alt="Red Hat" width="100"/>
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/redhat.png" alt="Red Hat" width="100"/>
   </a>
   <a href="https://www.credly.com/badges/a8aadffd-af3e-4e5d-9f95-881c81260025">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/cisco.png" alt="Cisco" width="100"/>
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/cisco.png" alt="Cisco" width="100"/>
   </a>
   <a href="https://learn.microsoft.com/api/credentials/share/en-us/ArpanPatra-3804/DF31299649B7C8D0?sharingId=583BDF8556DF2F7F">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/leadauditor.png" alt="Lead Auditor" width="100"/>
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/leadauditor.png" alt="Lead Auditor" width="100"/>
   </a>
   <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini" width="100"/>
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/gemini.png" alt="Gemini" width="100"/>
   </a>
   <a href="https://verify.skilljar.com/c/bvbpedx4dbzw">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/encryption.png" alt="Encryption" width="100"/>
+    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/feature/profile-enhancements/assets/encryption.png" alt="Encryption" width="100"/>
   </a>
 </p>
 
@@ -224,19 +224,32 @@ currently_learning:
 
 <!-- Local Trophies with Logarithmic Progress -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-trophies-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-trophies-light.svg" />
-  <img alt="GitHub Trophies" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-trophies-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-trophies-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-trophies-light.svg" />
+  <img alt="GitHub Trophies" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-trophies-dark.svg" width="100%" />
 </picture>
 
 </div>
 
 <div align="center">
 
-<!-- Stats Cards Row -->
+<!-- Stats Cards Row (self-hosted - no third-party API dependency) -->
 <p align="center">
-  <img src="https://git-readme-stats-phi.vercel.app/api?username=ARPANPATRA111&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9&ring_color=39d353&include_all_commits=true&count_private=true" width="49%" alt=""/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-stats-card-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-stats-card-light.svg" />
+    <img alt="GitHub Stats" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-stats-card-dark.svg" width="49%" />
+  </picture>
   <img src="https://nirzak-streak-stats.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=true&background=0D1117&ring=39d353&fire=ff6b6b&currStreakLabel=58a6ff" width="49%" alt=""/>
+</p>
+
+<!-- Most Used Languages (self-hosted donut) -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-languages-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-languages-light.svg" />
+    <img alt="Most Used Languages" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/github-languages-dark.svg" width="49%" />
+  </picture>
 </p>
 
 </div>
@@ -259,44 +272,44 @@ currently_learning:
 
 <a href="https://github.com/ARPANPATRA111/AtMark">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-0-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-0-light.svg" />
-    <img alt="AtMark" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-0-dark.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-0-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-0-light.svg" />
+    <img alt="AtMark" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-0-dark.svg" />
   </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/TripBudget">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-1-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-1-light.svg" />
-    <img alt="TripBudget" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-1-dark.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-1-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-1-light.svg" />
+    <img alt="TripBudget" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-1-dark.svg" />
   </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/Fitness-Dashboard">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-2-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-2-light.svg" />
-    <img alt="Fitness Dashboard" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-2-dark.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-2-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-2-light.svg" />
+    <img alt="Fitness Dashboard" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-2-dark.svg" />
   </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/Float-Chat">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-3-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-3-light.svg" />
-    <img alt="Float Chat" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-3-dark.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-3-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-3-light.svg" />
+    <img alt="Float Chat" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-3-dark.svg" />
   </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/MOB-APP">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-4-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-4-light.svg" />
-    <img alt="MOB-APP" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-4-dark.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-4-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-4-light.svg" />
+    <img alt="MOB-APP" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-4-dark.svg" />
   </picture>
 </a>
 <a href="https://github.com/ARPANPATRA111/Medix-manager">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-5-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-5-light.svg" />
-    <img alt="Medix Manager" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/featured-project-5-dark.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-5-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-5-light.svg" />
+    <img alt="Medix Manager" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/featured-project-5-dark.svg" />
   </picture>
 </a>
 
@@ -306,9 +319,9 @@ currently_learning:
 
 <!-- Theme-Aware Footer -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/footer-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/footer-light.svg" />
-  <img alt="Footer" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/footer-dark.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/footer-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/footer-light.svg" />
+  <img alt="Footer" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/feature/profile-enhancements/assets/footer-dark.svg" width="100%" />
 </picture>
 
 </div>

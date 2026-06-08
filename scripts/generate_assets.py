@@ -64,7 +64,8 @@ def get_user_stats() -> Dict:
         "total_issues": 0,
         "contributions": {},
         "account_age_years": 0,
-        "total_contributions": 0
+        "total_contributions": 0,
+        "languages": {}
     }
     
     # Get user info
@@ -95,10 +96,18 @@ def get_user_stats() -> Dict:
         page += 1
     
     total_commits = 0
+    language_counts: Dict[str, int] = {}
     for repo in all_repos:
         stats["total_stars"] += repo.get("stargazers_count", 0)
         stats["total_forks"] += repo.get("forks_count", 0)
-        
+
+        # Aggregate primary languages from the repo list (no extra API calls).
+        # Skip forks so the breakdown reflects your own work.
+        if not repo.get("fork", False):
+            lang = repo.get("language")
+            if lang:
+                language_counts[lang] = language_counts.get(lang, 0) + 1
+
         # Get commit count for each repo
         if not repo.get("fork", False):  # Skip forked repos
             repo_name = repo.get("name", "")
@@ -114,7 +123,8 @@ def get_user_stats() -> Dict:
                             break
     
     stats["total_commits"] = total_commits
-    
+    stats["languages"] = language_counts
+
     # Get PRs created by user
     prs_data = github_api_get(f"/search/issues?q=author:{GITHUB_USERNAME}+type:pr")
     if prs_data:
@@ -654,6 +664,205 @@ def generate_trophies_svg(stats: Dict, theme: str = "dark") -> str:
     return "".join(svg_parts)
 
 
+# Shared GitHub-style language colors (used by cards and donut)
+LANG_COLORS = {
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "Python": "#3572A5",
+    "Java": "#b07219",
+    "C++": "#f34b7d",
+    "C": "#555555",
+    "C#": "#178600",
+    "HTML": "#e34c26",
+    "CSS": "#563d7c",
+    "Kotlin": "#A97BFF",
+    "Go": "#00ADD8",
+    "Rust": "#dea584",
+    "Ruby": "#701516",
+    "PHP": "#4F5D95",
+    "Shell": "#89e051",
+    "Swift": "#F05138",
+    "Dart": "#00B4AB",
+    "Vue": "#41b883",
+    "Jupyter Notebook": "#DA5B0B",
+}
+
+
+def generate_stats_card_svg(stats: Dict, theme: str = "dark") -> str:
+    """Generate a self-hosted GitHub stats card (no external API dependency)."""
+    if theme == "dark":
+        bg_color = "#0d1117"
+        card_bg = "#161b22"
+        text_color = "#e6edf3"
+        secondary_text = "#8b949e"
+        border_color = "#30363d"
+        title_color = "#58a6ff"
+    else:
+        bg_color = "#ffffff"
+        card_bg = "#f6f8fa"
+        text_color = "#1f2328"
+        secondary_text = "#656d76"
+        border_color = "#d0d7de"
+        title_color = "#0969da"
+
+    rows = [
+        ("⭐", "Total Stars Earned", stats.get("total_stars", 0), "#ffd700"),
+        ("📝", "Total Commits", stats.get("total_commits", 0), "#4CAF50"),
+        ("🔀", "Total PRs", stats.get("total_prs", 0), "#9C27B0"),
+        ("❗", "Total Issues", stats.get("total_issues", 0), "#FF5722"),
+        ("👥", "Followers", stats.get("followers", 0), "#00BCD4"),
+        ("🔥", "Contributions (1y)", stats.get("total_contributions", 0), "#FF9800"),
+    ]
+
+    width = 420
+    row_height = 26
+    top = 58
+    height = top + len(rows) * row_height + 18
+
+    parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
+  <rect width="{width}" height="{height}" fill="{bg_color}" rx="12" ry="12"/>
+  <rect x="2" y="2" width="{width-4}" height="{height-4}" fill="{card_bg}" rx="10" ry="10" stroke="{border_color}" stroke-width="1"/>
+  <text x="24" y="36" fill="{title_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="700">GitHub Stats</text>
+  <line x1="24" y1="46" x2="{width-24}" y2="46" stroke="{border_color}" stroke-width="1"/>''']
+
+    for i, (icon, label, value, accent) in enumerate(rows):
+        y = top + i * row_height + 14
+        delay = 0.1 + i * 0.12
+        parts.append(f'''
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="{delay:.2f}s" fill="freeze"/>
+    <text x="24" y="{y}" font-size="14">{icon}</text>
+    <text x="48" y="{y}" fill="{text_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13">{label}</text>
+    <text x="{width-24}" y="{y}" text-anchor="end" fill="{accent}" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="700">{value}</text>
+  </g>''')
+
+    parts.append('\n</svg>')
+    return "".join(parts)
+
+
+def generate_languages_card_svg(languages: Dict[str, int], theme: str = "dark", top_n: int = 6) -> str:
+    """Generate a self-hosted 'most used languages' donut card."""
+    if theme == "dark":
+        bg_color = "#0d1117"
+        card_bg = "#161b22"
+        text_color = "#e6edf3"
+        secondary_text = "#8b949e"
+        border_color = "#30363d"
+        title_color = "#58a6ff"
+        track_color = "#30363d"
+    else:
+        bg_color = "#ffffff"
+        card_bg = "#f6f8fa"
+        text_color = "#1f2328"
+        secondary_text = "#656d76"
+        border_color = "#d0d7de"
+        title_color = "#0969da"
+        track_color = "#d0d7de"
+
+    width = 420
+    height = 220
+
+    parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
+  <rect width="{width}" height="{height}" fill="{bg_color}" rx="12" ry="12"/>
+  <rect x="2" y="2" width="{width-4}" height="{height-4}" fill="{card_bg}" rx="10" ry="10" stroke="{border_color}" stroke-width="1"/>
+  <text x="24" y="36" fill="{title_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="700">Most Used Languages</text>
+  <line x1="24" y1="46" x2="{width-24}" y2="46" stroke="{border_color}" stroke-width="1"/>''']
+
+    items = sorted(languages.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
+    total = sum(v for _, v in items)
+
+    if not items or total == 0:
+        parts.append(f'''
+  <text x="{width/2}" y="{height/2 + 10}" text-anchor="middle" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13">No language data available</text>
+</svg>''')
+        return "".join(parts)
+
+    # Donut geometry
+    cx, cy, r, stroke = 110, 135, 52, 18
+    circumference = 2 * math.pi * r
+    offset = 0.0
+
+    parts.append(f'''
+  <circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{track_color}" stroke-width="{stroke}" opacity="0.4"/>
+  <g transform="rotate(-90 {cx} {cy})">''')
+
+    for name, count in items:
+        frac = count / total
+        seg = circumference * frac
+        color = LANG_COLORS.get(name, "#8b949e")
+        parts.append(f'''
+    <circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{color}" stroke-width="{stroke}"
+            stroke-dasharray="{seg:.2f} {circumference - seg:.2f}" stroke-dashoffset="{-offset:.2f}">
+      <animate attributeName="stroke-dasharray" from="0 {circumference:.2f}" to="{seg:.2f} {circumference - seg:.2f}" dur="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </circle>''')
+        offset += seg
+
+    parts.append(f'''
+  </g>
+  <text x="{cx}" y="{cy - 4}" text-anchor="middle" fill="{text_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" font-weight="700">{total}</text>
+  <text x="{cx}" y="{cy + 14}" text-anchor="middle" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="10">repos</text>''')
+
+    # Legend
+    legend_x = 200
+    legend_y = 70
+    for i, (name, count) in enumerate(items):
+        y = legend_y + i * 24
+        color = LANG_COLORS.get(name, "#8b949e")
+        pct = count / total * 100
+        parts.append(f'''
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{0.2 + i*0.1:.2f}s" fill="freeze"/>
+    <circle cx="{legend_x + 6}" cy="{y - 4}" r="6" fill="{color}"/>
+    <text x="{legend_x + 20}" y="{y}" fill="{text_color}" font-family="'Segoe UI', system-ui, sans-serif" font-size="13">{name}</text>
+    <text x="{width - 24}" y="{y}" text-anchor="end" fill="{secondary_text}" font-family="'Segoe UI', system-ui, sans-serif" font-size="12">{pct:.1f}%</text>
+  </g>''')
+
+    parts.append('\n</svg>')
+    return "".join(parts)
+
+
+def build_level_classifier(contributions: Dict[str, int]):
+    """
+    Return a function count -> level (0-4) using quartiles of the distribution
+    of NON-ZERO days, mirroring how GitHub buckets its own calendar.
+
+    This replaces the old "fraction of the busiest day" approach, where a single
+    high-volume day (e.g. 20 contributions) pushed thresholds to 5/10/15 and
+    collapsed every normal 1-4 day into the same level-1 shade.
+    """
+    nonzero = sorted(c for c in contributions.values() if c > 0)
+    if not nonzero:
+        return lambda count: 0
+
+    def quantile(values: List[int], q: float) -> float:
+        if not values:
+            return 0.0
+        idx = q * (len(values) - 1)
+        lo = int(math.floor(idx))
+        hi = int(math.ceil(idx))
+        if lo == hi:
+            return float(values[lo])
+        frac = idx - lo
+        return values[lo] * (1 - frac) + values[hi] * frac
+
+    t1 = quantile(nonzero, 0.25)
+    t2 = quantile(nonzero, 0.50)
+    t3 = quantile(nonzero, 0.75)
+
+    def classify(count: int) -> int:
+        if count <= 0:
+            return 0
+        if count <= t1:
+            return 1
+        if count <= t2:
+            return 2
+        if count <= t3:
+            return 3
+        return 4
+
+    return classify
+
+
 def generate_contribution_graph_svg(contributions: Dict[str, int], theme: str = "dark") -> str:
     """Generate a modern, highly animated contribution graph SVG."""
     if theme == "dark":
@@ -767,36 +976,22 @@ def generate_contribution_graph_svg(contributions: Dict[str, int], theme: str = 
             prev_month = month_name
         current_date += timedelta(days=7)
     
-    # Calculate max for color levels
-    max_contrib = max(contributions.values()) if contributions else 1
-    max_contrib = max(max_contrib, 1)
-    
+    # Quartile-based level classifier (robust to single high-volume days)
+    classify = build_level_classifier(contributions)
+
     # Draw contribution cells with animations
     current_date = start_date
     cell_index = 0
-    
+
     for week in range(weeks):
         for day in range(days):
             date_str = current_date.strftime("%Y-%m-%d")
             count = contributions.get(date_str, 0)
-            
-            # Determine color level
-            if count == 0:
-                level = 0
-                color = level_colors[0]
-            elif count <= max_contrib * 0.25:
-                level = 1
-                color = level_colors[1]
-            elif count <= max_contrib * 0.5:
-                level = 2
-                color = level_colors[2]
-            elif count <= max_contrib * 0.75:
-                level = 3
-                color = level_colors[3]
-            else:
-                level = 4
-                color = level_colors[4]
-            
+
+            # Determine color level from the nonzero-day distribution
+            level = classify(count)
+            color = level_colors[level]
+
             x = left_padding + week * (cell_size + cell_gap)
             y = top_padding + day * (cell_size + cell_gap)
             
@@ -1022,8 +1217,8 @@ def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], them
     
     # Calculate totals from actual contributions
     total_contribs = sum(contributions.values())
-    max_contrib = max(contributions.values()) if contributions else 1
-    max_contrib = max(max_contrib, 1)
+    # Quartile-based level classifier (robust to single high-volume days)
+    classify = build_level_classifier(contributions)
     
     # Animation timing
     pop_duration = 4  # Total time for pop-up animation
@@ -1114,24 +1309,11 @@ def generate_infinite_contribution_graph_svg(contributions: Dict[str, int], them
         for day in range(days_per_week):
             date_str = current_date.strftime("%Y-%m-%d")
             count = contributions.get(date_str, 0)
-            
-            # Determine color level based on contribution count
-            if count == 0:
-                level = 0
-                color = level_colors[0]
-            elif count <= max(1, max_contrib * 0.25):
-                level = 1
-                color = level_colors[1]
-            elif count <= max(2, max_contrib * 0.5):
-                level = 2
-                color = level_colors[2]
-            elif count <= max(3, max_contrib * 0.75):
-                level = 3
-                color = level_colors[3]
-            else:
-                level = 4
-                color = level_colors[4]
-            
+
+            # Determine color level from the nonzero-day distribution
+            level = classify(count)
+            color = level_colors[level]
+
             x = left_padding + week * (cell_size + cell_gap)
             y = top_padding + day * (cell_size + cell_gap)
             
@@ -1344,7 +1526,27 @@ def main():
         with open(svg_file, "w", encoding="utf-8") as f:
             f.write(svg)
         print(f"  ✅ Generated {svg_file.name}")
-    
+
+    # Generate self-hosted stats card (replaces flaky third-party Vercel forks)
+    print("\n📇 Generating GitHub stats card...")
+    for theme in ["dark", "light"]:
+        svg = generate_stats_card_svg(github_stats, theme)
+        svg_file = assets_dir / f"github-stats-card-{theme}.svg"
+        with open(svg_file, "w", encoding="utf-8") as f:
+            f.write(svg)
+        print(f"  ✅ Generated {svg_file.name}")
+
+    # Generate most-used-languages donut card
+    print("\n🧬 Generating languages card...")
+    languages = github_stats.get("languages", {})
+    print(f"  📊 Found {len(languages)} languages across owned repos")
+    for theme in ["dark", "light"]:
+        svg = generate_languages_card_svg(languages, theme)
+        svg_file = assets_dir / f"github-languages-{theme}.svg"
+        with open(svg_file, "w", encoding="utf-8") as f:
+            f.write(svg)
+        print(f"  ✅ Generated {svg_file.name}")
+
     # Generate contribution graph
     print("\n📈 Generating modern contribution graph...")
     contributions = github_stats.get("contributions", {})
