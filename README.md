@@ -213,6 +213,44 @@ currently_learning:
 </tr>
 </table>
 
+<!-- LEETCODE DASHBOARD -->
+<h2>
+  <img src="https://assets.leetcode.com/static_assets/public/icons/favicon-32x32.png" width="28">
+  <span> LeetCode Journey</span>
+</h2>
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="https://leetcode.com/u/Arpan961/">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/Arpan961?theme=dark&font=Inter&ext=heatmap" />
+          <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/Arpan961?theme=light&font=Inter&ext=heatmap" />
+          <img
+            src="https://leetcard.jacoblin.cool/Arpan961?theme=dark&font=Inter&ext=heatmap"
+            width="100%"
+            alt="Arpan961 LeetCode activity heatmap"
+          />
+        </picture>
+      </a>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="https://leetcode.com/u/Arpan961/">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/Arpan961?theme=dark&font=Nunito&ext=contest" />
+          <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/Arpan961?theme=light&font=Nunito&ext=contest" />
+          <img
+            src="https://leetcard.jacoblin.cool/Arpan961?theme=dark&font=Nunito&ext=contest"
+            width="100%"
+            alt="Arpan961 LeetCode contest stats"
+          />
+        </picture>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
 <!-- GITHUB STATS -->
 <h2>
   <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="28">
@@ -233,24 +271,44 @@ currently_learning:
 
 <div align="center">
 
-<!-- Stats Cards Row (self-hosted - no third-party API dependency) -->
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-light.svg" />
-    <img alt="GitHub Stats" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-dark.svg" width="49%" />
-  </picture>
-  <img src="https://nirzak-streak-stats.vercel.app/?user=ARPANPATRA111&theme=tokyonight&hide_border=true&background=0D1117&ring=39d353&fire=ff6b6b&currStreakLabel=58a6ff" width="49%" alt=""/>
-</p>
-
-<!-- Most Used Languages (self-hosted donut) -->
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-light.svg" />
-    <img alt="Most Used Languages" src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-dark.svg" width="49%" />
-  </picture>
-</p>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <picture>
+        <source
+          media="(prefers-color-scheme: dark)"
+          srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-dark.svg"
+        />
+        <source
+          media="(prefers-color-scheme: light)"
+          srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-light.svg"
+        />
+        <img
+          src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-stats-card-dark.svg"
+          alt="GitHub Stats"
+          width="100%"
+        />
+      </picture>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <picture>
+        <source
+          media="(prefers-color-scheme: dark)"
+          srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-dark.svg"
+        />
+        <source
+          media="(prefers-color-scheme: light)"
+          srcset="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-light.svg"
+        />
+        <img
+          src="https://raw.githubusercontent.com/ARPANPATRA111/ARPANPATRA111/main/assets/github-languages-dark.svg"
+          alt="Most Used Languages"
+          width="100%"
+        />
+      </picture>
+    </td>
+  </tr>
+</table>
 
 </div>
 
