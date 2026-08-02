@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-02T12:59:29.143873+00:00",
+  "generated_at_utc": "2026-08-02T16:48:05.720803+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-08-02",
-  "total_coding_time": "1 hr 50 mins",
-  "today_total": "1 hrs 50 mins",
+  "total_coding_time": "2 hrs 43 mins",
+  "today_total": "2 hrs 43 mins",
   "yesterday_total": "0 hrs 12 mins",
-  "this_week_total": "15 hrs 46 mins",
+  "this_week_total": "16 hrs 39 mins",
   "last_week_total": "23 hrs 46 mins",
-  "week_change": "\ud83d\udcc9 33.7%",
+  "week_change": "\ud83d\udcc9 29.9%",
   "daily_hours": [
     0.42,
     3.24,
@@ -16,7 +16,7 @@
     3.12,
     4.74,
     0.21,
-    1.84
+    2.73
   ],
   "daily_labels": [
     "Mon",
@@ -11523,40 +11523,46 @@
     },
     {
       "grand_total": {
-        "hours": 1,
-        "minutes": 50,
-        "total_seconds": 6634.257,
-        "digital": "1:50",
-        "decimal": "1.83",
-        "text": "1 hr 50 mins",
-        "ai_additions": 1943,
+        "hours": 2,
+        "minutes": 43,
+        "total_seconds": 9831.673,
+        "digital": "2:43",
+        "decimal": "2.72",
+        "text": "2 hrs 43 mins",
+        "ai_additions": 2172,
         "ai_deletions": 11,
         "human_additions": 0,
         "human_deletions": 0,
         "ai_model_line_changes": {
-          "Opus": 1954
+          "Opus": 2183
         },
-        "ai_input_tokens": 44250457,
-        "ai_output_tokens": 126258,
-        "ai_prompt_length_sum": 12712,
-        "ai_prompt_events_total": 10,
+        "ai_input_tokens": 85400082,
+        "ai_output_tokens": 172026,
+        "ai_prompt_length_sum": 19220,
+        "ai_prompt_events_total": 19,
         "ai_sessions": 1,
         "ai_model_costs": {
-          "Opus": 224.408735
+          "Opus": 420.16948,
+          "Claude-Code": 6.678948
         },
         "ai_model_breakdown": [
           {
             "name": "Opus",
-            "lines": 1954,
-            "cost": 224.408735
+            "lines": 2183,
+            "cost": 420.16948
+          },
+          {
+            "name": "Claude-Code",
+            "lines": 0,
+            "cost": 6.678948
           }
         ],
-        "ai_model_total_cost": 224.408735,
-        "ai_prompt_length_avg": 1271,
-        "ai_prompt_events_avg_per_session": 10,
-        "ai_prompt_events_median_per_session": 10,
-        "ai_prompt_length_avg_per_session": 1271,
-        "ai_prompt_length_median_per_session": 1271
+        "ai_model_total_cost": 426.848428,
+        "ai_prompt_length_avg": 1012,
+        "ai_prompt_events_avg_per_session": 19,
+        "ai_prompt_events_median_per_session": 19,
+        "ai_prompt_length_avg_per_session": 1012,
+        "ai_prompt_length_median_per_session": 1012
       },
       "range": {
         "start": "2026-08-01T18:30:00Z",
@@ -11568,78 +11574,106 @@
       "projects": [
         {
           "name": "Proter",
-          "total_seconds": 6634.257,
-          "ai_additions": 1943,
+          "total_seconds": 9831.673,
+          "ai_additions": 2172,
           "ai_deletions": 11,
           "human_additions": 0,
           "human_deletions": 0,
           "ai_model_line_changes": {
-            "Opus": 1954
+            "Opus": 2183
           },
-          "ai_input_tokens": 44250457,
-          "ai_output_tokens": 126258,
-          "ai_prompt_length_sum": 12712,
-          "ai_prompt_events_total": 10,
+          "ai_input_tokens": 85400082,
+          "ai_output_tokens": 172026,
+          "ai_prompt_length_sum": 19220,
+          "ai_prompt_events_total": 19,
           "color": null,
           "ai_model_costs": {
-            "Opus": 224.408735
+            "Opus": 420.16948,
+            "Claude-Code": 6.678948
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
-              "lines": 1954,
-              "cost": 224.408735
+              "lines": 2183,
+              "cost": 420.16948
+            },
+            {
+              "name": "Claude-Code",
+              "lines": 0,
+              "cost": 6.678948
             }
           ],
-          "ai_model_total_cost": 224.408735,
-          "ai_prompt_length_avg": 1271,
-          "ai_prompt_length_avg_per_session": 1271,
-          "ai_prompt_length_median_per_session": 1271,
-          "ai_prompt_events_avg_per_session": 10,
-          "ai_prompt_events_median_per_session": 10,
+          "ai_model_total_cost": 426.848428,
+          "ai_prompt_length_avg": 1012,
+          "ai_prompt_length_avg_per_session": 1012,
+          "ai_prompt_length_median_per_session": 1012,
+          "ai_prompt_events_avg_per_session": 19,
+          "ai_prompt_events_median_per_session": 19,
           "ai_sessions": 1,
-          "digital": "1:50:34",
-          "decimal": "1.83",
-          "text": "1 hr 50 mins",
-          "hours": 1,
-          "minutes": 50,
-          "seconds": 34,
+          "digital": "2:43:51",
+          "decimal": "2.72",
+          "text": "2 hrs 43 mins",
+          "hours": 2,
+          "minutes": 43,
+          "seconds": 51,
           "percent": 100.0
         }
       ],
       "languages": [
         {
           "name": "TypeScript",
-          "total_seconds": 3221.121,
-          "digital": "0:53:41",
-          "decimal": "0.88",
-          "text": "53 mins",
-          "hours": 0,
-          "minutes": 53,
-          "seconds": 41,
-          "percent": 48.55
+          "total_seconds": 3954.87,
+          "digital": "1:05:54",
+          "decimal": "1.08",
+          "text": "1 hr 5 mins",
+          "hours": 1,
+          "minutes": 5,
+          "seconds": 54,
+          "percent": 40.23
         },
         {
           "name": "XML",
-          "total_seconds": 1244.037,
-          "digital": "0:20:44",
-          "decimal": "0.33",
-          "text": "20 mins",
+          "total_seconds": 1400.206,
+          "digital": "0:23:20",
+          "decimal": "0.38",
+          "text": "23 mins",
           "hours": 0,
-          "minutes": 20,
-          "seconds": 44,
-          "percent": 18.75
+          "minutes": 23,
+          "seconds": 20,
+          "percent": 14.24
+        },
+        {
+          "name": "Bash",
+          "total_seconds": 1287.983,
+          "digital": "0:21:27",
+          "decimal": "0.35",
+          "text": "21 mins",
+          "hours": 0,
+          "minutes": 21,
+          "seconds": 27,
+          "percent": 13.1
         },
         {
           "name": "Markdown",
-          "total_seconds": 1243.646,
-          "digital": "0:20:43",
+          "total_seconds": 1252.161,
+          "digital": "0:20:52",
           "decimal": "0.33",
           "text": "20 mins",
           "hours": 0,
           "minutes": 20,
-          "seconds": 43,
-          "percent": 18.75
+          "seconds": 52,
+          "percent": 12.74
+        },
+        {
+          "name": "JSON",
+          "total_seconds": 1029.044,
+          "digital": "0:17:09",
+          "decimal": "0.28",
+          "text": "17 mins",
+          "hours": 0,
+          "minutes": 17,
+          "seconds": 9,
+          "percent": 10.47
         },
         {
           "name": "Other",
@@ -11650,7 +11684,7 @@
           "hours": 0,
           "minutes": 8,
           "seconds": 37,
-          "percent": 7.8
+          "percent": 5.26
         },
         {
           "name": "JavaScript",
@@ -11661,18 +11695,7 @@
           "hours": 0,
           "minutes": 6,
           "seconds": 19,
-          "percent": 5.72
-        },
-        {
-          "name": "JSON",
-          "total_seconds": 18.044,
-          "digital": "0:00:18",
-          "decimal": "0.00",
-          "text": "18 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 18,
-          "percent": 0.27
+          "percent": 3.86
         },
         {
           "name": "Groovy",
@@ -11683,7 +11706,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 6,
-          "percent": 0.09
+          "percent": 0.06
         },
         {
           "name": "Text",
@@ -11694,31 +11717,42 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.07
+          "percent": 0.05
         }
       ],
       "dependencies": [
         {
           "name": "react",
-          "total_seconds": 1431.37,
-          "digital": "0:23:51",
-          "decimal": "0.38",
-          "text": "23 mins",
+          "total_seconds": 2701.905,
+          "digital": "0:45:01",
+          "decimal": "0.75",
+          "text": "45 mins",
           "hours": 0,
-          "minutes": 23,
-          "seconds": 51,
-          "percent": 13.94
+          "minutes": 45,
+          "seconds": 1,
+          "percent": 14.4
         },
         {
           "name": "react-native",
-          "total_seconds": 1402.825,
-          "digital": "0:23:22",
-          "decimal": "0.38",
-          "text": "23 mins",
+          "total_seconds": 2124.715,
+          "digital": "0:35:24",
+          "decimal": "0.58",
+          "text": "35 mins",
           "hours": 0,
-          "minutes": 23,
-          "seconds": 22,
-          "percent": 13.66
+          "minutes": 35,
+          "seconds": 24,
+          "percent": 11.32
+        },
+        {
+          "name": "npm",
+          "total_seconds": 840.069,
+          "digital": "0:14:00",
+          "decimal": "0.23",
+          "text": "14 mins",
+          "hours": 0,
+          "minutes": 14,
+          "seconds": 0,
+          "percent": 4.48
         },
         {
           "name": "types",
@@ -11729,7 +11763,7 @@
           "hours": 0,
           "minutes": 11,
           "seconds": 44,
-          "percent": 6.85
+          "percent": 3.75
         },
         {
           "name": "utils",
@@ -11740,7 +11774,7 @@
           "hours": 0,
           "minutes": 11,
           "seconds": 15,
-          "percent": 6.58
+          "percent": 3.6
         },
         {
           "name": "constants",
@@ -11751,7 +11785,7 @@
           "hours": 0,
           "minutes": 11,
           "seconds": 10,
-          "percent": 6.52
+          "percent": 3.57
         },
         {
           "name": "firestore",
@@ -11762,7 +11796,7 @@
           "hours": 0,
           "minutes": 11,
           "seconds": 10,
-          "percent": 6.52
+          "percent": 3.57
         },
         {
           "name": "app",
@@ -11773,7 +11807,7 @@
           "hours": 0,
           "minutes": 11,
           "seconds": 10,
-          "percent": 6.52
+          "percent": 3.57
         },
         {
           "name": "costCalculator",
@@ -11784,7 +11818,7 @@
           "hours": 0,
           "minutes": 11,
           "seconds": 10,
-          "percent": 6.52
+          "percent": 3.57
         },
         {
           "name": "auth",
@@ -11795,40 +11829,139 @@
           "hours": 0,
           "minutes": 11,
           "seconds": 10,
-          "percent": 6.52
+          "percent": 3.57
         },
         {
           "name": "ThemeContext",
-          "total_seconds": 526.601,
-          "digital": "0:08:46",
+          "total_seconds": 586.692,
+          "digital": "0:09:46",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 46,
+          "percent": 3.13
+        },
+        {
+          "name": "zustand",
+          "total_seconds": 568.738,
+          "digital": "0:09:28",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 28,
+          "percent": 3.03
+        },
+        {
+          "name": "firebase",
+          "total_seconds": 560.31,
+          "digital": "0:09:20",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 20,
+          "percent": 2.99
+        },
+        {
+          "name": "@types/react",
+          "total_seconds": 554.56,
+          "digital": "0:09:14",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 14,
+          "percent": 2.96
+        },
+        {
+          "name": "@tanstack/react-query",
+          "total_seconds": 554.56,
+          "digital": "0:09:14",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 14,
+          "percent": 2.96
+        },
+        {
+          "name": "typescript",
+          "total_seconds": 554.56,
+          "digital": "0:09:14",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 14,
+          "percent": 2.96
+        },
+        {
+          "name": "zod",
+          "total_seconds": 549.121,
+          "digital": "0:09:09",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 9,
+          "percent": 2.93
+        },
+        {
+          "name": "rimraf",
+          "total_seconds": 548.645,
+          "digital": "0:09:08",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 8,
+          "percent": 2.92
+        },
+        {
+          "name": "date-fns",
+          "total_seconds": 548.645,
+          "digital": "0:09:08",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 8,
+          "percent": 2.92
+        },
+        {
+          "name": "tsup",
+          "total_seconds": 548.645,
+          "digital": "0:09:08",
+          "decimal": "0.15",
+          "text": "9 mins",
+          "hours": 0,
+          "minutes": 9,
+          "seconds": 8,
+          "percent": 2.92
+        },
+        {
+          "name": "MaterialIcons",
+          "total_seconds": 515.322,
+          "digital": "0:08:35",
           "decimal": "0.13",
           "text": "8 mins",
           "hours": 0,
           "minutes": 8,
-          "seconds": 46,
-          "percent": 5.13
-        },
-        {
-          "name": "MaterialIcons",
-          "total_seconds": 436.07,
-          "digital": "0:07:16",
-          "decimal": "0.12",
-          "text": "7 mins",
-          "hours": 0,
-          "minutes": 7,
-          "seconds": 16,
-          "percent": 4.25
+          "seconds": 35,
+          "percent": 2.75
         },
         {
           "name": "shared",
-          "total_seconds": 407.093,
-          "digital": "0:06:47",
+          "total_seconds": 418.952,
+          "digital": "0:06:58",
           "decimal": "0.10",
           "text": "6 mins",
           "hours": 0,
           "minutes": 6,
-          "seconds": 47,
-          "percent": 3.96
+          "seconds": 58,
+          "percent": 2.23
         },
         {
           "name": "AlertContext",
@@ -11839,7 +11972,7 @@
           "hours": 0,
           "minutes": 5,
           "seconds": 10,
-          "percent": 3.02
+          "percent": 1.65
         },
         {
           "name": "common",
@@ -11850,7 +11983,7 @@
           "hours": 0,
           "minutes": 5,
           "seconds": 5,
-          "percent": 2.98
+          "percent": 1.63
         },
         {
           "name": "useScreenDiagnostics",
@@ -11861,7 +11994,29 @@
           "hours": 0,
           "minutes": 4,
           "seconds": 50,
-          "percent": 2.82
+          "percent": 1.55
+        },
+        {
+          "name": "tsx",
+          "total_seconds": 285.509,
+          "digital": "0:04:45",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 45,
+          "percent": 1.52
+        },
+        {
+          "name": "@types/node",
+          "total_seconds": 285.509,
+          "digital": "0:04:45",
+          "decimal": "0.07",
+          "text": "4 mins",
+          "hours": 0,
+          "minutes": 4,
+          "seconds": 45,
+          "percent": 1.52
         },
         {
           "name": "RootNavigator",
@@ -11872,7 +12027,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 26,
-          "percent": 0.26
+          "percent": 0.14
         },
         {
           "name": "native-stack",
@@ -11883,18 +12038,29 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 23,
-          "percent": 0.23
+          "percent": 0.12
         },
         {
-          "name": "zustand",
-          "total_seconds": 20.093,
-          "digital": "0:00:20",
+          "name": "js-sha1",
+          "total_seconds": 17.774,
+          "digital": "0:00:17",
           "decimal": "0.00",
-          "text": "20 secs",
+          "text": "17 secs",
           "hours": 0,
           "minutes": 0,
-          "seconds": 20,
-          "percent": 0.2
+          "seconds": 17,
+          "percent": 0.09
+        },
+        {
+          "name": "@env",
+          "total_seconds": 16.094,
+          "digital": "0:00:16",
+          "decimal": "0.00",
+          "text": "16 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 16,
+          "percent": 0.09
         },
         {
           "name": "middleware",
@@ -11905,7 +12071,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 14,
-          "percent": 0.14
+          "percent": 0.08
         },
         {
           "name": "formula",
@@ -11916,29 +12082,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 14,
-          "percent": 0.14
-        },
-        {
-          "name": "npm",
-          "total_seconds": 11.715,
-          "digital": "0:00:11",
-          "decimal": "0.00",
-          "text": "11 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 11,
-          "percent": 0.11
-        },
-        {
-          "name": "firebase",
-          "total_seconds": 11.665,
-          "digital": "0:00:11",
-          "decimal": "0.00",
-          "text": "11 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 11,
-          "percent": 0.11
+          "percent": 0.07
         },
         {
           "name": "react-native-safe-area-context",
@@ -11949,7 +12093,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 10,
-          "percent": 0.1
+          "percent": 0.05
         },
         {
           "name": "react-query",
@@ -11960,7 +12104,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 9,
-          "percent": 0.1
+          "percent": 0.05
         },
         {
           "name": "cloudinaryUpload",
@@ -11971,18 +12115,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 6,
-          "percent": 0.07
-        },
-        {
-          "name": "js-sha1",
-          "total_seconds": 5.915,
-          "digital": "0:00:05",
-          "decimal": "0.00",
-          "text": "5 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 5,
-          "percent": 0.06
+          "percent": 0.04
         },
         {
           "name": "@babel/core",
@@ -11993,7 +12126,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@babel/preset-typescript",
@@ -12004,7 +12137,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-native-community/datetimepicker",
@@ -12015,7 +12148,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-native-picker/picker",
@@ -12026,7 +12159,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-navigation/bottom-tabs",
@@ -12037,7 +12170,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@types/react-native-vector-icons",
@@ -12048,7 +12181,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "jest",
@@ -12059,7 +12192,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "babel-preset-expo",
@@ -12070,29 +12203,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
-        },
-        {
-          "name": "@types/react",
-          "total_seconds": 5.915,
-          "digital": "0:00:05",
-          "decimal": "0.00",
-          "text": "5 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 5,
-          "percent": 0.06
-        },
-        {
-          "name": "@tanstack/react-query",
-          "total_seconds": 5.915,
-          "digital": "0:00:05",
-          "decimal": "0.00",
-          "text": "5 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-native/babel-preset",
@@ -12103,7 +12214,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@types/jest",
@@ -12114,7 +12225,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@testing-library/react-native",
@@ -12125,7 +12236,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@babel/runtime",
@@ -12136,7 +12247,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "expo",
@@ -12147,7 +12258,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "babel-plugin-transform-remove-console",
@@ -12158,7 +12269,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "react-native-linear-gradient",
@@ -12169,7 +12280,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-native/assets-registry",
@@ -12180,7 +12291,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "eslint",
@@ -12191,7 +12302,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-navigation/native",
@@ -12202,7 +12313,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "react-native-dotenv",
@@ -12213,7 +12324,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "react-native-chart-kit",
@@ -12224,7 +12335,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@nozbe/watermelondb",
@@ -12235,7 +12346,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "detox",
@@ -12246,7 +12357,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "jest-junit",
@@ -12257,7 +12368,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@babel/plugin-proposal-decorators",
@@ -12268,18 +12379,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
-        },
-        {
-          "name": "typescript",
-          "total_seconds": 5.915,
-          "digital": "0:00:05",
-          "decimal": "0.00",
-          "text": "5 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "react-native-screens",
@@ -12290,7 +12390,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "react-native-svg",
@@ -12301,7 +12401,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "metro-react-native-babel-preset",
@@ -12312,7 +12412,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-navigation/native-stack",
@@ -12323,7 +12423,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "@react-native/metro-config",
@@ -12334,7 +12434,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "firebase-tools",
@@ -12345,29 +12445,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
-        },
-        {
-          "name": "tsx",
-          "total_seconds": 5.8,
-          "digital": "0:00:05",
-          "decimal": "0.00",
-          "text": "5 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 5,
-          "percent": 0.06
-        },
-        {
-          "name": "@types/node",
-          "total_seconds": 5.8,
-          "digital": "0:00:05",
-          "decimal": "0.00",
-          "text": "5 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "offline",
@@ -12378,7 +12456,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "validation",
@@ -12389,7 +12467,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
+          "percent": 0.03
         },
         {
           "name": "stores",
@@ -12400,18 +12478,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 5,
-          "percent": 0.06
-        },
-        {
-          "name": "@env",
-          "total_seconds": 4.235,
-          "digital": "0:00:04",
-          "decimal": "0.00",
-          "text": "4 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 4,
-          "percent": 0.04
+          "percent": 0.03
         },
         {
           "name": "AnimatedSplash",
@@ -12422,7 +12489,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "PushNotificationManager",
@@ -12433,7 +12500,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "VersionGate",
@@ -12444,7 +12511,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "async-storage",
@@ -12455,7 +12522,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "AccountLockGate",
@@ -12466,7 +12533,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "native",
@@ -12477,7 +12544,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "ToastContext",
@@ -12488,7 +12555,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "NetworkContext",
@@ -12499,7 +12566,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
+          "percent": 0.02
         },
         {
           "name": "react-native-paper",
@@ -12510,18 +12577,7 @@
           "hours": 0,
           "minutes": 0,
           "seconds": 4,
-          "percent": 0.04
-        },
-        {
-          "name": "zod",
-          "total_seconds": 0.476,
-          "digital": "0:00:00",
-          "decimal": "0.00",
-          "text": "0 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 0,
-          "percent": 0.0
+          "percent": 0.02
         },
         {
           "name": "accountant",
@@ -12769,110 +12825,118 @@
       "machines": [
         {
           "name": "Arpans-PC",
-          "total_seconds": 6634.257,
+          "total_seconds": 9831.673,
           "machine_name_id": "faaa25f3-4257-4d43-8fbb-6d29eb1a56c3",
-          "digital": "1:50:34",
-          "decimal": "1.83",
-          "text": "1 hr 50 mins",
-          "hours": 1,
-          "minutes": 50,
-          "seconds": 34,
+          "digital": "2:43:51",
+          "decimal": "2.72",
+          "text": "2 hrs 43 mins",
+          "hours": 2,
+          "minutes": 43,
+          "seconds": 51,
           "percent": 100.0
         }
       ],
       "editors": [
         {
           "name": "Claude Code",
-          "total_seconds": 6629.965,
-          "ai_additions": 1943,
+          "total_seconds": 9289.587,
+          "ai_additions": 2172,
           "ai_deletions": 11,
           "human_additions": 0,
           "human_deletions": 0,
           "ai_model_line_changes": {
-            "Opus": 1954
+            "Opus": 2183
           },
-          "ai_input_tokens": 44250457,
-          "ai_output_tokens": 126258,
-          "ai_prompt_length_sum": 4687,
-          "ai_prompt_events_total": 9,
+          "ai_input_tokens": 83185616,
+          "ai_output_tokens": 169656,
+          "ai_prompt_length_sum": 9675,
+          "ai_prompt_events_total": 16,
           "ai_model_costs": {
-            "Opus": 224.408735
+            "Opus": 420.16948
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
-              "lines": 1954,
-              "cost": 224.408735
+              "lines": 2183,
+              "cost": 420.16948
             }
           ],
-          "ai_model_total_cost": 224.408735,
-          "ai_prompt_length_avg": 521,
-          "ai_prompt_length_avg_per_session": 521,
-          "ai_prompt_length_median_per_session": 521,
-          "ai_prompt_events_avg_per_session": 9,
-          "ai_prompt_events_median_per_session": 9,
+          "ai_model_total_cost": 420.16948,
+          "ai_prompt_length_avg": 605,
+          "ai_prompt_length_avg_per_session": 605,
+          "ai_prompt_length_median_per_session": 605,
+          "ai_prompt_events_avg_per_session": 16,
+          "ai_prompt_events_median_per_session": 16,
           "ai_sessions": 1,
-          "digital": "1:50:29",
-          "decimal": "1.83",
-          "text": "1 hr 50 mins",
-          "hours": 1,
-          "minutes": 50,
-          "seconds": 29,
-          "percent": 99.94
+          "digital": "2:34:49",
+          "decimal": "2.57",
+          "text": "2 hrs 34 mins",
+          "hours": 2,
+          "minutes": 34,
+          "seconds": 49,
+          "percent": 94.49
         },
         {
           "name": "VS Code",
-          "total_seconds": 4.292,
+          "total_seconds": 542.086,
           "ai_additions": 0,
           "ai_deletions": 0,
           "human_additions": 0,
           "human_deletions": 0,
           "ai_model_line_changes": {},
-          "ai_input_tokens": 0,
-          "ai_output_tokens": 0,
-          "ai_prompt_length_sum": 8025,
-          "ai_prompt_events_total": 1,
-          "ai_model_costs": {},
-          "ai_model_breakdown": [],
-          "ai_model_total_cost": 0,
-          "ai_prompt_length_avg": 8025,
-          "ai_prompt_length_avg_per_session": 8025,
-          "ai_prompt_length_median_per_session": 8025,
-          "ai_prompt_events_avg_per_session": 1,
-          "ai_prompt_events_median_per_session": 1,
+          "ai_input_tokens": 2214466,
+          "ai_output_tokens": 2370,
+          "ai_prompt_length_sum": 9545,
+          "ai_prompt_events_total": 3,
+          "ai_model_costs": {
+            "Claude-Code": 6.678948
+          },
+          "ai_model_breakdown": [
+            {
+              "name": "Claude-Code",
+              "lines": 0,
+              "cost": 6.678948
+            }
+          ],
+          "ai_model_total_cost": 6.678948,
+          "ai_prompt_length_avg": 3182,
+          "ai_prompt_length_avg_per_session": 3182,
+          "ai_prompt_length_median_per_session": 3182,
+          "ai_prompt_events_avg_per_session": 3,
+          "ai_prompt_events_median_per_session": 3,
           "ai_sessions": 1,
-          "digital": "0:00:04",
-          "decimal": "0.00",
-          "text": "4 secs",
+          "digital": "0:09:02",
+          "decimal": "0.15",
+          "text": "9 mins",
           "hours": 0,
-          "minutes": 0,
-          "seconds": 4,
-          "percent": 0.06
+          "minutes": 9,
+          "seconds": 2,
+          "percent": 5.51
         }
       ],
       "operating_systems": [
         {
           "name": "Windows",
-          "total_seconds": 6634.257,
-          "digital": "1:50:34",
-          "decimal": "1.83",
-          "text": "1 hr 50 mins",
-          "hours": 1,
-          "minutes": 50,
-          "seconds": 34,
+          "total_seconds": 9831.673,
+          "digital": "2:43:51",
+          "decimal": "2.72",
+          "text": "2 hrs 43 mins",
+          "hours": 2,
+          "minutes": 43,
+          "seconds": 51,
           "percent": 100.0
         }
       ],
       "categories": [
         {
           "name": "AI Coding",
-          "total_seconds": 6634.257,
-          "digital": "1:50:34",
-          "decimal": "1.83",
-          "text": "1 hr 50 mins",
-          "hours": 1,
-          "minutes": 50,
-          "seconds": 34,
+          "total_seconds": 9831.673,
+          "digital": "2:43:51",
+          "decimal": "2.72",
+          "text": "2 hrs 43 mins",
+          "hours": 2,
+          "minutes": 43,
+          "seconds": 51,
           "percent": 100.0
         }
       ]
