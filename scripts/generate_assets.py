@@ -498,8 +498,9 @@ def logarithmic_progress(value: float, max_val: float, min_display: float = 0.25
         return 1.0
     
     # Use logarithmic scale: log(value + 1) / log(max + 1)
-    # This makes the progress fill up faster for lower values
-    progress = math.log(value + 1) / math.log(max_val + 1)
+    # This makes the progress fill up faster for lower values.
+    # Clamp to 1.0 so values above max_val can't push the bar past the track.
+    progress = min(1.0, math.log(value + 1) / math.log(max_val + 1))
     
     # Ensure minimum display of 25% for any non-zero value
     return min_display + (1 - min_display) * progress
@@ -534,7 +535,7 @@ def generate_trophies_svg(stats: Dict, theme: str = "dark") -> str:
             "name": "Commits",
             "icon": "📝",
             "value": stats.get("total_commits", 0),
-            "max_ref": 500,
+            "max_ref": 1000,
             "gradient": ("4CAF50", "2E7D32"),
             "accent": "#4CAF50"
         },
@@ -542,7 +543,7 @@ def generate_trophies_svg(stats: Dict, theme: str = "dark") -> str:
             "name": "PRs",
             "icon": "🔀",
             "value": stats.get("total_prs", 0),
-            "max_ref": 50,
+            "max_ref": 500,
             "gradient": ("9C27B0", "6A1B9A"),
             "accent": "#9C27B0"
         },
@@ -550,7 +551,7 @@ def generate_trophies_svg(stats: Dict, theme: str = "dark") -> str:
             "name": "Issues",
             "icon": "❗",
             "value": stats.get("total_issues", 0),
-            "max_ref": 50,
+            "max_ref": 200,
             "gradient": ("FF5722", "E64A19"),
             "accent": "#FF5722"
         },
@@ -558,7 +559,7 @@ def generate_trophies_svg(stats: Dict, theme: str = "dark") -> str:
             "name": "Repos",
             "icon": "📁",
             "value": stats.get("total_repos", 0),
-            "max_ref": 30,
+            "max_ref": 100,
             "gradient": ("2196F3", "1565C0"),
             "accent": "#2196F3"
         },
