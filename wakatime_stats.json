@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-23T19:19:48.580144+00:00",
+  "generated_at_utc": "2026-09-23T22:33:46.007568+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-09-23",
@@ -2841,6 +2841,93 @@
       }
     },
     {
+      "grand_total": {
+        "hours": 1,
+        "minutes": 53,
+        "total_seconds": 6804.532,
+        "digital": "1:53",
+        "decimal": "1.88",
+        "text": "1 hr 53 mins",
+        "ai_additions": 927,
+        "ai_deletions": 11,
+        "human_additions": 0,
+        "human_deletions": 0,
+        "ai_model_line_changes": {
+          "Opus": 938
+        },
+        "ai_input_tokens": 337546,
+        "ai_cached_input_tokens": 47789961,
+        "ai_output_tokens": 134180,
+        "ai_prompt_length_sum": 1506,
+        "ai_prompt_events_total": 14,
+        "ai_sessions": 1,
+        "ai_model_costs": {
+          "Opus": 28.937208
+        },
+        "ai_model_breakdown": [
+          {
+            "name": "Opus",
+            "lines": 938,
+            "cost": 28.937208
+          }
+        ],
+        "ai_model_total_cost": 28.937208,
+        "ai_prompt_length_avg": 108,
+        "ai_prompt_events_avg_per_session": 14,
+        "ai_prompt_events_median_per_session": 14,
+        "ai_prompt_length_avg_per_session": 108,
+        "ai_prompt_length_median_per_session": 108
+      },
+      "range": {
+        "start": "2026-09-22T18:30:00Z",
+        "end": "2026-09-23T18:29:59Z",
+        "date": "2026-09-23",
+        "text": "Wed Sep 23rd 2026",
+        "timezone": "Asia/Kolkata"
+      },
+      "projects": [
+        {
+          "name": "Ambica",
+          "total_seconds": 6804.532,
+          "ai_additions": 927,
+          "ai_deletions": 11,
+          "human_additions": 0,
+          "human_deletions": 0,
+          "ai_model_line_changes": {
+            "Opus": 938
+          },
+          "ai_input_tokens": 337546,
+          "ai_cached_input_tokens": 47789961,
+          "ai_output_tokens": 134180,
+          "ai_prompt_length_sum": 1506,
+          "ai_prompt_events_total": 14,
+          "color": null,
+          "ai_model_costs": {
+            "Opus": 28.937208
+          },
+          "ai_model_breakdown": [
+            {
+              "name": "Opus",
+              "lines": 938,
+              "cost": 28.937208
+            }
+          ],
+          "ai_model_total_cost": 28.937208,
+          "ai_prompt_length_avg": 108,
+          "ai_prompt_length_avg_per_session": 108,
+          "ai_prompt_length_median_per_session": 108,
+          "ai_prompt_events_avg_per_session": 14,
+          "ai_prompt_events_median_per_session": 14,
+          "ai_sessions": 1,
+          "digital": "1:53:24",
+          "decimal": "1.88",
+          "text": "1 hr 53 mins",
+          "hours": 1,
+          "minutes": 53,
+          "seconds": 24,
+          "percent": 100.0
+        }
+      ],
       "languages": [
         {
           "name": "JavaScript",
@@ -2887,43 +2974,110 @@
           "percent": 8.74
         }
       ],
-      "grand_total": {
-        "hours": 1,
-        "minutes": 53,
-        "total_seconds": 6804.532,
-        "digital": "1:53",
-        "decimal": "1.88",
-        "text": "1 hr 53 mins",
-        "ai_additions": 927,
-        "ai_deletions": 11,
-        "human_additions": 0,
-        "human_deletions": 0,
-        "ai_model_line_changes": {
-          "Opus": 938
+      "dependencies": [
+        {
+          "name": "node:fs",
+          "total_seconds": 2729.328,
+          "digital": "0:45:29",
+          "decimal": "0.75",
+          "text": "45 mins",
+          "hours": 0,
+          "minutes": 45,
+          "seconds": 29,
+          "percent": 30.7
         },
-        "ai_input_tokens": 337546,
-        "ai_cached_input_tokens": 47789961,
-        "ai_output_tokens": 134180,
-        "ai_prompt_length_sum": 1506,
-        "ai_prompt_events_total": 14,
-        "ai_sessions": 1,
-        "ai_model_costs": {
-          "Opus": 28.937208
+        {
+          "name": "node:path",
+          "total_seconds": 2712.586,
+          "digital": "0:45:12",
+          "decimal": "0.75",
+          "text": "45 mins",
+          "hours": 0,
+          "minutes": 45,
+          "seconds": 12,
+          "percent": 30.51
         },
-        "ai_model_breakdown": [
-          {
-            "name": "Opus",
-            "lines": 938,
-            "cost": 28.937208
-          }
-        ],
-        "ai_model_total_cost": 28.937208,
-        "ai_prompt_length_avg": 108,
-        "ai_prompt_events_avg_per_session": 14,
-        "ai_prompt_events_median_per_session": 14,
-        "ai_prompt_length_avg_per_session": 108,
-        "ai_prompt_length_median_per_session": 108
-      },
+        {
+          "name": "node:child_process",
+          "total_seconds": 1480.185,
+          "digital": "0:24:40",
+          "decimal": "0.40",
+          "text": "24 mins",
+          "hours": 0,
+          "minutes": 24,
+          "seconds": 40,
+          "percent": 16.65
+        },
+        {
+          "name": "node:url",
+          "total_seconds": 1088.6,
+          "digital": "0:18:08",
+          "decimal": "0.30",
+          "text": "18 mins",
+          "hours": 0,
+          "minutes": 18,
+          "seconds": 8,
+          "percent": 12.25
+        },
+        {
+          "name": "..",
+          "total_seconds": 687.77,
+          "digital": "0:11:27",
+          "decimal": "0.18",
+          "text": "11 mins",
+          "hours": 0,
+          "minutes": 11,
+          "seconds": 27,
+          "percent": 7.74
+        },
+        {
+          "name": "js",
+          "total_seconds": 63.658,
+          "digital": "0:01:03",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 3,
+          "percent": 0.72
+        },
+        {
+          "name": "eslint-plugin-react-hooks",
+          "total_seconds": 63.658,
+          "digital": "0:01:03",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 3,
+          "percent": 0.72
+        },
+        {
+          "name": "typescript-eslint",
+          "total_seconds": 63.658,
+          "digital": "0:01:03",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 3,
+          "percent": 0.72
+        }
+      ],
+      "machines": [
+        {
+          "name": "Arpans-PC",
+          "total_seconds": 6804.532,
+          "machine_name_id": "7a249e02-b7ff-4e98-91f1-d42b67e33bf5",
+          "digital": "1:53:24",
+          "decimal": "1.88",
+          "text": "1 hr 53 mins",
+          "hours": 1,
+          "minutes": 53,
+          "seconds": 24,
+          "percent": 100.0
+        }
+      ],
       "editors": [
         {
           "name": "Claude Code",
@@ -3021,160 +3175,7 @@
           "seconds": 24,
           "percent": 100.0
         }
-      ],
-      "dependencies": [
-        {
-          "name": "node:fs",
-          "total_seconds": 2729.328,
-          "digital": "0:45:29",
-          "decimal": "0.75",
-          "text": "45 mins",
-          "hours": 0,
-          "minutes": 45,
-          "seconds": 29,
-          "percent": 30.7
-        },
-        {
-          "name": "node:path",
-          "total_seconds": 2712.586,
-          "digital": "0:45:12",
-          "decimal": "0.75",
-          "text": "45 mins",
-          "hours": 0,
-          "minutes": 45,
-          "seconds": 12,
-          "percent": 30.51
-        },
-        {
-          "name": "node:child_process",
-          "total_seconds": 1480.185,
-          "digital": "0:24:40",
-          "decimal": "0.40",
-          "text": "24 mins",
-          "hours": 0,
-          "minutes": 24,
-          "seconds": 40,
-          "percent": 16.65
-        },
-        {
-          "name": "node:url",
-          "total_seconds": 1088.6,
-          "digital": "0:18:08",
-          "decimal": "0.30",
-          "text": "18 mins",
-          "hours": 0,
-          "minutes": 18,
-          "seconds": 8,
-          "percent": 12.25
-        },
-        {
-          "name": "..",
-          "total_seconds": 687.77,
-          "digital": "0:11:27",
-          "decimal": "0.18",
-          "text": "11 mins",
-          "hours": 0,
-          "minutes": 11,
-          "seconds": 27,
-          "percent": 7.74
-        },
-        {
-          "name": "eslint-plugin-react-hooks",
-          "total_seconds": 63.658,
-          "digital": "0:01:03",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 3,
-          "percent": 0.72
-        },
-        {
-          "name": "typescript-eslint",
-          "total_seconds": 63.658,
-          "digital": "0:01:03",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 3,
-          "percent": 0.72
-        },
-        {
-          "name": "js",
-          "total_seconds": 63.658,
-          "digital": "0:01:03",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 3,
-          "percent": 0.72
-        }
-      ],
-      "machines": [
-        {
-          "name": "Arpans-PC",
-          "total_seconds": 6804.532,
-          "machine_name_id": "7a249e02-b7ff-4e98-91f1-d42b67e33bf5",
-          "digital": "1:53:24",
-          "decimal": "1.88",
-          "text": "1 hr 53 mins",
-          "hours": 1,
-          "minutes": 53,
-          "seconds": 24,
-          "percent": 100.0
-        }
-      ],
-      "projects": [
-        {
-          "name": "Ambica",
-          "total_seconds": 6804.532,
-          "ai_additions": 927,
-          "ai_deletions": 11,
-          "human_additions": 0,
-          "human_deletions": 0,
-          "ai_model_line_changes": {
-            "Opus": 938
-          },
-          "ai_input_tokens": 337546,
-          "ai_cached_input_tokens": 47789961,
-          "ai_output_tokens": 134180,
-          "ai_prompt_length_sum": 1506,
-          "ai_prompt_events_total": 14,
-          "ai_model_costs": {
-            "Opus": 28.937208
-          },
-          "ai_model_breakdown": [
-            {
-              "name": "Opus",
-              "lines": 938,
-              "cost": 28.937208
-            }
-          ],
-          "ai_model_total_cost": 28.937208,
-          "ai_prompt_length_avg": 108,
-          "ai_prompt_length_avg_per_session": 108,
-          "ai_prompt_length_median_per_session": 108,
-          "ai_prompt_events_avg_per_session": 14,
-          "ai_prompt_events_median_per_session": 14,
-          "ai_sessions": 1,
-          "digital": "1:53:24",
-          "decimal": "1.88",
-          "text": "1 hr 53 mins",
-          "hours": 1,
-          "minutes": 53,
-          "seconds": 24,
-          "percent": 100.0
-        }
-      ],
-      "range": {
-        "start": "2026-09-22T18:30:00Z",
-        "end": "2026-09-23T18:29:59Z",
-        "date": "2026-09-23",
-        "text": "Wed Sep 23rd 2026",
-        "timezone": "Asia/Kolkata"
-      }
+      ]
     }
   ]
 }
