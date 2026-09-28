@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-28T10:18:36.485675+00:00",
+  "generated_at_utc": "2026-09-28T18:58:02.095870+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-09-28",
@@ -143,16 +143,16 @@
         "ai_prompt_events_total": 14,
         "ai_sessions": 1,
         "ai_model_costs": {
-          "Opus": 28.937208
+          "Opus": 13.591772
         },
         "ai_model_breakdown": [
           {
             "name": "Opus",
             "lines": 938,
-            "cost": 28.937208
+            "cost": 13.591772
           }
         ],
-        "ai_model_total_cost": 28.937208,
+        "ai_model_total_cost": 13.591772,
         "ai_prompt_length_avg": 108,
         "ai_prompt_events_avg_per_session": 14,
         "ai_prompt_events_median_per_session": 14,
@@ -176,16 +176,16 @@
           "ai_prompt_length_sum": 1236,
           "ai_prompt_events_total": 13,
           "ai_model_costs": {
-            "Opus": 28.937208
+            "Opus": 13.591772
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 938,
-              "cost": 28.937208
+              "cost": 13.591772
             }
           ],
-          "ai_model_total_cost": 28.937208,
+          "ai_model_total_cost": 13.591772,
           "ai_prompt_length_avg": 95,
           "ai_prompt_length_avg_per_session": 95,
           "ai_prompt_length_median_per_session": 95,
@@ -325,7 +325,7 @@
           "percent": 0.72
         },
         {
-          "name": "js",
+          "name": "eslint-plugin-react-hooks",
           "total_seconds": 63.658,
           "digital": "0:01:03",
           "decimal": "0.02",
@@ -336,7 +336,7 @@
           "percent": 0.72
         },
         {
-          "name": "eslint-plugin-react-hooks",
+          "name": "js",
           "total_seconds": 63.658,
           "digital": "0:01:03",
           "decimal": "0.02",
@@ -379,16 +379,16 @@
           "ai_prompt_events_total": 14,
           "color": null,
           "ai_model_costs": {
-            "Opus": 28.937208
+            "Opus": 13.591772
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 938,
-              "cost": 28.937208
+              "cost": 13.591772
             }
           ],
-          "ai_model_total_cost": 28.937208,
+          "ai_model_total_cost": 13.591772,
           "ai_prompt_length_avg": 108,
           "ai_prompt_length_avg_per_session": 108,
           "ai_prompt_length_median_per_session": 108,
@@ -480,16 +480,16 @@
         "ai_prompt_events_total": 1,
         "ai_sessions": 3,
         "ai_model_costs": {
-          "Opus": 3.195483
+          "Opus": 1.941044
         },
         "ai_model_breakdown": [
           {
             "name": "Opus",
             "lines": 2008,
-            "cost": 3.195483
+            "cost": 1.941044
           }
         ],
-        "ai_model_total_cost": 3.195483,
+        "ai_model_total_cost": 1.941044,
         "ai_prompt_length_avg": 8327,
         "ai_prompt_events_avg_per_session": 0,
         "ai_prompt_events_median_per_session": 1,
@@ -513,16 +513,16 @@
           "ai_prompt_length_sum": 8327,
           "ai_prompt_events_total": 1,
           "ai_model_costs": {
-            "Opus": 3.195483
+            "Opus": 1.941044
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 2008,
-              "cost": 3.195483
+              "cost": 1.941044
             }
           ],
-          "ai_model_total_cost": 3.195483,
+          "ai_model_total_cost": 1.941044,
           "ai_prompt_length_avg": 8327,
           "ai_prompt_length_avg_per_session": 8327,
           "ai_prompt_length_median_per_session": 8327,
@@ -607,17 +607,6 @@
       ],
       "dependencies": [
         {
-          "name": "math",
-          "total_seconds": 782.729,
-          "digital": "0:13:02",
-          "decimal": "0.22",
-          "text": "13 mins",
-          "hours": 0,
-          "minutes": 13,
-          "seconds": 2,
-          "percent": 24.04
-        },
-        {
           "name": "reportlab",
           "total_seconds": 782.729,
           "digital": "0:13:02",
@@ -629,7 +618,18 @@
           "percent": 24.04
         },
         {
-          "name": "markdown",
+          "name": "math",
+          "total_seconds": 782.729,
+          "digital": "0:13:02",
+          "decimal": "0.22",
+          "text": "13 mins",
+          "hours": 0,
+          "minutes": 13,
+          "seconds": 2,
+          "percent": 24.04
+        },
+        {
+          "name": "pathlib",
           "total_seconds": 111.175,
           "digital": "0:01:51",
           "decimal": "0.02",
@@ -640,7 +640,7 @@
           "percent": 3.41
         },
         {
-          "name": "pathlib",
+          "name": "markdown",
           "total_seconds": 111.175,
           "digital": "0:01:51",
           "decimal": "0.02",
@@ -662,73 +662,7 @@
           "percent": 3.41
         },
         {
-          "name": "workRestore",
-          "total_seconds": 96.897,
-          "digital": "0:01:36",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 36,
-          "percent": 2.98
-        },
-        {
-          "name": "workTeams",
-          "total_seconds": 96.897,
-          "digital": "0:01:36",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 36,
-          "percent": 2.98
-        },
-        {
-          "name": "classes",
-          "total_seconds": 96.897,
-          "digital": "0:01:36",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 36,
-          "percent": 2.98
-        },
-        {
-          "name": "expo-document-picker",
-          "total_seconds": 96.897,
-          "digital": "0:01:36",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 36,
-          "percent": 2.98
-        },
-        {
-          "name": "archive",
-          "total_seconds": 96.897,
-          "digital": "0:01:36",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 36,
-          "percent": 2.98
-        },
-        {
-          "name": "students",
-          "total_seconds": 96.897,
-          "digital": "0:01:36",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 36,
-          "percent": 2.98
-        },
-        {
-          "name": "monitoring",
+          "name": "types",
           "total_seconds": 96.897,
           "digital": "0:01:36",
           "decimal": "0.02",
@@ -750,7 +684,7 @@
           "percent": 2.98
         },
         {
-          "name": "legacy",
+          "name": "workRestore",
           "total_seconds": 96.897,
           "digital": "0:01:36",
           "decimal": "0.02",
@@ -761,7 +695,7 @@
           "percent": 2.98
         },
         {
-          "name": "saf",
+          "name": "workWorkers",
           "total_seconds": 96.897,
           "digital": "0:01:36",
           "decimal": "0.02",
@@ -772,7 +706,18 @@
           "percent": 2.98
         },
         {
-          "name": "types",
+          "name": "expo-document-picker",
+          "total_seconds": 96.897,
+          "digital": "0:01:36",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 36,
+          "percent": 2.98
+        },
+        {
+          "name": "students",
           "total_seconds": 96.897,
           "digital": "0:01:36",
           "decimal": "0.02",
@@ -794,7 +739,7 @@
           "percent": 2.98
         },
         {
-          "name": "attendance",
+          "name": "classes",
           "total_seconds": 96.897,
           "digital": "0:01:36",
           "decimal": "0.02",
@@ -805,7 +750,62 @@
           "percent": 2.98
         },
         {
-          "name": "workWorkers",
+          "name": "archive",
+          "total_seconds": 96.897,
+          "digital": "0:01:36",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 36,
+          "percent": 2.98
+        },
+        {
+          "name": "legacy",
+          "total_seconds": 96.897,
+          "digital": "0:01:36",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 36,
+          "percent": 2.98
+        },
+        {
+          "name": "workTeams",
+          "total_seconds": 96.897,
+          "digital": "0:01:36",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 36,
+          "percent": 2.98
+        },
+        {
+          "name": "saf",
+          "total_seconds": 96.897,
+          "digital": "0:01:36",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 36,
+          "percent": 2.98
+        },
+        {
+          "name": "monitoring",
+          "total_seconds": 96.897,
+          "digital": "0:01:36",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 36,
+          "percent": 2.98
+        },
+        {
+          "name": "attendance",
           "total_seconds": 96.897,
           "digital": "0:01:36",
           "decimal": "0.02",
@@ -848,16 +848,16 @@
           "ai_prompt_events_total": 0,
           "color": null,
           "ai_model_costs": {
-            "Opus": 1.12186
+            "Opus": 0.703554
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 997,
-              "cost": 1.12186
+              "cost": 0.703554
             }
           ],
-          "ai_model_total_cost": 1.12186,
+          "ai_model_total_cost": 0.703554,
           "ai_prompt_length_avg": 0,
           "ai_prompt_length_avg_per_session": 0,
           "ai_prompt_length_median_per_session": 0,
@@ -889,16 +889,16 @@
           "ai_prompt_events_total": 0,
           "color": null,
           "ai_model_costs": {
-            "Opus": 0.97171
+            "Opus": 0.54992
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 219,
-              "cost": 0.97171
+              "cost": 0.54992
             }
           ],
-          "ai_model_total_cost": 0.97171,
+          "ai_model_total_cost": 0.54992,
           "ai_prompt_length_avg": 0,
           "ai_prompt_length_avg_per_session": 0,
           "ai_prompt_length_median_per_session": 0,
@@ -930,16 +930,16 @@
           "ai_prompt_events_total": 1,
           "color": null,
           "ai_model_costs": {
-            "Opus": 1.101913
+            "Opus": 0.68757
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 792,
-              "cost": 1.101913
+              "cost": 0.68757
             }
           ],
-          "ai_model_total_cost": 1.101913,
+          "ai_model_total_cost": 0.68757,
           "ai_prompt_length_avg": 8327,
           "ai_prompt_length_avg_per_session": 8327,
           "ai_prompt_length_median_per_session": 8327,
@@ -1096,16 +1096,16 @@
         "ai_prompt_events_total": 5,
         "ai_sessions": 1,
         "ai_model_costs": {
-          "Opus": 15.527965
+          "Opus": 7.63814
         },
         "ai_model_breakdown": [
           {
             "name": "Opus",
             "lines": 1385,
-            "cost": 15.527965
+            "cost": 7.63814
           }
         ],
-        "ai_model_total_cost": 15.527965,
+        "ai_model_total_cost": 7.63814,
         "ai_prompt_length_avg": 1497,
         "ai_prompt_events_avg_per_session": 5,
         "ai_prompt_events_median_per_session": 5,
@@ -1129,16 +1129,16 @@
           "ai_prompt_length_sum": 6253,
           "ai_prompt_events_total": 4,
           "ai_model_costs": {
-            "Opus": 15.527965
+            "Opus": 7.63814
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 1385,
-              "cost": 15.527965
+              "cost": 7.63814
             }
           ],
-          "ai_model_total_cost": 15.527965,
+          "ai_model_total_cost": 7.63814,
           "ai_prompt_length_avg": 1563,
           "ai_prompt_length_avg_per_session": 1563,
           "ai_prompt_length_median_per_session": 1563,
@@ -1256,7 +1256,7 @@
           "percent": 12.93
         },
         {
-          "name": "async-storage",
+          "name": "expo-updates",
           "total_seconds": 500.938,
           "digital": "0:08:20",
           "decimal": "0.13",
@@ -1267,7 +1267,7 @@
           "percent": 10.93
         },
         {
-          "name": "expo-updates",
+          "name": "async-storage",
           "total_seconds": 500.938,
           "digital": "0:08:20",
           "decimal": "0.13",
@@ -1300,7 +1300,7 @@
           "percent": 4.78
         },
         {
-          "name": "better-sqlite3",
+          "name": "fs",
           "total_seconds": 210.247,
           "digital": "0:03:30",
           "decimal": "0.05",
@@ -1311,7 +1311,7 @@
           "percent": 4.59
         },
         {
-          "name": "fs",
+          "name": "better-sqlite3",
           "total_seconds": 210.247,
           "digital": "0:03:30",
           "decimal": "0.05",
@@ -1388,17 +1388,6 @@
           "percent": 2.59
         },
         {
-          "name": "recoveryFakes",
-          "total_seconds": 91.489,
-          "digital": "0:01:31",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 31,
-          "percent": 2.0
-        },
-        {
           "name": "classes",
           "total_seconds": 91.489,
           "digital": "0:01:31",
@@ -1410,7 +1399,18 @@
           "percent": 2.0
         },
         {
-          "name": "schema",
+          "name": "recoveryFakes",
+          "total_seconds": 91.489,
+          "digital": "0:01:31",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 31,
+          "percent": 2.0
+        },
+        {
+          "name": "migrations",
           "total_seconds": 66.38,
           "digital": "0:01:06",
           "decimal": "0.02",
@@ -1421,7 +1421,7 @@
           "percent": 1.45
         },
         {
-          "name": "migrations",
+          "name": "schema",
           "total_seconds": 66.38,
           "digital": "0:01:06",
           "decimal": "0.02",
@@ -1454,7 +1454,7 @@
           "percent": 1.06
         },
         {
-          "name": "config",
+          "name": "config-plugins",
           "total_seconds": 1.151,
           "digital": "0:00:01",
           "decimal": "0.00",
@@ -1465,7 +1465,7 @@
           "percent": 0.03
         },
         {
-          "name": "config-plugins",
+          "name": "config",
           "total_seconds": 1.151,
           "digital": "0:00:01",
           "decimal": "0.00",
@@ -1508,16 +1508,16 @@
           "ai_prompt_events_total": 5,
           "color": null,
           "ai_model_costs": {
-            "Opus": 15.527965
+            "Opus": 7.63814
           },
           "ai_model_breakdown": [
             {
               "name": "Opus",
               "lines": 1385,
-              "cost": 15.527965
+              "cost": 7.63814
             }
           ],
-          "ai_model_total_cost": 15.527965,
+          "ai_model_total_cost": 7.63814,
           "ai_prompt_length_avg": 1497,
           "ai_prompt_length_avg_per_session": 1497,
           "ai_prompt_length_median_per_session": 1497,
