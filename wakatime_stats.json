@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-01T10:34:19.971195+00:00",
+  "generated_at_utc": "2026-10-01T17:44:01.861692+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-10-01",
-  "total_coding_time": "0 secs",
-  "today_total": "0 hrs 0 mins",
+  "total_coding_time": "1 min",
+  "today_total": "0 hrs 1 mins",
   "yesterday_total": "7 hrs 29 mins",
-  "this_week_total": "12 hrs 56 mins",
+  "this_week_total": "12 hrs 58 mins",
   "last_week_total": "14 hrs 34 mins",
-  "week_change": "\ud83d\udcc9 11.2%",
+  "week_change": "\ud83d\udcc9 11.0%",
   "daily_hours": [
     0.0,
     1.52,
@@ -16,7 +16,7 @@
     0.0,
     3.93,
     7.49,
-    0.0
+    0.03
   ],
   "daily_labels": [
     "Fri",
@@ -4435,30 +4435,38 @@
     {
       "grand_total": {
         "hours": 0,
-        "minutes": 0,
-        "total_seconds": 0.0,
-        "digital": "0:00",
-        "decimal": "0.00",
-        "text": "0 secs",
+        "minutes": 1,
+        "total_seconds": 98.295,
+        "digital": "0:01",
+        "decimal": "0.02",
+        "text": "1 min",
         "ai_additions": 0,
         "ai_deletions": 0,
         "human_additions": 0,
         "human_deletions": 0,
         "ai_model_line_changes": {},
-        "ai_input_tokens": 0,
-        "ai_cached_input_tokens": 0,
-        "ai_output_tokens": 0,
-        "ai_prompt_length_sum": 0,
-        "ai_prompt_events_total": 0,
-        "ai_sessions": 0,
-        "ai_model_costs": {},
-        "ai_model_breakdown": [],
-        "ai_model_total_cost": 0,
-        "ai_prompt_length_avg": 0,
-        "ai_prompt_events_avg_per_session": 0,
-        "ai_prompt_events_median_per_session": 0,
-        "ai_prompt_length_avg_per_session": 0,
-        "ai_prompt_length_median_per_session": 0
+        "ai_input_tokens": 813276,
+        "ai_cached_input_tokens": 5043264,
+        "ai_output_tokens": 4690,
+        "ai_prompt_length_sum": 8,
+        "ai_prompt_events_total": 1,
+        "ai_sessions": 1,
+        "ai_model_costs": {
+          "Opus": 4.355557
+        },
+        "ai_model_breakdown": [
+          {
+            "name": "Opus",
+            "lines": 0,
+            "cost": 4.355557
+          }
+        ],
+        "ai_model_total_cost": 4.355557,
+        "ai_prompt_length_avg": 8,
+        "ai_prompt_events_avg_per_session": 1,
+        "ai_prompt_events_median_per_session": 1,
+        "ai_prompt_length_avg_per_session": 8,
+        "ai_prompt_length_median_per_session": 8
       },
       "range": {
         "start": "2026-09-30T18:30:00Z",
@@ -4467,13 +4475,171 @@
         "text": "Thu Oct 1st 2026",
         "timezone": "Asia/Kolkata"
       },
-      "projects": [],
-      "languages": [],
+      "projects": [
+        {
+          "name": "Serenity",
+          "total_seconds": 98.295,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 0,
+          "human_deletions": 0,
+          "ai_model_line_changes": {},
+          "ai_input_tokens": 813276,
+          "ai_cached_input_tokens": 5043264,
+          "ai_output_tokens": 4690,
+          "ai_prompt_length_sum": 8,
+          "ai_prompt_events_total": 1,
+          "color": null,
+          "ai_model_costs": {
+            "Opus": 4.355557
+          },
+          "ai_model_breakdown": [
+            {
+              "name": "Opus",
+              "lines": 0,
+              "cost": 4.355557
+            }
+          ],
+          "ai_model_total_cost": 4.355557,
+          "ai_prompt_length_avg": 8,
+          "ai_prompt_length_avg_per_session": 8,
+          "ai_prompt_length_median_per_session": 8,
+          "ai_prompt_events_avg_per_session": 1,
+          "ai_prompt_events_median_per_session": 1,
+          "ai_sessions": 1,
+          "digital": "0:01:38",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 38,
+          "percent": 100.0
+        }
+      ],
+      "languages": [
+        {
+          "name": "Other",
+          "total_seconds": 98.295,
+          "digital": "0:01:38",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 38,
+          "percent": 100.0
+        }
+      ],
       "dependencies": [],
-      "machines": [],
-      "editors": [],
-      "operating_systems": [],
-      "categories": []
+      "machines": [
+        {
+          "name": "Arpans-PC",
+          "total_seconds": 98.295,
+          "machine_name_id": "ef85a9a9-2a6b-4383-b249-21044b2f0067",
+          "digital": "0:01:38",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 38,
+          "percent": 100.0
+        }
+      ],
+      "editors": [
+        {
+          "name": "Claude Code",
+          "total_seconds": 76.718,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 0,
+          "human_deletions": 0,
+          "ai_model_line_changes": {},
+          "ai_input_tokens": 813276,
+          "ai_cached_input_tokens": 5043264,
+          "ai_output_tokens": 4690,
+          "ai_prompt_length_sum": 0,
+          "ai_prompt_events_total": 0,
+          "ai_model_costs": {
+            "Opus": 4.355557
+          },
+          "ai_model_breakdown": [
+            {
+              "name": "Opus",
+              "lines": 0,
+              "cost": 4.355557
+            }
+          ],
+          "ai_model_total_cost": 4.355557,
+          "ai_prompt_length_avg": 0,
+          "ai_prompt_length_avg_per_session": 0,
+          "ai_prompt_length_median_per_session": 0,
+          "ai_prompt_events_avg_per_session": 0,
+          "ai_prompt_events_median_per_session": 0,
+          "ai_sessions": 1,
+          "digital": "0:01:16",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 16,
+          "percent": 78.05
+        },
+        {
+          "name": "VS Code",
+          "total_seconds": 21.577,
+          "ai_additions": 0,
+          "ai_deletions": 0,
+          "human_additions": 0,
+          "human_deletions": 0,
+          "ai_model_line_changes": {},
+          "ai_input_tokens": 0,
+          "ai_cached_input_tokens": 0,
+          "ai_output_tokens": 0,
+          "ai_prompt_length_sum": 8,
+          "ai_prompt_events_total": 1,
+          "ai_model_costs": {},
+          "ai_model_breakdown": [],
+          "ai_model_total_cost": 0,
+          "ai_prompt_length_avg": 8,
+          "ai_prompt_length_avg_per_session": 8,
+          "ai_prompt_length_median_per_session": 8,
+          "ai_prompt_events_avg_per_session": 1,
+          "ai_prompt_events_median_per_session": 1,
+          "ai_sessions": 1,
+          "digital": "0:00:21",
+          "decimal": "0.00",
+          "text": "21 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 21,
+          "percent": 21.95
+        }
+      ],
+      "operating_systems": [
+        {
+          "name": "Windows",
+          "total_seconds": 98.295,
+          "digital": "0:01:38",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 38,
+          "percent": 100.0
+        }
+      ],
+      "categories": [
+        {
+          "name": "AI Coding",
+          "total_seconds": 98.295,
+          "digital": "0:01:38",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 38,
+          "percent": 100.0
+        }
+      ]
     }
   ]
 }
