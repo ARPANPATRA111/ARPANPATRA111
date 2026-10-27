@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-27T17:02:42.549800+00:00",
+  "generated_at_utc": "2026-10-27T23:21:25.043111+00:00",
   "wake_up_time": "00:00:00",
   "summary_days": 7,
   "latest_day": "2026-10-27",
@@ -5966,99 +5966,6 @@
       }
     },
     {
-      "grand_total": {
-        "hours": 0,
-        "minutes": 55,
-        "total_seconds": 3352.658,
-        "digital": "0:55",
-        "decimal": "0.92",
-        "text": "55 mins",
-        "ai_additions": 1134,
-        "ai_deletions": 3,
-        "human_additions": 2,
-        "human_deletions": 0,
-        "ai_model_line_changes": {
-          "Opus": 1137
-        },
-        "ai_input_tokens": 202416,
-        "ai_cached_input_tokens": 19700821,
-        "ai_output_tokens": 102960,
-        "ai_prompt_length_sum": 15703,
-        "ai_prompt_events_total": 4,
-        "ai_sessions": 1,
-        "ai_model_costs": {
-          "Opus": 6.809029
-        },
-        "ai_model_breakdown": [
-          {
-            "name": "Opus",
-            "lines": 1137,
-            "cost": 6.809029,
-            "input_tokens": 202416,
-            "output_tokens": 102960,
-            "cached_input_tokens": 19700821
-          }
-        ],
-        "ai_model_total_cost": 6.809029,
-        "ai_prompt_length_avg": 3926,
-        "ai_prompt_events_avg_per_session": 4,
-        "ai_prompt_events_median_per_session": 4,
-        "ai_prompt_length_avg_per_session": 3926,
-        "ai_prompt_length_median_per_session": 3926
-      },
-      "range": {
-        "start": "2026-10-26T18:30:00Z",
-        "end": "2026-10-27T18:29:59Z",
-        "date": "2026-10-27",
-        "text": "Tue Oct 27th 2026",
-        "timezone": "Asia/Kolkata"
-      },
-      "projects": [
-        {
-          "name": "OwnGym",
-          "total_seconds": 3352.658,
-          "ai_additions": 1134,
-          "ai_deletions": 3,
-          "human_additions": 2,
-          "human_deletions": 0,
-          "ai_model_line_changes": {
-            "Opus": 1137
-          },
-          "ai_input_tokens": 202416,
-          "ai_cached_input_tokens": 19700821,
-          "ai_output_tokens": 102960,
-          "ai_prompt_length_sum": 15703,
-          "ai_prompt_events_total": 4,
-          "color": null,
-          "ai_model_costs": {
-            "Opus": 6.809029
-          },
-          "ai_model_breakdown": [
-            {
-              "name": "Opus",
-              "lines": 1137,
-              "cost": 6.809029,
-              "input_tokens": 202416,
-              "output_tokens": 102960,
-              "cached_input_tokens": 19700821
-            }
-          ],
-          "ai_model_total_cost": 6.809029,
-          "ai_prompt_length_avg": 3926,
-          "ai_prompt_length_avg_per_session": 3926,
-          "ai_prompt_length_median_per_session": 3926,
-          "ai_prompt_events_avg_per_session": 4,
-          "ai_prompt_events_median_per_session": 4,
-          "ai_sessions": 1,
-          "digital": "0:55:52",
-          "decimal": "0.92",
-          "text": "55 mins",
-          "hours": 0,
-          "minutes": 55,
-          "seconds": 52,
-          "percent": 100.0
-        }
-      ],
       "languages": [
         {
           "name": "Markdown",
@@ -6116,187 +6023,46 @@
           "percent": 0.0
         }
       ],
-      "dependencies": [
-        {
-          "name": "numpy",
-          "total_seconds": 355.142,
-          "digital": "0:05:55",
-          "decimal": "0.08",
-          "text": "5 mins",
-          "hours": 0,
-          "minutes": 5,
-          "seconds": 55,
-          "percent": 16.07
+      "grand_total": {
+        "hours": 0,
+        "minutes": 55,
+        "total_seconds": 3352.658,
+        "digital": "0:55",
+        "decimal": "0.92",
+        "text": "55 mins",
+        "ai_additions": 1134,
+        "ai_deletions": 3,
+        "human_additions": 2,
+        "human_deletions": 0,
+        "ai_model_line_changes": {
+          "Opus": 1137
         },
-        {
-          "name": "PIL",
-          "total_seconds": 355.142,
-          "digital": "0:05:55",
-          "decimal": "0.08",
-          "text": "5 mins",
-          "hours": 0,
-          "minutes": 5,
-          "seconds": 55,
-          "percent": 16.07
+        "ai_input_tokens": 202416,
+        "ai_cached_input_tokens": 19700821,
+        "ai_output_tokens": 102960,
+        "ai_prompt_length_sum": 15703,
+        "ai_prompt_events_total": 4,
+        "ai_sessions": 1,
+        "ai_model_costs": {
+          "Opus": 6.809029
         },
-        {
-          "name": "app.owngym",
-          "total_seconds": 220.214,
-          "digital": "0:03:40",
-          "decimal": "0.05",
-          "text": "3 mins",
-          "hours": 0,
-          "minutes": 3,
-          "seconds": 40,
-          "percent": 9.96
-        },
-        {
-          "name": "androidx.compose",
-          "total_seconds": 189.315,
-          "digital": "0:03:09",
-          "decimal": "0.05",
-          "text": "3 mins",
-          "hours": 0,
-          "minutes": 3,
-          "seconds": 9,
-          "percent": 8.57
-        },
-        {
-          "name": "kotlinx.coroutines",
-          "total_seconds": 189.315,
-          "digital": "0:03:09",
-          "decimal": "0.05",
-          "text": "3 mins",
-          "hours": 0,
-          "minutes": 3,
-          "seconds": 9,
-          "percent": 8.57
-        },
-        {
-          "name": "androidx.hilt",
-          "total_seconds": 155.156,
-          "digital": "0:02:35",
-          "decimal": "0.03",
-          "text": "2 mins",
-          "hours": 0,
-          "minutes": 2,
-          "seconds": 35,
-          "percent": 7.02
-        },
-        {
-          "name": "javax.inject",
-          "total_seconds": 155.156,
-          "digital": "0:02:35",
-          "decimal": "0.03",
-          "text": "2 mins",
-          "hours": 0,
-          "minutes": 2,
-          "seconds": 35,
-          "percent": 7.02
-        },
-        {
-          "name": "androidx.lifecycle",
-          "total_seconds": 155.156,
-          "digital": "0:02:35",
-          "decimal": "0.03",
-          "text": "2 mins",
-          "hours": 0,
-          "minutes": 2,
-          "seconds": 35,
-          "percent": 7.02
-        },
-        {
-          "name": "dagger.hilt",
-          "total_seconds": 155.156,
-          "digital": "0:02:35",
-          "decimal": "0.03",
-          "text": "2 mins",
-          "hours": 0,
-          "minutes": 2,
-          "seconds": 35,
-          "percent": 7.02
-        },
-        {
-          "name": "argparse",
-          "total_seconds": 83.556,
-          "digital": "0:01:23",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 23,
-          "percent": 3.78
-        },
-        {
-          "name": "scipy",
-          "total_seconds": 83.556,
-          "digital": "0:01:23",
-          "decimal": "0.02",
-          "text": "1 min",
-          "hours": 0,
-          "minutes": 1,
-          "seconds": 23,
-          "percent": 3.78
-        },
-        {
-          "name": "kotlin.math",
-          "total_seconds": 34.159,
-          "digital": "0:00:34",
-          "decimal": "0.00",
-          "text": "34 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 34,
-          "percent": 1.55
-        },
-        {
-          "name": "org.junit",
-          "total_seconds": 30.899,
-          "digital": "0:00:30",
-          "decimal": "0.00",
-          "text": "30 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 30,
-          "percent": 1.4
-        },
-        {
-          "name": "android.graphics",
-          "total_seconds": 24.07,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 1.09
-        },
-        {
-          "name": "android.content",
-          "total_seconds": 24.07,
-          "digital": "0:00:24",
-          "decimal": "0.00",
-          "text": "24 secs",
-          "hours": 0,
-          "minutes": 0,
-          "seconds": 24,
-          "percent": 1.09
-        }
-      ],
-      "machines": [
-        {
-          "name": "Arpans-PC",
-          "total_seconds": 3352.658,
-          "machine_name_id": "5727a0e0-4acb-4b8d-9fbc-1be9841c28fa",
-          "digital": "0:55:52",
-          "decimal": "0.92",
-          "text": "55 mins",
-          "hours": 0,
-          "minutes": 55,
-          "seconds": 52,
-          "percent": 100.0
-        }
-      ],
+        "ai_model_breakdown": [
+          {
+            "name": "Opus",
+            "lines": 1137,
+            "cost": 6.809029,
+            "input_tokens": 202416,
+            "output_tokens": 102960,
+            "cached_input_tokens": 19700821
+          }
+        ],
+        "ai_model_total_cost": 6.809029,
+        "ai_prompt_length_avg": 3926,
+        "ai_prompt_events_avg_per_session": 4,
+        "ai_prompt_events_median_per_session": 4,
+        "ai_prompt_length_avg_per_session": 3926,
+        "ai_prompt_length_median_per_session": 3926
+      },
       "editors": [
         {
           "name": "Claude Code",
@@ -6432,7 +6198,240 @@
           "seconds": 37,
           "percent": 1.11
         }
-      ]
+      ],
+      "dependencies": [
+        {
+          "name": "PIL",
+          "total_seconds": 355.142,
+          "digital": "0:05:55",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 55,
+          "percent": 16.07
+        },
+        {
+          "name": "numpy",
+          "total_seconds": 355.142,
+          "digital": "0:05:55",
+          "decimal": "0.08",
+          "text": "5 mins",
+          "hours": 0,
+          "minutes": 5,
+          "seconds": 55,
+          "percent": 16.07
+        },
+        {
+          "name": "app.owngym",
+          "total_seconds": 220.214,
+          "digital": "0:03:40",
+          "decimal": "0.05",
+          "text": "3 mins",
+          "hours": 0,
+          "minutes": 3,
+          "seconds": 40,
+          "percent": 9.96
+        },
+        {
+          "name": "androidx.compose",
+          "total_seconds": 189.315,
+          "digital": "0:03:09",
+          "decimal": "0.05",
+          "text": "3 mins",
+          "hours": 0,
+          "minutes": 3,
+          "seconds": 9,
+          "percent": 8.57
+        },
+        {
+          "name": "kotlinx.coroutines",
+          "total_seconds": 189.315,
+          "digital": "0:03:09",
+          "decimal": "0.05",
+          "text": "3 mins",
+          "hours": 0,
+          "minutes": 3,
+          "seconds": 9,
+          "percent": 8.57
+        },
+        {
+          "name": "androidx.lifecycle",
+          "total_seconds": 155.156,
+          "digital": "0:02:35",
+          "decimal": "0.03",
+          "text": "2 mins",
+          "hours": 0,
+          "minutes": 2,
+          "seconds": 35,
+          "percent": 7.02
+        },
+        {
+          "name": "dagger.hilt",
+          "total_seconds": 155.156,
+          "digital": "0:02:35",
+          "decimal": "0.03",
+          "text": "2 mins",
+          "hours": 0,
+          "minutes": 2,
+          "seconds": 35,
+          "percent": 7.02
+        },
+        {
+          "name": "javax.inject",
+          "total_seconds": 155.156,
+          "digital": "0:02:35",
+          "decimal": "0.03",
+          "text": "2 mins",
+          "hours": 0,
+          "minutes": 2,
+          "seconds": 35,
+          "percent": 7.02
+        },
+        {
+          "name": "androidx.hilt",
+          "total_seconds": 155.156,
+          "digital": "0:02:35",
+          "decimal": "0.03",
+          "text": "2 mins",
+          "hours": 0,
+          "minutes": 2,
+          "seconds": 35,
+          "percent": 7.02
+        },
+        {
+          "name": "argparse",
+          "total_seconds": 83.556,
+          "digital": "0:01:23",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 23,
+          "percent": 3.78
+        },
+        {
+          "name": "scipy",
+          "total_seconds": 83.556,
+          "digital": "0:01:23",
+          "decimal": "0.02",
+          "text": "1 min",
+          "hours": 0,
+          "minutes": 1,
+          "seconds": 23,
+          "percent": 3.78
+        },
+        {
+          "name": "kotlin.math",
+          "total_seconds": 34.159,
+          "digital": "0:00:34",
+          "decimal": "0.00",
+          "text": "34 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 34,
+          "percent": 1.55
+        },
+        {
+          "name": "org.junit",
+          "total_seconds": 30.899,
+          "digital": "0:00:30",
+          "decimal": "0.00",
+          "text": "30 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 30,
+          "percent": 1.4
+        },
+        {
+          "name": "android.graphics",
+          "total_seconds": 24.07,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 1.09
+        },
+        {
+          "name": "android.content",
+          "total_seconds": 24.07,
+          "digital": "0:00:24",
+          "decimal": "0.00",
+          "text": "24 secs",
+          "hours": 0,
+          "minutes": 0,
+          "seconds": 24,
+          "percent": 1.09
+        }
+      ],
+      "machines": [
+        {
+          "name": "Arpans-PC",
+          "total_seconds": 3352.658,
+          "machine_name_id": "5727a0e0-4acb-4b8d-9fbc-1be9841c28fa",
+          "digital": "0:55:52",
+          "decimal": "0.92",
+          "text": "55 mins",
+          "hours": 0,
+          "minutes": 55,
+          "seconds": 52,
+          "percent": 100.0
+        }
+      ],
+      "projects": [
+        {
+          "name": "OwnGym",
+          "total_seconds": 3352.658,
+          "ai_additions": 1134,
+          "ai_deletions": 3,
+          "human_additions": 2,
+          "human_deletions": 0,
+          "ai_model_line_changes": {
+            "Opus": 1137
+          },
+          "ai_input_tokens": 202416,
+          "ai_cached_input_tokens": 19700821,
+          "ai_output_tokens": 102960,
+          "ai_prompt_length_sum": 15703,
+          "ai_prompt_events_total": 4,
+          "ai_model_costs": {
+            "Opus": 6.809029
+          },
+          "ai_model_breakdown": [
+            {
+              "name": "Opus",
+              "lines": 1137,
+              "cost": 6.809029,
+              "input_tokens": 202416,
+              "output_tokens": 102960,
+              "cached_input_tokens": 19700821
+            }
+          ],
+          "ai_model_total_cost": 6.809029,
+          "ai_prompt_length_avg": 3926,
+          "ai_prompt_length_avg_per_session": 3926,
+          "ai_prompt_length_median_per_session": 3926,
+          "ai_prompt_events_avg_per_session": 4,
+          "ai_prompt_events_median_per_session": 4,
+          "ai_sessions": 1,
+          "digital": "0:55:52",
+          "decimal": "0.92",
+          "text": "55 mins",
+          "hours": 0,
+          "minutes": 55,
+          "seconds": 52,
+          "percent": 100.0
+        }
+      ],
+      "range": {
+        "start": "2026-10-26T18:30:00Z",
+        "end": "2026-10-27T18:29:59Z",
+        "date": "2026-10-27",
+        "text": "Tue Oct 27th 2026",
+        "timezone": "Asia/Kolkata"
+      }
     }
   ]
 }
