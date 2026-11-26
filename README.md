@@ -180,9 +180,10 @@ currently_learning:
 
 ### 🥇 LeetCode
 <p align="center">
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/200.gif" width="100" alt="200 Days"/>
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/100%20days.gif" width="100" alt="100 Days"/>
-  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/50Days.gif" width="100" alt="50 Days"/>
+  <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/200.gif" width="100" alt="200 Days"/>
+  <!-- <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/50Days.gif" width="100" alt="50 Days"/> -->
+  <img width="100" alt="500 Days" src="https://github.com/user-attachments/assets/fdfccbcc-f7fe-4bbf-acc1-94f3b79030ae" />
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/202507.gif" width="100" alt="July Badge"/>
   <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/2025.gif" width="100" alt="2025 Badge"/>
 </p>
@@ -201,8 +202,9 @@ currently_learning:
   <a href="https://learn.microsoft.com/api/credentials/share/en-us/ArpanPatra-3804/DF31299649B7C8D0?sharingId=583BDF8556DF2F7F">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/leadauditor.png" alt="Lead Auditor" width="100"/>
   </a>
-  <a href="https://edu.google.accredible.com/d7e23f1f-3a00-4684-804e-abecfd12c6ae">
-    <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini" width="100"/>
+  <a href="https://www.credential.net/afeac0e4-8252-4a81-9d60-32577713666c#acc.Ktq72wgL">
+    <!-- <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/gemini.png" alt="Gemini" width="100"/> -->
+    <img width="100" alt="Google Play Academy" src="https://github.com/user-attachments/assets/f94f919a-13e8-4ec2-9f25-1515dd7694c7" />
   </a>
   <a href="https://verify.skilljar.com/c/bvbpedx4dbzw">
     <img src="https://github.com/ARPANPATRA111/ARPANPATRA111/blob/main/assets/encryption.png" alt="Encryption" width="100"/>
